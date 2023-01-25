@@ -5,13 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class scenesManager : MonoBehaviour
 {
+    
+    
     public int[] _randomScene;
+
+    public static scenesManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Il y a plus d'une instance de MetaGameManager dans la scène");
+            Destroy(this.gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
     private void Start()
     {
         LoadRandomScene();
     }
-    public void LoadSpecificScene(string minigameIndex)
+
+
+    public void LoadSpecificScene(int minigameIndex)
     {
         SceneManager.LoadScene(minigameIndex);
     }
