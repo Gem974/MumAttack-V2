@@ -8,7 +8,7 @@ public class MetaGameManager : MonoBehaviour
 
     public enum moms
     {
-        Rachel, Aurelie
+        None, Rachel, Aurelie
     }
 
     [Header("Set Characters")]
@@ -29,8 +29,9 @@ public class MetaGameManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("Il y a plus d'une instance de MetaGameManager dans la scène");
+            
             Destroy(this.gameObject);
+            Debug.LogError("Il y avait plus d'une instance de MetaGameManager dans la scène.");
             return;
         }
 
@@ -40,6 +41,9 @@ public class MetaGameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
     }
+
+    
+
 
 
 

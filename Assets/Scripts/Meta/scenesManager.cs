@@ -25,7 +25,15 @@ public class scenesManager : MonoBehaviour
 
     private void Start()
     {
-        LoadRandomScene();
+        SetRandomScene();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
 
@@ -34,7 +42,7 @@ public class scenesManager : MonoBehaviour
         SceneManager.LoadScene(minigameIndex);
     }
 
-    public void LoadRandomScene()
+    public void SetRandomScene()
     {
         for (int i = 0; i < 5; i++)
         {

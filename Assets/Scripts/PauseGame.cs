@@ -39,4 +39,10 @@ public class PauseGame : MonoBehaviour
             }
         }
     }
+
+    public void PauseBackToMenu()
+    {
+        scenesManager sm = FindObjectOfType<scenesManager>();
+        sm.LoadSpecificScene(0);
+    }
 }
