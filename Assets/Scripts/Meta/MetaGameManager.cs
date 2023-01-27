@@ -39,6 +39,8 @@ public class MetaGameManager : MonoBehaviour
     }
     void Start()
     {
+        
+     
         DontDestroyOnLoad(this.gameObject);
     }
 

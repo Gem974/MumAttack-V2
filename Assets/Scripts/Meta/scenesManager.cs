@@ -5,22 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class scenesManager : MonoBehaviour
 {
-    
+
+    public bool _isNotDestroyable;
     
     public int[] _randomScene;
 
     public static scenesManager instance;
 
+    
+
     private void Awake()
     {
-        if (instance != null)
+        if (_isNotDestroyable)
         {
-            Debug.LogError("Il y a plus d'une instance de MetaGameManager dans la scène");
-            Destroy(this.gameObject);
-            return;
-        }
+            if (instance != null)
+            {
+                return;
+            }
 
-        instance = this;
+            instance = this; 
+        }
     }
 
     private void Start()
@@ -30,10 +34,10 @@ public class scenesManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    SceneManager.LoadScene(0);
+        //}
     }
 
 

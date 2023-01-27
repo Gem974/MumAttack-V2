@@ -38,6 +38,8 @@ public class PauseGame : MonoBehaviour
 
             }
         }
+
+
     }
 
     public void PauseBackToMenu()
@@ -46,3 +48,6 @@ public class PauseGame : MonoBehaviour
         sm.LoadSpecificScene(0);
     }
 }
+
+
+

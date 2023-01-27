@@ -23,7 +23,8 @@ public class Emrandomimg : MonoBehaviour
 
     public GameObject _posePannel;
     public GameObject _posePannel2;
-    public GameObject _textGameOver;
+    public GameObject _gameOverPanel;
+    public Text _textGO;
     public GameObject _overlay;
 
     public Sprite[] _positions;
@@ -470,9 +471,20 @@ public class Emrandomimg : MonoBehaviour
         }
         else if (_pointsJ1 == 3 || _pointsJ2 == 3)
         {
-            _textGameOver.SetActive(true);
-            _overlay.SetActive(true);
+            _gameOverPanel.SetActive(true);
+           
             _bgMusic.Stop();
+
+            if (_pointsJ1 == 3)
+            {
+                _textGO.text = "Player 1 Wins !";
+            }
+            else if (_pointsJ2 == 3)
+            {
+                _textGO.text = "Player 2 Wins !";
+            }
+
+
             Debug.Log("Game Over");
         }
     }

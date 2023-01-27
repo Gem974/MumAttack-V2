@@ -38,6 +38,8 @@ public class SpamBehaviour : MonoBehaviour
         SetRandomKey();
         StartCoroutine(RandomKeys());
         _animatorP1.SetBool("isMoving", false);
+        //_animatorP1.enabled = false;
+        //_animatorP2.enabled = false;
         
 
     }
@@ -173,6 +175,7 @@ public class SpamBehaviour : MonoBehaviour
         }
         else if (_colliDetection._inCollision)  //Test si les personnage sont en collision
         {
+
             Debug.Log("Lance FX Collision");
             if (_colliDetection._inCollision && _colliDetection._stopColliFX)
             {

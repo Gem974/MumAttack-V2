@@ -10,6 +10,7 @@ public class ButtonsBehaviour : MonoBehaviour
 
     private void Start()
     {
+
         OffPanels();
         _mainMenuPanel.SetActive(true);
     }
@@ -36,8 +37,10 @@ public class ButtonsBehaviour : MonoBehaviour
 
     public void PauseBackToMenu()
     {
+        
         scenesManager sm = FindObjectOfType<scenesManager>();
         sm.LoadSpecificScene(0);
+        
     }
 
 }
