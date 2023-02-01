@@ -170,17 +170,19 @@ public class Sumo_GameManager : MonoBehaviour
         _spamBehaviour._zoomSFX.Play();
 
         //APL CHROMATIC ABERRATION
-        while (_chroAbe.intensity.value <= 1)
+        
+
+        while (_chroAbe.intensity.value <= 0.9)
         {
             _chroAbe.intensity.value += 0.1f;
-            //pr.focusDistance.value += 0.1f;
+    
             yield return new WaitForSeconds(0.02f);
+            Debug.Log("Test");
         }
 
         UnityEngine.Time.timeScale = 0.2f;
         yield return new WaitForSeconds(0.3f);
         UnityEngine.Time.timeScale = 1;
-        Debug.Log("Test");
         RestartRound();
 
 

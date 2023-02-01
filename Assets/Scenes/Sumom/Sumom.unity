@@ -1067,11 +1067,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: VolumeSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 6725830014913201893, guid: 013762cdf0b89624eb90068dadda615d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6725830014913201895, guid: 013762cdf0b89624eb90068dadda615d,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 963194226}
+      objectReference: {fileID: 0}
     - target: {fileID: 6725830014913201895, guid: 013762cdf0b89624eb90068dadda615d,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1079,18 +1084,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 013762cdf0b89624eb90068dadda615d, type: 3}
---- !u!114 &380356298 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6725830014913201895, guid: 013762cdf0b89624eb90068dadda615d,
-    type: 3}
-  m_PrefabInstance: {fileID: 380356297}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &386052387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,9 +2112,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
-  - component: {fileID: 963194230}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2129,14 +2121,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2195,20 +2179,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5.273, y: 0, z: 0}
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218255dce57c38a43b6d43a23f3b496c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sliderRef: {fileID: 0}
-  _sliderInGame: {fileID: 380356298}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,6 +2212,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &963194232
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
 --- !u!1 &1082694822
 GameObject:
   m_ObjectHideFlags: 0

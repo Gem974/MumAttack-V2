@@ -43,4 +43,9 @@ public class ButtonsBehaviour : MonoBehaviour
         
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }

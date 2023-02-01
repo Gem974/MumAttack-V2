@@ -320,6 +320,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d1beae33c7cd440b63981f368bfe1b, type: 3}
+--- !u!114 &69770880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4747555290580994840, guid: a2d1beae33c7cd440b63981f368bfe1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 69770879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6190fe035229e1842be7d5a3dd7f79c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &95383547
 GameObject:
   m_ObjectHideFlags: 0
@@ -6071,10 +6083,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 806276720}
-        m_TargetAssemblyTypeName: SceneManager_DarTeat, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 69770880}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: PauseBackToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
