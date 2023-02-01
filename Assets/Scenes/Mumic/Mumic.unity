@@ -1956,10 +1956,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenuPanel: {fileID: 0}
+  _modePanel: {fileID: 0}
   _miniGamesPanel: {fileID: 0}
   _optionsPanel: {fileID: 0}
-  _outlines: []
-  _currentGame: 0
 --- !u!1 &990490407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,7 +3373,8 @@ MonoBehaviour:
   _scoreJ2: {fileID: 1301453944}
   _posePannel: {fileID: 990490407}
   _posePannel2: {fileID: 1319940371}
-  _textGameOver: {fileID: 1647447814}
+  _gameOverPanel: {fileID: 0}
+  _textGO: {fileID: 0}
   _overlay: {fileID: 258464816}
   _positions:
   - {fileID: 21300000, guid: 064dc2036223266469f7a80a3a2f0658, type: 3}
