@@ -3,18 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - OffLimit
-  - OffLimit2
-  - FxTemporaire
-  - Mur
-  - MurFragile
-  - Projectile
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Caddie
+  - 
   - Water
   - UI
   - 
