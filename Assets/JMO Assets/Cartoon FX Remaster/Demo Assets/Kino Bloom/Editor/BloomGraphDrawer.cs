@@ -32,7 +32,7 @@ namespace Kino
         #region Public Methods
 
         // Update internal state with a given bloom instance.
-        public void Prepare(Bloom bloom)
+        /*public void Prepare(Bloom bloom)
         {
             #if UNITY_5_6_OR_NEWER
             if (bloom.GetComponent<Camera>().allowHDR)
@@ -54,7 +54,7 @@ namespace Kino
 
             // Intensity is capped to prevent sampling errors.
             _intensity = Mathf.Min(bloom.intensity, 10);
-        }
+        }*/
 
         // Draw the graph at the current position.
         public void DrawGraph()

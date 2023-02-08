@@ -51,9 +51,9 @@ namespace CartoonFX
                 return;
             }
             
-            if (shader.name.Contains("Cartoon FX/Remaster"))
+            if (shader.name.Contains("Cartoon FX"))
             {
-                // Strip Cartoon FX Remaster Shader variants based on current render pipeline
+                // Strip Hybrid Shader variants based on current render pipeline
                 if ((isUsingURP && snippet.passType != PassType.ScriptableRenderPipeline) ||
                     (!isUsingURP && snippet.passType == PassType.ScriptableRenderPipeline))
                 {

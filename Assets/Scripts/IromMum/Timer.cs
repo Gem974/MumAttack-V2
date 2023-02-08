@@ -61,7 +61,7 @@ public class Timer : MonoBehaviour
                     {
                         yield return new WaitForSeconds(1f);
                         _timerStart--;
-                        Debug.Log(_timerStart);
+           
                         if (_timerStart <= 0)
                         {
                             _timerTxt.text = _timerStart.ToString();

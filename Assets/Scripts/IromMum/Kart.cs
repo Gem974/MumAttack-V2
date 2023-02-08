@@ -6,12 +6,20 @@ using UnityEngine;
 public class Kart : MonoBehaviour
 {
     public bool _isPlayer1;
+    public enum PlayerState
+    {
+       Standby, Charging, Propulse
+    }
+
     [Header("Kart Movement")]
+    [SerializeField] PlayerState _playerState;
     [SerializeField] Rigidbody _rb;
     [SerializeField] float _maxPower;
+    [SerializeField] Vector3 _moveForce;
     [SerializeField] float _power;
     [SerializeField] float _chargeSpeed;
     [SerializeField] float _turnSpeed;
+    [SerializeField] float _driftPower = 1;
 
     [SerializeField] KeyCode _right, _left, _up, _down, _action;
 
@@ -32,6 +40,7 @@ public class Kart : MonoBehaviour
         if (GameManager_IromMum.instance._canPlay)
         {
             TouchBinding();
+            _playerState = PlayerState.Standby;
         }
     }
 
@@ -44,7 +53,28 @@ public class Kart : MonoBehaviour
  
         }
 
+      
+        
+       
     }
+
+    private void FixedUpdate()
+    {
+
+        if (_playerState == PlayerState.Propulse)
+        {
+            _driftPower -= 0.02f;
+            _rb.AddForce(transform.forward * 0.3f * (_power / 10), ForceMode.VelocityChange);
+            if (_driftPower <= 0)
+            {
+                _driftPower = 0f;
+                _playerState = PlayerState.Standby;
+                _power = 0;
+            }
+        }
+    }
+
+
 
 
 
@@ -83,41 +113,47 @@ public class Kart : MonoBehaviour
 
     void ImpulseCharge()
     {
-        if (Input.GetKey(_action))
+        if (_playerState != PlayerState.Propulse)
         {
-            if (_power <= _maxPower)
+            if (Input.GetKey(_action))
             {
-                _power += Time.deltaTime * _chargeSpeed;
-
-                if (_power < 2)
+                _playerState = PlayerState.Charging;
+                if (_power <= _maxPower)
                 {
-                    //Jaune
+                    _power += Time.deltaTime * _chargeSpeed;
 
-                    
-                    
-                    
+                    if (_power < 2)
+                    {
+                        //Jaune
 
-                }
-                else if (_power > 2 && _power < 6)
-                {
-                    Debug.Log("PIOU");
-                    
-                }
-                else if (_power > 6 && _power < 12)
-                {
-                   
+
+
+
+
+                    }
+                    else if (_power > 2 && _power < 6)
+                    {
+                        Debug.Log("PIOU");
+
+                    }
+                    else if (_power > 6 && _power < 12)
+                    {
+
+                    }
                 }
             }
-        }
-        if (Input.GetKeyUp(_action))
-        {
-            Vector3 Impulse = _power * transform.forward;
-            _rb.AddForce(Impulse, ForceMode.Impulse);
-            _power = 0;
+            if (Input.GetKeyUp(_action))
+            {
+                _driftPower = 1;
+                //StopAllCoroutines();
+                //_playerState = PlayerState.Standby;
+                Vector3 Impulse = _power * transform.forward;
+                _rb.AddForce(Impulse, ForceMode.Impulse);
+                _playerState = PlayerState.Propulse;
+                //StartCoroutine(Drift());
+                Instantiate(_fxPropulse, _fxSpawnPoint);
 
-            Instantiate(_fxPropulse, _fxSpawnPoint);
-           
-            //FeedBackManager.instance._propulsion?.Invoke();
+            } 
         }
 
     }
@@ -142,6 +178,14 @@ public class Kart : MonoBehaviour
         _multiplier = 1;
         _canMultiply = false;
 
+    }
+
+    IEnumerator Drift()
+    {
+        float driftPower = _power * (1 / _maxPower);
+        Debug.Log(driftPower);
+        yield return new WaitForSeconds(driftPower);
+        _playerState = PlayerState.Standby;
     }
 
 

@@ -42,7 +42,7 @@ public class CFX_LightIntensityFade : MonoBehaviour
 	{
 		if(p_delay > 0)
 		{
-			p_delay -= UnityEngine.Time.deltaTime;
+			p_delay -= Time.deltaTime;
 			if(p_delay <= 0)
 			{
 				GetComponent<Light>().enabled = true;
@@ -53,7 +53,7 @@ public class CFX_LightIntensityFade : MonoBehaviour
 		if(p_lifetime/duration < 1.0f)
 		{
 			GetComponent<Light>().intensity = Mathf.Lerp(baseIntensity, finalIntensity, p_lifetime/duration);
-			p_lifetime += UnityEngine.Time.deltaTime;
+			p_lifetime += Time.deltaTime;
 		}
 		else
 		{

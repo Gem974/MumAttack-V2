@@ -22,7 +22,7 @@ public class CFX_AutoStopLoopedEffect : MonoBehaviour
 	{
 		if(d > 0)
 		{
-			d -= UnityEngine.Time.deltaTime;
+			d -= Time.deltaTime;
 			if(d <= 0)
 			{
 				this.GetComponent<ParticleSystem>().Stop(true);

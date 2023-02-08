@@ -27,7 +27,7 @@ using UnityEditor;
 namespace Kino
 {
     [CanEditMultipleObjects]
-    [CustomEditor(typeof(Bloom))]
+//    [CustomEditor(typeof(Bloom))]
     public class BloomEditor : Editor
     {
         BloomGraphDrawer _graph;
@@ -58,7 +58,7 @@ namespace Kino
 
             if (!serializedObject.isEditingMultipleObjects) {
                 EditorGUILayout.Space();
-                _graph.Prepare((Bloom)target);
+             //   _graph.Prepare((Bloom)target);
                 _graph.DrawGraph();
                 EditorGUILayout.Space();
             }

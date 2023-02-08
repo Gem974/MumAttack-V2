@@ -122,12 +122,12 @@ public class CFX_Demo_New : MonoBehaviour
 		slowMo = !slowMo;
 		if(slowMo)
 		{
-			UnityEngine.Time.timeScale = 0.33f;
+			Time.timeScale = 0.33f;
 			c.a = 1f;
 		}
 		else
 		{
-			UnityEngine.Time.timeScale = 1.0f;
+			Time.timeScale = 1.0f;
 			c.a = 0.33f;
 		}
 
