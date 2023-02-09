@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1971019226610501453}
   - component: {fileID: 3659294636198139739}
   - component: {fileID: 4592493071171032904}
-  - component: {fileID: 5604418619883031590}
   m_Layer: 0
   m_Name: Plie (1)
   m_TagString: Plaices
@@ -98,18 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5604418619883031590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468484979840135221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c217abb952fc645896d8dde2b3d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &920204352919212840
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +109,6 @@ GameObject:
   - component: {fileID: 4587419216232579190}
   - component: {fileID: 7650452127135770594}
   - component: {fileID: 8114585695165884775}
-  - component: {fileID: 6315830109860154148}
   m_Layer: 0
   m_Name: Plie (5)
   m_TagString: Plaices
@@ -208,18 +194,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6315830109860154148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920204352919212840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c217abb952fc645896d8dde2b3d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2259190477440260757
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +206,6 @@ GameObject:
   - component: {fileID: 2259190477440260760}
   - component: {fileID: 2259190477440260763}
   - component: {fileID: 2259190477440260762}
-  - component: {fileID: 2259190477440260766}
   m_Layer: 0
   m_Name: Plie
   m_TagString: Plaices
@@ -318,18 +291,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2259190477440260766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2259190477440260757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c217abb952fc645896d8dde2b3d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2711912002807222827
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 2711912002807222827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.03, y: 0.5, z: 4.77}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2259190477440260761}
@@ -380,7 +341,6 @@ GameObject:
   - component: {fileID: 4684957103157990923}
   - component: {fileID: 2213175977029926844}
   - component: {fileID: 2544966015997583348}
-  - component: {fileID: 4385057873465668831}
   m_Layer: 0
   m_Name: Plie (4)
   m_TagString: Plaices
@@ -466,18 +426,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4385057873465668831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2969071958378017067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c217abb952fc645896d8dde2b3d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4143869350024868465
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +438,6 @@ GameObject:
   - component: {fileID: 8443081516581155529}
   - component: {fileID: 801331334535538432}
   - component: {fileID: 5561504406996428700}
-  - component: {fileID: 4583718058218523357}
   m_Layer: 0
   m_Name: Plie (6)
   m_TagString: Plaices
@@ -576,18 +523,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4583718058218523357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4143869350024868465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c217abb952fc645896d8dde2b3d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5192348688474918824
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +535,6 @@ GameObject:
   - component: {fileID: 2800238687689803580}
   - component: {fileID: 3131098180588179574}
   - component: {fileID: 9178260303146050734}
-  - component: {fileID: 3853106545985423876}
   m_Layer: 0
   m_Name: Plie (3)
   m_TagString: Plaices
@@ -686,18 +620,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3853106545985423876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5192348688474918824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c217abb952fc645896d8dde2b3d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7804446220913363502
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +632,6 @@ GameObject:
   - component: {fileID: 3277597783825784170}
   - component: {fileID: 1481206412757743211}
   - component: {fileID: 4047046670854440355}
-  - component: {fileID: 2573654537221064921}
   m_Layer: 0
   m_Name: Plie (7)
   m_TagString: Plaices
@@ -796,15 +717,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2573654537221064921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7804446220913363502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c217abb952fc645896d8dde2b3d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -14,7 +14,7 @@ public class Sumo_GameManager : MonoBehaviour
     [SerializeField] SpamBehaviour _spamBehaviour;
     [SerializeField] Sumo_CollisionDetection _colliDetection;
 
-    [SerializeField] Text _playerWinsTxt, _timer, _pointJ1Txt, _pointJ2Txt;
+    [SerializeField] Text _playerWinsTxt, _discountTxt, _pointJ1Txt, _pointJ2Txt;
     [SerializeField] Transform _player1, _player2;
     [SerializeField] Vector2 _startPos1, _startPos2;
     [SerializeField] Quaternion _playersRot;
@@ -63,10 +63,6 @@ public class Sumo_GameManager : MonoBehaviour
     {
 
 
-
-
-
-
         if (!_gameOver) // En jeu
         {
             _pointJ1Txt.text = _pointsP1.ToString();
@@ -78,7 +74,7 @@ public class Sumo_GameManager : MonoBehaviour
             _gameOverPanel.SetActive(true);
 
             _sound.SetActive(false);
-            _timer.gameObject.SetActive(false);
+            _discountTxt.gameObject.SetActive(false);
             //_scores.SetActive(false);
 
         }
@@ -99,7 +95,7 @@ public class Sumo_GameManager : MonoBehaviour
 
             UnityEngine.Time.timeScale = 1;
 
-            StartCoroutine(Timer());
+            StartCoroutine(DiscountBeforeStart());
             _spamBehaviour._animatorP1.SetBool("isMoving", false);
             _spamBehaviour._animatorP2.SetBool("isMoving", false);
             _colliDetection._stopColliFX = true;
@@ -136,21 +132,21 @@ public class Sumo_GameManager : MonoBehaviour
 
 
 
-    IEnumerator Timer()
+    IEnumerator DiscountBeforeStart()
     {
 
-        _timer.gameObject.SetActive(true);
+        _discountTxt.gameObject.SetActive(true);
         _canPlay = false;
-        _timer.text = "3";
+        _discountTxt.text = "3";
         yield return new WaitForSeconds(1f);
-        _timer.text = "2";
+        _discountTxt.text = "2";
         yield return new WaitForSeconds(1f);
-        _timer.text = "1";
+        _discountTxt.text = "1";
         yield return new WaitForSeconds(1f);
-        _timer.text = "START !";
+        _discountTxt.text = "START !";
         yield return new WaitForSeconds(1f);
         _canPlay = true;
-        _timer.gameObject.SetActive(false);
+        _discountTxt.gameObject.SetActive(false);
 
         //APL DepthOfField
         while (_dop.focusDistance.value <= 10f)
@@ -177,7 +173,7 @@ public class Sumo_GameManager : MonoBehaviour
             _chroAbe.intensity.value += 0.1f;
     
             yield return new WaitForSeconds(0.02f);
-            Debug.Log("Test");
+            
         }
 
         UnityEngine.Time.timeScale = 0.2f;

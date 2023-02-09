@@ -33,7 +33,8 @@ public class GameManager_IromMum : MonoBehaviour
 
     private void Start()
     {
-        Timer.instance.LaunchTimer();
+        _canPlay = false;
+
     }
 
 
@@ -67,5 +68,13 @@ public class GameManager_IromMum : MonoBehaviour
             _playerWinsText.text = "Player 2 Wins";
             Debug.Log("P2 Wins");
         }   
+    }
+
+    public void StartGameAfterDiscount()
+    {
+        Timer.instance.LaunchTimer();
+        RandomPlaices.instance.StartRandomPlaices();
+        _canPlay = true;
+
     }
 }
