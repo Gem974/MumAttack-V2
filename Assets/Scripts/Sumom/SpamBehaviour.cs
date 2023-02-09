@@ -26,9 +26,20 @@ public class SpamBehaviour : MonoBehaviour
     public AudioSource _sfxRun2;
     public AudioSource _zoomSFX;
     public AudioClip[] _clips; // 0 = CollisionSFX | 1 = Crowd | 2 = funny run | 3 = Démarrage
-   
 
 
+    public static SpamBehaviour instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Il y a plus d'une instance de SpamBehaviour dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
 
 
     private void Start()
@@ -38,9 +49,11 @@ public class SpamBehaviour : MonoBehaviour
         SetRandomKey();
         StartCoroutine(RandomKeys());
         _animatorP1.SetBool("isMoving", false);
+        _animatorP2.SetBool("Collision", false);
+        _animatorP1.SetBool("Collision", false);
         //_animatorP1.enabled = false;
         //_animatorP2.enabled = false;
-        
+
 
     }
 
@@ -58,7 +71,7 @@ public class SpamBehaviour : MonoBehaviour
             _arrows[4].SetActive(false); //Désactive les flèches
         }
 
-        if (_animatorP2.GetBool("isMoving"))
+        if (_animatorP2.GetBool("isMoving"))    
         {
             _sfxRun2.gameObject.SetActive(true);
         }
@@ -176,6 +189,8 @@ public class SpamBehaviour : MonoBehaviour
             Debug.Log("Lance FX Collision");
             if (_colliDetection._inCollision && _colliDetection._stopColliFX)
             {
+                _animatorP2.SetBool("Collision", true);
+                _animatorP1.SetBool("Collision", true);
                 if (_FXOrigins[0].childCount == 0)
                 {
                     //_colliDetection._stopColliFX = false;
@@ -208,6 +223,12 @@ public class SpamBehaviour : MonoBehaviour
 
             }
         }
+    }
+
+    public void ResetAnim()
+    {
+        _animatorP1.SetBool("Collision", false);
+        _animatorP2.SetBool("Collision", false);
     }
 
     void InstantiateFX(int FXindex)

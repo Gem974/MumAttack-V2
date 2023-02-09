@@ -122,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4747555290580994840}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: PauseBackToMenu
         m_Mode: 1
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4747555290580994837}
   - component: {fileID: 4747555290580994842}
   - component: {fileID: 4747555290580994843}
-  - component: {fileID: 4747555290580994840}
+  - component: {fileID: 407222810}
   m_Layer: 5
   m_Name: PauseGO
   m_TagString: Untagged
@@ -163,7 +163,7 @@ RectTransform:
   m_GameObject: {fileID: 4747555290580994841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4747555290951085801}
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4747555290580994840
+--- !u!114 &407222810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4747555290580994841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6190fe035229e1842be7d5a3dd7f79c9, type: 3}
+  m_Script: {fileID: 11500000, guid: d05060d86d6ef864aa409eafe3940806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _pausePanel: {fileID: 4747555290951085806}
@@ -305,7 +305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4747555290951085801
 RectTransform:
   m_ObjectHideFlags: 0

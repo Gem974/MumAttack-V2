@@ -186,7 +186,10 @@ public class Kart : MonoBehaviour
     
     IEnumerator Multiply()
     {
-        _multiplier++;
+        if (_multiplier <= 3)
+        {
+            _multiplier++; 
+        }
         yield return new WaitForSeconds(1f);
         _multiplier = 1;
         _canMultiply = false;
@@ -196,7 +199,7 @@ public class Kart : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "OffLimit")
         {
             foreach (ContactPoint contact in collision.contacts)
             {

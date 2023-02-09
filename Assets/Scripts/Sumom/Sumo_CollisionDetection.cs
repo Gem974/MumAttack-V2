@@ -10,6 +10,7 @@ public class Sumo_CollisionDetection : MonoBehaviour
 
 
 
+
     //[SerializeField] Rigidbody2D _rb1, _rb2;
 
     private void Start()
@@ -46,10 +47,12 @@ public class Sumo_CollisionDetection : MonoBehaviour
         if (collision.gameObject.tag == "OffLimit")
         {
             transform.Rotate(0.0f, 0.0f, 37.0f, Space.Self);
+            
         }
         else if (collision.gameObject.tag == "OffLimit2")
         {
             transform.Rotate(0.0f, 0.0f, -37.0f, Space.Self);
+            
         }
         else if (transform.rotation.z != 0f)
         {
