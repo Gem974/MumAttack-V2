@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Events;
 
 
@@ -12,6 +13,10 @@ public class Kart : MonoBehaviour
        Standby, Charging, Propulse
     }
 
+    [Header("Character Display")]
+    [SerializeField] SpriteRenderer _sprite;
+    [SerializeField] Renderer _kartMat;
+
     [Header("Kart Movement")]
     [SerializeField] PlayerState _playerState;
     [SerializeField] Rigidbody _rb;
@@ -21,6 +26,7 @@ public class Kart : MonoBehaviour
     [SerializeField] float _chargeSpeed;
     [SerializeField] float _turnSpeed;
     [SerializeField] float _driftPower = 1;
+    [SerializeField] Animator _animator;
 
     [SerializeField] KeyCode _right, _left, _up, _down, _action;
 
@@ -35,12 +41,16 @@ public class Kart : MonoBehaviour
     [SerializeField] GameObject _fxCollision;
     [SerializeField] UnityEvent _yellowSteam, _orangeSteam, _violetSteam, _noSteam;
 
+    [Header("Sounds")]
+    [SerializeField] AudioSource _source;
 
 
-    
+
+
 
     private void Start()
     {
+        DisplayInfoCharacter();
         TouchBinding();
         _playerState = PlayerState.Standby;
     }
@@ -113,6 +123,8 @@ public class Kart : MonoBehaviour
 
             if (Input.GetKey(_action))
             {
+                _animator.SetBool("Charge", true);
+                _animator.speed = 1f;
                 _playerState = PlayerState.Charging;
                 if (_power <= _maxPower)
                 {
@@ -120,25 +132,25 @@ public class Kart : MonoBehaviour
 
                     if (_power < 4)
                     {
-                       
+                        _animator.speed = 1.2f;
                         _yellowSteam?.Invoke();
                     }
                     else if (_power > 4 && _power < 8)
                     {
-                     
+                        _animator.speed = 1.4f;
                         _orangeSteam?.Invoke();
 
                     }
                     else if (_power > 8 && _power < 12)
                     {
-                     
+                        _animator.speed = 10f;
                         _violetSteam?.Invoke();
                     }
                 }
             }
             if (Input.GetKeyUp(_action))
             {
-
+                _animator.SetBool("Charge", false);
                 _noSteam?.Invoke();
 
                 _driftPower = 1;
@@ -151,6 +163,7 @@ public class Kart : MonoBehaviour
 
                 if (_power < 4)
                 {
+
                     Instantiate(_fxPropulse[0], _fxSpawnPoint);
 
                 }
@@ -179,7 +192,7 @@ public class Kart : MonoBehaviour
             StartCoroutine(Multiply());
             GameManager_IromMum.instance.AddPoints(_isPlayer1, _multiplier);
             RandomPlaices.instance.RemovePlaces();
-
+            _source.Play();
             Destroy(other.gameObject);
         }
     }
@@ -207,6 +220,21 @@ public class Kart : MonoBehaviour
             }
 
         }
+    }
+
+    void DisplayInfoCharacter()
+    {
+        if (_isPlayer1)
+        {
+            _kartMat.materials[0].SetColor("_BASE_COLOR", DisplayCharacter.instance._player1Character._color);
+            _sprite.sprite = DisplayCharacter.instance._player1Character._ironMum_sprite;
+        }
+        else if (!_isPlayer1)
+        {
+            _kartMat.materials[0].SetColor("_BASE_COLOR", DisplayCharacter.instance._player2Character._color);
+            _sprite.sprite = DisplayCharacter.instance._player2Character._ironMum_sprite;
+        }
+        
     }
 
 

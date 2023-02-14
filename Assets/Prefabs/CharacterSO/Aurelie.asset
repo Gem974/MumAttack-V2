@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078677eb21c5ca642a8de46799ed7484, type: 3}
+  m_Name: Aurelie
+  m_EditorClassIdentifier: 
+  _name: Aurelie
+  _color:
+    serializedVersion: 2
+    rgba: 4292991810
+  _ironMum_sprite: {fileID: 21300000, guid: a8777b68bcfa26e45a85d56c8bb82509, type: 3}
+  _animatorController: {fileID: 9100000, guid: 285102e0d6a0307478c066c2a4e04990, type: 2}

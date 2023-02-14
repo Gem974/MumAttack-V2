@@ -48,9 +48,7 @@ public class SpamBehaviour : MonoBehaviour
         _gameManager = FindObjectOfType<Sumo_GameManager>();
         SetRandomKey();
         StartCoroutine(RandomKeys());
-        _animatorP1.SetBool("isMoving", false);
-        _animatorP2.SetBool("Collision", false);
-        _animatorP1.SetBool("Collision", false);
+        ResetAnim();
         //_animatorP1.enabled = false;
         //_animatorP2.enabled = false;
 
@@ -96,10 +94,13 @@ public class SpamBehaviour : MonoBehaviour
 
     IEnumerator RandomKeys()
     {
-        float randomTime = Random.Range(2f, 4f);
-        yield return new WaitForSeconds(randomTime);
-        SetRandomKey();
-        StartCoroutine(RandomKeys());
+        while (true)
+        {
+            float randomTime = Random.Range(2f, 4f);
+            yield return new WaitForSeconds(randomTime);
+            SetRandomKey(); 
+        }
+        
         
     }
 
@@ -227,8 +228,12 @@ public class SpamBehaviour : MonoBehaviour
 
     public void ResetAnim()
     {
+        _animatorP1.SetTrigger("StartPos");
+        _animatorP2.SetTrigger("StartPos");
         _animatorP1.SetBool("Collision", false);
         _animatorP2.SetBool("Collision", false);
+        _animatorP1.SetBool("isMoving", false);
+        _animatorP2.SetBool("isMoving", false);
     }
 
     void InstantiateFX(int FXindex)

@@ -2,53 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MetaGameManager : MonoBehaviour
+namespace META
 {
-    public static MetaGameManager instance;
-
-    public enum moms
+    public class MetaGameManager : MonoBehaviour
     {
-        None, Rachel, Aurelie
-    }
+        public static MetaGameManager instance;
 
-    [Header("Set Characters")]
-    public moms _moms;
-    
-
-    [Header("LeaderBoard")]
-    public int[] _topScorePoints;
-    public string[] _topScoreName;
-
-    [Header("Sounds")]
-    public float _volume;
-
-    
-    
-
-    private void Awake()
-    {
-        if (instance != null)
+        public enum moms
         {
-            
-            Destroy(this.gameObject);
-            Debug.LogError("Il y avait plus d'une instance de MetaGameManager dans la scène.");
-            return;
+            None, Rachel, Aurelie
         }
 
-        instance = this;
+        [Header("Set Characters")]
+        public moms _moms;
+
+
+        [Header("LeaderBoard")]
+        public int[] _topScorePoints;
+        public string[] _topScoreName;
+
+        [Header("Sounds")]
+        public float _volume;
+
+
+
+
+        private void Awake()
+        {
+            if (instance != null)
+            {
+
+                Destroy(this.gameObject);
+                Debug.LogError("Il y avait plus d'une instance de MetaGameManager dans la scène.");
+                return;
+            }
+
+            instance = this;
+        }
+        void Start()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
+
+
+
+
+
+
+
     }
-    void Start()
-    {
-        
-     
-        DontDestroyOnLoad(this.gameObject);
-    }
-
-    
-
-
-
-
-
-
 }

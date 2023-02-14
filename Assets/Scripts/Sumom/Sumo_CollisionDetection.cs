@@ -5,18 +5,20 @@ using UnityEngine;
 public class Sumo_CollisionDetection : MonoBehaviour
 {
 
+    [SerializeField] bool _isPlayer1;
+    [SerializeField] Animator _animator;
+    
     public bool _inCollision, _falling, _stopColliFX;
     public Sumo_GameManager _gameManager;
+    
 
 
-
-
-    //[SerializeField] Rigidbody2D _rb1, _rb2;
 
     private void Start()
     {
+        DisplayInfoCharacter();
         _gameManager = FindObjectOfType<Sumo_GameManager>();
-    
+        //_animator = GetComponent<Animator>();
         _inCollision = false;
         _stopColliFX = true;
 
@@ -54,21 +56,20 @@ public class Sumo_CollisionDetection : MonoBehaviour
             transform.Rotate(0.0f, 0.0f, -37.0f, Space.Self);
             
         }
-        else if (transform.rotation.z != 0f)
-        {
-            if (collision.gameObject.tag == "PreOff")
-            {
-                _gameManager.ResetRot(1); 
-                Debug.Log("STP");
-            }
-            else if (collision.gameObject.tag == "PreOff2")
-            {
-                _gameManager.ResetRot(2);
-            } 
-        }
-
-
         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "OffLimit")
+        {
+            _gameManager.ResetRot(1);
+            Debug.Log("STP");
+        }
+        else if (other.gameObject.tag == "OffLimit2")
+        {
+            _gameManager.ResetRot(2);
+        }
     }
 
     private void OnTriggerStay(Collider collision)
@@ -89,6 +90,20 @@ public class Sumo_CollisionDetection : MonoBehaviour
             
         
     }
+
+    void DisplayInfoCharacter()
+    {
+        if (_isPlayer1)
+        {
+            _animator.runtimeAnimatorController = DisplayCharacter.instance._player1Character._animatorController;
+        }
+        else
+        {
+            _animator.runtimeAnimatorController = DisplayCharacter.instance._player2Character._animatorController;
+        }
+    }
+
+   
 
 
 }

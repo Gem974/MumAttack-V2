@@ -24,6 +24,8 @@ public class Sumo_GameManager : MonoBehaviour
     public ChromaticAberration _chroAbe;
     public DepthOfField _dop;
 
+    public Animator[] _animator;
+
 
 
 
@@ -180,6 +182,7 @@ public class Sumo_GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         UnityEngine.Time.timeScale = 1;
         SpamBehaviour.instance.ResetAnim();
+        
         RestartRound();
 
 
