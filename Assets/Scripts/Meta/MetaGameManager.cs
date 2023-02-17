@@ -8,13 +8,9 @@ namespace META
     {
         public static MetaGameManager instance;
 
-        public enum moms
-        {
-            None, Rachel, Aurelie
-        }
-
         [Header("Set Characters")]
-        public moms _moms;
+        public Character _player1;
+        public Character _player2;
 
 
         [Header("LeaderBoard")]
