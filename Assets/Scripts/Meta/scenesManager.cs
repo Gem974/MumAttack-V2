@@ -8,7 +8,7 @@ public class scenesManager : MonoBehaviour
 
     public bool _isNotDestroyable;
     
-    public int[] _randomScene;
+    public List<int> _randomScene = new List<int>();
 
     public static scenesManager instance;
 
@@ -29,7 +29,10 @@ public class scenesManager : MonoBehaviour
 
     private void Start()
     {
-        SetRandomScene();
+        if (_isNotDestroyable)
+        {
+            SetRandomScene(); 
+        }
     }
 
     private void Update()
@@ -48,14 +51,34 @@ public class scenesManager : MonoBehaviour
 
     public void SetRandomScene()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
-            int randomInt = Random.Range(0, 15);
+            int randomInt = Random.Range(1, 4);
             Debug.Log(randomInt);
-            _randomScene.SetValue(randomInt, i);
+
+            if (_randomScene.Contains(randomInt))
+            {
+                //Debug.Log("Pas Bon");
+                while (_randomScene.Contains(randomInt))
+                {
+                    randomInt = Random.Range(1, 4);
+                }
+                _randomScene.Add(randomInt);
+            }
+            else if (!_randomScene.Contains(randomInt))
+            {
+                Debug.Log("Bon");
+                _randomScene.Add(randomInt);
+
+            }
+
         }
 
+
+
     }
+
+    
 
     
 }

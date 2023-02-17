@@ -15,6 +15,7 @@ public class GameManager_IromMum : MonoBehaviour
     public TextMeshProUGUI _pointsTxt1, _pointsTxt2;
     public GameObject _GOPanel;
     public Text _playerWinsText;
+    public Animator _HUD;
 
     public static GameManager_IromMum instance;
 
@@ -38,6 +39,7 @@ public class GameManager_IromMum : MonoBehaviour
     }
 
 
+
     // Update is called once per frame
     public void AddPoints(bool isPlayer1, int multiplier)
     {
@@ -51,6 +53,16 @@ public class GameManager_IromMum : MonoBehaviour
             _points2 += 1 * multiplier; ;
             _pointsTxt2.text = _points2.ToString();
         }
+
+        if (_points1 > _points2)
+        {
+            _HUD.SetBool("P1Stronger", true);
+        }
+        else if (_points2 > _points1)
+        {
+            _HUD.SetBool("P1Stronger", false);
+        }
+
     }
 
     public void GameOver()

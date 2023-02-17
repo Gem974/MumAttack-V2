@@ -11,7 +11,6 @@ public class Sumo_GameManager : MonoBehaviour
     public int _pointsP1, _pointsP2;
     //[SerializeField] int _totalRounds;
     [SerializeField] GameObject _gameOverPanel, _gameCanvas, _scores, _sound;
-    [SerializeField] SpamBehaviour _spamBehaviour;
     [SerializeField] Sumo_CollisionDetection _colliDetection;
 
     [SerializeField] Text _playerWinsTxt, _discountTxt, _pointJ1Txt, _pointJ2Txt;
@@ -24,6 +23,8 @@ public class Sumo_GameManager : MonoBehaviour
     [SerializeField] Volume _postProcess;
     public ChromaticAberration _chroAbe;
     public DepthOfField _dop;
+
+    public Animator[] _animator;
 
 
 
@@ -51,7 +52,7 @@ public class Sumo_GameManager : MonoBehaviour
         _colliDetection = FindObjectOfType<Sumo_CollisionDetection>();
 
         _gameOver = false;
-        _spamBehaviour = FindObjectOfType<SpamBehaviour>();
+       
         RestartRound();
         // _totalRounds = 3;
 
@@ -86,7 +87,7 @@ public class Sumo_GameManager : MonoBehaviour
         if (!_gameOver)
         {
 
-
+            
             StopAllCoroutines();
 
             //APL CHROMATIC ABERRATION
@@ -96,16 +97,17 @@ public class Sumo_GameManager : MonoBehaviour
             UnityEngine.Time.timeScale = 1;
 
             StartCoroutine(DiscountBeforeStart());
-            _spamBehaviour._animatorP1.SetBool("isMoving", false);
-            _spamBehaviour._animatorP2.SetBool("isMoving", false);
+            SpamBehaviour.instance._animatorP1.SetBool("isMoving", false);
+            SpamBehaviour.instance._animatorP2.SetBool("isMoving", false);
+            
+            SpamBehaviour.instance._rb1.velocity = new Vector2(0f, 0f);
+            SpamBehaviour.instance._rb2.velocity = new Vector2(0f, 0f);
             _colliDetection._stopColliFX = true;
             _colliDetection._inCollision = false;
             _player1.position = _startPos1;
             _player2.position = _startPos2;
             ResetRot(1);
             ResetRot(2);
-            _spamBehaviour._rb1.velocity = new Vector2(0f, 0f);
-            _spamBehaviour._rb2.velocity = new Vector2(0f, 0f);
         }
     }
 
@@ -161,9 +163,9 @@ public class Sumo_GameManager : MonoBehaviour
 
     IEnumerator PreRestart()
     {
-        _spamBehaviour._sfxManager.clip = _spamBehaviour._clips[1];
-        _spamBehaviour._sfxManager.Play();
-        _spamBehaviour._zoomSFX.Play();
+        SpamBehaviour.instance._sfxManager.clip = SpamBehaviour.instance._clips[1];
+        SpamBehaviour.instance._sfxManager.Play();
+        SpamBehaviour.instance._zoomSFX.Play();
 
         //APL CHROMATIC ABERRATION
         
@@ -179,6 +181,8 @@ public class Sumo_GameManager : MonoBehaviour
         UnityEngine.Time.timeScale = 0.2f;
         yield return new WaitForSeconds(0.3f);
         UnityEngine.Time.timeScale = 1;
+        SpamBehaviour.instance.ResetAnim();
+        
         RestartRound();
 
 
