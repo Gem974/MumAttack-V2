@@ -8,8 +8,10 @@ namespace META
     {
 
         [SerializeField] KeyCode _right, _left, _up, _down, _action;
+        [SerializeField] SelectCharacter _otherCharacter;
 
         [SerializeField] int _currentPlayer;
+        [SerializeField] Animator _animator;
      
 
 
@@ -18,6 +20,7 @@ namespace META
 
         void Start()
         {
+            
             TouchBinding();
             if (_isPlayer1)
             {
@@ -27,16 +30,20 @@ namespace META
             {
                 _currentPlayer = 1;
             }
-            Placement();
             _momChoosed = false;
+            Placement();
 
 
         }
+
 
         // Update is called once per frame
         void Update()
         {
             MomSelection();
+
+            
+            
         }
 
         void TouchBinding()
@@ -72,6 +79,8 @@ namespace META
 
             transform.position = MomReferencer.instance._moms[_currentPlayer].position;
             transform.rotation = MomReferencer.instance._moms[_currentPlayer].rotation;
+
+            
         }
 
         void MomSelection()
@@ -91,6 +100,8 @@ namespace META
                 else if (Input.GetKeyDown(_action)) //SelectMom
                 {
                     _momChoosed = true;
+                    MomReferencer.instance.ShowButton();
+                    
                     WichMom();
                 }
             }
@@ -99,7 +110,9 @@ namespace META
                 if (Input.GetKeyDown(_action)) //UnselectMom
                 {
                     _momChoosed = false;
+                    _animator.SetTrigger("UnSelect");
                     WichMom();
+                    MomReferencer.instance.ShowButton();
                 }
             }
         }
@@ -107,38 +120,108 @@ namespace META
         {
             if (_isPlayer1)
             {
-                switch (_currentPlayer)
+                if (_momChoosed)
                 {
-                    case 1: // Aurelie
-                        MetaGameManager.instance._player1 = MomReferencer.instance._datas[0];
-                        break;
-                    case 2: // Rachel
-                        MetaGameManager.instance._player1 = MomReferencer.instance._datas[1];
-                        break;
-                    default:
-                        break;
+                    switch (_currentPlayer)
+                    {
+                        case 0: // Aurelie
+                            MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
+                            CheckSelection();
+                            break;
+                        case 1: // Rachel
+                            MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
+                            CheckSelection();
+                            break;
+                        case 2: // WIP Uncomment all lines below when the new mom is implemented
+                            //MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
+                            //CheckSelection();
+                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
+                            _momChoosed = false; // Delete this line when the new mom is implemented 
+                            break;
+                        case 3: // WIP Uncomment all lines below when the new mom is implemented
+                            //MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
+                            //CheckSelection();
+                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
+                            _momChoosed = false; // Delete this line when the new mom is implemented 
+
+                            break;
+
+                        default:
+                            break;
+                    } 
+                }
+
+                if (MetaGameManager.instance._player1 == MetaGameManager.instance._player2 && _momChoosed == true)
+                {
+                    _momChoosed = false;
+                    MetaGameManager.instance._player1 = null;
+                    MomReferencer.instance._playBtn.SetActive(false);
+                    //SFX Pas Bon
+                    
+                    Debug.Log("Deselect J1");
+
                 }
             }
             else
             {
-                switch (_currentPlayer)
+                if (_momChoosed)
                 {
-                    case 1: // Aurelie
-                        MetaGameManager.instance._player2 = MomReferencer.instance._datas[0];
-                        break;
-                    case 2: // Rachel
-                        MetaGameManager.instance._player2    = MomReferencer.instance._datas[1];
-                        break;
-                    default:
-                        break;
+                    switch (_currentPlayer)
+                    {
+                        case 0: // Aurelie
+                            MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
+                            CheckSelection();
+                            break;
+                        case 1: // Rachel
+                            MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
+                            CheckSelection();
+                            break;
+                        case 2: // WIP Uncomment all lines below when the new mom is implemented
+                            //MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
+                            //CheckSelection();
+                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
+                            _momChoosed = false; // Delete this line when the new mom is implemented 
+                            break;
+                        case 3: // WIP Uncomment all lines below when the new mom is implemented
+                            //MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
+                            //CheckSelection();
+                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
+                            _momChoosed = false; // Delete this line when the new mom is implemented 
+                            break;
+                        
+                        default:
+                            break;
+                    } 
+                }
+
+                if (MetaGameManager.instance._player1 == MetaGameManager.instance._player2 && _momChoosed == true)
+                {
+                    _momChoosed = false;
+                    MetaGameManager.instance._player2 = null;
+                    MomReferencer.instance._playBtn.SetActive(false);
+                    _animator.SetTrigger("UnSelect");
+                    //SFX Pas Bon
+                    Debug.Log("Deselect J2");
                 }
             }
 
-            if (MetaGameManager.instance._player1 = MetaGameManager.instance._player2)
-            {
+            
+        }
 
+        void CheckSelection()
+        {
+            if (_otherCharacter._currentPlayer == _currentPlayer && _otherCharacter._momChoosed)
+            {
+                _animator.SetTrigger("CantSelect");
+                //SFX Pas Bon
+            }
+            else if (_otherCharacter._currentPlayer != _currentPlayer)
+            {
+                _animator.SetTrigger("Select");
             }
         }
+
+        
 
     } 
 

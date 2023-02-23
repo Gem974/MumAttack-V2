@@ -32,18 +32,9 @@ public class scenesManager : MonoBehaviour
         if (_isNotDestroyable)
         {
             SetRandomScene(); 
+
         }
     }
-
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    SceneManager.LoadScene(0);
-        //}
-    }
-
-
     public void LoadSpecificScene(int minigameIndex)
     {
         SceneManager.LoadScene(minigameIndex);
@@ -53,7 +44,7 @@ public class scenesManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            int randomInt = Random.Range(1, 4);
+            int randomInt = Random.Range(2, 5);
             Debug.Log(randomInt);
 
             if (_randomScene.Contains(randomInt))
@@ -61,7 +52,7 @@ public class scenesManager : MonoBehaviour
                 //Debug.Log("Pas Bon");
                 while (_randomScene.Contains(randomInt))
                 {
-                    randomInt = Random.Range(1, 4);
+                    randomInt = Random.Range(2, 5);
                 }
                 _randomScene.Add(randomInt);
             }
@@ -76,6 +67,24 @@ public class scenesManager : MonoBehaviour
 
 
 
+    }
+
+    public void LoadBroadcastScene(int step)
+    {
+        if (step == 1)
+        {
+            SceneManager.LoadScene(scenesManager.instance._randomScene[1]);
+        }
+        else if (step == 2)
+        {
+
+            SceneManager.LoadScene(scenesManager.instance._randomScene[2]);
+        }
+        else if (step == 3)
+        {
+            SceneManager.LoadScene(scenesManager.instance._randomScene[3]);
+
+        }
     }
 
     
