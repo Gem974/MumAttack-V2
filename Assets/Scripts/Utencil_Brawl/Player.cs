@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
 
     public Image _circleFill;
     [Range(1, 0)] float _progress;
+
+    public UnityEvent _onHit;
 
   
     void Start()
@@ -197,6 +200,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("AIE PUTAIN");
         _touches--;
+        _onHit?.Invoke();
         LifeChecker();
     }
 
