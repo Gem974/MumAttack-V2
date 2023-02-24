@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    
+
+    [Header("Clamp Displacement")]
+    [SerializeField] float _clamping = 4.4f;
+
     public bool _isPlayerOne;
 
     public float _moveSpeed = 5f;
@@ -72,6 +75,10 @@ public class Player : MonoBehaviour
             _move = new Vector3(0f, 0f, Input.GetAxis("Vertical_P1")); 
 
             transform.Translate(_move * _moveSpeed * Time.deltaTime, Space.World);
+
+            ClampDisplacement();
+
+
         }
         else if (!_isPlayerOne)
         {
@@ -79,6 +86,8 @@ public class Player : MonoBehaviour
             _move = new Vector3(0f, 0f, Input.GetAxis("Vertical_P2"));
 
             transform.Translate(_move * _moveSpeed * Time.deltaTime, Space.World);
+
+            ClampDisplacement();
         }
     }
 
@@ -89,8 +98,8 @@ public class Player : MonoBehaviour
         {
             GameObject _bulletLifted = Instantiate(_projectilePrefab, _firePoint.position, _Lanceur.rotation);
 
-            if (_move.z >= 1f) _bulletLifted.GetComponent<Bullet>()._IsArcLeft = true;         //SPECIAL LEFT
-            else if (_move.z <= -1f) _bulletLifted.GetComponent<Bullet>()._IsArcRight = true;  //SPECIAL RIGHT
+            if (_move.z >= 0.1f) _bulletLifted.GetComponent<Bullet>()._IsArcLeft = true;         //SPECIAL LEFT
+            else if (_move.z <= -0.1f) _bulletLifted.GetComponent<Bullet>()._IsArcRight = true;  //SPECIAL RIGHT
             else                                                                               //DEFAULT SHOT
             {
                 Destroy(_bulletLifted);
@@ -189,6 +198,18 @@ public class Player : MonoBehaviour
         Debug.Log("AIE PUTAIN");
         _touches--;
         LifeChecker();
+    }
+
+    void ClampDisplacement()
+    {
+        if (transform.position.z > _clamping)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, _clamping);
+        }
+        else if (transform.position.z < -_clamping)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -_clamping);
+        }
     }
 
 }

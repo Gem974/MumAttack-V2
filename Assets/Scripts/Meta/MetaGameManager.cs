@@ -8,6 +8,14 @@ namespace META
     {
         public static MetaGameManager instance;
 
+        public enum GameMode
+        {
+            BroadCast, FreeBrawl
+        }
+
+        [Header("GameMode")]
+        public GameMode _gameMode;
+
         [Header("Set Characters")]
         public Character _player1;
         public Character _player2;

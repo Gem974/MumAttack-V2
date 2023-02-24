@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 
 public class Bullet : MonoBehaviour
@@ -23,12 +24,16 @@ public class Bullet : MonoBehaviour
     public bool _IsArcLeft = false;
     public bool _IsArcRight = false;
 
+    [Header("Change Object System")]
+    public MeshFilter _objectRenderer;
+    public Mesh[] _meshes;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        SelectMesh();
 
         //LeftArc
         pathLeft[0] = _PathPoints.position;
@@ -115,5 +120,12 @@ public class Bullet : MonoBehaviour
         DOTween.Kill(_Utencil);
     }
 
-    
+    void SelectMesh()
+    {
+        int randomMesh = Random.Range(0, _meshes.Length);
+        _objectRenderer.mesh = _meshes[randomMesh];
+    }
+
+
+
 }

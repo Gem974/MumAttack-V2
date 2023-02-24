@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using META;
 
 public class scenesManager : MonoBehaviour
 {
@@ -71,6 +72,8 @@ public class scenesManager : MonoBehaviour
 
     public void LoadBroadcastScene(int step)
     {
+        MetaGameManager.instance._gameMode = MetaGameManager.GameMode.BroadCast;
+
         if (step == 1)
         {
             SceneManager.LoadScene(scenesManager.instance._randomScene[1]);
