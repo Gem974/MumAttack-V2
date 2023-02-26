@@ -20,11 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IronMum/IronMum.unity
     guid: f17bbbe7e65684d4894a312978d24bf4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/UtensilBrawl/UtensilBrawl.unity
-    guid: 6dc534e279fa1a84597d87d3a5531b28
-  - enabled: 1
-    path: Assets/Scenes/Supermaket/SuperMaket.unity
+    path: Assets/Scenes/SuperMaket/SuperMaket.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Mumic/Mumic.unity
