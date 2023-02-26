@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     public Image _circleFill;
     [Range(1, 0)] float _progress;
 
-    public UnityEvent _onHit;
+    public UnityEvent _onHit, _onShoot;
 
   
     void Start()
@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
                 _bulletStraight.GetComponent<Bullet>()._IsStraight = true; 
             }
 
+            _onShoot?.Invoke();
             _shootCountdown = 1 / _shootRate;
         }
 
