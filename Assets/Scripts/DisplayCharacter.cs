@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using META;
 
 public class DisplayCharacter : MonoBehaviour
 {
@@ -18,5 +19,8 @@ public class DisplayCharacter : MonoBehaviour
         }
 
         instance = this;
+        _player1Character = MetaGameManager.instance._player1;
+        _player2Character = MetaGameManager.instance._player2;
     }
+
 }

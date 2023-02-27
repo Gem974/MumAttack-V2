@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using META;
 
 
 public class GameManager_IromMum : MonoBehaviour
@@ -72,12 +73,14 @@ public class GameManager_IromMum : MonoBehaviour
         {
             _GOPanel.SetActive(true);
             _playerWinsText.text = "Player 1 Wins";
+            MetaGameManager.instance._P1Wins++;
             Debug.Log("P1 Wins");
         }
         else if (_points2 > _points1)
         {
             _GOPanel.SetActive(true);
             _playerWinsText.text = "Player 2 Wins";
+            MetaGameManager.instance._P2Wins++;
             Debug.Log("P2 Wins");
         }   
     }

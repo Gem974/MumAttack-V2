@@ -10,11 +10,15 @@ namespace META
 
         public enum GameMode
         {
-            BroadCast, FreeBrawl
+            None,BroadCast, FreeBrawl
         }
-
-        [Header("GameMode")]
         public GameMode _gameMode;
+
+        [Header("BroadCast Mode")]
+        public int _maxStep;
+        public int _currentStep;
+        public int _P1Wins, _P2Wins;
+
 
         [Header("Set Characters")]
         public Character _player1;
@@ -40,12 +44,18 @@ namespace META
                 Debug.LogError("Il y avait plus d'une instance de MetaGameManager dans la scène.");
                 return;
             }
-
             instance = this;
         }
         void Start()
         {
             DontDestroyOnLoad(this.gameObject);
+            _currentStep = 0;
+            _gameMode = GameMode.None;
+        }
+
+        public void BroadCastNextStep()
+        {
+            _currentStep++;
         }
 
 
