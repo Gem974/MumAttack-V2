@@ -10,6 +10,9 @@ namespace META
         [SerializeField] KeyCode _right, _left, _up, _down, _action;
         [SerializeField] SelectCharacter _otherCharacter;
 
+        [SerializeField] string _horizontalInput, _verticalInput, _actionInput;
+        [SerializeField] float _startTime, _nextTime;
+
         [SerializeField] int _currentPlayer;
         [SerializeField] Animator _animator;
      
@@ -20,7 +23,8 @@ namespace META
 
         void Start()
         {
-            
+            _nextTime = Time.time + 2;
+          
             TouchBinding();
             if (_isPlayer1)
             {
@@ -32,6 +36,8 @@ namespace META
             }
             _momChoosed = false;
             Placement();
+            StartCoroutine(SelectMom());
+
 
 
         }
@@ -40,30 +46,38 @@ namespace META
         // Update is called once per frame
         void Update()
         {
-            MomSelection();
 
-            
-            
+        
+
+
+
+#if UNITY_EDITOR
+            string[] joystickNames = Input.GetJoystickNames();
+            for (int i = 0; i < joystickNames.Length; i++)
+            {
+                Debug.Log("Manette " + (i + 1) + " : " + joystickNames[i]);
+            }
+#endif
+
+
         }
 
         void TouchBinding()
         {
             if (_isPlayer1)
             {
-                _right = KeyCode.D;
-                _left = KeyCode.Q;
-                _up = KeyCode.Z;
-                _down = KeyCode.S;
-                _action = KeyCode.A;
+                _horizontalInput = "Horizontal_P1";
+                _verticalInput = "a";
+                _actionInput = "Fire_P1";
             }
             else
             {
-                _right = KeyCode.RightArrow;
-                _left = KeyCode.LeftArrow;
-                _up = KeyCode.UpArrow;
-                _down = KeyCode.DownArrow;
-                _action = KeyCode.RightControl;
+                _horizontalInput = "Horizontal_P2";
+                _verticalInput = "Vertical_P2";
+                _actionInput = "Fire_P2";
             }
+
+
         }
 
         void Placement()
@@ -85,141 +99,118 @@ namespace META
 
         void MomSelection()
         {
-            if (!_momChoosed)
+            
+        }
+
+        IEnumerator SelectMom()
+        {
+            while (true)
             {
-                if (Input.GetKeyDown(_right)) //NextMom
+                if (!_momChoosed)
                 {
-                    _currentPlayer++;
-                    Placement();
+                    if (Input.GetAxis(_horizontalInput) > 0f) //NextMom
+                    {
+                        Debug.Log("Input:" + _horizontalInput);
+                        _currentPlayer++;
+                        Placement();
+                        yield return new WaitForSeconds(0.2f);
+                    }
+                    else if (Input.GetAxis(_horizontalInput) < 0f) //PreviousMom
+                    {
+                        Debug.Log("Input:" + _horizontalInput);
+                        _currentPlayer--;
+                        Placement();
+                        yield return new WaitForSeconds(0.2f);
+                    }
+                    else if (Input.GetButtonDown(_actionInput)) //SelectMom
+                    {
+                        if ((_otherCharacter._currentPlayer != _currentPlayer) || ( (_otherCharacter._currentPlayer == _currentPlayer) && !_otherCharacter._momChoosed))
+                        {
+                            Debug.Log("1_OK ");
+                            _momChoosed = true; 
+                            MomReferencer.instance.ShowButton();
+
+                            WichMom();
+                        }
+                        else
+                        {
+                            _animator.SetTrigger("CantSelect");
+                            //SFX Pas Bon
+                        }
+                        yield return null;
+                    }
+                    else
+                    {
+                        yield return null;
+                    }
+
                 }
-                else if (Input.GetKeyDown(_left)) //PreviousMom
+                else
                 {
-                    _currentPlayer--;
-                    Placement();
-                }
-                else if (Input.GetKeyDown(_action)) //SelectMom
-                {
-                    _momChoosed = true;
-                    MomReferencer.instance.ShowButton();
+                    if (Input.GetButtonDown(_actionInput)) //UnselectMom
+                    {
+                        _momChoosed = false;
+                        _animator.SetTrigger("UnSelect");
+                        WichMom();
+                        MomReferencer.instance.ShowButton();
+
+                    }
+                    yield return null;
+
+                } 
                     
-                    WichMom();
-                }
-            }
-            else
-            {
-                if (Input.GetKeyDown(_action)) //UnselectMom
-                {
-                    _momChoosed = false;
-                    _animator.SetTrigger("UnSelect");
-                    WichMom();
-                    MomReferencer.instance.ShowButton();
-                }
             }
         }
+
         void WichMom()
         {
             if (_isPlayer1)
             {
                 if (_momChoosed)
                 {
-                    switch (_currentPlayer)
+                    if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
-                        case 0: // Aurelie
-                            MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
-                            CheckSelection();
-                            break;
-                        case 1: // Rachel
-                            MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
-                            CheckSelection();
-                            break;
-                        case 2: // WIP Uncomment all lines below when the new mom is implemented
-                            //MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
-                            //CheckSelection();
-                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
-                            _momChoosed = false; // Delete this line when the new mom is implemented 
-                            break;
-                        case 3: // WIP Uncomment all lines below when the new mom is implemented
-                            //MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
-                            //CheckSelection();
-                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
-                            _momChoosed = false; // Delete this line when the new mom is implemented 
-
-                            break;
-
-                        default:
-                            break;
-                    } 
-                }
-
-                if (MetaGameManager.instance._player1 == MetaGameManager.instance._player2 && _momChoosed == true)
-                {
-                    _momChoosed = false;
-                    MetaGameManager.instance._player1 = null;
-                    MomReferencer.instance._playBtn.SetActive(false);
-                    //SFX Pas Bon
+                        MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
+                        _animator.SetTrigger("Select");
+                        Debug.Log("1_BON" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
+                    }
+                    else
+                    {
+                        _animator.SetTrigger("CantSelect");
+                        _momChoosed = false;
+                        Debug.Log("1_NOT" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
+                    }
                     
-                    Debug.Log("Deselect J1");
-
                 }
+
+                
             }
             else
             {
                 if (_momChoosed)
                 {
-                    switch (_currentPlayer)
+                    if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
-                        case 0: // Aurelie
-                            MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
-                            CheckSelection();
-                            break;
-                        case 1: // Rachel
-                            MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
-                            CheckSelection();
-                            break;
-                        case 2: // WIP Uncomment all lines below when the new mom is implemented
-                            //MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
-                            //CheckSelection();
-                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
-                            _momChoosed = false; // Delete this line when the new mom is implemented 
-                            break;
-                        case 3: // WIP Uncomment all lines below when the new mom is implemented
-                            //MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
-                            //CheckSelection();
-                            _animator.SetTrigger("CantSelect"); // Delete this line when the new mom is implemented 
-                            _momChoosed = false; // Delete this line when the new mom is implemented 
-                            break;
-                        
-                        default:
-                            break;
-                    } 
+                        MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
+                        _animator.SetTrigger("Select");
+                        Debug.Log("2_BON" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
+                    }
+                    else
+                    {
+                        _animator.SetTrigger("CantSelect");
+                        _momChoosed = false;
+                        Debug.Log("2_NOT" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
+                    }
                 }
 
-                if (MetaGameManager.instance._player1 == MetaGameManager.instance._player2 && _momChoosed == true)
-                {
-                    _momChoosed = false;
-                    MetaGameManager.instance._player2 = null;
-                    MomReferencer.instance._playBtn.SetActive(false);
-                    _animator.SetTrigger("UnSelect");
-                    //SFX Pas Bon
-                    Debug.Log("Deselect J2");
-                }
+                
             }
 
             
         }
 
-        void CheckSelection()
-        {
-            if (_otherCharacter._currentPlayer == _currentPlayer && _otherCharacter._momChoosed)
-            {
-                _animator.SetTrigger("CantSelect");
-                //SFX Pas Bon
-            }
-            else if (_otherCharacter._currentPlayer != _currentPlayer)
-            {
-                _animator.SetTrigger("Select");
-            }
-        }
+
+  
 
         
 

@@ -28,7 +28,7 @@ public class Kart : MonoBehaviour
     [SerializeField] float _driftPower = 1;
     [SerializeField] Animator _animator;
 
-    [SerializeField] KeyCode _right, _left, _up, _down, _action;
+    [SerializeField] string _horizontalInput, _verticalInput, _actionInput;
 
     [Header("Multiplier System")]
     [SerializeField] bool _canMultiply;
@@ -87,29 +87,26 @@ public class Kart : MonoBehaviour
     {
         if (_isPlayer1)
         {
-            _right = KeyCode.D;
-            _left = KeyCode.Q;
-            _up = KeyCode.Z;
-            _down = KeyCode.S;
-            _action = KeyCode.A;
+            _horizontalInput = "Horizontal_P1";
+            _verticalInput = "Vertical_P1";
+            _actionInput = "Fire_P1";
         }
         else
         {
-            _right = KeyCode.RightArrow;
-            _left = KeyCode.LeftArrow;
-            _up = KeyCode.UpArrow;
-            _down = KeyCode.DownArrow;
-            _action = KeyCode.RightControl;
+            _horizontalInput = "Horizontal_P2";
+            _verticalInput = "Vertical_P2";
+            _actionInput = "Fire_P2";
         }
     }
+
     void Move()
     {
-        if (Input.GetKey(_right))
+        if (Input.GetAxis(_horizontalInput) > 0)
         {
             Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, _turnSpeed, 0) * Time.deltaTime);
             _rb.MoveRotation(_rb.rotation * deltaRotation);
         }
-        if (Input.GetKey(_left))
+        if (Input.GetAxis(_horizontalInput) < 0)
         {
             Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, -_turnSpeed, 0) * Time.deltaTime);
             _rb.MoveRotation(_rb.rotation * deltaRotation);
@@ -121,7 +118,7 @@ public class Kart : MonoBehaviour
         if (_playerState != PlayerState.Propulse)
         {
 
-            if (Input.GetKey(_action))
+            if (Input.GetButton(_actionInput))
             {
                 _animator.SetBool("Charge", true);
                 _animator.speed = 1f;
@@ -148,7 +145,7 @@ public class Kart : MonoBehaviour
                     }
                 }
             }
-            if (Input.GetKeyUp(_action))
+            if (Input.GetButtonUp(_actionInput))
             {
                 _animator.SetBool("Charge", false);
                 _noSteam?.Invoke();

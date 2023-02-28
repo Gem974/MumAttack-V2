@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using META;
 
 public class GameOverBehaviour : MonoBehaviour
 {
     public static GameOverBehaviour instance;
-    public GameObject _menuBtn;
-    public GameObject _ContinueBtn;
+    public Button _menuBtn;
+    public Button _ContinueBtn;
     private void Awake()
     {
         if (instance != null)
@@ -27,12 +28,15 @@ public class GameOverBehaviour : MonoBehaviour
         {
             case MetaGameManager.GameMode.BroadCast:
                 MetaGameManager.instance.BroadCastNextStep();
-                _ContinueBtn.SetActive(true);
-                _menuBtn.SetActive(false);
+                _ContinueBtn.gameObject.SetActive(true);
+                _ContinueBtn.Select();
+                
+                _menuBtn.gameObject.SetActive(false);
                 break;
             case MetaGameManager.GameMode.FreeBrawl:
-                _ContinueBtn.SetActive(false);
-                _menuBtn.SetActive(true);
+                _ContinueBtn.gameObject.SetActive(false);
+                _menuBtn.gameObject.SetActive(true);
+                _menuBtn.Select();
                 break;
             default:
                 break;

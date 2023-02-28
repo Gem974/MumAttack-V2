@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI    ;
 
 namespace META
 {
@@ -9,7 +10,7 @@ namespace META
 
         public Transform[] _moms;
         public Character[] _datas;
-        public GameObject _playBtn;
+        public Button _playBtn;
         public SelectCharacter[] _playersSelector;
 
 
@@ -33,18 +34,19 @@ namespace META
 
         private void Start()
         {
-            _playBtn.SetActive(false);
+            _playBtn.gameObject.SetActive(false);
         }
 
         public void ShowButton()
         {
             if (_playersSelector[0]._momChoosed && _playersSelector[1]._momChoosed)
             {
-                _playBtn.SetActive(true);
+                _playBtn.gameObject.SetActive(true);
+                _playBtn.Select();
             }
             else
             {
-                _playBtn.SetActive(false);
+                _playBtn.gameObject.SetActive(false);
             }
         }
     } 
