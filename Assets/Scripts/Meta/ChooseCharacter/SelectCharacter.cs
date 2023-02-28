@@ -29,17 +29,16 @@ namespace META
             if (_isPlayer1)
             {
                 _currentPlayer = 0;
+                ChangeStateMomSelection(true, false, _currentPlayer);
             }
             else
             {
                 _currentPlayer = 1;
+                ChangeStateMomSelection(true, false, _currentPlayer);
             }
             _momChoosed = false;
             Placement();
             StartCoroutine(SelectMom());
-
-
-
         }
 
 
@@ -113,15 +112,26 @@ namespace META
                     if (Input.GetAxis(_horizontalInput) > 0f) //NextMom
                     {
                         Debug.Log("Input:" + _horizontalInput);
+
+                        ChangeStateMomSelection(false, false, _currentPlayer);
+
                         _currentPlayer++;
                         Placement();
+
+                        ChangeStateMomSelection(true, false, _currentPlayer);
+
                         yield return new WaitForSeconds(0.2f);
                     }
                     else if (Input.GetAxis(_horizontalInput) < 0f) //PreviousMom
                     {
                         Debug.Log("Input:" + _horizontalInput);
+
+                        ChangeStateMomSelection(false, false, _currentPlayer);
+
                         _currentPlayer--;
                         Placement();
+
+                        ChangeStateMomSelection(true, false, _currentPlayer);
                         yield return new WaitForSeconds(0.2f);
                     }
                     else if (Input.GetButtonDown(_actionInput)) //SelectMom
@@ -172,6 +182,9 @@ namespace META
                 {
                     if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
+
+                        ChangeStateMomSelection(false, true, _currentPlayer);
+
                         MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
                         _animator.SetTrigger("Select");
                         Debug.Log("1_BON" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
@@ -193,6 +206,8 @@ namespace META
                 {
                     if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
+                        ChangeStateMomSelection(false, true, _currentPlayer);
+
                         MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
                         _animator.SetTrigger("Select");
                         Debug.Log("2_BON" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
@@ -211,7 +226,28 @@ namespace META
             
         }
 
+        public void ChangeStateMomSelection(bool show, bool selected, int currentSelection)
+        {
 
+            MomSelecter _momSelecter = MomReferencer.instance._moms[currentSelection].GetComponent<MomSelecter>();
+
+
+            if (selected)
+            {
+                _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Selected);
+            }
+
+            if (show)
+            {
+                _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Hover);
+
+            }
+            else if (!show && currentSelection != _otherCharacter._currentPlayer)
+            {
+                _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Default);
+            }
+
+        }
   
 
         
