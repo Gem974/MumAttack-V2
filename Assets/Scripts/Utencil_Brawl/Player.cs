@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+
 namespace Utencil_Brawl
 {
     public class Player : MonoBehaviour
@@ -33,10 +34,12 @@ namespace Utencil_Brawl
         public Image _touchepoints;
         public Sprite[] _sprites;
 
+        
+
         public Image _circleFill;
         [Range(1, 0)] float _progress;
 
-        public UnityEvent _onHit, _onShoot;
+        public UnityEvent _onHit, _onShoot, _Startrun, _Stoprun;
 
 
         void Start()
@@ -91,6 +94,7 @@ namespace Utencil_Brawl
                     //Vector2 Axis created in OldInputSystem
                     _move = new Vector3(0f, 0f, Input.GetAxis("Vertical_P1"));
                     //SFX Run on Loop
+                    _Startrun?.Invoke();
 
                     transform.Translate(_move * _moveSpeed * Time.deltaTime, Space.World);
                     _animator.SetTrigger("Run");
@@ -99,6 +103,7 @@ namespace Utencil_Brawl
                 else
                 {
                     //SFX Run Stop
+                    _Stoprun?.Invoke();
                     _move = Vector3.zero;
                     _animator.SetTrigger("Static");
                 }
