@@ -32,8 +32,8 @@ public class Emrandomimg : MonoBehaviour
 
 
     public Sprite[] _directions;
-    public Sprite[] _flècheJ1;
-    public Sprite[] _flècheJ2;
+    public Sprite[] _flecheJ1;
+    public Sprite[] _flecheJ2;
 
 
 
@@ -78,7 +78,7 @@ public class Emrandomimg : MonoBehaviour
     void SpawnArrows()
     {
         
-        Debug.Log("creation de flèches");
+        Debug.Log("creation de fl?ches");
         GameObject go = Instantiate(_arrowsP, _arrowPanel.transform);
         int aleatoire = Random.Range(0, 4);
         go.GetComponent<Image>().sprite = _directions[aleatoire];
@@ -139,7 +139,7 @@ public class Emrandomimg : MonoBehaviour
                 _audioManager.PlaySound(1, 1);
                 _playerKeys.Add(KeyCode.UpArrow);
                 GameObject im = Instantiate(_arrows, _p1Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ1[0];
+                im.GetComponent<Image>().sprite = _flecheJ1[0];
 
                 GameObject pose = Instantiate(_poses, _posePannel.transform);
                 pose.GetComponent<Image>().sprite = _positions[0];
@@ -159,7 +159,7 @@ public class Emrandomimg : MonoBehaviour
                 _audioManager.PlaySound(1, 1);
                 _playerKeys.Add(KeyCode.DownArrow);
                 GameObject im = Instantiate(_arrows, _p1Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ1[3];
+                im.GetComponent<Image>().sprite = _flecheJ1[3];
 
                 GameObject pose = Instantiate(_poses, _posePannel.transform);
                 pose.GetComponent<Image>().sprite = _positions[3];
@@ -180,7 +180,7 @@ public class Emrandomimg : MonoBehaviour
                 
                 _playerKeys.Add(KeyCode.LeftArrow);
                 GameObject im = Instantiate(_arrows, _p1Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ1[2];
+                im.GetComponent<Image>().sprite = _flecheJ1[2];
 
                 GameObject pose = Instantiate(_poses, _posePannel.transform);
                 pose.GetComponent<Image>().sprite = _positions[2];
@@ -201,7 +201,7 @@ public class Emrandomimg : MonoBehaviour
                 
                 _playerKeys.Add(KeyCode.RightArrow);
                 GameObject im = Instantiate(_arrows, _p1Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ1[1];
+                im.GetComponent<Image>().sprite = _flecheJ1[1];
 
                 GameObject pose = Instantiate(_poses, _posePannel.transform);
                 pose.GetComponent<Image>().sprite = _positions[1];
@@ -226,7 +226,7 @@ public class Emrandomimg : MonoBehaviour
                 _audioManager.PlaySound(1, 1);
                 _playerKeys2.Add(KeyCode.UpArrow);
                 GameObject im = Instantiate(_arrows, _p2Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ2[0];
+                im.GetComponent<Image>().sprite = _flecheJ2[0];
 
                 GameObject pose = Instantiate(_poses, _posePannel2.transform);
                 pose.GetComponent<Image>().sprite = _positionsj2[0];
@@ -247,7 +247,7 @@ public class Emrandomimg : MonoBehaviour
                 _audioManager.PlaySound(1, 1);
                 _playerKeys2.Add(KeyCode.DownArrow);
                 GameObject im = Instantiate(_arrows, _p2Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ2[3];
+                im.GetComponent<Image>().sprite = _flecheJ2[3];
 
                 GameObject pose = Instantiate(_poses, _posePannel2.transform);
                 pose.GetComponent<Image>().sprite = _positionsj2[3];
@@ -268,7 +268,7 @@ public class Emrandomimg : MonoBehaviour
                 _audioManager.PlaySound(1, 1);
                 _playerKeys2.Add(KeyCode.LeftArrow);
                 GameObject im = Instantiate(_arrows, _p2Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ2[2];
+                im.GetComponent<Image>().sprite = _flecheJ2[2];
 
                 GameObject pose = Instantiate(_poses, _posePannel2.transform);
                 pose.GetComponent<Image>().sprite = _positionsj2[2];
@@ -290,7 +290,7 @@ public class Emrandomimg : MonoBehaviour
                 _audioManager.PlaySound(1, 1);
                 _playerKeys2.Add(KeyCode.RightArrow);
                 GameObject im = Instantiate(_arrows, _p2Panel.transform);
-                im.GetComponent<Image>().sprite = _flècheJ2[1];
+                im.GetComponent<Image>().sprite = _flecheJ2[1];
 
                 GameObject pose = Instantiate(_poses, _posePannel2.transform);
                 pose.GetComponent<Image>().sprite = _positionsj2[1];
