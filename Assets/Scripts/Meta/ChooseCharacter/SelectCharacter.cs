@@ -235,6 +235,7 @@ namespace META
             if (selected)
             {
                 _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Selected);
+                return;
             }
 
             if (show)

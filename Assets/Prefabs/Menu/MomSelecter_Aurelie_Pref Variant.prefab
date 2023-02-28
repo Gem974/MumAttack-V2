@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 4473553196718220262, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.62
+      value: -3.5809999
       objectReference: {fileID: 0}
     - target: {fileID: 4473553196718220262, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
         type: 3}
@@ -89,7 +89,7 @@ PrefabInstance:
     - target: {fileID: 4473553196718220262, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.95
+      value: 10.841999
       objectReference: {fileID: 0}
     - target: {fileID: 4473553196718220262, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
         type: 3}
@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 4473553197794314285, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4473553197848869520, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
         type: 3}
@@ -270,181 +270,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &5637852518630733341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4473553197794314285, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
-    type: 3}
-  m_PrefabInstance: {fileID: 8081969088191102512}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5637852519002916949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4473553196218103397, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
-    type: 3}
-  m_PrefabInstance: {fileID: 8081969088191102512}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5637852519661211954 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4473553196633288450, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
-    type: 3}
-  m_PrefabInstance: {fileID: 8081969088191102512}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5637852519710498263 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4473553196718220263, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
-    type: 3}
-  m_PrefabInstance: {fileID: 8081969088191102512}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &268656008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5637852519710498263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7fe9bed2972c2143b5cc9809bd191bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDefault:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5637852518630733341}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 268656007}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: CLOSE
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5637852519002916949}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5637852519661211954}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5637852519002916949}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 268656007}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: OPEN
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5637852519661211954}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5637852518630733341}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSelected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5637852519661211954}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5637852519002916949}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5637852518630733341}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  momSelecterState: 0
