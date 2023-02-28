@@ -8,11 +8,13 @@ TagManager:
   - OffLimit2
   - FxTemporaire
   - Plaices
+  - J2
+  - J1
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - SpriteLight
   - Water
   - UI
   - 

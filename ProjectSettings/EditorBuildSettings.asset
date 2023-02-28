@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5135edff4e84abc4e9dde5fe41a993bd
@@ -20,11 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IronMum/IronMum.unity
     guid: f17bbbe7e65684d4894a312978d24bf4
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SuperMaket/SuperMaket.unity
+    path: Assets/Scenes/UtensilBrawl/UtencilBrawl_V1.unity
+    guid: 44ba6a6643fbbed459c96637eb2f322d
+  - enabled: 1
+    path: Assets/Scenes/Supermaket/SuperMaket.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Mumic/Mumic.unity

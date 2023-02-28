@@ -9,6 +9,7 @@ public class GameOverBehaviour : MonoBehaviour
     public static GameOverBehaviour instance;
     public Button _menuBtn;
     public Button _ContinueBtn;
+    public Text _playerWinTxt;
     private void Awake()
     {
         if (instance != null)
@@ -48,6 +49,11 @@ public class GameOverBehaviour : MonoBehaviour
     public void BackToMenu()
     {
         scenesManager.instance.LoadSpecificScene(0);
+    }
+
+    public void PlayerToWin(int player)
+    {
+        _playerWinTxt.text = "Player " + player.ToString() + " Wins !";
     }
 
     public void ContinueBroadCast()

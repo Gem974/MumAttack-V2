@@ -191,7 +191,7 @@ namespace META
                 {
                     if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
-                        MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
+                        MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
                         _animator.SetTrigger("Select");
                         Debug.Log("2_BON" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
                     }

@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     public bool _IsStraight = false;
     public bool _IsArcLeft = false;
-    public bool _IsArcRight = false;
+    //public bool _IsArcRight = false;
 
     [Header("Change Object System")]
     public MeshFilter _objectRenderer;
@@ -72,19 +72,14 @@ public class Bullet : MonoBehaviour
          
 
         }
-        else if (_IsArcRight == true )
+        else if (!_IsStraight)
         {
-
             //Debug.Log("ArcRightShoot");
             transform.DOPath(pathRight, durationRight, pathsysteme);
 
-           
-
             Destroy(transform.gameObject, _destroyValue);
-
-           
-
         }
+     
 
     }
 

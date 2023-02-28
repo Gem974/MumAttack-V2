@@ -7,7 +7,7 @@ public class SpamBehaviour : MonoBehaviour
 {
     Sumo_GameManager _gameManager;
     [SerializeField] KeyCode _p1, _p2;
-    [SerializeField] GameObject[] _arrows;
+    [SerializeField] GameObject[] _arrows; // 0 = DOWN | 1 = UP | 2 = RIGHT | 3 = LEFT
     public Rigidbody _rb1, _rb2;
     [SerializeField] float _impulseForce;
 
@@ -138,7 +138,6 @@ public class SpamBehaviour : MonoBehaviour
                 _arrows[0].SetActive(true);
                 
                 break;
-
 
         }
     }
