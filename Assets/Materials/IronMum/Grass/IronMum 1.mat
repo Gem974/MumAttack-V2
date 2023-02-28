@@ -9,7 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: IronMum 1
   m_Shader: {fileID: 4800000, guid: 2c2cefb6802b6cd429dfbe4041764676, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - USE_CS
+  - USE_RT
+  - USE_S
+  - USE_SC
   m_InvalidKeywords:
   - _RTEFFECT_ON
   m_LightmapFlags: 4

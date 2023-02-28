@@ -30,45 +30,45 @@ public class scenesManager : MonoBehaviour
 
     private void Start()
     {
-        if (_isNotDestroyable)
-        {
-            SetRandomScene(); 
+        //if (_isNotDestroyable)
+        //{
+        //    SetRandomScene(); 
 
-        }
+        //}
     }
     public void LoadSpecificScene(int minigameIndex)
     {
         SceneManager.LoadScene(minigameIndex);
     }
 
-    public void SetRandomScene()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            int randomInt = Random.Range(2, 5);
-            Debug.Log(randomInt);
+    //public void SetRandomScene()
+    //{
+    //    for (int i = 0; i < 3; i++)
+    //    {
+    //        int randomInt = Random.Range(2, 5);
+    //        Debug.Log(randomInt);
 
-            if (_randomScene.Contains(randomInt))
-            {
-                //Debug.Log("Pas Bon");
-                while (_randomScene.Contains(randomInt))
-                {
-                    randomInt = Random.Range(2, 5);
-                }
-                _randomScene.Add(randomInt);
-            }
-            else if (!_randomScene.Contains(randomInt))
-            {
-                Debug.Log("Bon");
-                _randomScene.Add(randomInt);
+    //        if (_randomScene.Contains(randomInt))
+    //        {
+    //            //Debug.Log("Pas Bon");
+    //            while (_randomScene.Contains(randomInt))
+    //            {
+    //                randomInt = Random.Range(2, 5);
+    //            }
+    //            _randomScene.Add(randomInt);
+    //        }
+    //        else if (!_randomScene.Contains(randomInt))
+    //        {
+    //            Debug.Log("Bon");
+    //            _randomScene.Add(randomInt);
 
-            }
+    //        }
 
-        }
+    //    }
 
 
 
-    }
+    //}
 
     public void LoadBroadcastScene(int step)
     {

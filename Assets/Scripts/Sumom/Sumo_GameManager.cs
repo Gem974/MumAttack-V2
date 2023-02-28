@@ -73,6 +73,14 @@ public class Sumo_GameManager : MonoBehaviour
         else if (_gameOver) // Fin de partie
         {
             _gameOverPanel.SetActive(true);
+            if (_pointsP1 == 3)
+            {
+                GameOverBehaviour.instance.PlayerToWin(1);
+            }
+            else if (_pointsP2 == 3)
+            {
+                GameOverBehaviour.instance.PlayerToWin(2);
+            }
 
             _sound.SetActive(false);
             _discountTxt.gameObject.SetActive(false);
@@ -119,7 +127,7 @@ public class Sumo_GameManager : MonoBehaviour
             _gameOver = true;
             UnityEngine.Time.timeScale = 1;
 
-            GameOverBehaviour.instance.PlayerToWin(1);
+            
         }
         else if (_pointsP2 == 3)
         {
@@ -127,7 +135,7 @@ public class Sumo_GameManager : MonoBehaviour
             UnityEngine.Time.timeScale = 1;
 
 
-            GameOverBehaviour.instance.PlayerToWin(2);
+           
         }
     }
 

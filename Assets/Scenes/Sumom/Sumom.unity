@@ -3504,8 +3504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameMode: 0
-  _maxStep: 0
-  _currentStep: 0
+  _maxStep: 3
+  _currentStep: 1
   _P1Wins: 0
   _P2Wins: 0
   _player1: {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
