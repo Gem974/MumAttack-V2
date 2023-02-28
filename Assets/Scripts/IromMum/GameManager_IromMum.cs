@@ -72,17 +72,21 @@ public class GameManager_IromMum : MonoBehaviour
         if (_points1 > _points2)
         {
             _GOPanel.SetActive(true);
-            _playerWinsText.text = "Player 1 Wins";
-            MetaGameManager.instance._P1Wins++;
+            GameOverBehaviour.instance.PlayerToWin(1);
             Debug.Log("P1 Wins");
         }
         else if (_points2 > _points1)
         {
             _GOPanel.SetActive(true);
-            _playerWinsText.text = "Player 2 Wins";
-            MetaGameManager.instance._P2Wins++;
+            GameOverBehaviour.instance.PlayerToWin(2);
             Debug.Log("P2 Wins");
-        }   
+        }
+        if (_points1 == _points2)
+        {
+            _GOPanel.SetActive(true);
+            GameOverBehaviour.instance.PlayerToWin(1);
+            Debug.Log("P1 Wins");
+        }
     }
 
     public void StartGameAfterDiscount()

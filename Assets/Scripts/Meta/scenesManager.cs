@@ -72,22 +72,23 @@ public class scenesManager : MonoBehaviour
 
     public void LoadBroadcastScene(int step)
     {
-        Debug.Log("Step= " + step);
-        if (MetaGameManager.instance._gameMode == MetaGameManager.GameMode.None)
+        
+        if (MetaGameManager.instance._currentStep <= MetaGameManager.instance._maxStep) //En cours de BroadCast
         {
-            MetaGameManager.instance.BroadCastNextStep();
-            MetaGameManager.instance._gameMode = MetaGameManager.GameMode.BroadCast;
-        }
+            Debug.Log("Step= " + step);
+            if (MetaGameManager.instance._gameMode == MetaGameManager.GameMode.None)
+            {
+                MetaGameManager.instance.BroadCastNextStep();
+                MetaGameManager.instance._gameMode = MetaGameManager.GameMode.BroadCast;
+            }
 
             SceneManager.LoadScene(scenesManager.instance._randomScene[step - 1]);
 
-        //if (MetaGameManager.instance._currentStep < MetaGameManager.instance._maxStep) 
-        //{
-        //}
-        //else if (MetaGameManager.instance._currentStep > MetaGameManager.instance._maxStep)
-        //{
-        //    LoadSpecificScene();
-        //}
+        }
+        else if (MetaGameManager.instance._currentStep > MetaGameManager.instance._maxStep) //Fin du BroadCast
+        {
+            LoadSpecificScene(10);
+        }
     }
 
     

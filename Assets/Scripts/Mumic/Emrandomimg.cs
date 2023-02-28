@@ -477,11 +477,11 @@ public class Emrandomimg : MonoBehaviour
 
             if (_pointsJ1 == 3)
             {
-                _textGO.text = "Player 1 Wins !";
+                GameOverBehaviour.instance.PlayerToWin(2);
             }
             else if (_pointsJ2 == 3)
             {
-                _textGO.text = "Player 2 Wins !";
+                GameOverBehaviour.instance.PlayerToWin(2);
             }
 
 

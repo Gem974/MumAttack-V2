@@ -44,6 +44,14 @@ namespace Utencil_Brawl
             //Debug.Log(_Touches);
             _progress = _shootCountdown;
             _shootCountdown -= Time.deltaTime;
+            if (_isPlayerOne)
+            {
+                _animator.runtimeAnimatorController = DisplayCharacter.instance._player1Character.utencil_animatorController;
+            }
+            else
+            {
+                _animator.runtimeAnimatorController = DisplayCharacter.instance._player2Character.utencil_animatorController;
+            }
             LifeChecker();
         }
 

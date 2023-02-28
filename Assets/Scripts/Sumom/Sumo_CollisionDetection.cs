@@ -95,11 +95,11 @@ public class Sumo_CollisionDetection : MonoBehaviour
     {
         if (_isPlayer1)
         {
-            _animator.runtimeAnimatorController = DisplayCharacter.instance._player1Character._animatorController;
+            _animator.runtimeAnimatorController = DisplayCharacter.instance._player1Character.sumom_animatorController;
         }
         else
         {
-            _animator.runtimeAnimatorController = DisplayCharacter.instance._player2Character._animatorController;
+            _animator.runtimeAnimatorController = DisplayCharacter.instance._player2Character.sumom_animatorController;
         }
     }
 

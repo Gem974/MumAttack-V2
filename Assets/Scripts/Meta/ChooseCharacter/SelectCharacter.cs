@@ -7,10 +7,10 @@ namespace META
     public class SelectCharacter : MonoBehaviour
     {
 
-        [SerializeField] KeyCode _right, _left, _up, _down, _action;
+        [SerializeField] KeyCode _right, _left, _up, _down, _action, _action2;
         [SerializeField] SelectCharacter _otherCharacter;
 
-        [SerializeField] string _horizontalInput, _verticalInput, _actionInput;
+        [SerializeField] string _horizontalInput, _verticalInput, _actionInput, _altActionInput;
         [SerializeField] float _startTime, _nextTime;
 
         [SerializeField] int _currentPlayer;
@@ -69,12 +69,14 @@ namespace META
                 _horizontalInput = "Horizontal_P1";
                 _verticalInput = "a";
                 _actionInput = "Fire_P1";
+                _altActionInput = "Fire_Alt_P1";
             }
             else
             {
                 _horizontalInput = "Horizontal_P2";
                 _verticalInput = "Vertical_P2";
                 _actionInput = "Fire_P2";
+                _altActionInput = "Fire_Alt_P2";
             }
 
 
@@ -147,7 +149,7 @@ namespace META
                 }
                 else
                 {
-                    if (Input.GetButtonDown(_actionInput)) //UnselectMom
+                    if (Input.GetButtonDown(_altActionInput)) //UnselectMom
                     {
                         _momChoosed = false;
                         _animator.SetTrigger("UnSelect");
