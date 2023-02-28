@@ -13,11 +13,14 @@ public class Character : ScriptableObject
     public Color32 _color;
     [Header("IRONMUM")]
     public Sprite _ironMum_sprite;
-
+    
 
     [Header("SUMOM")]
-    public RuntimeAnimatorController _animatorController;
- 
-    
+    public RuntimeAnimatorController sumom_animatorController;
+
+    [Header("UTENCIL BRAWL")]
+    public RuntimeAnimatorController utencil_animatorController;
+
+
 
 }

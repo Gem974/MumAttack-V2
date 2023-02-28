@@ -17,4 +17,6 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4292991810
   _ironMum_sprite: {fileID: 21300000, guid: a8777b68bcfa26e45a85d56c8bb82509, type: 3}
-  _animatorController: {fileID: 9100000, guid: 285102e0d6a0307478c066c2a4e04990, type: 2}
+  sumom_animatorController: {fileID: 0}
+  utencil_animatorController: {fileID: 9100000, guid: 33d1c7795b95cce4393f61ccba1f3439,
+    type: 2}

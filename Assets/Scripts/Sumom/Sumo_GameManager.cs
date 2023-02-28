@@ -119,7 +119,7 @@ public class Sumo_GameManager : MonoBehaviour
             _gameOver = true;
             UnityEngine.Time.timeScale = 1;
 
-            _playerWinsTxt.text = "Player 1 Wins";
+            GameOverBehaviour.instance.PlayerToWin(1);
         }
         else if (_pointsP2 == 3)
         {
@@ -127,7 +127,7 @@ public class Sumo_GameManager : MonoBehaviour
             UnityEngine.Time.timeScale = 1;
 
 
-            _playerWinsTxt.text = "Player 2 Wins";
+            GameOverBehaviour.instance.PlayerToWin(2);
         }
     }
 

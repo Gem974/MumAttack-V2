@@ -54,6 +54,14 @@ public class GameOverBehaviour : MonoBehaviour
     public void PlayerToWin(int player)
     {
         _playerWinTxt.text = "Player " + player.ToString() + " Wins !";
+        if (player == 1)
+        {
+            MetaGameManager.instance._P1Wins++;
+        }
+        else if (player == 2)
+        {
+            MetaGameManager.instance._P2Wins++;
+        }
     }
 
     public void ContinueBroadCast()

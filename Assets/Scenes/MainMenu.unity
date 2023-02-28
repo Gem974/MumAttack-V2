@@ -2317,7 +2317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameMode: 0
-  _maxStep: 0
+  _maxStep: 3
   _currentStep: 0
   _P1Wins: 0
   _P2Wins: 0
