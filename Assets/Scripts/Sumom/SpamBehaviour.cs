@@ -110,6 +110,7 @@ public class SpamBehaviour : MonoBehaviour
 
         switch (randomKey)
         {
+
             case 0:
                 ArrowsOff(); //Up
                 _pK1 = KeyCode.Z;
@@ -117,7 +118,9 @@ public class SpamBehaviour : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button3;
                 _pG2 = KeyCode.Joystick2Button3;
                 _arrows[1].SetActive(true);
-                
+                Sign.instance.ChangePos();
+
+
                 break;
             case 1:
                 ArrowsOff(); //Right
@@ -126,7 +129,8 @@ public class SpamBehaviour : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button1;
                 _pG2 = KeyCode.Joystick2Button1;
                 _arrows[2].SetActive(true);
-                
+                Sign.instance.ChangePos();
+
                 break;
             case 2:
                 ArrowsOff(); //Left
@@ -135,7 +139,8 @@ public class SpamBehaviour : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button2;
                 _pG2 = KeyCode.Joystick2Button2;
                 _arrows[3].SetActive(true);
-                
+                Sign.instance.ChangePos();
+
                 break;
             case 3:
                 ArrowsOff(); //Down
@@ -144,7 +149,8 @@ public class SpamBehaviour : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button0;
                 _pG2 = KeyCode.Joystick2Button0;
                 _arrows[0].SetActive(true);
-                
+                Sign.instance.ChangePos();
+
                 break;
 
         }
