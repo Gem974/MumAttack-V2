@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class SpamBehaviour : MonoBehaviour
 {
     Sumo_GameManager _gameManager;
-    [SerializeField] KeyCode _p1, _p2;
+    [SerializeField] KeyCode _pK1, _pK2, _pG1, _pG2;
     [SerializeField] GameObject[] _arrows; // 0 = DOWN | 1 = UP | 2 = RIGHT | 3 = LEFT
     public Rigidbody _rb1, _rb2;
     [SerializeField] float _impulseForce;
@@ -111,30 +111,38 @@ public class SpamBehaviour : MonoBehaviour
         switch (randomKey)
         {
             case 0:
-                ArrowsOff();
-                _p1 = KeyCode.Z;
-                _p2 = KeyCode.UpArrow;
+                ArrowsOff(); //Up
+                _pK1 = KeyCode.Z;
+                _pK2 = KeyCode.UpArrow;
+                _pG1 = KeyCode.Joystick1Button3;
+                _pG2 = KeyCode.Joystick2Button3;
                 _arrows[1].SetActive(true);
                 
                 break;
             case 1:
-                ArrowsOff();
-                _p1 = KeyCode.D;
-                _p2 = KeyCode.RightArrow;
+                ArrowsOff(); //Right
+                _pK1 = KeyCode.D;
+                _pK2 = KeyCode.RightArrow;
+                _pG1 = KeyCode.Joystick1Button1;
+                _pG2 = KeyCode.Joystick2Button1;
                 _arrows[2].SetActive(true);
                 
                 break;
             case 2:
-                ArrowsOff();
-                _p1 = KeyCode.Q;
-                _p2 = KeyCode.LeftArrow;
+                ArrowsOff(); //Left
+                _pK1 = KeyCode.Q;
+                _pK2 = KeyCode.LeftArrow;
+                _pG1 = KeyCode.Joystick1Button2;
+                _pG2 = KeyCode.Joystick2Button2;
                 _arrows[3].SetActive(true);
                 
                 break;
             case 3:
-                ArrowsOff();
-                _p1 = KeyCode.S;
-                _p2 = KeyCode.DownArrow;
+                ArrowsOff(); //Down
+                _pK1 = KeyCode.S;
+                _pK2 = KeyCode.DownArrow;
+                _pG1 = KeyCode.Joystick1Button0;
+                _pG2 = KeyCode.Joystick2Button0;
                 _arrows[0].SetActive(true);
                 
                 break;
@@ -146,13 +154,13 @@ public class SpamBehaviour : MonoBehaviour
     {
         impulseForce = _impulseForce;
 
-        if (Input.GetKeyDown(_p1))
+        if (Input.GetKeyDown(_pK1) || Input.GetKeyDown(_pG1))
         {
             _rb1.AddForce(transform.right * impulseForce, ForceMode.Impulse);
             InstantiateFX(1); //FX Course J1
         }
         
-        if (Input.GetKeyDown(_p2))
+        if (Input.GetKeyDown(_pK2) || Input.GetKeyDown(_pG2))
         {
             _rb2.AddForce(-transform.right * impulseForce, ForceMode.Impulse);
             InstantiateFX(2); //FX Course J2

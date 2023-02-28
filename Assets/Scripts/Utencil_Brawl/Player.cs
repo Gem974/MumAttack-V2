@@ -82,7 +82,7 @@ namespace Utencil_Brawl
                 {
                     //Vector2 Axis created in OldInputSystem
                     _move = new Vector3(0f, 0f, Input.GetAxis("Vertical_P1"));
-
+                    //SFX Run on Loop
 
                     transform.Translate(_move * _moveSpeed * Time.deltaTime, Space.World);
                     _animator.SetTrigger("Run");
@@ -90,6 +90,7 @@ namespace Utencil_Brawl
                 }
                 else
                 {
+                    //SFX Run Stop
                     _move = Vector3.zero;
                     _animator.SetTrigger("Static");
                 }
@@ -146,6 +147,7 @@ namespace Utencil_Brawl
 
                 _onShoot?.Invoke();
                 _shootCountdown = 1 / _shootRate;
+                //SFX Shoot
                 Debug.Log("MoveZ " + _move.z);
             }
 
@@ -237,6 +239,7 @@ namespace Utencil_Brawl
             Debug.Log("AIE PUTAIN");
             _touches--;
             _onHit?.Invoke();
+            //SFX Hit
             LifeChecker();
         }
 
