@@ -49,11 +49,11 @@ namespace Utencil_Brawl
             _shootCountdown -= Time.deltaTime;
             if (_isPlayerOne)
             {
-                _animator.runtimeAnimatorController = DisplayCharacter.instance._player1Character.utencil_animatorController;
+                _animator.runtimeAnimatorController = META.MetaGameManager.instance._player1.utencil_animatorController;
             }
             else
             {
-                _animator.runtimeAnimatorController = DisplayCharacter.instance._player2Character.utencil_animatorController;
+                _animator.runtimeAnimatorController = META.MetaGameManager.instance._player2.utencil_animatorController;
             }
             LifeChecker();
         }
@@ -61,26 +61,32 @@ namespace Utencil_Brawl
 
         void Update()
         {
-            _circleFill.fillAmount = _shootCountdown;
+            if (UtencilBrawl_GameManager.instance._canPlay)
+            {
+                _circleFill.fillAmount = _shootCountdown;
 
-            if (Input.GetButtonDown("Fire_P1") && _isPlayerOne)
-            {
-                Shoot();
-            }
-            if (Input.GetButtonDown("Fire_P2") && !_isPlayerOne)
-            {
-                Shoot();
+                if (Input.GetButtonDown("Fire_P1") && _isPlayerOne)
+                {
+                    Shoot();
+                }
+                if (Input.GetButtonDown("Fire_P2") && !_isPlayerOne)
+                {
+                    Shoot();
+                } 
             }
         }
 
 
         private void FixedUpdate()
         {
-            //Movement
-            movePlayer();
+            if (UtencilBrawl_GameManager.instance._canPlay)
+            {
+                //Movement
+                movePlayer();
 
-            //_ShootCountdown Constently dimminushing
-            _shootCountdown -= Time.deltaTime;
+                //_ShootCountdown Constently dimminushing
+                _shootCountdown -= Time.deltaTime; 
+            }
 
         }
 

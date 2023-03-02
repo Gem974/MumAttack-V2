@@ -13,13 +13,28 @@ public class UtencilBrawl_GameManager : MonoBehaviour
     public GameObject _GOPanel;
 
     public bool _isGameStopped = false;
-   
 
-    // Start is called before the first frame update
+    public bool _canPlay;
+
+    public static UtencilBrawl_GameManager instance;
+
+
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Il y a plus d'une instance de GameManager dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
+
     void Start()
     {
-       Time.timeScale = 1;
-       _isGameStopped = false;
+       
+        _canPlay = false;
     }
 
     // Update is called once per frame
@@ -60,6 +75,14 @@ public class UtencilBrawl_GameManager : MonoBehaviour
     {
         Debug.Log("reload");
         SceneManager.LoadScene(0);
+    }
+
+    public void StartGameAfterDiscount()
+    {
+        Time.timeScale = 1;
+        _isGameStopped = false;
+        _canPlay = true;
+
     }
 
 

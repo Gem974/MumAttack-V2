@@ -223,13 +223,13 @@ public class Kart : MonoBehaviour
     {
         if (_isPlayer1)
         {
-            _kartMat.materials[0].SetColor("_BASE_COLOR", DisplayCharacter.instance._player1Character._color);
-            _sprite.sprite = DisplayCharacter.instance._player1Character._ironMum_sprite;
+            _kartMat.materials[0].SetColor("_BASE_COLOR", META.MetaGameManager.instance._player1._color);
+            _sprite.sprite = META.MetaGameManager.instance._player1._ironMum_sprite;
         }
         else if (!_isPlayer1)
         {
-            _kartMat.materials[0].SetColor("_BASE_COLOR", DisplayCharacter.instance._player2Character._color);
-            _sprite.sprite = DisplayCharacter.instance._player2Character._ironMum_sprite;
+            _kartMat.materials[0].SetColor("_BASE_COLOR", META.MetaGameManager.instance._player2._color);
+            _sprite.sprite = META.MetaGameManager.instance._player2._ironMum_sprite;
         }
         
     }

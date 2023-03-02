@@ -1,19 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using META;
 
 public class BroadCastVictory : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Image _winnerImage;
     void Start()
     {
-        
+        _winnerImage.sprite = MetaGameManager.instance._winner._winImage;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

@@ -23,9 +23,10 @@ namespace META
         [Header("Set Characters")]
         public Character _player1;
         public Character _player2;
-
+        public Character _winner;
 
         [Header("LeaderBoard")]
+
         public int[] _topScorePoints;
         public string[] _topScoreName;
 
@@ -55,7 +56,34 @@ namespace META
 
         public void BroadCastNextStep()
         {
-            _currentStep++;
+            if (_currentStep <= _maxStep)
+            {
+                _currentStep++;
+            }
+            else
+            {
+                _currentStep = 0;
+            }
+
+            if (_currentStep > _maxStep)
+            {
+                if (_P1Wins > _P2Wins)
+                {
+                    _winner = _player1;
+                }
+                else
+                {
+                    _winner = _player2;
+                }
+            }
+        }
+
+        public void ResetAll()
+        {
+            _player1 = null;
+            _player2 = null;
+            _currentStep = 0;
+            _gameMode = GameMode.None;
         }
 
 

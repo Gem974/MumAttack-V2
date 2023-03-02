@@ -7,15 +7,16 @@ using UnityEngine.Rendering.Universal;
 
 public class DiscountBeforeStart : MonoBehaviour
 {
+    [SerializeField] GameObject _gameManagerInScene;
     [SerializeField] Volume _postProcess;
     [SerializeField] DepthOfField _dop;
     [SerializeField] Text _discountTxt;
     void Start()
     {
-        StartCoroutine(Discount());
+        StartCoroutine(Discount(_gameManagerInScene));
         _postProcess.profile.TryGet(out _dop);
     }
-    IEnumerator Discount()
+    IEnumerator Discount(GameObject GameManager)
     {
 
         _discountTxt.gameObject.SetActive(true);
@@ -38,7 +39,7 @@ public class DiscountBeforeStart : MonoBehaviour
         }
 
         //Lance toute les fonctions de Start
-        GameManager_IromMum.instance.StartGameAfterDiscount();
+        GameManager.SendMessage("StartGameAfterDiscount");
 
 
 
