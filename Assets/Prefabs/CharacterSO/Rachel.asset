@@ -17,6 +17,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4282695913
   _winImage: {fileID: 21300000, guid: d71446c884cc74a498b0b869ff6ecc7f, type: 3}
+  _goodHead: {fileID: 21300000, guid: 1e8f68ec254a23e4090d990eae3d8339, type: 3}
+  _badHead: {fileID: 21300000, guid: 9b14062a16765f944aeb949b7c818d0c, type: 3}
   _ironMum_sprite: {fileID: 21300000, guid: c8231ca8b73f60c41b3229bd102aee51, type: 3}
   sumom_animatorController: {fileID: 9100000, guid: 009eaa7b95d638d48b2ee1dc2b480691,
     type: 2}

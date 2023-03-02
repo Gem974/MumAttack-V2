@@ -48,4 +48,9 @@ public class ButtonsBehaviour : MonoBehaviour
         Application.Quit();
     }
 
+    public void DebugButton()
+    {
+        Debug.Log("Working");
+    }
+
 }

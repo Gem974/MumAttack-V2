@@ -43,6 +43,7 @@ public class Kart : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] AudioSource _source;
+    [SerializeField] AudioClip _plaicesIroned;
 
 
 
@@ -189,7 +190,7 @@ public class Kart : MonoBehaviour
             StartCoroutine(Multiply());
             GameManager_IromMum.instance.AddPoints(_isPlayer1, _multiplier);
             RandomPlaices.instance.RemovePlaces();
-            _source.Play();
+            _source.PlayOneShot(_plaicesIroned);
             Destroy(other.gameObject);
         }
     }

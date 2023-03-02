@@ -31,7 +31,7 @@ public class Sumo_GameManager : MonoBehaviour
 
 
 
-    public bool _canPlay, _gameOver;
+    public bool _canPlay, _gameOver, _launchPlayer;
 
 
     private void Awake()
@@ -50,7 +50,7 @@ public class Sumo_GameManager : MonoBehaviour
         _postProcess.profile.TryGet(out _dop);
         _gameCanvas.SetActive(true);
         _colliDetection = FindObjectOfType<Sumo_CollisionDetection>();
-
+        _launchPlayer = false;
         _gameOver = false;
        
         RestartRound();
@@ -73,13 +73,16 @@ public class Sumo_GameManager : MonoBehaviour
         else if (_gameOver) // Fin de partie
         {
             _gameOverPanel.SetActive(true);
-            if (_pointsP1 == 3)
+
+            if (_pointsP1 == 3 && _launchPlayer)
             {
                 GameOverBehaviour.instance.PlayerToWin(1);
+                _canPlay = false;
             }
-            else if (_pointsP2 == 3)
+            else if (_pointsP2 == 3 && _launchPlayer)
             {
                 GameOverBehaviour.instance.PlayerToWin(2);
+                _canPlay = false;
             }
 
             _sound.SetActive(false);
@@ -125,6 +128,7 @@ public class Sumo_GameManager : MonoBehaviour
         if (_pointsP1 == 3)
         {
             _gameOver = true;
+            _launchPlayer = true;
             UnityEngine.Time.timeScale = 1;
 
             
@@ -132,6 +136,7 @@ public class Sumo_GameManager : MonoBehaviour
         else if (_pointsP2 == 3)
         {
             _gameOver = true;
+            _launchPlayer = true;
             UnityEngine.Time.timeScale = 1;
 
 

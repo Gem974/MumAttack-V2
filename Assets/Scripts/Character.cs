@@ -12,6 +12,9 @@ public class Character : ScriptableObject
     public string _name;
     public Color32 _color;
     public Sprite _winImage;
+    public Sprite _goodHead;
+    public Sprite _badHead;
+
 
     [Header("IRONMUM")]
     public Sprite _ironMum_sprite;

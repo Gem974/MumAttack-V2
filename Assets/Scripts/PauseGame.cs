@@ -18,7 +18,7 @@ public class PauseGame : MonoBehaviour
     {
         if (_canPause)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))
             {
                 _canPause = false;
                 _pausePanel.SetActive(true);
@@ -29,7 +29,7 @@ public class PauseGame : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))
             {
                 _canPause = true;
                 _pausePanel.SetActive(false);

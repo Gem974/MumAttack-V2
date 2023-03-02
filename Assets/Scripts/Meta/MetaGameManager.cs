@@ -65,7 +65,7 @@ namespace META
                 _currentStep = 0;
             }
 
-            if (_currentStep > _maxStep)
+            if (_currentStep >= _maxStep)
             {
                 if (_P1Wins > _P2Wins)
                 {

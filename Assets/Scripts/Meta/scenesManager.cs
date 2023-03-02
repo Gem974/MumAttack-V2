@@ -30,50 +30,50 @@ public class scenesManager : MonoBehaviour
 
     private void Start()
     {
-        //if (_isNotDestroyable)
-        //{
-        //    SetRandomScene(); 
+        if (_isNotDestroyable)
+        {
+            SetRandomScene(); 
 
-        //}
+        }
     }
     public void LoadSpecificScene(int minigameIndex)
     {
         SceneManager.LoadScene(minigameIndex);
     }
 
-    //public void SetRandomScene()
-    //{
-    //    for (int i = 0; i < 3; i++)
-    //    {
-    //        int randomInt = Random.Range(2, 5);
-    //        Debug.Log(randomInt);
+    public void SetRandomScene()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            int randomInt = Random.Range(2, 5);
+            Debug.Log(randomInt);
 
-    //        if (_randomScene.Contains(randomInt))
-    //        {
-    //            //Debug.Log("Pas Bon");
-    //            while (_randomScene.Contains(randomInt))
-    //            {
-    //                randomInt = Random.Range(2, 5);
-    //            }
-    //            _randomScene.Add(randomInt);
-    //        }
-    //        else if (!_randomScene.Contains(randomInt))
-    //        {
-    //            Debug.Log("Bon");
-    //            _randomScene.Add(randomInt);
+            if (_randomScene.Contains(randomInt))
+            {
+                //Debug.Log("Pas Bon");
+                while (_randomScene.Contains(randomInt))
+                {
+                    randomInt = Random.Range(2, 5);
+                }
+                _randomScene.Add(randomInt);
+            }
+            else if (!_randomScene.Contains(randomInt))
+            {
+                Debug.Log("Bon");
+                _randomScene.Add(randomInt);
 
-    //        }
+            }
 
-    //    }
+        }
 
 
 
-    //}
+    }
 
     public void LoadBroadcastScene(int step)
     {
         
-        if (MetaGameManager.instance._currentStep <= MetaGameManager.instance._maxStep) //En cours de BroadCast
+        if (MetaGameManager.instance._currentStep < MetaGameManager.instance._maxStep) //En cours de BroadCast
         {
             Debug.Log("Step= " + step);
             if (MetaGameManager.instance._gameMode == MetaGameManager.GameMode.None)
@@ -85,11 +85,16 @@ public class scenesManager : MonoBehaviour
             SceneManager.LoadScene(scenesManager.instance._randomScene[step - 1]);
 
         }
-        else if (MetaGameManager.instance._currentStep > MetaGameManager.instance._maxStep) //Fin du BroadCast
+        else if (MetaGameManager.instance._currentStep >= MetaGameManager.instance._maxStep) //Fin du BroadCast
         {
             MetaGameManager.instance.ResetAll();
             LoadSpecificScene(10);
         }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     

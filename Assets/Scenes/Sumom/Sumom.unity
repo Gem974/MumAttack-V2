@@ -965,7 +965,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 124
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &261668817
 Transform:
   m_ObjectHideFlags: 0
@@ -3070,7 +3070,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 124
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &839568864
 Transform:
   m_ObjectHideFlags: 0
@@ -3503,13 +3503,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b72f2b85fc3214992f1e5b1ceb1f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameMode: 0
+  _gameMode: 1
   _maxStep: 3
   _currentStep: 1
   _P1Wins: 0
   _P2Wins: 0
   _player1: {fileID: 11400000, guid: 0cfdcf28b96cfac47844dae3334302ad, type: 2}
   _player2: {fileID: 11400000, guid: 0cfdcf28b96cfac47844dae3334302ad, type: 2}
+  _winner: {fileID: 0}
   _topScorePoints: 
   _topScoreName: []
   _volume: 0
