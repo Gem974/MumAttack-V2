@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace META
 {
@@ -15,6 +17,10 @@ namespace META
 
         [SerializeField] int _currentPlayer;
         [SerializeField] Animator _animator;
+
+        [Header("DisplayScreen")]
+        [SerializeField] SpriteRenderer _headDisplay;
+        [SerializeField] TextMeshProUGUI _nameDisplay;
      
 
 
@@ -98,10 +104,7 @@ namespace META
             
         }
 
-        void MomSelection()
-        {
-            
-        }
+      
 
         IEnumerator SelectMom()
         {
@@ -143,11 +146,14 @@ namespace META
                             MomReferencer.instance.ShowButton();
 
                             WichMom();
+                            //DisplayScreenInfo();
                         }
                         else
                         {
-                            _animator.SetTrigger("CantSelect");
-                            //SFX Pas Bon
+                            //_animator.SetTrigger("CantSelect");
+                            //_nameDisplay.text = "Select a Mom";
+                            //_headDisplay.gameObject.SetActive(false);
+                            ////SFX Pas Bon
                         }
                         yield return null;
                     }
@@ -164,7 +170,10 @@ namespace META
                         _momChoosed = false;
                         _animator.SetTrigger("UnSelect");
                         WichMom();
+                        _nameDisplay.text = "Select a Mom";
+                        _headDisplay.gameObject.SetActive(false);
                         MomReferencer.instance.ShowButton();
+                        
 
                     }
                     yield return null;
@@ -178,11 +187,11 @@ namespace META
         {
             if (_isPlayer1)
             {
-                if (_momChoosed)
+                if (_momChoosed) //J1
                 {
                     if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
-
+                        DisplayScreenInfo();
                         ChangeStateMomSelection(false, true, _currentPlayer);
 
                         MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
@@ -191,9 +200,14 @@ namespace META
                     }
                     else
                     {
+                        ChangeStateMomSelection(false, false, _currentPlayer);
                         _animator.SetTrigger("CantSelect");
+                        
                         _momChoosed = false;
                         Debug.Log("1_NOT" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
+
+                        _nameDisplay.text = "Select a Mom";
+                        _headDisplay.gameObject.SetActive(false);
                     }
                     
                 }
@@ -202,7 +216,7 @@ namespace META
             }
             else
             {
-                if (_momChoosed)
+                if (_momChoosed) //J2
                 {
                     if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
@@ -214,9 +228,14 @@ namespace META
                     }
                     else
                     {
+                        ChangeStateMomSelection(false, false, _currentPlayer);
                         _animator.SetTrigger("CantSelect");
                         _momChoosed = false;
                         Debug.Log("2_NOT" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
+
+                        _nameDisplay.text = "Select a Mom";
+                        _headDisplay.gameObject.SetActive(false);
+                        
                     }
                 }
 
@@ -238,6 +257,7 @@ namespace META
                 return;
             }
 
+
             if (show)
             {
                 _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Hover);
@@ -248,6 +268,21 @@ namespace META
                 _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Default);
             }
 
+
+
+        }
+
+        public void DisplayScreenInfo()
+        {
+                Debug.Log("Jsuis rentré zbi");
+                _nameDisplay.text = MomReferencer.instance._datas[_currentPlayer]._name;
+                _headDisplay.gameObject.SetActive(true);
+                _headDisplay.sprite = MomReferencer.instance._datas[_currentPlayer]._goodHead;
+            //if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
+            //{
+            //}
+            
+            
         }
   
 

@@ -199,8 +199,8 @@ public class SpamBehaviour : MonoBehaviour
         }
         else if (_colliDetection._inCollision)  //Test si les personnage sont en collision
         {
-            _animatorP2.SetTrigger("FirstCollision");
-            _animatorP1.SetTrigger("FirstCollision");
+            _animatorP2.SetBool("FirstCollision", true);
+            _animatorP1.SetBool("FirstCollision", true);
             
             Debug.Log("Lance FX Collision");
             if (_colliDetection._inCollision && _colliDetection._stopColliFX)
@@ -249,6 +249,9 @@ public class SpamBehaviour : MonoBehaviour
         _animatorP2.SetBool("Collision", false);
         _animatorP1.SetBool("isMoving", false);
         _animatorP2.SetBool("isMoving", false);
+        _animatorP1.SetBool("FirstCollision", false);
+        _animatorP2.SetBool("FirstCollision", false);
+        
     }
 
     void InstantiateFX(int FXindex)

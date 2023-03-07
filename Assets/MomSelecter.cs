@@ -5,13 +5,14 @@ using UnityEngine.Events;
 
 public class MomSelecter : MonoBehaviour
 {
-    public UnityEvent OnDefault, OnHover, OnSelected; 
+    public UnityEvent OnDefault, OnHover, OnSelected, OnCantSelect; 
 
     public  enum MomSelecterState
     {
         Default,
         Hover,
-        Selected
+        Selected,
+        CantSelect
     }
 
     [SerializeField] MomSelecterState momSelecterState;
@@ -33,6 +34,10 @@ public class MomSelecter : MonoBehaviour
             case MomSelecterState.Selected:
                 OnSelected?.Invoke();
                 momSelecterState = MomSelecterState.Selected;
+                break;
+            case MomSelecterState.CantSelect:
+                OnCantSelect?.Invoke();
+                momSelecterState = MomSelecterState.CantSelect;
                 break;
             
             default:
