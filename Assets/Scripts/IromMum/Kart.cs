@@ -58,30 +58,71 @@ public class Kart : MonoBehaviour
 
     void Update()
     {
+
         if (GameManager_IromMum.instance._canPlay)
         {
-            
-            ImpulseCharge();
-            Move();
- 
-        }
+            switch (_playerState)
+            {
+                case PlayerState.Standby:
+                    PowerCharge();
+                    break;
+                case PlayerState.Charging:
+                    PowerCharge();
 
+                    break;
+                case PlayerState.Propulse:
+                    PowerCharge();
+
+                    break;
+                default:
+                    break;
+            } 
+        }
     }
 
     private void FixedUpdate()
     {
-
-        if (_playerState == PlayerState.Propulse)
+        if (GameManager_IromMum.instance._canPlay)
         {
-            _driftPower -= 0.02f;
-            _rb.AddForce(transform.forward * 0.3f * (_power / 10), ForceMode.VelocityChange);
-            if (_driftPower <= 0)
+
+            Move();
+            PowerImpulse();
+            switch (_playerState)
             {
-                _driftPower = 0f;
-                _playerState = PlayerState.Standby;
-                _power = 0;
+                case PlayerState.Standby:
+                    
+                    break;
+                case PlayerState.Charging:
+                    break;
+                case PlayerState.Propulse:
+                    _driftPower -= 0.02f;
+                    if (_driftPower <= 0)
+                    {
+                       
+                        _power = Mathf.Lerp(_power, 0f, 2f * Time.fixedDeltaTime);
+                        if (_power <= 0.1f)
+                        {
+                            _playerState = PlayerState.Standby;
+                            _power = 0;
+                            _driftPower = 0;
+                        }
+                    }
+                    _rb.AddForce(transform.forward * 0.6f * (_power / 10F), ForceMode.VelocityChange);
+                    
+                    break;
+                default:
+                    break;
             }
+
+            if (_rb.velocity.sqrMagnitude > 324f)
+            {
+                _rb.velocity = _rb.velocity.normalized * 18f;
+                //Debug.Log(_rb.velocity.sqrMagnitude); 
+            }
+
         }
+
+       
     }
 
     void TouchBinding()
@@ -104,19 +145,21 @@ public class Kart : MonoBehaviour
     {
         if (Input.GetAxis(_horizontalInput) > 0)
         {
-            Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, _turnSpeed, 0) * Time.deltaTime);
+            Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, _turnSpeed, 0) * Time.fixedDeltaTime);
+
+           
             _rb.MoveRotation(_rb.rotation * deltaRotation);
         }
         if (Input.GetAxis(_horizontalInput) < 0)
         {
-            Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, -_turnSpeed, 0) * Time.deltaTime);
+            Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, -_turnSpeed, 0) * Time.fixedDeltaTime);
             _rb.MoveRotation(_rb.rotation * deltaRotation);
         }
     }
 
-    void ImpulseCharge()
+    void PowerCharge()
     {
-        if (_playerState != PlayerState.Propulse)
+        //if (_playerState != PlayerState.Propulse)
         {
 
             if (Input.GetButton(_actionInput))
@@ -126,20 +169,20 @@ public class Kart : MonoBehaviour
                 _playerState = PlayerState.Charging;
                 if (_power <= _maxPower)
                 {
-                    _power += Time.deltaTime * _chargeSpeed;
+                    _power += Time.fixedDeltaTime * _chargeSpeed;
 
                     if (_power < 4)
                     {
                         _animator.speed = 1.2f;
                         _yellowSteam?.Invoke();
                     }
-                    else if (_power > 4 && _power < 8)
+                    else if (_power < 8)
                     {
                         _animator.speed = 1.4f;
                         _orangeSteam?.Invoke();
 
                     }
-                    else if (_power > 8 && _power < 12)
+                    else if (_power < 12)
                     {
                         _animator.speed = 10f;
                         _violetSteam?.Invoke();
@@ -153,8 +196,8 @@ public class Kart : MonoBehaviour
 
                 _driftPower = 1;
                 
-                Vector3 Impulse = _power * transform.forward;
-                _rb.AddForce(Impulse, ForceMode.Impulse);
+                //Vector3 Impulse = _power * transform.forward;
+                //_rb.AddForce(Impulse, ForceMode.Impulse);
                 _playerState = PlayerState.Propulse;
               
                 
@@ -176,7 +219,35 @@ public class Kart : MonoBehaviour
                     Instantiate(_fxPropulse[2], _fxSpawnPoint);
                 }
 
-            } 
+                
+
+            }
+
+            if (Input.GetButtonDown(_actionInput))
+            {
+                _power = 0;
+            }
+        }
+
+    }
+
+    void PowerImpulse()
+    {
+        if (_playerState != PlayerState.Propulse)
+        {
+
+            
+            if (Input.GetButtonUp(_actionInput))
+            {
+
+                Vector3 Impulse = _power * transform.forward;
+                _rb.AddForce(Impulse, ForceMode.Impulse);
+                _playerState = PlayerState.Propulse;
+
+
+
+
+            }
         }
 
     }

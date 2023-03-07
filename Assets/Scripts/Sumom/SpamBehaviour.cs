@@ -199,7 +199,9 @@ public class SpamBehaviour : MonoBehaviour
         }
         else if (_colliDetection._inCollision)  //Test si les personnage sont en collision
         {
-
+            _animatorP2.SetTrigger("FirstCollision");
+            _animatorP1.SetTrigger("FirstCollision");
+            
             Debug.Log("Lance FX Collision");
             if (_colliDetection._inCollision && _colliDetection._stopColliFX)
             {

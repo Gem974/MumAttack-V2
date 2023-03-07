@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IronMum 2
+  m_Name: TshirtMat
   m_Shader: {fileID: 4800000, guid: 2c2cefb6802b6cd429dfbe4041764676, type: 3}
   m_ValidKeywords:
   - USE_CS
@@ -50,23 +50,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassTex:
-        m_Texture: {fileID: 2800000, guid: 31ea030e6226b8241a5cfea71dc780f1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 308ece58caac2cd489e4df7deedc1d2d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GroundTex:
-        m_Texture: {fileID: 2800000, guid: 9bcbdc52ab432e548a4571f15c8b977f, type: 3}
+        m_Texture: {fileID: 2800000, guid: d81d53b6e52be774da2e48cc92c734bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9bcbdc52ab432e548a4571f15c8b977f, type: 3}
-        m_Scale: {x: -0.67, y: -0.67}
+        m_Texture: {fileID: 2800000, guid: d81d53b6e52be774da2e48cc92c734bb, type: 3}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoGrassTex:
-        m_Texture: {fileID: 2800000, guid: 6ca5daa3415451940921fa7e2c3db9e8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7f25c6183047a8a4bb1552aab341ba92, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise:
@@ -109,7 +109,7 @@ Material:
     - _Mode: 0
     - _NearCameraSmoosh: 83.7
     - _NoisePower: 1.24
-    - _NumberOfStacks: 11.5
+    - _NumberOfStacks: 17
     - _OcclusionStrength: 1
     - _OffsetValue: 0.46
     - _Parallax: 0.02
@@ -138,19 +138,19 @@ Material:
     - _UseTP: 0
     - _UseVR: 0
     - _UseWC: 0
-    - _WindForce: 0.1
-    - _WindMovement: 0.1
+    - _WindForce: 0
+    - _WindMovement: 0
     - _WorldRotation: 0
     - _WorldScale: 10
     - _ZWrite: 1
     - __NumberOfStacks: 17
     m_Colors:
-    - _Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+    - _Color: {r: 0, g: 0.97868776, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GroundColor: {r: 1, g: 0, b: 0, a: 1}
     - _OffsetVector: {r: 0, g: 0, b: 0, a: 0}
     - _PJShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ProjectedShadowColor: {r: 0.24528301, g: 0.17678888, b: 0.17678888, a: 1}
+    - _ProjectedShadowColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     - _RimColor: {r: 0.277, g: 0.25819692, b: 0.1355532, a: 1}
-    - _SelfShadowColor: {r: 0.3733713, g: 0.4528302, b: 0.4528302, a: 1}
+    - _SelfShadowColor: {r: 0.31320754, g: 0.4167849, b: 0.5, a: 1}
   m_BuildTextureStacks: []
