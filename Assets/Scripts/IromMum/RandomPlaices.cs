@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomPlaices : MonoBehaviour
 {
-    [SerializeField] Transform _ground;
+
     [SerializeField] GameObject[] _plaices;
     [SerializeField] Collider _collider;
     [SerializeField] int _spwanedPlaices;
@@ -45,8 +45,11 @@ public class RandomPlaices : MonoBehaviour
 
                 int randomPlaices = Random.Range(0, _plaices.Length);
 
-                //float randomZ = Random.Range(-(_ground.transform.localScale.z / 2), (_ground.transform.localScale.z / 2));
-                //float randomX = Random.Range(-(_ground.transform.localScale.x / 2), (_ground.transform.localScale.x / 2));
+                //float randomZ = Random.Range(-(_collider.transform.localScale.z / 2), (_collider.transform.localScale.z / 2));
+                //float randomX = Random.Range(-(_collider.transform.localScale.x / 2), (_collider.transform.localScale.x / 2));
+                //Vector3 SpawnPoint = new Vector3(randomX, 0, randomZ);
+                //Debug.Log("SpawnPoint: X= " + randomX + " | Y = " + randomZ);
+
                 Vector3 SpawnPoint = RandomPointInBounds(_collider.bounds);
 
 
@@ -74,9 +77,9 @@ public class RandomPlaices : MonoBehaviour
     public Vector3 RandomPointInBounds(Bounds bounds)
     {
         return new Vector3(
-            Random.Range(bounds.min.x / 1.8f, bounds.max.x / 1.8f),
-            0.5f,
-            Random.Range(bounds.min.z / 1.8f, bounds.max.z / 1.8f)
+            Random.Range(bounds.min.x / 2, bounds.max.x / 2),
+            0f,
+            Random.Range(bounds.min.z / 2, bounds.max.z / 2)
         );
     }
     
