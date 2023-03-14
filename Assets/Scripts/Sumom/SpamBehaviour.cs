@@ -166,12 +166,17 @@ public class SpamBehaviour : MonoBehaviour
             InstantiateFX(1); //FX Course J1
         }
         
+
+
+
         if (Input.GetKeyDown(_pK2) || Input.GetKeyDown(_pG2))
         {
             _rb2.AddForce(-transform.right * impulseForce, ForceMode.Impulse);
             InstantiateFX(2); //FX Course J2
 
         }
+        
+
     }
 
     void ArrowsOff()
@@ -191,7 +196,8 @@ public class SpamBehaviour : MonoBehaviour
                 Debug.Log("FX J1 Avance sans collision");
                 _animatorP1.SetBool("isMoving", true);
             }
-            else if (_rb2.velocity.x < 0)
+            
+            if (_rb2.velocity.x < 0)
             {
                 Debug.Log("FX J2 Avance sans collision");
                 _animatorP2.SetBool("isMoving", true);

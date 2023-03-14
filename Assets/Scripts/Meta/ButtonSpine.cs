@@ -22,5 +22,15 @@ public class ButtonSpine : MonoBehaviour
         _skGraphic.Skeleton.SetSkin(skinName);
     }
 
+    public void WaitTime(float timeToWait)
+    {
+        StartCoroutine(Wait(timeToWait));
+    }
+
+    IEnumerator Wait(float timeToWait)
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
 
 }

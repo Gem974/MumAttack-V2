@@ -87,6 +87,9 @@ public class scenesManager : MonoBehaviour
         }
         else if (MetaGameManager.instance._currentStep >= MetaGameManager.instance._maxStep) //Fin du BroadCast
         {
+
+            _randomScene.Clear();
+            SetRandomScene();
             MetaGameManager.instance.ResetAll();
             LoadSpecificScene(10);
         }

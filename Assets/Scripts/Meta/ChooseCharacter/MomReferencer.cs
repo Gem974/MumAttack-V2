@@ -39,7 +39,7 @@ namespace META
 
         public void ShowButton()
         {
-            if (_playersSelector[0]._momChoosed && _playersSelector[1]._momChoosed)
+            if (_playersSelector[0]._momValidate && _playersSelector[1]._momValidate)
             {
                 _playBtn.gameObject.SetActive(true);
                 _playBtn.Select();

@@ -40,6 +40,7 @@ public class Kart : MonoBehaviour
     [SerializeField] Transform _fxSpawnPoint;
     [SerializeField] GameObject _fxCollision;
     [SerializeField] UnityEvent _yellowSteam, _orangeSteam, _violetSteam, _noSteam;
+    [SerializeField] Bubble _bubble;
 
     [Header("Sounds")]
     [SerializeField] AudioSource _source;
@@ -285,6 +286,7 @@ public class Kart : MonoBehaviour
         {
             foreach (ContactPoint contact in collision.contacts)
             {
+                _bubble._angryEvent?.Invoke();
                 Instantiate(_fxCollision, contact.point, Quaternion.identity);
             }
 

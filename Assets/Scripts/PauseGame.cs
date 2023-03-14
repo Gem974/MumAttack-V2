@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] GameObject _pausePanel;
+    [SerializeField] Button _backBtn;
     bool _canPause;
     void Start()
     {
@@ -22,7 +24,7 @@ public class PauseGame : MonoBehaviour
             {
                 _canPause = false;
                 _pausePanel.SetActive(true);
-
+                _backBtn.Select();
                 UnityEngine.Time.timeScale = 0;
 
             }
@@ -33,6 +35,7 @@ public class PauseGame : MonoBehaviour
             {
                 _canPause = true;
                 _pausePanel.SetActive(false);
+               
 
                 UnityEngine.Time.timeScale = 1;
 

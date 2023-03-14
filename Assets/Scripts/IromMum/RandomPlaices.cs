@@ -9,6 +9,7 @@ public class RandomPlaices : MonoBehaviour
     [SerializeField] Collider _collider;
     [SerializeField] int _spwanedPlaices;
     [SerializeField] int _maxPlaicesToSpawn = 50;
+    [SerializeField] float _zoneDivide;
 
     public static RandomPlaices instance;
 
@@ -77,9 +78,9 @@ public class RandomPlaices : MonoBehaviour
     public Vector3 RandomPointInBounds(Bounds bounds)
     {
         return new Vector3(
-            Random.Range(bounds.min.x / 2, bounds.max.x / 2),
+            Random.Range(bounds.min.x / _zoneDivide, bounds.max.x / _zoneDivide),
             0f,
-            Random.Range(bounds.min.z / 2, bounds.max.z / 2)
+            Random.Range(bounds.min.z / _zoneDivide, bounds.max.z / _zoneDivide)
         );
     }
     

@@ -9,11 +9,11 @@ namespace META
     public class SelectCharacter : MonoBehaviour
     {
 
-        [SerializeField] KeyCode _right, _left, _up, _down, _action, _action2;
+        //[SerializeField] KeyCode _right, _left, _up, _down, _action, _action2;
         [SerializeField] SelectCharacter _otherCharacter;
 
         [SerializeField] string _horizontalInput, _verticalInput, _actionInput, _altActionInput;
-        [SerializeField] float _startTime, _nextTime;
+        [SerializeField] float _startTime;
 
         [SerializeField] int _currentPlayer;
         [SerializeField] Animator _animator;
@@ -26,11 +26,14 @@ namespace META
 
         public bool _isPlayer1;
         public bool _momChoosed;
+        public bool _momValidate;
 
         void Start()
         {
-            _nextTime = Time.time + 2;
-          
+
+            _momValidate = false;
+
+
             TouchBinding();
             if (_isPlayer1)
             {
@@ -143,9 +146,9 @@ namespace META
                         {
                             Debug.Log("1_OK ");
                             _momChoosed = true; 
-                            MomReferencer.instance.ShowButton();
 
                             WichMom();
+                            MomReferencer.instance.ShowButton();
                             //DisplayScreenInfo();
                         }
                         else
@@ -197,6 +200,7 @@ namespace META
                         MetaGameManager.instance._player1 = MomReferencer.instance._datas[_currentPlayer];
                         _animator.SetTrigger("Select");
                         Debug.Log("1_BON" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
+                        _momValidate = true;
                     }
                     else
                     {
@@ -204,6 +208,7 @@ namespace META
                         _animator.SetTrigger("CantSelect");
                         
                         _momChoosed = false;
+                        _momValidate = false;
                         Debug.Log("1_NOT" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
 
                         _nameDisplay.text = "Select a Mom";
@@ -220,10 +225,13 @@ namespace META
                 {
                     if (_currentPlayer <= MomReferencer.instance._datas.Length - 1)
                     {
+                        DisplayScreenInfo();
                         ChangeStateMomSelection(false, true, _currentPlayer);
 
                         MetaGameManager.instance._player2 = MomReferencer.instance._datas[_currentPlayer];
                         _animator.SetTrigger("Select");
+
+                        _momValidate = true;
                         Debug.Log("2_BON" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
                     }
                     else
@@ -231,6 +239,7 @@ namespace META
                         ChangeStateMomSelection(false, false, _currentPlayer);
                         _animator.SetTrigger("CantSelect");
                         _momChoosed = false;
+                        _momValidate = false;
                         Debug.Log("2_NOT" + _currentPlayer + " " + MomReferencer.instance._datas.Length);
 
                         _nameDisplay.text = "Select a Mom";

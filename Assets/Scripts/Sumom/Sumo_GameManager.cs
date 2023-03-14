@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Spine.Unity;
 
 
 public class Sumo_GameManager : MonoBehaviour
 {
+
     public int _pointsP1, _pointsP2;
     //[SerializeField] int _totalRounds;
     [SerializeField] GameObject _gameOverPanel, _gameCanvas, _scores, _sound;
@@ -24,7 +26,10 @@ public class Sumo_GameManager : MonoBehaviour
     public ChromaticAberration _chroAbe;
     public DepthOfField _dop;
 
+    [Header("Set Spine")]
     public Animator[] _animator;
+    public SkeletonMecanim _skeletonMecanim1;
+    public SkeletonMecanim _skeletonMecanim2;
 
 
 
@@ -46,6 +51,8 @@ public class Sumo_GameManager : MonoBehaviour
     }
     private void Start()
     {
+        _skeletonMecanim1.skeleton.SetSkin(META.MetaGameManager.instance._player1._name);
+        _skeletonMecanim2.skeleton.SetSkin(META.MetaGameManager.instance._player2._name);
         _postProcess.profile.TryGet(out _chroAbe);
         _postProcess.profile.TryGet(out _dop);
         _gameCanvas.SetActive(true);

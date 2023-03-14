@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Utencil_Brawl;
+using Spine.Unity;
 
 
 public class UtencilBrawl_GameManager : MonoBehaviour
@@ -17,6 +18,11 @@ public class UtencilBrawl_GameManager : MonoBehaviour
     public bool _canPlay;
 
     public static UtencilBrawl_GameManager instance;
+
+    [Header("Set Spine")]
+
+    public SkeletonMecanim _skeletonMecanim1;
+    public SkeletonMecanim _skeletonMecanim2;
 
 
 
@@ -33,7 +39,8 @@ public class UtencilBrawl_GameManager : MonoBehaviour
 
     void Start()
     {
-       
+        _skeletonMecanim1.skeleton.SetSkin(META.MetaGameManager.instance._player1._name);
+        _skeletonMecanim2.skeleton.SetSkin(META.MetaGameManager.instance._player2._name);
         _canPlay = false;
     }
 
@@ -53,6 +60,7 @@ public class UtencilBrawl_GameManager : MonoBehaviour
         if (_J1._touches <= 0 )
         {
             Debug.Log("J2 Win");
+            _canPlay = false;
             _isGameStopped = true;
             _GOPanel.SetActive(true);
             GameOverBehaviour.instance.PlayerToWin(2);
@@ -62,6 +70,7 @@ public class UtencilBrawl_GameManager : MonoBehaviour
         else if (_J2._touches <= 0)
         {
             Debug.Log("J1 Win");
+            _canPlay = false;
             _isGameStopped = true;
             _GOPanel.SetActive(true);
             GameOverBehaviour.instance.PlayerToWin(1);
