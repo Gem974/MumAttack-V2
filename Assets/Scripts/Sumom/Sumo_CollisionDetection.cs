@@ -48,12 +48,14 @@ public class Sumo_CollisionDetection : MonoBehaviour
     {
         if (collision.gameObject.tag == "OffLimit")
         {
-            transform.Rotate(0.0f, 0.0f, 37.0f, Space.Self);
+            //transform.Rotate(0.0f, 0.0f, 37.0f, Space.Self);
+            _animator.SetTrigger("Fall");
             
         }
         else if (collision.gameObject.tag == "OffLimit2")
         {
-            transform.Rotate(0.0f, 0.0f, -37.0f, Space.Self);
+            //transform.Rotate(0.0f, 0.0f, -37.0f, Space.Self);
+            _animator.SetTrigger("Fall");
             
         }
         
@@ -63,12 +65,14 @@ public class Sumo_CollisionDetection : MonoBehaviour
     {
         if (other.gameObject.tag == "OffLimit")
         {
-            _gameManager.ResetRot(1);
+            //_gameManager.ResetRot(1);
+            _animator.SetTrigger("ComeBack");
             Debug.Log("STP");
         }
         else if (other.gameObject.tag == "OffLimit2")
         {
-            _gameManager.ResetRot(2);
+            _animator.SetTrigger("ComeBack");
+            //_gameManager.ResetRot(2);
         }
     }
 
