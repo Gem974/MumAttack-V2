@@ -288,6 +288,7 @@ public class Kart : MonoBehaviour
             {
                 _bubble._angryEvent?.Invoke();
                 Instantiate(_fxCollision, contact.point, Quaternion.identity);
+                PresentatorVoice.instance.StartSpeaking(true, false);
             }
 
         }

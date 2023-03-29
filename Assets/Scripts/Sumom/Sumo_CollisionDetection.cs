@@ -50,12 +50,15 @@ public class Sumo_CollisionDetection : MonoBehaviour
         {
             //transform.Rotate(0.0f, 0.0f, 37.0f, Space.Self);
             _animator.SetTrigger("Fall");
-            
+            PresentatorVoice.instance.StartSpeaking(false, false);
+
         }
         else if (collision.gameObject.tag == "OffLimit2")
         {
             //transform.Rotate(0.0f, 0.0f, -37.0f, Space.Self);
             _animator.SetTrigger("Fall");
+            PresentatorVoice.instance.StartSpeaking(false, false);
+            
             
         }
         
@@ -78,18 +81,18 @@ public class Sumo_CollisionDetection : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (transform.rotation.z != 0f)
-        {
-            if (collision.gameObject.tag == "PreOff")
-            {
-                Debug.Log("REMETE AOU DROITE LMKT");
-                _gameManager.ResetRot(1);
-            }
-            else if (collision.gameObject.tag == "PreOff2")
-            {
-                _gameManager.ResetRot(2);
-            } 
-        }
+        //if (transform.rotation.z != 0f)
+        //{
+        //    if (collision.gameObject.tag == "PreOff")
+        //    {
+        //        Debug.Log("REMETE AOU DROITE LMKT");
+        //        _gameManager.ResetRot(1);
+        //    }
+        //    else if (collision.gameObject.tag == "PreOff2")
+        //    {
+        //        _gameManager.ResetRot(2);
+        //    } 
+        //}
         
             
         

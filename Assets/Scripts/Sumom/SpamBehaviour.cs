@@ -19,6 +19,12 @@ public class SpamBehaviour : MonoBehaviour
     [Header("VFX Part")]
     [SerializeField] GameObject[] _VFX;
     [SerializeField] Transform[] _FXOrigins;
+    public enum PlayerDominant
+    {
+        None, Player1, Player2
+    }
+    public PlayerDominant _playerDominant;
+
 
     [Header("SFX Part")]
     public AudioSource _sfxManager; 
@@ -80,12 +86,12 @@ public class SpamBehaviour : MonoBehaviour
 
         if (_animatorP1.GetBool("isMoving"))
         {
-            Debug.Log("SoundON");
+            
             _sfxRun1.gameObject.SetActive(true);
         }
         else
         {
-            Debug.Log("SoundON");
+            
             _sfxRun1.gameObject.SetActive(false);
         }
 
@@ -205,6 +211,11 @@ public class SpamBehaviour : MonoBehaviour
         }
         else if (_colliDetection._inCollision)  //Test si les personnage sont en collision
         {
+            //PresentatorVoice.instance.StartSpeaking(true, true);
+            if (!_animatorP1.GetBool("FirstCollision") && !_animatorP2.GetBool("FirstCollision"))
+            {
+                PresentatorVoice.instance.StartSpeaking(true, true);   
+            }
             _animatorP2.SetBool("FirstCollision", true);
             _animatorP1.SetBool("FirstCollision", true);
             
@@ -224,16 +235,38 @@ public class SpamBehaviour : MonoBehaviour
 
             if (_rb1.velocity.x > -_rb2.velocity.x)
             {
+                if (_playerDominant == PlayerDominant.Player2)
+                {
+                    PresentatorVoice.instance.StartSpeaking(true, true);
+                    _playerDominant = PlayerDominant.Player1;
+                }
+                else if (_playerDominant == PlayerDominant.None)
+                {
+                    _playerDominant = PlayerDominant.Player1;
+                }
+
                 Debug.Log("FX Avantage J1");
                 _animatorP1.SetBool("isMoving", true);
                 if (_FXOrigins[2].childCount == 0)
                 {
                     Instantiate(_VFX[1], _FXOrigins[2]); 
+                   
                 }
                 _animatorP2.SetBool("isMoving", false);
             }
             else if (-_rb2.velocity.x > _rb1.velocity.x)
             {
+                if (_playerDominant == PlayerDominant.Player1)
+                {
+                    PresentatorVoice.instance.StartSpeaking(true, true);
+                    _playerDominant = PlayerDominant.Player2;
+                    
+                }
+                else if (_playerDominant == PlayerDominant.None)
+                {
+                    _playerDominant = PlayerDominant.Player2;
+                }
+            
                 Debug.Log("FX Avantage J2");
                 _animatorP1.SetBool("isMoving", false);
                 if (_FXOrigins[1].childCount == 0)

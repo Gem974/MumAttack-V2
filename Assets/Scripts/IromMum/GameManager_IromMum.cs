@@ -48,11 +48,13 @@ public class GameManager_IromMum : MonoBehaviour
         {
             _points1 += 1 * multiplier;
             _pointsTxt1.text = _points1.ToString();
+            PresentatorVoice.instance.StartSpeaking(true, true);
         }
         else
         {
             _points2 += 1 * multiplier; ;
             _pointsTxt2.text = _points2.ToString();
+            PresentatorVoice.instance.StartSpeaking(true, true);
         }
 
         if (_points1 > _points2)

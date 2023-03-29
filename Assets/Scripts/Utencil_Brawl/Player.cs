@@ -167,7 +167,7 @@ namespace Utencil_Brawl
                 _onShoot?.Invoke();
                 _shootCountdown = 1 / _shootRate;
                 //SFX Shoot
-                Debug.Log("MoveZ " + _move.z);
+                //Debug.Log("MoveZ " + _move.z);
             }
 
             #region //DO THE SAME THING BUT NOT OPTI
@@ -260,6 +260,7 @@ namespace Utencil_Brawl
             _onHit?.Invoke();
             //SFX Hit
             LifeChecker();
+            PresentatorVoice.instance.StartSpeaking(true, false);
         }
 
         void ClampDisplacement()
