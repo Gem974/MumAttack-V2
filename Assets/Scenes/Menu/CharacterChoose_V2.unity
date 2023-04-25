@@ -4332,6 +4332,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectJ2
       objectReference: {fileID: 0}
+    - target: {fileID: 4239337015629906505, guid: 52afc1d39ee7fdb4c93ec0e731b6541b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4239337015629906506, guid: 52afc1d39ee7fdb4c93ec0e731b6541b,
         type: 3}
       propertyPath: _isPlayer1
@@ -6507,6 +6512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SelectJ1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239337015629906505, guid: 52afc1d39ee7fdb4c93ec0e731b6541b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4239337015629906506, guid: 52afc1d39ee7fdb4c93ec0e731b6541b,
         type: 3}

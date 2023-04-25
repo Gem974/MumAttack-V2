@@ -28,6 +28,8 @@ public class Bullet : MonoBehaviour
     public MeshFilter _objectRenderer;
     public Mesh[] _meshes;
 
+    [Header("FXs")]
+    [SerializeField] GameObject _FXs;
 
 
     // Start is called before the first frame update
@@ -103,8 +105,16 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Destroyed");
-        Destroy(transform.gameObject);
+        if (other.tag != "Projectiles")
+        {
+            Debug.Log("Destroyed");
+            Destroy(transform.gameObject);
+        }
+        else if (other.tag == "Projectiles")
+        {
+            //Juicy HERE
+        }
+        
     }
 
 

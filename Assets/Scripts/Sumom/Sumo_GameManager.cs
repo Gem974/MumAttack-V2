@@ -12,7 +12,7 @@ public class Sumo_GameManager : MonoBehaviour
 
     public int _pointsP1, _pointsP2;
     //[SerializeField] int _totalRounds;
-    [SerializeField] GameObject _gameOverPanel, _gameCanvas, _scores, _sound;
+    [SerializeField] GameObject _gameOverPanel, _gameCanvas, _scores;
     [SerializeField] Sumo_CollisionDetection _colliDetection;
 
     [SerializeField] Text _playerWinsTxt, _discountTxt, _pointJ1Txt, _pointJ2Txt;
@@ -51,20 +51,45 @@ public class Sumo_GameManager : MonoBehaviour
     }
     private void Start()
     {
-        _skeletonMecanim1.skeleton.SetSkin(META.MetaGameManager.instance._player1._name);
-        _skeletonMecanim2.skeleton.SetSkin(META.MetaGameManager.instance._player2._name);
-        _postProcess.profile.TryGet(out _chroAbe);
-        _postProcess.profile.TryGet(out _dop);
+        StopAllCoroutines();
+
+        //APL CHROMATIC ABERRATION
+
+     
+
+        UnityEngine.Time.timeScale = 1;
+
         _gameCanvas.SetActive(true);
+
+        SpamBehaviour.instance._animatorP1.SetBool("isMoving", false);
+        SpamBehaviour.instance._animatorP2.SetBool("isMoving", false);
         _colliDetection = FindObjectOfType<Sumo_CollisionDetection>();
-        _launchPlayer = false;
-        _gameOver = false;
-       
-        RestartRound();
+
+        SpamBehaviour.instance._rb1.velocity = new Vector2(0f, 0f);
+        SpamBehaviour.instance._rb2.velocity = new Vector2(0f, 0f);
+        _colliDetection._stopColliFX = true;
+        _colliDetection._inCollision = false;
+        _player1.position = _startPos1;
+        _player2.position = _startPos2;
+        ResetRot(1);
+        ResetRot(2);
         // _totalRounds = 3;
 
 
 
+    }
+
+    public void StartGameAfterDiscount()
+    {
+        _skeletonMecanim1.skeleton.SetSkin(META.MetaGameManager.instance._player1._name);
+        _skeletonMecanim2.skeleton.SetSkin(META.MetaGameManager.instance._player2._name);
+        _postProcess.profile.TryGet(out _chroAbe);
+        _postProcess.profile.TryGet(out _dop);
+        _launchPlayer = false;
+        _gameOver = false;
+
+        _canPlay = true;
+        
     }
 
     private void Update()
@@ -92,7 +117,7 @@ public class Sumo_GameManager : MonoBehaviour
                 _canPlay = false;
             }
 
-            _sound.SetActive(false);
+            //_sound.SetActive(false);
             _discountTxt.gameObject.SetActive(false);
             //_scores.SetActive(false);
 
@@ -105,7 +130,7 @@ public class Sumo_GameManager : MonoBehaviour
         if (!_gameOver)
         {
 
-            
+            _canPlay = true;
             StopAllCoroutines();
 
             //APL CHROMATIC ABERRATION
@@ -114,7 +139,10 @@ public class Sumo_GameManager : MonoBehaviour
 
             UnityEngine.Time.timeScale = 1;
 
-            StartCoroutine(DiscountBeforeStart());
+            if (_pointsP2 > 0 || _pointsP1 > 0)
+            {
+                StartCoroutine(DiscountBeforeStart());  
+            }
             SpamBehaviour.instance._animatorP1.SetBool("isMoving", false);
             SpamBehaviour.instance._animatorP2.SetBool("isMoving", false);
             
@@ -126,6 +154,7 @@ public class Sumo_GameManager : MonoBehaviour
             _player2.position = _startPos2;
             ResetRot(1);
             ResetRot(2);
+            
         }
     }
 

@@ -10,6 +10,7 @@ TagManager:
   - Plaices
   - J2
   - J1
+  - Projectiles
   layers:
   - Default
   - TransparentFX

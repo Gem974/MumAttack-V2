@@ -1,21 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using META;
 
 public class DiscountBeforeStart : MonoBehaviour
 {
     [SerializeField] GameObject _gameManagerInScene;
+    [SerializeField] GameObject _timerGO, _soundStart;
     [SerializeField] Volume _postProcess;
     [SerializeField] DepthOfField _dop;
     [SerializeField] Text _discountTxt;
+
+
+    public static DiscountBeforeStart instance;
+
+
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Il y a plus d'une instance de GameManager dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
+
     void Start()
     {
+        
+    }
+
+    public void StartAfterTuto()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            GameManager_IromMum.instance._bubbleJ1.SetActive(true);
+            GameManager_IromMum.instance._bubbleJ2.SetActive(true); 
+        }
+        _soundStart.SetActive(true);
         StartCoroutine(Discount(_gameManagerInScene));
         _postProcess.profile.TryGet(out _dop);
     }
+
+
     IEnumerator Discount(GameObject GameManager)
     {
 

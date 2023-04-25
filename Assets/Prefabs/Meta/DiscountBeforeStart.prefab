@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1129767749232771563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManagerInScene: {fileID: 0}
+  _tutorialGO: {fileID: 0}
   _postProcess: {fileID: 1129767750062624928}
   _dop: {fileID: 0}
   _discountTxt: {fileID: 1129767749232771541}

@@ -27,6 +27,7 @@ public class Kart : MonoBehaviour
     [SerializeField] float _turnSpeed;
     [SerializeField] float _driftPower = 1;
     [SerializeField] Animator _animator;
+    [SerializeField] bool _canPropulse;
 
     [SerializeField] string _horizontalInput, _verticalInput, _actionInput;
 
@@ -55,6 +56,7 @@ public class Kart : MonoBehaviour
         DisplayInfoCharacter();
         TouchBinding();
         _playerState = PlayerState.Standby;
+        _canPropulse = true;
     }
 
     void Update()
@@ -158,76 +160,88 @@ public class Kart : MonoBehaviour
         }
     }
 
+    void CantSpam()
+    {
+        StartCoroutine(CantSpamCoroutine());
+    }
+
+    IEnumerator CantSpamCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _canPropulse = true;
+    }
+
     void PowerCharge()
     {
-        //if (_playerState != PlayerState.Propulse)
+        if (Input.GetButton(_actionInput))
         {
-
-            if (Input.GetButton(_actionInput))
+            if (_canPropulse)
             {
-                _animator.SetBool("Charge", true);
-                _animator.speed = 1f;
-                _playerState = PlayerState.Charging;
-                if (_power <= _maxPower)
-                {
-                    _power += Time.fixedDeltaTime * _chargeSpeed;
-
-                    if (_power < 4)
-                    {
-                        _animator.speed = 1.2f;
-                        _yellowSteam?.Invoke();
-                    }
-                    else if (_power < 8)
-                    {
-                        _animator.speed = 1.4f;
-                        _orangeSteam?.Invoke();
-
-                    }
-                    else if (_power < 12)
-                    {
-                        _animator.speed = 10f;
-                        _violetSteam?.Invoke();
-                    }
-                }
+                _canPropulse = false;
+                CantSpam();
             }
-            if (Input.GetButtonUp(_actionInput))
+            _animator.SetBool("Charge", true);
+            _animator.speed = 1f;
+            _playerState = PlayerState.Charging;
+            if (_power <= _maxPower)
             {
-                _animator.SetBool("Charge", false);
-                _noSteam?.Invoke();
-
-                _driftPower = 1;
-                
-                //Vector3 Impulse = _power * transform.forward;
-                //_rb.AddForce(Impulse, ForceMode.Impulse);
-                _playerState = PlayerState.Propulse;
-              
-                
+                _power += Time.fixedDeltaTime * _chargeSpeed;
 
                 if (_power < 4)
                 {
-
-                    Instantiate(_fxPropulse[0], _fxSpawnPoint);
-
+                    _animator.speed = 1.2f;
+                    _yellowSteam?.Invoke();
                 }
-                else if (_power > 4 && _power < 8)
+                else if (_power < 8)
                 {
-
-                    Instantiate(_fxPropulse[1], _fxSpawnPoint);
+                    _animator.speed = 1.4f;
+                    _orangeSteam?.Invoke();
 
                 }
-                else if (_power > 8 && _power < 12)
+                else if (_power < 12)
                 {
-                    Instantiate(_fxPropulse[2], _fxSpawnPoint);
+                    _animator.speed = 10f;
+                    _violetSteam?.Invoke();
                 }
-
-                
-
             }
+        }
+        if (Input.GetButtonUp(_actionInput))
+        {
+            _animator.SetBool("Charge", false);
+            _noSteam?.Invoke();
 
-            if (Input.GetButtonDown(_actionInput))
+            _driftPower = 1;
+
+            //Vector3 Impulse = _power * transform.forward;
+            //_rb.AddForce(Impulse, ForceMode.Impulse);
+            _playerState = PlayerState.Propulse;
+
+
+
+            if (_power < 4)
             {
-                _power = 0;
+
+                Instantiate(_fxPropulse[0], _fxSpawnPoint);
+
             }
+            else if (_power > 4 && _power < 8)
+            {
+
+                Instantiate(_fxPropulse[1], _fxSpawnPoint);
+
+            }
+            else if (_power > 8 && _power < 12)
+            {
+                Instantiate(_fxPropulse[2], _fxSpawnPoint);
+            }
+
+
+
+        }
+
+        if (Input.GetButtonDown(_actionInput) && !_canPropulse)
+        {
+            _power = 0;
         }
 
     }
@@ -271,7 +285,12 @@ public class Kart : MonoBehaviour
     {
         if (_multiplier <= 3)
         {
-            _multiplier++; 
+            _multiplier++;
+
+        }
+        else if (_multiplier >= 3)
+        {
+            PresentatorVoice.instance.StartSpeaking(true, true); // When the player get a lot of points  
         }
         yield return new WaitForSeconds(1f);
         _multiplier = 1;
@@ -298,13 +317,13 @@ public class Kart : MonoBehaviour
     {
         if (_isPlayer1)
         {
-            _kartMat.materials[0].SetColor("_BASE_COLOR", META.MetaGameManager.instance._player1._color);
-            _sprite.sprite = META.MetaGameManager.instance._player1._ironMum_sprite;
+            _kartMat.materials[0].SetColor("_BaseColor", META.MetaGameManager.instance._player1._color);
+            //_sprite.sprite = META.MetaGameManager.instance._player1._ironMum_sprite;
         }
         else if (!_isPlayer1)
         {
-            _kartMat.materials[0].SetColor("_BASE_COLOR", META.MetaGameManager.instance._player2._color);
-            _sprite.sprite = META.MetaGameManager.instance._player2._ironMum_sprite;
+            _kartMat.materials[0].SetColor("_BaseColor", META.MetaGameManager.instance._player2._color);
+            //_sprite.sprite = META.MetaGameManager.instance._player2._ironMum_sprite;
         }
         
     }

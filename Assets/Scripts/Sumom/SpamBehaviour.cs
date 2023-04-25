@@ -112,6 +112,9 @@ public class SpamBehaviour : MonoBehaviour
 
     void SetRandomKey()
     {
+        SpamBehaviour.instance._rb1.velocity = Vector3.zero;
+        SpamBehaviour.instance._rb2.velocity = Vector3.zero;
+
         int randomKey = Random.Range(0, 4);
 
         switch (randomKey)
@@ -168,6 +171,7 @@ public class SpamBehaviour : MonoBehaviour
 
         if (Input.GetKeyDown(_pK1) || Input.GetKeyDown(_pG1))
         {
+            Instantiate(_VFX[3], _FXOrigins[3].position, _FXOrigins[3].rotation);
             _rb1.AddForce(transform.right * impulseForce, ForceMode.Impulse);
             InstantiateFX(1); //FX Course J1
         }
@@ -177,6 +181,7 @@ public class SpamBehaviour : MonoBehaviour
 
         if (Input.GetKeyDown(_pK2) || Input.GetKeyDown(_pG2))
         {
+            Instantiate(_VFX[3], _FXOrigins[4].position, _FXOrigins[4].rotation);
             _rb2.AddForce(-transform.right * impulseForce, ForceMode.Impulse);
             InstantiateFX(2); //FX Course J2
 

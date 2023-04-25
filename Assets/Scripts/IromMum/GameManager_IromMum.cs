@@ -11,6 +11,7 @@ public class GameManager_IromMum : MonoBehaviour
     [Header("Systems")]
     public bool _canPlay;
     public int _points1, _points2;
+    public GameObject _bubbleJ1, _bubbleJ2;
 
     [Header("UI")]
     public TextMeshProUGUI _pointsTxt1, _pointsTxt2;
@@ -41,6 +42,7 @@ public class GameManager_IromMum : MonoBehaviour
 
 
 
+
     // Update is called once per frame
     public void AddPoints(bool isPlayer1, int multiplier)
     {
@@ -48,13 +50,13 @@ public class GameManager_IromMum : MonoBehaviour
         {
             _points1 += 1 * multiplier;
             _pointsTxt1.text = _points1.ToString();
-            PresentatorVoice.instance.StartSpeaking(true, true);
+            
         }
         else
         {
             _points2 += 1 * multiplier; ;
             _pointsTxt2.text = _points2.ToString();
-            PresentatorVoice.instance.StartSpeaking(true, true);
+            
         }
 
         if (_points1 > _points2)
@@ -96,6 +98,6 @@ public class GameManager_IromMum : MonoBehaviour
         Timer.instance.LaunchTimer();
         RandomPlaices.instance.StartRandomPlaices();
         _canPlay = true;
-
+        
     }
 }
