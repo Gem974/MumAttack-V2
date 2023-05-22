@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: MAanimSpine_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 537b4be9c54fc7647bdf40112d056d14, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
+  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
+  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}

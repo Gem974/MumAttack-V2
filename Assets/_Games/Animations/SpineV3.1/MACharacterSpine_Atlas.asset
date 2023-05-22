@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: MACharacterSpine_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: acb250fca763f674cb06d89021d1f85b, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 9236b8c50d1355b4fba171b5bc76cafb, type: 2}
+  - {fileID: 2100000, guid: ca1f05aa64c9df346b6b8294c731de64, type: 2}
+  - {fileID: 2100000, guid: 4ef8b391766f00044adbfbd1886539da, type: 2}
