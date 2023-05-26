@@ -25,5 +25,5 @@ MonoBehaviour:
   _ironMum_sprite: {fileID: 21300000, guid: a8777b68bcfa26e45a85d56c8bb82509, type: 3}
   sumom_animatorController: {fileID: 9100000, guid: 763c001fa22452c41af48fee41b5b3b5,
     type: 2}
-  utencil_animatorController: {fileID: 9100000, guid: 6f9b001e451579549b06effe0b7b273a,
+  utencil_animatorController: {fileID: 9100000, guid: a875ffd182f9c44409746db2b20719c3,
     type: 2}

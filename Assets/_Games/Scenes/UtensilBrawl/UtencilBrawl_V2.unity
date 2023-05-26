@@ -2624,7 +2624,7 @@ MonoBehaviour:
   _currentStep: 0
   _P1Wins: 0
   _P2Wins: 0
-  _player1: {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
+  _player1: {fileID: 11400000, guid: 0cfdcf28b96cfac47844dae3334302ad, type: 2}
   _player2: {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
   _winner: {fileID: 0}
   _topScorePoints: 
