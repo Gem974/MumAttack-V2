@@ -4674,7 +4674,7 @@ Animator:
   m_GameObject: {fileID: 804378130}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9d8f892cfd629794e91ec87515de2cbf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6274d5750d0128a47ba962bee448694b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4705,29 +4705,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
   - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
   - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
   - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
@@ -10184,8 +10161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint:
   - {fileID: 628803555}
-  - {fileID: 1256542293}
-  - {fileID: 710262797}
+  - {fileID: 628803555}
+  - {fileID: 628803555}
   _animator: {fileID: 1602921104}
 --- !u!95 &1602921104
 Animator:
@@ -11252,7 +11229,7 @@ Animator:
   m_GameObject: {fileID: 1761239810}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9d8f892cfd629794e91ec87515de2cbf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6274d5750d0128a47ba962bee448694b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11283,29 +11260,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: 2739e787651532a4c9a3692b223fb2b3, type: 2}
-  - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
-  - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
   - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}
   - {fileID: 2100000, guid: b542d01d4b36f96408038bb5168dd38b, type: 2}
   - {fileID: 2100000, guid: 97efd7123a6772b44b80ac546fb68cdf, type: 2}

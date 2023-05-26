@@ -87,12 +87,22 @@ public class scenesManager : MonoBehaviour
         }
         else if (MetaGameManager.instance._currentStep >= MetaGameManager.instance._maxStep) //Fin du BroadCast
         {
-
             _randomScene.Clear();
             SetRandomScene();
             MetaGameManager.instance.ResetAll();
             LoadSpecificScene(10);
         }
+    }
+
+
+    public void SetToFreeBrawl()
+    {
+        META.MetaGameManager.instance._gameMode = MetaGameManager.GameMode.FreeBrawl;
+    }
+
+    public void SetToBroadCast()
+    {
+        META.MetaGameManager.instance._gameMode = MetaGameManager.GameMode.BroadCast;
     }
 
     public void Quit()
