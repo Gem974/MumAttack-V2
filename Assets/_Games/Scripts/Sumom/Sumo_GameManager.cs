@@ -107,6 +107,7 @@ public class Sumo_GameManager : MonoBehaviour
         _gameOver = false;
 
         _canPlay = true;
+        PauseGame.instance.CanPause();
         //LaunchTimer();
         //StartCoroutine(Chrono());
         
@@ -153,6 +154,7 @@ public class Sumo_GameManager : MonoBehaviour
         }
         else if (_gameOver) // Fin de partie
         {
+            PauseGame.instance.CanTPause();
             _gameOverPanel.SetActive(true);
 
             if (_pointsP1 == 3 && _launchPlayer)

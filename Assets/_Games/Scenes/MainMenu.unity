@@ -1137,6 +1137,7 @@ GameObject:
   - component: {fileID: 666075729}
   - component: {fileID: 666075728}
   - component: {fileID: 666075732}
+  - component: {fileID: 666075733}
   m_Layer: 5
   m_Name: MenusCanvas
   m_TagString: Untagged
@@ -1244,6 +1245,21 @@ MonoBehaviour:
   _modePanel: {fileID: 571245334}
   _miniGamesPanel: {fileID: 571245334}
   _optionsPanel: {fileID: 571245334}
+--- !u!114 &666075733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666075727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74384ba0d8217634baf271508c8f8706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playPanel: {fileID: 1764483861}
+  _modePanel: {fileID: 571245334}
+  _playBtn: {fileID: 2022685849}
 --- !u!21 &733563421
 Material:
   serializedVersion: 8
@@ -28392,6 +28408,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3136938957545590453}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2022685849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3136938959013769762, guid: e83d81315a521214e85ee44ee7dc4a58,
+    type: 3}
+  m_PrefabInstance: {fileID: 3136938957545590453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368535582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!21 &2055244922
 Material:
   serializedVersion: 8

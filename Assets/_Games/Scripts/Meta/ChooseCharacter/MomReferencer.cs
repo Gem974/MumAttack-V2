@@ -32,9 +32,18 @@ namespace META
             }
         }
 
+
         private void Start()
         {
             _playBtn.gameObject.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (Input.GetButtonDown("Cancel"))
+            {
+                scenesManager.instance.LoadSpecificScene(0);
+            }
         }
 
         public void ShowButton()

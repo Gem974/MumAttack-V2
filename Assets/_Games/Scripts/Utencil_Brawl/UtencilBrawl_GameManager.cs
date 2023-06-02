@@ -54,6 +54,7 @@ public class UtencilBrawl_GameManager : MonoBehaviour
     {
         if (_isGameStopped == false && _J1._touches == 0 || _J2._touches == 0 && _isGameStopped == false)
         {
+            PauseGame.instance.CanTPause();
             Victory();
         }
 
@@ -95,6 +96,8 @@ public class UtencilBrawl_GameManager : MonoBehaviour
         Time.timeScale = 1;
         _isGameStopped = false;
         _canPlay = true;
+        PauseGame.instance.CanPause();
+
 
     }
 

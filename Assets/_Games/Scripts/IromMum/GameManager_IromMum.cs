@@ -72,6 +72,7 @@ public class GameManager_IromMum : MonoBehaviour
 
     public void GameOver()
     {
+        PauseGame.instance.CanTPause();
         _canPlay = false;
         if (_points1 > _points2)
         {
@@ -98,6 +99,7 @@ public class GameManager_IromMum : MonoBehaviour
         Timer.instance.LaunchTimer();
         RandomPlaices.instance.StartRandomPlaices();
         _canPlay = true;
-        
+        PauseGame.instance.CanPause();
+
     }
 }

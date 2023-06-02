@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MomSelecter_Rachel_Pref Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4473553196718220263, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4473553197124085620, guid: 3da6a8a5e5d15064c9f722d2b68e3cfc,
         type: 3}
       propertyPath: m_LocalPosition.y

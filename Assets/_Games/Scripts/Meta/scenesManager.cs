@@ -95,6 +95,15 @@ public class scenesManager : MonoBehaviour
     }
 
 
+    public void PauseBackToMainMenu()
+    {
+        _randomScene.Clear();
+        SetRandomScene();
+        MetaGameManager.instance.ResetAll();
+        LoadSpecificScene(0);
+    }
+
+
     public void SetToFreeBrawl()
     {
         META.MetaGameManager.instance._gameMode = MetaGameManager.GameMode.FreeBrawl;

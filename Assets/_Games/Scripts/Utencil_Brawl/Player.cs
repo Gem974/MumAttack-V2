@@ -65,13 +65,16 @@ namespace Utencil_Brawl
             {
                 _circleFill.fillAmount = _shootCountdown;
 
-                if (Input.GetButtonDown("Fire_P1") && _isPlayerOne)
+                if (PauseGame.instance._canPause)
                 {
-                    Shoot();
-                }
-                if (Input.GetButtonDown("Fire_P2") && !_isPlayerOne)
-                {
-                    Shoot();
+                    if (Input.GetButtonDown("Fire_P1") && _isPlayerOne)
+                    {
+                        Shoot();
+                    }
+                    if (Input.GetButtonDown("Fire_P2") && !_isPlayerOne)
+                    {
+                        Shoot();
+                    } 
                 } 
             }
         }
@@ -81,11 +84,14 @@ namespace Utencil_Brawl
         {
             if (UtencilBrawl_GameManager.instance._canPlay)
             {
-                //Movement
-                movePlayer();
+                if (PauseGame.instance._canPause)
+                {
+                    //Movement
+                    movePlayer();
 
-                //_ShootCountdown Constently dimminushing
-                _shootCountdown -= Time.deltaTime; 
+                    //_ShootCountdown Constently dimminushing
+                    _shootCountdown -= Time.deltaTime;  
+                }
             }
 
         }
