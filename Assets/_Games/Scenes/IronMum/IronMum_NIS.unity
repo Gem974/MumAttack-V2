@@ -2191,7 +2191,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 47.241173
+  field of view: 47.24116
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2217,7 +2217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.9619057, y: 39.299835, z: -25.033674}
+  m_LocalPosition: {x: 2.9619024, y: 39.299835, z: -25.033674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3346,13 +3346,79 @@ PrefabInstance:
       objectReference: {fileID: 1231866499}
     - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
+      propertyPath: _move.m_Id
+      value: 1b399f70-b1f5-4acc-afad-c26578237f91
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _inputAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 03b5ee03d9bb3824f8c1ffe2e6fff6cf,
+        type: 3}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
       propertyPath: _chargeSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
+      propertyPath: _move.m_Name
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Id
+      value: 881a4afe-de1b-436b-b6e4-723d46e8180a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
       propertyPath: _timeBeforeSpam
       value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Name
+      value: Action Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Actions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Bindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Actions.Array.data[0].m_Id
+      value: 87054cdd-b217-4db3-8e2b-e61939d804ff
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Bindings.Array.data[0].m_Id
+      value: 0f76e523-b71f-46c9-86b2-b9742bc585f0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Actions.Array.data[0].m_Name
+      value: New action
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Actions.Array.data[0].m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Bindings.Array.data[0].m_Action
+      value: New action
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Actions.Array.data[0].m_ExpectedControlType
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 6627102417993501202, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
@@ -3439,6 +3505,12 @@ PrefabInstance:
 --- !u!1 &534399530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5765190834760816086, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+    type: 3}
+  m_PrefabInstance: {fileID: 534399529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &534399531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6627102417993501203, guid: 0f9faa31f599a81428313d2a5cd0a47e,
     type: 3}
   m_PrefabInstance: {fileID: 534399529}
   m_PrefabAsset: {fileID: 0}
@@ -4960,7 +5032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196643380}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.9619057, y: 39.299835, z: -25.033674}
+  m_LocalPosition: {x: 2.9619024, y: 39.299835, z: -25.033674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4992,8 +5064,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
+      propertyPath: _move.m_Id
+      value: ea3bf8d2-ad28-4f9e-bf8c-d0c361c10fe7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
       propertyPath: _chargeSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _move.m_Name
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Id
+      value: 2342997e-f635-46ec-b627-35567ec4dfd4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _actionMap.m_Name
+      value: Action Map
       objectReference: {fileID: 0}
     - target: {fileID: 6627102417993501202, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
@@ -5100,6 +5192,95 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1207739913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1207739916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6627102417993501203, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1207739913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1207739917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207739916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e855b0909ab91b54f843da95a76af63a,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8714ec69-6c73-43e8-9afc-9adf656d84a5
+    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c788be57-c7ab-4c4d-9543-49318fe3bf8f
+    m_ActionName: Player1/Action[/Keyboard/q,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1207739920}
+        m_TargetAssemblyTypeName: Kart, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a634e5a5-3c12-4671-a2e5-098eae0780fe
+    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1207739920}
+        m_TargetAssemblyTypeName: Kart, Assembly-CSharp
+        m_MethodName: OnAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 58a39e7d-3408-48e2-806d-2f05953dfb67
+    m_ActionName: Player2/Action[/Keyboard/ctrl,/DualShock4GamepadHID/buttonSouth]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player2
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1207739920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1207739913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207739916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6400fda5d5e4cc74989d3e6acddcdf8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1231866499 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3270141567465888479, guid: 0f9faa31f599a81428313d2a5cd0a47e,
@@ -5509,7 +5690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1568147055}
   - component: {fileID: 1568147054}
-  - component: {fileID: 1568147053}
+  - component: {fileID: 1568147056}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -5517,25 +5698,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1568147053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1568147052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1568147054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5566,6 +5728,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1568147056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568147052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!1 &1601378894
 GameObject:
   m_ObjectHideFlags: 0
@@ -8064,6 +8265,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 534399529}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6627102418175311932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534399531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e855b0909ab91b54f843da95a76af63a,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6627102418175311933}
+        m_TargetAssemblyTypeName: Kart, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8714ec69-6c73-43e8-9afc-9adf656d84a5
+    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6627102418175311933}
+        m_TargetAssemblyTypeName: Kart, Assembly-CSharp
+        m_MethodName: OnAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c788be57-c7ab-4c4d-9543-49318fe3bf8f
+    m_ActionName: Player1/Action[/Keyboard/q,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a634e5a5-3c12-4671-a2e5-098eae0780fe
+    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 58a39e7d-3408-48e2-806d-2f05953dfb67
+    m_ActionName: Player2/Action[/Keyboard/ctrl,/DualShock4GamepadHID/buttonSouth]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &6627102418175311933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+    type: 3}
+  m_PrefabInstance: {fileID: 534399529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534399531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6400fda5d5e4cc74989d3e6acddcdf8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6818827508418367656
 GameObject:
   m_ObjectHideFlags: 0
