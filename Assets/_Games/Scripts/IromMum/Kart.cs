@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
-
+using UnityEngine.InputSystem.Users;
 
 public class Kart : MonoBehaviour
 {
@@ -53,17 +53,15 @@ public class Kart : MonoBehaviour
 
     private Vector2 _moveInput = Vector2.zero;
     private bool _actionNewInput = false;
-
+    private PlayerInput _playerInput;
     private void Start()
     {
-        if(_isPlayer1)
-            Debug.Log("P1 : " + Gamepad.current);
-        else
-            Debug.Log("P2 : " + Gamepad.current);
         DisplayInfoCharacter();
         //TouchBinding();
         _playerState = PlayerState.Standby;
         _canPropulse = true;
+        _playerInput = GetComponent<PlayerInput>();
+        InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
     }
 
     public void OnMove(InputAction.CallbackContext context)
