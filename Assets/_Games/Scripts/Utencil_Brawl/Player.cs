@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 namespace Utencil_Brawl
 {
@@ -41,9 +42,17 @@ namespace Utencil_Brawl
 
         public UnityEvent _onHit, _onShoot, _Startrun, _Stoprun;
 
+        private Vector2 _moveInput = Vector2.zero;
+        private bool _actionInput = false;
+        private PlayerInput _playerInput;
 
         void Start()
         {
+            //Liaison avec le Player Input
+            _playerInput = GetComponent<PlayerInput>();
+            //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
+            InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
+
             //Debug.Log(_Touches);
             _progress = _shootCountdown;
             _shootCountdown -= Time.deltaTime;
@@ -58,6 +67,37 @@ namespace Utencil_Brawl
             LifeChecker();
         }
 
+        //Event pour les touches de déplacement 
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            //On se contente de récupérer le Vecteur2 des touches de déplacement
+            _moveInput = context.ReadValue<Vector2>();
+        }
+
+        //Event pour la touche d'action
+        public void OnAction(InputAction.CallbackContext context)
+        {
+            _actionInput = context.action.triggered;
+        }
+
+        //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
+        public void OnReady(InputAction.CallbackContext context)
+        {
+            Tutorials.instance.ReadyChecker(_isPlayerOne);
+        }
+
+        //Passer de l'action map Tuto (get ready) à l'action map de jeu
+        public void ChangeActionMap()
+        {
+            if (_isPlayerOne)
+            {
+                _playerInput.SwitchCurrentActionMap("Player1");
+            }
+            else
+            {
+                _playerInput.SwitchCurrentActionMap("Player2");
+            }
+        }
 
         void Update()
         {
@@ -67,14 +107,18 @@ namespace Utencil_Brawl
 
                 if (PauseGame.instance._canPause)
                 {
-                    if (Input.GetButtonDown("Fire_P1") && _isPlayerOne)
+                    //if (Input.GetButtonDown("Fire_P1") && _isPlayerOne)
+                    //{
+                    //    Shoot();
+                    //}
+                    //if (Input.GetButtonDown("Fire_P2") && !_isPlayerOne)
+                    //{
+                    //    Shoot();
+                    //} 
+                    if (_actionInput)
                     {
                         Shoot();
                     }
-                    if (Input.GetButtonDown("Fire_P2") && !_isPlayerOne)
-                    {
-                        Shoot();
-                    } 
                 } 
             }
         }
@@ -99,12 +143,12 @@ namespace Utencil_Brawl
 
         public void movePlayer()
         {
-            if (_isPlayerOne)
-            {
-                if (Input.GetAxis("Vertical_P1") != 0)
+            //if (_isPlayerOne)
+            //{
+                if (/*Input.GetAxis("Vertical_P1") != 0*/ _moveInput.y != 0)
                 {
                     //Vector2 Axis created in OldInputSystem
-                    _move = new Vector3(0f, 0f, Input.GetAxis("Vertical_P1"));
+                    _move = new Vector3(0f, 0f, /*Input.GetAxis("Vertical_P1")*/ _moveInput.y);
                     //SFX Run on Loop
                     _Startrun?.Invoke();
 
@@ -121,25 +165,25 @@ namespace Utencil_Brawl
                 }
 
 
-            }
-            else if (!_isPlayerOne)
-            {
-                //Vector2 Axis created in OldInputSystem
-                if (Input.GetAxis("Vertical_P2") != 0)
-                {
-                    _move = new Vector3(0f, 0f, Input.GetAxis("Vertical_P2"));
+            //}
+            //else if (!_isPlayerOne)
+            //{
+            //    //Vector2 Axis created in OldInputSystem
+            //    if (Input.GetAxis("Vertical_P2") != 0)
+            //    {
+            //        _move = new Vector3(0f, 0f, Input.GetAxis("Vertical_P2"));
 
-                    transform.Translate(_move * _moveSpeed * Time.deltaTime, Space.World);
-                    _animator.SetTrigger("Run");
+            //        transform.Translate(_move * _moveSpeed * Time.deltaTime, Space.World);
+            //        _animator.SetTrigger("Run");
 
-                    ClampDisplacement();
-                }
-                else
-                {
-                    _move = Vector3.zero;
-                    _animator.SetTrigger("Static");
-                }
-            }
+            //        ClampDisplacement();
+            //    }
+            //    else
+            //    {
+            //        _move = Vector3.zero;
+            //        _animator.SetTrigger("Static");
+            //    }
+            //}
 
             
         }
