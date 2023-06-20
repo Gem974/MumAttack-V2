@@ -14,7 +14,7 @@ public class DiscountBeforeStart : MonoBehaviour
     [SerializeField] Volume _postProcess;
     [SerializeField] DepthOfField _dop;
     [SerializeField] Text _discountTxt;
-
+    
 
     public static DiscountBeforeStart instance;
 
@@ -77,8 +77,8 @@ public class DiscountBeforeStart : MonoBehaviour
 
         //Lance toute les fonctions de Start
         GameManager.SendMessage("StartGameAfterDiscount");
-
-
+        
+        
 
     }
 }

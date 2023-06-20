@@ -60,29 +60,54 @@ public class Kart : MonoBehaviour
         //TouchBinding();
         _playerState = PlayerState.Standby;
         _canPropulse = true;
+        //Liaison avec le Player Input
         _playerInput = GetComponent<PlayerInput>();
+        //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
     }
 
+    //Event pour les touches de déplacement 
     public void OnMove(InputAction.CallbackContext context)
     {
+        //On se contente de récupérer le Vecteur2 des touches de déplacement
         _moveInput = context.ReadValue<Vector2>();
     }
 
+    //Event pour la touche d'action
     public void OnAction(InputAction.CallbackContext context)
     {
-        //_actionNewInput = context.ReadValue<bool>();
+        //Equivaut a un GetKeyDown (appuie sur le bouton)
          context.action.started += context =>
          {
              _actionNewInput = true;
          };
 
+        //Equivaut a un GetKeyUp (quand on relache le bouton)
         context.action.canceled += context =>
         {
             RealeshPower();
             PowerImpulse();
             _actionNewInput = false;
         };
+    }
+
+    //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
+    public void OnReady(InputAction.CallbackContext context)
+    {
+            Tutorials.instance.ReadyChecker(_isPlayer1);  
+    }
+
+    //Passer de l'action map Tuto (get ready) à l'action map de jeu
+    public void ChangeActionMap()
+    {
+        if (_isPlayer1)
+        {
+            _playerInput.SwitchCurrentActionMap("Player1");
+        }
+        else
+        {
+            _playerInput.SwitchCurrentActionMap("Player2");
+        }
     }
 
     void Update()

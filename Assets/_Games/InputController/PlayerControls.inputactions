@@ -228,6 +228,84 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "TutoP1",
+            "id": "b7a85955-85d9-486e-941c-990063a298c4",
+            "actions": [
+                {
+                    "name": "Ready",
+                    "type": "Button",
+                    "id": "df65e17c-8ece-46c6-be4b-bd6e1409faeb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bf576e0d-4ff8-4eb7-b54d-49f0eb445c35",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6bf8a51-c8c2-4b24-9332-f2893064f3b8",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TutoP2",
+            "id": "1e1bec2a-250a-45a4-b2f0-061a5faad1fd",
+            "actions": [
+                {
+                    "name": "Ready",
+                    "type": "Button",
+                    "id": "7289ac76-913f-4521-a01b-3c15cb364486",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9380c500-81de-4221-bfd8-b2b608537280",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "afd3e1dc-e431-43e1-a8c2-e59b5623e518",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

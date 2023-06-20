@@ -2191,7 +2191,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 47.24116
+  field of view: 47.241165
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2217,7 +2217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.961903, y: 39.29983, z: -25.03367}
+  m_LocalPosition: {x: 2.961903, y: 39.29983, z: -25.033669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5032,7 +5032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196643380}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.961903, y: 39.29983, z: -25.03367}
+  m_LocalPosition: {x: 2.961903, y: 39.29983, z: -25.033669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5264,9 +5264,29 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 58a39e7d-3408-48e2-806d-2f05953dfb67
     m_ActionName: Player2/Action[/Keyboard/ctrl,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: df65e17c-8ece-46c6-be4b-bd6e1409faeb
+    m_ActionName: TutoP1/Ready[/XInputControllerWindows/start,/DualShock4GamepadHID/start,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1207739920}
+        m_TargetAssemblyTypeName: Kart, Assembly-CSharp
+        m_MethodName: OnReady
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7289ac76-913f-4521-a01b-3c15cb364486
+    m_ActionName: TutoP2/Ready[/XInputControllerWindows/start,/DualShock4GamepadHID/start,/Keyboard/ctrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: Player2
+  m_DefaultActionMap: 1e1bec2a-250a-45a4-b2f0-061a5faad1fd
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1207739920 stripped
@@ -8331,9 +8351,29 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 58a39e7d-3408-48e2-806d-2f05953dfb67
     m_ActionName: Player2/Action[/Keyboard/ctrl,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6627102418175311933}
+        m_TargetAssemblyTypeName: Kart, Assembly-CSharp
+        m_MethodName: OnReady
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: df65e17c-8ece-46c6-be4b-bd6e1409faeb
+    m_ActionName: TutoP1/Ready[/XInputControllerWindows/start,/DualShock4GamepadHID/start,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7289ac76-913f-4521-a01b-3c15cb364486
+    m_ActionName: TutoP2/Ready[/XInputControllerWindows/start,/DualShock4GamepadHID/start,/Keyboard/ctrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: Player1
+  m_DefaultActionMap: TutoP1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &6627102418175311933 stripped
