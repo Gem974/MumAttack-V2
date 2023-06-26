@@ -33,10 +33,12 @@ public class ScoreController_DarTeat : MonoBehaviour
         if(playerId == 1)
         {
             _currentScorePlayer1 += value;
+            _successfulTeatsThrowingPlayer1++;
         }
         else if(playerId == 2)
         {
             _currentScorePlayer2 += value;
+            _successfulTeatsThrowingPlayer2++;
         }
 
         _currentScoresText.text = string.Format("{0} | {1}", _currentScorePlayer1, _currentScorePlayer2);
