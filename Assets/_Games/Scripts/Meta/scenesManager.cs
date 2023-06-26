@@ -32,7 +32,7 @@ public class scenesManager : MonoBehaviour
     {
         if (_isNotDestroyable)
         {
-            SetRandomScene(); 
+           // SetRandomScene(); 
 
         }
     }

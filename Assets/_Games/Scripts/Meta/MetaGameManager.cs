@@ -50,7 +50,7 @@ namespace META
         void Start()
         {
             DontDestroyOnLoad(this.gameObject);
-            _currentStep = 0;
+            _currentStep = 1;
             _gameMode = GameMode.None;
         }
 
@@ -82,7 +82,7 @@ namespace META
         {
             _player1 = null;
             _player2 = null;
-            _currentStep = 0;
+            _currentStep = 1;
             _gameMode = GameMode.None;
         }
 

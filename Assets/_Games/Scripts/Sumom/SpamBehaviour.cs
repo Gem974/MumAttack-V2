@@ -67,12 +67,12 @@ public class SpamBehaviour : MonoBehaviour
         {
             FXSystem();
             SpamBehave(_impulseForce);
-            _arrows[4].SetActive(true);
+            //_arrows[4].SetActive(true);
             
         }
         else
         {
-            _arrows[4].SetActive(false); //Désactive les flèches
+            //_arrows[4].SetActive(false); //Désactive les flèches
         }
 
         if (_animatorP2.GetBool("isMoving"))    

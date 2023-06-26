@@ -44,14 +44,24 @@ public class DiscountBeforeStart : MonoBehaviour
             GameManager_IromMum.instance._bubbleJ2.SetActive(true); 
         }
         _soundStart.SetActive(true);
-        StartCoroutine(Discount(_gameManagerInScene));
+        StartCoroutine(Discount());
         _postProcess.profile.TryGet(out _dop);
     }
 
-
-    IEnumerator Discount(GameObject GameManager)
+    public void RestartDiscount()
     {
+        StartCoroutine(Discount());
+        PauseGame.instance.CanPause();
+        
 
+    }
+
+
+
+
+    IEnumerator Discount()
+    {
+        PauseGame.instance.CanTPause();
         _discountTxt.gameObject.SetActive(true);
         PresentatorVoice.instance.DiscountPresentator(3);
         _discountTxt.text = "3";
@@ -66,6 +76,7 @@ public class DiscountBeforeStart : MonoBehaviour
         _discountTxt.text = "START !";
         yield return new WaitForSeconds(1f);
         _discountTxt.gameObject.SetActive(false);
+        PauseGame.instance.CanPause();
         
         //APL DepthOfField
         while (_dop.focusDistance.value <= 10f)
@@ -76,7 +87,7 @@ public class DiscountBeforeStart : MonoBehaviour
         }
 
         //Lance toute les fonctions de Start
-        GameManager.SendMessage("StartGameAfterDiscount");
+        _gameManagerInScene.SendMessage("StartGameAfterDiscount");
 
 
 

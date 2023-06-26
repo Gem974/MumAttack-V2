@@ -21,8 +21,6 @@ public class Sumo_GameManager : MonoBehaviour
     [SerializeField] Vector2 _startPos1, _startPos2;
     [SerializeField] Quaternion _playersRot;
 
-    [SerializeField] float _value;
-
     [SerializeField] Volume _postProcess;
     public ChromaticAberration _chroAbe;
     public DepthOfField _dop;
@@ -32,9 +30,9 @@ public class Sumo_GameManager : MonoBehaviour
     public SkeletonRenderer _skeletonMecanim1;
     public SkeletonRenderer _skeletonMecanim2;
 
-    [Header("Chrono")]
-    public int _timerStart;
-    public TextMeshProUGUI _timerTxt;
+    //[Header("Chrono")]
+    //public int _timerStart;
+    //public TextMeshProUGUI _timerTxt;
     
 
 
@@ -113,35 +111,35 @@ public class Sumo_GameManager : MonoBehaviour
         
     }
 
-    public void LaunchTimer()
-    {
-        StopCoroutine(TimerBehaviour());
-        StartCoroutine(TimerBehaviour());
-    }
+    //public void LaunchTimer()
+    //{
+    //    StopCoroutine(TimerBehaviour());
+    //    StartCoroutine(TimerBehaviour());
+    //}
 
-    IEnumerator TimerBehaviour()
-    {
-        _timerTxt.text = _timerStart.ToString();
+    //IEnumerator TimerBehaviour()
+    //{
+    //    _timerTxt.text = _timerStart.ToString();
 
-        while (_timerStart >= -1)
-        {
-            yield return new WaitForSeconds(1f);
-            _timerStart--;
+    //    while (_timerStart >= -1)
+    //    {
+    //        yield return new WaitForSeconds(1f);
+    //        _timerStart--;
 
-            if (_timerStart <= 0)
-            {
-                _timerTxt.text = _timerStart.ToString();
-                _gameOver = true;
-                StopAllCoroutines();
+    //        if (_timerStart <= 0)
+    //        {
+    //            _timerTxt.text = _timerStart.ToString();
+    //            _gameOver = true;
+    //            StopAllCoroutines();
 
-            }
-            else
-            {
-                _timerTxt.text = _timerStart.ToString();
-            }
+    //        }
+    //        else
+    //        {
+    //            _timerTxt.text = _timerStart.ToString();
+    //        }
 
-        }
-    }
+    //    }
+    //}
         private void Update()
     {
 
