@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 namespace META
 {
@@ -28,13 +30,22 @@ namespace META
         public bool _momChoosed;
         public bool _momValidate;
 
+        private Vector2 _moveInput = Vector2.zero;
+        private bool _actionNewInput = false;
+        private bool _cancelInput = false;
+        private PlayerInput _playerInput;
+
         void Start()
         {
+            //Liaison avec le Player Input
+            _playerInput = GetComponent<PlayerInput>();
+            //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
+            InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
 
             _momValidate = false;
 
 
-            TouchBinding();
+            //TouchBinding();
             if (_isPlayer1)
             {
                 _currentPlayer = 0;
@@ -50,25 +61,38 @@ namespace META
             StartCoroutine(SelectMom());
         }
 
+        //Event pour les touches de déplacement 
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            //On se contente de récupérer le Vecteur2 des touches de déplacement
+            _moveInput = context.ReadValue<Vector2>();
+        }
+
+        //Event pour la touche d'action
+        public void OnAction(InputAction.CallbackContext context)
+        {
+            _actionNewInput = context.action.triggered;
+        }
+
+        //Event pour la touche cancel
+        public void OnCancel(InputAction.CallbackContext context)
+        {
+            _cancelInput = context.action.triggered;
+        }
 
         // Update is called once per frame
-        void Update()
-        {
-
-        
-
-
-
-#if UNITY_EDITOR
-            string[] joystickNames = Input.GetJoystickNames();
-            for (int i = 0; i < joystickNames.Length; i++)
-            {
-                Debug.Log("Manette " + (i + 1) + " : " + joystickNames[i]);
-            }
-#endif
+        //        void Update()
+        //        {
+        //#if UNITY_EDITOR
+        //            string[] joystickNames = Input.GetJoystickNames();
+        //            for (int i = 0; i < joystickNames.Length; i++)
+        //            {
+        //                Debug.Log("Manette " + (i + 1) + " : " + joystickNames[i]);
+        //            }
+        //#endif
 
 
-        }
+        //        }
 
         void TouchBinding()
         {
@@ -115,7 +139,7 @@ namespace META
             {
                 if (!_momChoosed)
                 {
-                    if (Input.GetAxis(_horizontalInput) > 0f) //NextMom
+                    if (/*Input.GetAxis(_horizontalInput) > 0f*/ _moveInput.x > 0f) //NextMom
                     {
                         Debug.Log("Input:" + _horizontalInput);
 
@@ -128,7 +152,7 @@ namespace META
 
                         yield return new WaitForSeconds(0.2f);
                     }
-                    else if (Input.GetAxis(_horizontalInput) < 0f) //PreviousMom
+                    else if (/*Input.GetAxis(_horizontalInput) < 0f*/ _moveInput.x < 0f) //PreviousMom
                     {
                         Debug.Log("Input:" + _horizontalInput);
 
@@ -140,7 +164,7 @@ namespace META
                         ChangeStateMomSelection(true, false, _currentPlayer);
                         yield return new WaitForSeconds(0.2f);
                     }
-                    else if (Input.GetButtonDown(_actionInput)) //SelectMom
+                    else if (/*Input.GetButtonDown(_actionInput)*/ _actionNewInput) //SelectMom
                     {
                         if ((_otherCharacter._currentPlayer != _currentPlayer) || ( (_otherCharacter._currentPlayer == _currentPlayer) && !_otherCharacter._momChoosed))
                         {
@@ -168,7 +192,7 @@ namespace META
                 }
                 else
                 {
-                    if (Input.GetButtonDown(_altActionInput)) //UnselectMom
+                    if (/*Input.GetButtonDown(_altActionInput)*/ _cancelInput) //UnselectMom
                     {
                         _momChoosed = false;
                         _animator.SetTrigger("UnSelect");

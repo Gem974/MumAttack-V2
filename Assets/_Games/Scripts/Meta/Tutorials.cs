@@ -13,13 +13,26 @@ public class Tutorials : MonoBehaviour
     public Animator _animator;
 
     public AudioSource _tutoSFX;
-    public AudioClip[] _clips; 
+    public AudioClip[] _clips;
     #region IndexRegister
     //0 = Validate Character
     //1 = Yeah !
     //2 = Get Ready
 
     #endregion
+
+    public static Tutorials instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Il y a plus d'une instance de Tutorials dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
 
     private void Start()
     {
@@ -30,12 +43,12 @@ public class Tutorials : MonoBehaviour
 
     void Update()
     {
-        ReadyChecker();
+        //ReadyChecker();
     }
 
-    public void ReadyChecker()
+    public void ReadyChecker(bool isPlayer1)
     {
-        if (Input.GetButtonDown("Fire_P1"))
+        if(isPlayer1)
         {
             Debug.Log("J1 OK");
             if (!_readyP1)
@@ -50,8 +63,7 @@ public class Tutorials : MonoBehaviour
                 _readyBanner1.SetActive(false);
             }
         }
-
-        if (Input.GetButtonDown("Fire_P2"))
+        else
         {
             Debug.Log("J2 OK");
             if (!_readyP2)
@@ -66,6 +78,38 @@ public class Tutorials : MonoBehaviour
                 _readyBanner2.SetActive(false);
             }
         }
+
+        //if (Input.GetButtonDown("Fire_P1"))
+        //{
+        //    Debug.Log("J1 OK");
+        //    if (!_readyP1)
+        //    {
+        //        _readyP1 = true;
+        //        _tutoSFX.PlayOneShot(_clips[0]);
+        //        _readyBanner1.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        _readyP1 = false;
+        //        _readyBanner1.SetActive(false);
+        //    }
+        //}
+
+        //if (Input.GetButtonDown("Fire_P2"))
+        //{
+        //    Debug.Log("J2 OK");
+        //    if (!_readyP2)
+        //    {
+        //        _readyP2 = true;
+        //        _tutoSFX.PlayOneShot(_clips[0]);
+        //        _readyBanner2.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        _readyP2 = false;
+        //        _readyBanner2.SetActive(false);
+        //    }
+        //}
 
         if (_readyP1 && _readyP2)
         {

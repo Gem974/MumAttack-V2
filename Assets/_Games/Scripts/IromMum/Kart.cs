@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Events;
-
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
+using UnityEngine.InputSystem.Users;
 
 public class Kart : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class Kart : MonoBehaviour
 
     [SerializeField] string _horizontalInput, _verticalInput, _actionInput;
 
+
     [Header("Multiplier System")]
     [SerializeField] bool _canMultiply;
     [SerializeField] float _nextime;
@@ -48,16 +51,63 @@ public class Kart : MonoBehaviour
     [SerializeField] AudioSource _source;
     [SerializeField] AudioClip _plaicesIroned;
 
-
-
-
-
+    private Vector2 _moveInput = Vector2.zero;
+    private bool _actionNewInput = false;
+    private PlayerInput _playerInput;
     private void Start()
     {
         DisplayInfoCharacter();
-        TouchBinding();
+        //TouchBinding();
         _playerState = PlayerState.Standby;
         _canPropulse = true;
+        //Liaison avec le Player Input
+        _playerInput = GetComponent<PlayerInput>();
+        //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
+        InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
+    }
+
+    //Event pour les touches de déplacement 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        //On se contente de récupérer le Vecteur2 des touches de déplacement
+        _moveInput = context.ReadValue<Vector2>();
+    }
+
+    //Event pour la touche d'action
+    public void OnAction(InputAction.CallbackContext context)
+    {
+        //Equivaut a un GetKeyDown (appuie sur le bouton)
+         context.action.started += context =>
+         {
+             _actionNewInput = true;
+         };
+
+        //Equivaut a un GetKeyUp (quand on relache le bouton)
+        context.action.canceled += context =>
+        {
+            RealeshPower();
+            PowerImpulse();
+            _actionNewInput = false;
+        };
+    }
+
+    //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
+    public void OnReady(InputAction.CallbackContext context)
+    {
+            Tutorials.instance.ReadyChecker(_isPlayer1);  
+    }
+
+    //Passer de l'action map Tuto (get ready) à l'action map de jeu
+    public void ChangeActionMap()
+    {
+        if (_isPlayer1)
+        {
+            _playerInput.SwitchCurrentActionMap("Player1");
+        }
+        else
+        {
+            _playerInput.SwitchCurrentActionMap("Player2");
+        }
     }
 
     void Update()
@@ -90,7 +140,7 @@ public class Kart : MonoBehaviour
         {
 
             Move();
-            PowerImpulse();
+            //PowerImpulse();
             switch (_playerState)
             {
                 case PlayerState.Standby:
@@ -147,14 +197,14 @@ public class Kart : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetAxis(_horizontalInput) > 0)
+        if (/*Input.GetAxis(_horizontalInput) > 0*/ _moveInput.x > 0)
         {
             Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, _turnSpeed, 0) * Time.fixedDeltaTime);
 
            
             _rb.MoveRotation(_rb.rotation * deltaRotation);
         }
-        if (Input.GetAxis(_horizontalInput) < 0)
+        if (/*Input.GetAxis(_horizontalInput) < 0*/ _moveInput.x < 0)
         {
             Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, -_turnSpeed, 0) * Time.fixedDeltaTime);
             _rb.MoveRotation(_rb.rotation * deltaRotation);
@@ -174,7 +224,7 @@ public class Kart : MonoBehaviour
 
     void PowerCharge()
     {
-        if (Input.GetButton(_actionInput))
+        if (/*Input.GetButton(_actionInput)*/_actionNewInput)
         {
             if (_canPropulse)
             {
@@ -206,43 +256,70 @@ public class Kart : MonoBehaviour
                 }
             }
         }
-        if (Input.GetButtonUp(_actionInput))
+        //if (/*Input.GetButtonUp(_actionInput)*/_actionNewInput == false)
+        //{
+        //    _animator.SetBool("Charge", false);
+        //    _noSteam?.Invoke();
+
+        //    _driftPower = 1;
+
+        //    //Vector3 Impulse = _power * transform.forward;
+        //    //_rb.AddForce(Impulse, ForceMode.Impulse);
+        //    _playerState = PlayerState.Propulse;
+
+
+
+        //    if (_power < 4)
+        //    {
+
+        //        Instantiate(_fxPropulse[0], _fxSpawnPoint);
+
+        //    }
+        //    else if (_power > 4 && _power < 8)
+        //    {
+
+        //        Instantiate(_fxPropulse[1], _fxSpawnPoint);
+
+        //    }
+        //    else if (_power > 8 && _power < 12)
+        //    {
+        //        Instantiate(_fxPropulse[2], _fxSpawnPoint);
+        //    }
+        //}
+
+        //if (Input.GetButtonDown(_actionInput) && !_canPropulse)
+        //{
+        //    _power = 0;
+        //}
+
+    }
+
+    void RealeshPower()
+    {
+        _animator.SetBool("Charge", false);
+        _noSteam?.Invoke();
+
+        _driftPower = 1;
+
+        //Vector3 Impulse = _power * transform.forward;
+        //_rb.AddForce(Impulse, ForceMode.Impulse);
+        _playerState = PlayerState.Propulse;
+
+        if (_power < 4)
         {
-            _animator.SetBool("Charge", false);
-            _noSteam?.Invoke();
 
-            _driftPower = 1;
-
-            //Vector3 Impulse = _power * transform.forward;
-            //_rb.AddForce(Impulse, ForceMode.Impulse);
-            _playerState = PlayerState.Propulse;
-
-
-
-            if (_power < 4)
-            {
-
-                Instantiate(_fxPropulse[0], _fxSpawnPoint);
-
-            }
-            else if (_power > 4 && _power < 8)
-            {
-
-                Instantiate(_fxPropulse[1], _fxSpawnPoint);
-
-            }
-            else if (_power > 8 && _power < 12)
-            {
-                Instantiate(_fxPropulse[2], _fxSpawnPoint);
-            }
-
-
+            Instantiate(_fxPropulse[0], _fxSpawnPoint);
 
         }
-
-        if (Input.GetButtonDown(_actionInput) && !_canPropulse)
+        else if (_power > 4 && _power < 8)
         {
-            _power = 0;
+
+            Instantiate(_fxPropulse[1], _fxSpawnPoint);
+
+        }
+        else if (_power > 8 && _power < 12)
+        {
+            Instantiate(_fxPropulse[2], _fxSpawnPoint);
         }
 
     }
@@ -251,19 +328,14 @@ public class Kart : MonoBehaviour
     {
         if (_playerState != PlayerState.Propulse)
         {
-
-            
-            if (Input.GetButtonUp(_actionInput))
-            {
+            //if (/*Input.GetButtonUp(_actionInput)*/)
+            //{
 
                 Vector3 Impulse = _power * transform.forward;
                 _rb.AddForce(Impulse, ForceMode.Impulse);
                 _playerState = PlayerState.Propulse;
 
-
-
-
-            }
+            //}
         }
 
     }

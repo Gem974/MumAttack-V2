@@ -19,9 +19,9 @@ public class GameManager_IromMum : MonoBehaviour
     public Text _playerWinsText;
     public Animator _HUD;
 
+    private Kart[] _players;
+
     public static GameManager_IromMum instance;
-
-
 
     private void Awake()
     {
@@ -36,12 +36,10 @@ public class GameManager_IromMum : MonoBehaviour
 
     private void Start()
     {
+        _players = FindObjectsOfType<Kart>();
         _canPlay = false;
 
     }
-
-
-
 
     // Update is called once per frame
     public void AddPoints(bool isPlayer1, int multiplier)
@@ -100,6 +98,10 @@ public class GameManager_IromMum : MonoBehaviour
         RandomPlaices.instance.StartRandomPlaices();
         _canPlay = true;
         PauseGame.instance.CanPause();
-
+        foreach (var player in _players)
+        {
+            player.ChangeActionMap();
+        }
     }
+
 }

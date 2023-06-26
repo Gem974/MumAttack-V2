@@ -97,7 +97,8 @@ public class UtencilBrawl_GameManager : MonoBehaviour
         _isGameStopped = false;
         _canPlay = true;
         PauseGame.instance.CanPause();
-
+        _J1.ChangeActionMap();
+        _J2.ChangeActionMap();
 
     }
 

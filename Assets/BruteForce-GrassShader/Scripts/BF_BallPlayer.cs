@@ -33,22 +33,22 @@ public class BF_BallPlayer : MonoBehaviour
 
 
 #if ENABLE_INPUT_SYSTEM
-        if (Keyboard.current.qKey.isPressed || Keyboard.current.aKey.isPressed)
-        {
-            inputDirection += new Vector3(0, 0, 1);
-        }
-        if (Keyboard.current.dKey.isPressed)
-        {
-            inputDirection += new Vector3(0, 0, -1);
-        }
-        if (Keyboard.current.wKey.isPressed || Keyboard.current.zKey.isPressed)
-        {
-            inputDirection += new Vector3(1, 0, 0);
-        }
-        if (Keyboard.current.sKey.isPressed)
-        {
-            inputDirection += new Vector3(-1, 0, 0);
-        }
+        //if (Keyboard.current.qKey.isPressed || Keyboard.current.aKey.isPressed)
+        //{
+        //    inputDirection += new Vector3(0, 0, 1);
+        //}
+        //if (Keyboard.current.dKey.isPressed)
+        //{
+        //    inputDirection += new Vector3(0, 0, -1);
+        //}
+        //if (Keyboard.current.wKey.isPressed || Keyboard.current.zKey.isPressed)
+        //{
+        //    inputDirection += new Vector3(1, 0, 0);
+        //}
+        //if (Keyboard.current.sKey.isPressed)
+        //{
+        //    inputDirection += new Vector3(-1, 0, 0);
+        //}
 #else
 
         //PLAYER 1
