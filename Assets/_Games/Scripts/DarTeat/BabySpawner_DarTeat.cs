@@ -22,6 +22,8 @@ public class BabySpawner_DarTeat : MonoBehaviour
     //Défini le score minimum et maximum de la ligne
     public int _minScoreValue, _maxScoreValue = 5;
 
+    public int _railID;
+
     //Lance une première fois la coroutine
     private void Start(){ StartCoroutine(SpawnNewBaby()); }
 
@@ -32,8 +34,19 @@ public class BabySpawner_DarTeat : MonoBehaviour
 
         if (!GameManager_DarTeat.instance._gameIsFinished)
         {
+            var scale = 0f;
+            if(_railID == 1)
+            {
+                scale = Random.Range(0.9f, 1.3f);
+
+            }
+            else if(_railID == 2)
+            {
+                scale = Random.Range(0.5f, 0.8f);
+            }
             //Instancie l'objet souhaité
             GameObject baby = Instantiate(_prefabBaby, transform);
+            baby.transform.localScale = new Vector3(scale, scale, scale);
             BabyBehavior_DarTeat babyBehavior = baby.GetComponent<BabyBehavior_DarTeat>();
 
             //Change de façon dynamique la direction des bébés.

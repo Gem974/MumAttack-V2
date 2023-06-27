@@ -14,7 +14,7 @@ public class Bullet_DarTeat : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         var i = Random.Range(10f, 40f);
-        _rb.AddForce(new Vector3(i, i*1.2f, -i) * _speed);
+        _rb.AddForce(new Vector3(0, i*1.2f, -i) * _speed);
         _rb.AddTorque(new Vector3(i, i, i));
     }
 
