@@ -23,7 +23,7 @@ MonoBehaviour:
   _goodHead: {fileID: 21300000, guid: 5daf118c79c8481468b30eefa449a2c0, type: 3}
   _badHead: {fileID: 21300000, guid: 8104afbd7d937ed4e8e9ab5a2e36c420, type: 3}
   _ironMum_sprite: {fileID: 21300000, guid: a8777b68bcfa26e45a85d56c8bb82509, type: 3}
-  sumom_animatorController: {fileID: 9100000, guid: 763c001fa22452c41af48fee41b5b3b5,
+  sumom_animatorController: {fileID: 9100000, guid: 6274d5750d0128a47ba962bee448694b,
     type: 2}
   utencil_animatorController: {fileID: 9100000, guid: a875ffd182f9c44409746db2b20719c3,
     type: 2}

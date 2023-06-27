@@ -1240,7 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101243744}
   - component: {fileID: 101243743}
-  - component: {fileID: 101243742}
+  - component: {fileID: 101243745}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1248,25 +1248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &101243742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101243741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &101243743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,6 +1278,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &101243745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101243741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: e855b0909ab91b54f843da95a76af63a,
+    type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: -7810850027242147209, guid: e855b0909ab91b54f843da95a76af63a,
+    type: 3}
+  m_SubmitAction: {fileID: -164257023063719051, guid: e855b0909ab91b54f843da95a76af63a,
+    type: 3}
+  m_CancelAction: {fileID: 2521991892585258521, guid: e855b0909ab91b54f843da95a76af63a,
+    type: 3}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!1 &105377680
 GameObject:
   m_ObjectHideFlags: 0
@@ -11963,10 +11976,6 @@ MonoBehaviour:
   - {fileID: 628803555}
   - {fileID: 628803555}
   - {fileID: 628803555}
-  _pK1: 0
-  _pK2: 0
-  _pG1: 0
-  _pG2: 0
   _arrows:
   - {fileID: 1149317568}
   - {fileID: 1542788847}

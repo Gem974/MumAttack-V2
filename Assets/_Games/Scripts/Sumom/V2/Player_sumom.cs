@@ -53,7 +53,6 @@ public class Player_sumom : MonoBehaviour
         if (Sumom_GameManager.instance._canPlay)
         {
             AnimTransitor();
-            KeyRestitution(); 
         }
 
     }
@@ -86,20 +85,6 @@ public class Player_sumom : MonoBehaviour
         }
     }
 
-
-    void KeyRestitution() //Restitue la bonne touche à appuyer.
-    {
-        if (_isPlayer1) //Regarde si c'est le joueur 1.
-        {
-            _pG = Sign.instance._pG1;
-            _pK = Sign.instance._pK1;
-        }
-        else //Regarde si c'est le joueur 2.
-        {
-            _pG = Sign.instance._pG2;
-            _pK = Sign.instance._pK2;
-        }
-    }
 
     void SpamBehaviour()
     {

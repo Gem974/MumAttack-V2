@@ -6,7 +6,6 @@ public class Sign : MonoBehaviour
 {
     [Header("System")]
     [SerializeField] Transform[] _spawnPoint; // Ou va apparaitre le panneau
-    public KeyCode _pK1, _pK2, _pG1, _pG2; // pK = Keyboard & pG Gamepad
     [SerializeField] GameObject[] _arrows; // Bouton qui s'affiche
     [SerializeField] Animator _animator;
     public static Sign instance;
@@ -52,11 +51,7 @@ public class Sign : MonoBehaviour
         {
 
             case 0:
-                ArrowsOff(); //Up
-                _pK1 = KeyCode.Z;
-                _pK2 = KeyCode.UpArrow;
-                _pG1 = KeyCode.Joystick1Button3;
-                _pG2 = KeyCode.Joystick2Button3;
+                ArrowsOff(); //Up              
                 _arrows[1].SetActive(true);
                 _buttonToSpam = ButtonToSpam.North;
                 ChangePos();
@@ -64,22 +59,14 @@ public class Sign : MonoBehaviour
 
                 break;
             case 1:
-                ArrowsOff(); //Right
-                _pK1 = KeyCode.D;
-                _pK2 = KeyCode.RightArrow;
-                _pG1 = KeyCode.Joystick1Button1;
-                _pG2 = KeyCode.Joystick2Button1;
+                ArrowsOff(); //Right               
                 _arrows[2].SetActive(true);
                 _buttonToSpam = ButtonToSpam.East;
                 ChangePos();
 
                 break;
             case 2:
-                ArrowsOff(); //Left
-                _pK1 = KeyCode.Q;
-                _pK2 = KeyCode.LeftArrow;
-                _pG1 = KeyCode.Joystick1Button2;
-                _pG2 = KeyCode.Joystick2Button2;
+                ArrowsOff(); //Left              
                 _arrows[3].SetActive(true);
                 _buttonToSpam = ButtonToSpam.West;
                 ChangePos();
@@ -87,10 +74,6 @@ public class Sign : MonoBehaviour
                 break;
             case 3:
                 ArrowsOff(); //Down
-                _pK1 = KeyCode.S;
-                _pK2 = KeyCode.DownArrow;
-                _pG1 = KeyCode.Joystick1Button0;
-                _pG2 = KeyCode.Joystick2Button0;
                 _arrows[0].SetActive(true);
                 _buttonToSpam = ButtonToSpam.South;
                 ChangePos();

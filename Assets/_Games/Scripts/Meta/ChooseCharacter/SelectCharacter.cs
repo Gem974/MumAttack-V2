@@ -14,7 +14,7 @@ namespace META
         //[SerializeField] KeyCode _right, _left, _up, _down, _action, _action2;
         [SerializeField] SelectCharacter _otherCharacter;
 
-        [SerializeField] string _horizontalInput, _verticalInput, _actionInput, _altActionInput;
+        //[SerializeField] string _horizontalInput, _verticalInput, _actionInput, _altActionInput;
         [SerializeField] float _startTime;
 
         [SerializeField] int _currentPlayer;
@@ -94,25 +94,25 @@ namespace META
 
         //        }
 
-        void TouchBinding()
-        {
-            if (_isPlayer1)
-            {
-                _horizontalInput = "Horizontal_P1";
-                _verticalInput = "a";
-                _actionInput = "Fire_P1";
-                _altActionInput = "Fire_Alt_P1";
-            }
-            else
-            {
-                _horizontalInput = "Horizontal_P2";
-                _verticalInput = "Vertical_P2";
-                _actionInput = "Fire_P2";
-                _altActionInput = "Fire_Alt_P2";
-            }
+        //void TouchBinding()
+        //{
+        //    if (_isPlayer1)
+        //    {
+        //        _horizontalInput = "Horizontal_P1";
+        //        _verticalInput = "a";
+        //        _actionInput = "Fire_P1";
+        //        _altActionInput = "Fire_Alt_P1";
+        //    }
+        //    else
+        //    {
+        //        _horizontalInput = "Horizontal_P2";
+        //        _verticalInput = "Vertical_P2";
+        //        _actionInput = "Fire_P2";
+        //        _altActionInput = "Fire_Alt_P2";
+        //    }
 
 
-        }
+        //}
 
         void Placement()
         {
@@ -141,7 +141,7 @@ namespace META
                 {
                     if (/*Input.GetAxis(_horizontalInput) > 0f*/ _moveInput.x > 0f) //NextMom
                     {
-                        Debug.Log("Input:" + _horizontalInput);
+                        //Debug.Log("Input:" + _horizontalInput);
 
                         ChangeStateMomSelection(false, false, _currentPlayer);
 
@@ -154,7 +154,7 @@ namespace META
                     }
                     else if (/*Input.GetAxis(_horizontalInput) < 0f*/ _moveInput.x < 0f) //PreviousMom
                     {
-                        Debug.Log("Input:" + _horizontalInput);
+                        //Debug.Log("Input:" + _horizontalInput);
 
                         ChangeStateMomSelection(false, false, _currentPlayer);
 
