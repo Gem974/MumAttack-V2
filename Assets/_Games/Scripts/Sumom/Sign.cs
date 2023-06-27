@@ -10,7 +10,12 @@ public class Sign : MonoBehaviour
     [SerializeField] GameObject[] _arrows; // Bouton qui s'affiche
     [SerializeField] Animator _animator;
     public static Sign instance;
+    public enum ButtonToSpam
+    {
+        South, East, North, West
+    }
 
+    public ButtonToSpam _buttonToSpam;
 
 
     private void Awake()
@@ -53,6 +58,7 @@ public class Sign : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button3;
                 _pG2 = KeyCode.Joystick2Button3;
                 _arrows[1].SetActive(true);
+                _buttonToSpam = ButtonToSpam.North;
                 ChangePos();
 
 
@@ -64,6 +70,7 @@ public class Sign : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button1;
                 _pG2 = KeyCode.Joystick2Button1;
                 _arrows[2].SetActive(true);
+                _buttonToSpam = ButtonToSpam.East;
                 ChangePos();
 
                 break;
@@ -74,6 +81,7 @@ public class Sign : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button2;
                 _pG2 = KeyCode.Joystick2Button2;
                 _arrows[3].SetActive(true);
+                _buttonToSpam = ButtonToSpam.West;
                 ChangePos();
 
                 break;
@@ -84,6 +92,7 @@ public class Sign : MonoBehaviour
                 _pG1 = KeyCode.Joystick1Button0;
                 _pG2 = KeyCode.Joystick2Button0;
                 _arrows[0].SetActive(true);
+                _buttonToSpam = ButtonToSpam.South;
                 ChangePos();
 
                 break;

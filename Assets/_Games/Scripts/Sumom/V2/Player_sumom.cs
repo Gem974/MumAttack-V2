@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 using Spine.Unity;
 
 public class Player_sumom : MonoBehaviour
@@ -13,11 +15,13 @@ public class Player_sumom : MonoBehaviour
     public bool _inCollision, _falling;
     [SerializeField] Transform _player;
     [SerializeField] Vector3 _startPos;
+    [SerializeField] PlayerInput _playerInput;
 
 
     [Header("Controls")]
     [SerializeField] KeyCode _pK; //Touches clavier
     [SerializeField] KeyCode _pG; //Touches Gamepad
+    [SerializeField] bool _buttonSouth, _buttonNorth, _buttonWest, _buttonEast;
 
 
     [Header("Spine")]
@@ -33,6 +37,8 @@ public class Player_sumom : MonoBehaviour
 
     private void Start()
     {
+        _playerInput = GetComponent<PlayerInput>();
+        InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
         DisplayInfoCharacter();
         _inCollision = false;
         _animator.SetBool("CanMove", false);
@@ -56,10 +62,10 @@ public class Player_sumom : MonoBehaviour
     {
         if (Sumom_GameManager.instance._canPlay)
         {
-            if (Input.GetKeyDown(_pK) || Input.GetKeyDown(_pG))
-            {
-                SpamBehaviour();
-            } 
+            //if (Input.GetKeyDown(_pK) || Input.GetKeyDown(_pG))
+            //{
+            //    SpamBehaviour();
+            //} 
         }
     }
 
@@ -98,7 +104,7 @@ public class Player_sumom : MonoBehaviour
     void SpamBehaviour()
     {
         InstantiateFXs(2);
-        _rb.AddForce(transform.right * _impulseForce, ForceMode.Impulse);
+        _rb.AddForce(transform.right * (_impulseForce/3), ForceMode.Impulse);
         InstantiateFXs(1);
         
     }
@@ -231,7 +237,72 @@ public class Player_sumom : MonoBehaviour
 
     }
 
-   
+    public void ChangeActionMap()
+    {
+        if (_isPlayer1)
+        {
+            _playerInput.SwitchCurrentActionMap("SumomP1");
+        }
+        else
+        {
+            _playerInput.SwitchCurrentActionMap("SumomP2");
+        }
+    }
+
+    public void OnActionSud(InputAction.CallbackContext context)
+    {
+        print("SUD");
+        if (Sumom_GameManager.instance._canPlay)
+        {
+            if (Sign.instance._buttonToSpam == Sign.ButtonToSpam.South)
+            {
+                SpamBehaviour();
+            }
+        }
+    }
+    public void OnActionNord(InputAction.CallbackContext context)
+    {
+        print("NORD");
+        if (Sumom_GameManager.instance._canPlay)
+        {
+            if (Sign.instance._buttonToSpam == Sign.ButtonToSpam.North)
+            {
+                SpamBehaviour();
+            }
+        }
+    }
+    public void OnActionOuest(InputAction.CallbackContext context)
+    {
+        print("OUEST");
+        if (Sumom_GameManager.instance._canPlay)
+        {
+            if (Sign.instance._buttonToSpam == Sign.ButtonToSpam.West)
+            {
+                SpamBehaviour();
+            }
+        }
+
+    }
+    public void OnActionEst(InputAction.CallbackContext context)
+    {
+        print("EST");
+        if (Sumom_GameManager.instance._canPlay)
+        {
+            if (Sign.instance._buttonToSpam == Sign.ButtonToSpam.East)
+            {
+                SpamBehaviour();
+            }
+        }
+
+    }
+
+    public void OnReady(InputAction.CallbackContext context)
+    {
+        Tutorials.instance.ReadyChecker(_isPlayer1);
+    }
+
+
+
 
 
 

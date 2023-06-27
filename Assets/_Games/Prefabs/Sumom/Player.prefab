@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 3425387679829732767}
   - component: {fileID: 8146773733114299690}
   - component: {fileID: 8146773733114299701}
+  - component: {fileID: 8146773732990024444}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -330,11 +331,15 @@ MonoBehaviour:
   _animator: {fileID: 8146773732575915246}
   _inCollision: 0
   _falling: 0
-  _stopColliFX: 0
   _player: {fileID: 8146773733114299691}
   _startPos: {x: 0, y: 0, z: 0}
+  _playerInput: {fileID: 0}
   _pK: 0
   _pG: 0
+  _buttonSouth: 0
+  _buttonNorth: 0
+  _buttonWest: 0
+  _buttonEast: 0
   _skeletonMecanim: {fileID: 8146773732575915241}
   _VFX:
   - {fileID: 4928814567997950061, guid: 60fbafed52dd05141971afaa99b95096, type: 3}
@@ -378,3 +383,138 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.426154, y: 14.039999, z: 1.52}
   m_Center: {x: 0.48202783, y: -0.00000059604645, z: 0}
+--- !u!114 &8146773732990024444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8146773733114299702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e855b0909ab91b54f843da95a76af63a,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8714ec69-6c73-43e8-9afc-9adf656d84a5
+    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c788be57-c7ab-4c4d-9543-49318fe3bf8f
+    m_ActionName: Player1/Action[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a634e5a5-3c12-4671-a2e5-098eae0780fe
+    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 58a39e7d-3408-48e2-806d-2f05953dfb67
+    m_ActionName: Player2/Action[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3425387679829732767}
+        m_TargetAssemblyTypeName: Player_sumom, Assembly-CSharp
+        m_MethodName: OnReady
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: df65e17c-8ece-46c6-be4b-bd6e1409faeb
+    m_ActionName: TutoP1/Ready[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player_sumom, Assembly-CSharp
+        m_MethodName: OnReady
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7289ac76-913f-4521-a01b-3c15cb364486
+    m_ActionName: TutoP2/Ready[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0237bd6f-cf83-4035-9ad4-ad590068045b
+    m_ActionName: SumomP1/ActionSud[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f23205d0-ff34-4aff-a585-b43ec2bda4f4
+    m_ActionName: SumomP1/ActionOuest[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24b0b0a7-c307-49dd-958e-026222f5c018
+    m_ActionName: SumomP1/ActionNord[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd5a4e64-9f29-4253-86c7-9480d739ec52
+    m_ActionName: SumomP1/ActionEst[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bb9f43aa-6dc7-44e1-b6f7-4183f2794bc7
+    m_ActionName: SumomP2/ActionSud[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5ac066b-c2be-4eab-a1f5-57f71b750279
+    m_ActionName: SumomP2/ActionOuest[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01f674b9-55e0-4284-bb73-6f75d0a0f3e5
+    m_ActionName: SumomP2/ActionNord[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3efcbe21-d9a9-4b8b-8c98-c4249d3c6a20
+    m_ActionName: SumomP2/ActionEst[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f21a1154-f49e-4760-b7bf-95e3218f25ed
+    m_ActionName: SelectCharaP1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 71c52429-141a-4b46-aa22-58ee56349e5a
+    m_ActionName: SelectCharaP1/Select[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: adfe1b54-329f-400f-b592-0b7e887a2a7e
+    m_ActionName: SelectCharaP1/Cancel[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43595886-9e12-4b71-89a7-581b0f7bce5d
+    m_ActionName: SelectCharaP2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd2ab696-a9a3-45ce-b43f-87f3885dbe06
+    m_ActionName: SelectCharaP2/Select[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f367cb27-bfe8-4b85-8ef3-3c98ac8fba8c
+    m_ActionName: SelectCharaP2/Cancel[/Keyboard/rightShift]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Gamepad
+  m_DefaultActionMap: TutoP1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

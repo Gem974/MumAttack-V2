@@ -11,7 +11,7 @@ public class Sumom_GameManager : MonoBehaviour
     public bool _canPlay;
     public int _pointsP1, _pointsP2;
     public Rigidbody _rb1, _rb2;
-    public Player_sumom[] _players;
+    public Player_sumom _player1, _player2;
     
 
     [Header("UI")]
@@ -54,7 +54,7 @@ public class Sumom_GameManager : MonoBehaviour
         _canPlay = false;
         Sign.instance.StartRandomKeys();
         _playerDominant = PlayerDominant.None;
-        _players = FindObjectsOfType<Player_sumom>();
+        
 
         _pointsP1 = 0;
         _pointsP2 = 0;
@@ -65,12 +65,12 @@ public class Sumom_GameManager : MonoBehaviour
 
     public void StartGameAfterDiscount()
     {
+        _player1.ChangeActionMap();
+        _player2.ChangeActionMap();
         _canPlay = true;
 
-        foreach (Player_sumom player in _players) // Reset les propriétés des joueurs
-        {
-            player.AnimCanMove();
-        }
+        _player1.AnimCanMove();
+        _player2.AnimCanMove();
     }
 
     void Update()
@@ -172,11 +172,8 @@ public class Sumom_GameManager : MonoBehaviour
         _playerDominant = PlayerDominant.None;
          
         DiscountBeforeStart.instance.RestartDiscount();
-        foreach (Player_sumom player in _players) // Reset les propriétés des joueurs
-        {
-            player.ResetPlayer();
-
-        }
+        _player1.ResetPlayer();
+        _player2.ResetPlayer();
     }
 
 

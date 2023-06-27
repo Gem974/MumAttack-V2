@@ -36,6 +36,13 @@ public class DiscountBeforeStart : MonoBehaviour
         
     }
 
+    public void RestartDiscount()
+    {
+        StartCoroutine(Discount());
+        PauseGame.instance.CanTPause();
+
+    }
+
     public void StartAfterTuto()
     {
         if (SceneManager.GetActiveScene().buildIndex == 3)
@@ -44,12 +51,12 @@ public class DiscountBeforeStart : MonoBehaviour
             GameManager_IromMum.instance._bubbleJ2.SetActive(true); 
         }
         _soundStart.SetActive(true);
-        StartCoroutine(Discount(_gameManagerInScene));
+        StartCoroutine(Discount());
         _postProcess.profile.TryGet(out _dop);
     }
 
 
-    IEnumerator Discount(GameObject GameManager)
+    IEnumerator Discount()
     {
 
         _discountTxt.gameObject.SetActive(true);
@@ -76,7 +83,7 @@ public class DiscountBeforeStart : MonoBehaviour
         }
 
         //Lance toute les fonctions de Start
-        GameManager.SendMessage("StartGameAfterDiscount");
+        _gameManagerInScene.SendMessage("StartGameAfterDiscount");
         
         
 
