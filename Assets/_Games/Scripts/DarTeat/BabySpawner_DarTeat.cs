@@ -32,7 +32,7 @@ public class BabySpawner_DarTeat : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if (!GameManager_DarTeat.instance._gameIsFinished)
+        if (GameManager_DarTeat.instance._canPlay)
         {
             var scale = 0f;
             if(_railID == 1)

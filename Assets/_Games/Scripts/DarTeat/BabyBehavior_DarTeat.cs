@@ -25,10 +25,15 @@ public class BabyBehavior_DarTeat : MonoBehaviour
     void Update()
     {
         //Movement
-        if(!GameManager_DarTeat.instance._gameIsFinished)
+        if(GameManager_DarTeat.instance._canPlay)
             transform.position = new Vector3(transform.position.x + _speed * Time.deltaTime, transform.position.y, transform.position.z);
         
         if (transform.position.x < -7 || transform.position.x > 7)
             Destroy(gameObject);
+    }
+
+    public void ChangeColor(Color color)
+    {
+        _teat.GetComponent<MeshRenderer>().material.color = color;
     }
 }

@@ -15,7 +15,7 @@ public class SightNoise_DarTeat : MonoBehaviour
     }
     void Update()
     {
-        if(!GameManager_DarTeat.instance._gameIsFinished)
+        if(GameManager_DarTeat.instance._canPlay)
             transform.Translate(_target * Time.deltaTime, Space.Self);
     }
 

@@ -7,13 +7,13 @@ using UnityEngine.InputSystem.Users;
 public class PlayerController_DarTeat : MonoBehaviour
 {
     public bool _isPlayerOne;
-    public GameObject _teatPrefab;
+    public GameObject _teatPrefab, _vfxHit;
     public float _sightSpeed = 250f;
     public Camera _mainCamera;
+    public Color _playerColor;
     public float _shootRate = 1f;
     private float _shootCountdown;
     [Range(1, 0)] float _progress;
-
     private Vector2 _moveInput = Vector2.zero;
     private bool _actionInput = false;
     private PlayerInput _playerInput;
@@ -63,7 +63,7 @@ public class PlayerController_DarTeat : MonoBehaviour
 
     void Update()
     {
-        if(!GameManager_DarTeat.instance._gameIsFinished)
+        if(GameManager_DarTeat.instance._canPlay)
         {
             MoveSight();
 
@@ -122,9 +122,10 @@ public class PlayerController_DarTeat : MonoBehaviour
         {
             if (hit.transform.CompareTag("Teat"))
             {
-                ScoreController_DarTeat.instance.AddValue(hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>()._valueToAdd, playerID);
+                GameManager_DarTeat.instance.AddPoints(_isPlayerOne , hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>()._valueToAdd);
                 hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>()._teat.SetActive(true);
                 hit.transform.GetComponent<CapsuleCollider>().enabled = false;
+                hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>().ChangeColor(_playerColor);
 
                 //Sound
                 SoundManager_DarTeat.instance._soundEffectsPlayerController.PlayOneShot(SoundManager_DarTeat.instance._addPointSoundEffect);
@@ -132,11 +133,12 @@ public class PlayerController_DarTeat : MonoBehaviour
                 CameraShake_DarTeat.instance.ShakeCamera();
 
                 if (TimerBehavior_DarTeat._goldenTeat)
-                    GameManager_DarTeat.instance.Victory();
+                    GameManager_DarTeat.instance.GameOver();
             }
             else
             {
-                Instantiate(_teatPrefab, hit.point, Quaternion.identity);
+                var go = Instantiate(_teatPrefab, hit.point, Quaternion.identity);
+                go.GetComponent<MeshRenderer>().material.color = _playerColor;
             }
         }
     }

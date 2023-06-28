@@ -28,6 +28,11 @@ public class TimerBehavior_DarTeat : MonoBehaviour
         _goldenTeat = false;
 
         _timer.text = string.Format("{0} : {1}", _minutes.ToString("00"), _seconds.ToString("00"));
+        
+    }
+
+    public void StartInGameTimer()
+    {
         StartCoroutine("OneSecondLess");
     }
 
@@ -35,7 +40,7 @@ public class TimerBehavior_DarTeat : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        if(!GameManager_DarTeat.instance._gameIsFinished)
+        if(GameManager_DarTeat.instance._canPlay)
         {
 
             if(_seconds > 0)
@@ -51,16 +56,16 @@ public class TimerBehavior_DarTeat : MonoBehaviour
                 }
                 else
                 {
-                    if (ScoreController_DarTeat.instance._currentScorePlayer1 == ScoreController_DarTeat.instance._currentScorePlayer2)
+                    if (GameManager_DarTeat.instance._points1 == GameManager_DarTeat.instance._points2)
                     {
                         _equalityAnimation.SetActive(true);
                         _goldenTeat = true;
                         _canSpendTime = false;
-                        GameManager_DarTeat.instance._gameIsFinished = true;
+                        GameManager_DarTeat.instance._canPlay = false;
                         yield return new WaitForSeconds(3.5f);
                         _goldenTeatText.SetActive(true);
                         _goldenTeatText.transform.parent.GetComponent<TextMeshProUGUI>().enabled = false;
-                        GameManager_DarTeat.instance._gameIsFinished = false;
+                        GameManager_DarTeat.instance._canPlay = true;
                         SoundManager_DarTeat.instance._soundEffectTheme.Stop();
                         SoundManager_DarTeat.instance._soundEffectThemeOnGoldTeat.Play();
 
@@ -107,7 +112,7 @@ public class TimerBehavior_DarTeat : MonoBehaviour
 
     public void Victory()
     {
-        GameManager_DarTeat.instance.Victory();
+        GameManager_DarTeat.instance.GameOver();
         //Timer can continue ?
         _canSpendTime = false;
         //Sounds
