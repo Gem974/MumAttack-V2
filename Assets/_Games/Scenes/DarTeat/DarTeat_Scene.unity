@@ -6106,8 +6106,8 @@ MonoBehaviour:
   _points2: 0
   _GOPanel: {fileID: 7436544232407712874}
   _playerWinsText: {fileID: 7436544232407712873}
-  _pointsTxt1: {fileID: 2001636844}
-  _pointsTxt2: {fileID: 1789509548}
+  _pointsTxt1: {fileID: 7436544232150076290}
+  _pointsTxt2: {fileID: 7436544232789418780}
   _HUD: {fileID: 7436544232368055056}
 --- !u!4 &1226989476
 Transform:
@@ -12265,7 +12265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &5567917211091557042
 Animator:
   serializedVersion: 4
