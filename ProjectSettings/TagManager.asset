@@ -11,6 +11,9 @@ TagManager:
   - J2
   - J1
   - Projectiles
+  - DeadZone_DarTeat
+  - Teat
+  - Baby
   layers:
   - Default
   - TransparentFX

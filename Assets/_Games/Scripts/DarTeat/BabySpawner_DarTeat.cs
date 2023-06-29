@@ -46,7 +46,7 @@ public class BabySpawner_DarTeat : MonoBehaviour
             }
             //Instancie l'objet souhaité
             GameObject baby = Instantiate(_prefabBaby, transform);
-            baby.transform.localScale = new Vector3(scale, scale, scale);
+            //baby.transform.localScale = new Vector3(scale, scale, scale);
             BabyBehavior_DarTeat babyBehavior = baby.GetComponent<BabyBehavior_DarTeat>();
 
             //Change de façon dynamique la direction des bébés.

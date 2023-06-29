@@ -8,8 +8,9 @@ public class BabyBehavior_DarTeat : MonoBehaviour
 {
     public TextMeshProUGUI _currenValue;
     public float _speed;
-    public GameObject _teat;
-
+    public GameObject _teat, _vfxSuccess;
+    public GameObject[] _tearsVFX;
+    public Collider _col;
     [HideInInspector]
     public int _minScoreValue, _maxScoreValue = 5;
 
@@ -32,8 +33,15 @@ public class BabyBehavior_DarTeat : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void ChangeColor(Color color)
+    public void Goal(Color color)
     {
+        foreach (var i in _tearsVFX)
+        {
+            i.SetActive(false);
+        }
+        _teat.SetActive(true);
         _teat.GetComponent<MeshRenderer>().material.color = color;
+        _col.enabled = false;
+        _vfxSuccess.SetActive(true);
     }
 }

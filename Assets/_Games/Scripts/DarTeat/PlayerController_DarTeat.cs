@@ -7,13 +7,14 @@ using UnityEngine.InputSystem.Users;
 public class PlayerController_DarTeat : MonoBehaviour
 {
     public bool _isPlayerOne;
-    public GameObject _teatPrefab, _vfxHit;
+    public GameObject _teatPrefab;
+    public GameObject[] _vfxHit;
     public float _sightSpeed = 250f;
     public Camera _mainCamera;
     public Color _playerColor;
     public float _shootRate = 1f;
-    private float _shootCountdown;
-    [Range(1, 0)] float _progress;
+    public float _shootCountdown = 0.2f;
+    private float _nextShot;
     private Vector2 _moveInput = Vector2.zero;
     private bool _actionInput = false;
     private PlayerInput _playerInput;
@@ -25,8 +26,6 @@ public class PlayerController_DarTeat : MonoBehaviour
         //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
 
-        _progress = _shootCountdown;
-        _shootCountdown -= Time.deltaTime;
     }
 
     //Event pour les touches de déplacement 
@@ -73,10 +72,6 @@ public class PlayerController_DarTeat : MonoBehaviour
             }
 
             ClampPosition();
-
-            //_ShootCountdown Constently dimminushing
-            _shootCountdown -= Time.deltaTime;
-
         }
     }
 
@@ -99,7 +94,8 @@ public class PlayerController_DarTeat : MonoBehaviour
 
     void Shoot()
     {
-        if (_shootCountdown <= 0f)
+        //Verification du temps aprés cooldown
+        if (Time.time >= _nextShot)
         {
             if (_isPlayerOne)
             {
@@ -109,7 +105,7 @@ public class PlayerController_DarTeat : MonoBehaviour
             {
                 HitChecker(gameObject, 2);
             }
-            _shootCountdown = 1 / _shootRate;
+            _nextShot = Time.time + _shootCountdown;
         }
     }
 
@@ -123,9 +119,7 @@ public class PlayerController_DarTeat : MonoBehaviour
             if (hit.transform.CompareTag("Teat"))
             {
                 GameManager_DarTeat.instance.AddPoints(_isPlayerOne , hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>()._valueToAdd);
-                hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>()._teat.SetActive(true);
-                hit.transform.GetComponent<CapsuleCollider>().enabled = false;
-                hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>().ChangeColor(_playerColor);
+                hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>().Goal(_playerColor);
 
                 //Sound
                 SoundManager_DarTeat.instance._soundEffectsPlayerController.PlayOneShot(SoundManager_DarTeat.instance._addPointSoundEffect);
@@ -137,6 +131,14 @@ public class PlayerController_DarTeat : MonoBehaviour
             }
             else
             {
+                if (hit.transform.CompareTag("Baby"))
+                {
+                    Instantiate(_vfxHit[0], hit.point, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(_vfxHit[1], hit.point, Quaternion.identity);
+                }
                 var go = Instantiate(_teatPrefab, hit.point, Quaternion.identity);
                 go.GetComponent<MeshRenderer>().material.color = _playerColor;
             }

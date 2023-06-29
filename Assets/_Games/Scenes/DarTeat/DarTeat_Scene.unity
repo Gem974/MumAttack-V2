@@ -9359,7 +9359,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756654323}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: 1, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
@@ -9397,11 +9397,14 @@ MonoBehaviour:
   _isPlayerOne: 1
   _teatPrefab: {fileID: 5267056591300235849, guid: 26acaf76acc10cf43af1b5d0a2de4944,
     type: 3}
-  _vfxHit: {fileID: 0}
+  _vfxHit:
+  - {fileID: 4021103657954561961, guid: b49391005ba7a4441add1c3f24892ff8, type: 3}
+  - {fileID: 1040608886635896, guid: cc56bae5f19975e47bdf76faee3d97e8, type: 3}
   _sightSpeed: 3
   _mainCamera: {fileID: 1515718684}
   _playerColor: {r: 0.3137255, g: 0.9921569, b: 0, a: 1}
   _shootRate: 1
+  _shootCountdown: 0.2
 --- !u!114 &1756654328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9546,7 +9549,7 @@ MonoBehaviour:
     m_ActionName: SelectCharaP2/Cancel[/Keyboard/rightShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: b7a85955-85d9-486e-941c-990063a298c4
+  m_DefaultActionMap: TutoP1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1763213401
@@ -10058,7 +10061,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830554275}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 1, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
@@ -10277,7 +10280,7 @@ MonoBehaviour:
     m_ActionName: SelectCharaP2/Cancel[/Keyboard/rightShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: 1e1bec2a-250a-45a4-b2f0-061a5faad1fd
+  m_DefaultActionMap: TutoP2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1830554280
@@ -10295,11 +10298,14 @@ MonoBehaviour:
   _isPlayerOne: 0
   _teatPrefab: {fileID: 5267056591300235849, guid: 26acaf76acc10cf43af1b5d0a2de4944,
     type: 3}
-  _vfxHit: {fileID: 0}
+  _vfxHit:
+  - {fileID: 4021103657954561961, guid: b49391005ba7a4441add1c3f24892ff8, type: 3}
+  - {fileID: 1040608886635896, guid: cc56bae5f19975e47bdf76faee3d97e8, type: 3}
   _sightSpeed: 3
   _mainCamera: {fileID: 1515718684}
   _playerColor: {r: 0, g: 0.14117648, b: 0.9921569, a: 1}
   _shootRate: 1
+  _shootCountdown: 0.2
 --- !u!1 &1855428306
 GameObject:
   m_ObjectHideFlags: 0
@@ -12975,8 +12981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take a seat in the ironing kart and iron the most plaice on this giant
-    t-shirt !
+  m_text: "Don't cry baby, take a teat !!! \nShot teat on the babies' mouth."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
