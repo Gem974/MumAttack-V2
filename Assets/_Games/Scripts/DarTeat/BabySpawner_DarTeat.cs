@@ -42,11 +42,11 @@ public class BabySpawner_DarTeat : MonoBehaviour
             }
             else if(_railID == 2)
             {
-                scale = Random.Range(0.5f, 0.8f);
+                scale = Random.Range(0.6f, 0.9f);
             }
             //Instancie l'objet souhaité
             GameObject baby = Instantiate(_prefabBaby, transform);
-            //baby.transform.localScale = new Vector3(scale, scale, scale);
+            baby.transform.localScale = new Vector3(scale, scale, scale);
             BabyBehavior_DarTeat babyBehavior = baby.GetComponent<BabyBehavior_DarTeat>();
 
             //Change de façon dynamique la direction des bébés.
