@@ -15,6 +15,7 @@ public class Tank_movement : MonoBehaviour
     [SerializeField] private float _currentSpeed;
     [SerializeField] private float _speedRotate;
     [SerializeField] private _player Player;
+    public bool _isPlayer1;
     private KeyCode _up, _down, _left, _right;
     [SerializeField] private int _life = 3;
     private string _P1Win = "Player 1 Wins !";
@@ -42,7 +43,6 @@ public class Tank_movement : MonoBehaviour
 
     private void Start()
     {
-
         SetKeys();
     }
 
@@ -57,7 +57,7 @@ public class Tank_movement : MonoBehaviour
 
     void SetKeys()
     {
-        if (Player == _player.Player1)
+        if (_isPlayer1)
         {
             //move ZQSD
             _up = KeyCode.Z;
@@ -66,7 +66,7 @@ public class Tank_movement : MonoBehaviour
             _right = KeyCode.D;
 
         }
-        else if (Player == _player.Player2)
+        else
         {
             //move directional button
             _up = KeyCode.UpArrow;
@@ -155,7 +155,7 @@ public class Tank_movement : MonoBehaviour
         GameObject projectile = Instantiate(_projectile, _fireposition.transform.position, _fireposition.transform.rotation); //variable local qui servira à désigner le gameobject pour ensuite faire des modification directement sur l'objet ciblé.
         _gameManager.InstanciateFx(_fxFire, _fireposition.transform.position, _fireposition.transform.rotation);
         projectile.GetComponent<Rigidbody2D>().AddForce(projectile.transform.up * _speedFire * UnityEngine.Time.deltaTime, ForceMode2D.Impulse);
-        StartCoroutine(AnimCamShoot());
+        //StartCoroutine(AnimCamShoot());
         _animCam._animCamera.SetBool("Shoot_anim", true);
         _soundFire.Play();
         //_rigid2D.AddForce(transform.up * _speedProjectile * Time.deltaTime, ForceMode2D.Impulse);
@@ -185,16 +185,16 @@ public class Tank_movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.CompareTag("Projectile"))
-        {
-            Destroy(collision.gameObject);
-            _gameManager.InstanciateFx(_fxDamage, collision.contacts[0].point, transform.rotation);
-            _life--;
-            StartCoroutine(AnimDegat());
-            _soundDegat[Random.Range(0, _soundDegat.Length)].Play();
-            print("toucher");
+        //if (collision.collider.gameObject.CompareTag("Projectile"))
+        //{
+        //    Destroy(collision.gameObject);
+        //    _gameManager.InstanciateFx(_fxDamage, collision.contacts[0].point, transform.rotation);
+        //    _life--;
+        //    StartCoroutine(AnimDegat());
+        //    _soundDegat[Random.Range(0, _soundDegat.Length)].Play();
+        //    print("toucher");
             
-        }
+        //}
     }
 
     void Dead()
