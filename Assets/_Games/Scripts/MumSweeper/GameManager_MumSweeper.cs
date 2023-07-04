@@ -7,17 +7,18 @@ public class GameManager_MumSweeper : MonoBehaviour
     //Variables
     [Header("Systems")]
     public bool _canPlay;
+    private PlayerController[] _players;
 
     [Header("UI")]
     public GameObject _GOPanel;
     public Animator _HUD;
 
     [Header("Level Manager")]
-    public List<Cells> _grid = new List<Cells>();
-    public List<Cells> _emptyCells = new List<Cells>();
     public float _trapCount = 5;
+    private List<Cells> _grid = new List<Cells>();
         
-    private PlayerController[] _players;
+
+    //Singleton
     public static GameManager_MumSweeper instance;
 
     private void Awake()
@@ -36,46 +37,42 @@ public class GameManager_MumSweeper : MonoBehaviour
     {
         _players = FindObjectsOfType<PlayerController>();
         _canPlay = false;
+
+        //List des cellules du terrain
         foreach (var i in FindObjectsOfType<Cells>())
         {
             _grid.Add(i);
         }
+
+        //Choisir la cellule à trouver
         GetGoal();
+
+        //Mise en place des pieges
         PutTrap();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Fonction pour assigner une cellule objectif de la partie
     private void GetGoal()
     {
         var id = Random.Range(0, _grid.Count);
-        var grid = _grid.ToArray();
-        grid[id]._isGoal = true;
-       
+        _grid[id]._isGoal = true;
+
+        //On retire la cellule objectif de la list de cellule
+        _grid.Remove(_grid[id]);
     }
 
+    //Fonction qui choisi une cellule et la transforme en piege
     private void PutTrap()
     {
-        foreach (var i in _grid)
-        {
-            if (i._isGoal == false)
-                _emptyCells.Add(i);
-        }
-
         for (int i = 0; i < _trapCount; i++)
         {
-            var id = Random.Range(0, _emptyCells.Count);
-            _emptyCells[id]._isTrap = true;
-            _emptyCells.Remove(_emptyCells[id]);
-
+            var id = Random.Range(0, _grid.Count);
+            _grid[id]._isTrap = true;
+            _grid.Remove(_grid[id]);
         }
     }
 
-
+    //Fonction déclenchée par l'effet de la cellule objectif
     public void GameOver(bool isPlayer1)
     {
         PauseGame.instance.CanTPause();

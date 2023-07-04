@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Move(Vector3.right));
     }
 
+    //Co routine pour faire du step par step lors du deplacement
     IEnumerator Move(Vector3 dir)
     {
         _canMove = false;
@@ -116,6 +117,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Trapped());
     }
 
+    //Desactivation du mouvement et de l'action > réactivation
     IEnumerator Trapped()
     {
         _stunIcon.SetActive(true);
@@ -127,6 +129,7 @@ public class PlayerController : MonoBehaviour
         _canDig = true;
     }
 
+    //Description de l'action Dig : on créer un raycast partant du joueur vers le bas (la cellule au dessous de lui) > declenchement de la fonction principale des cellules : révélation + effet OU re cacher la cellule
     IEnumerator Dig()
     {
         _digIcon.SetActive(true);
