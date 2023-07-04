@@ -1,12 +1,14 @@
+using META;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonsBehaviour : MonoBehaviour
 {
-    [SerializeField] GameObject _mainMenuPanel, _modePanel, _miniGamesPanel, _optionsPanel;
+    [SerializeField] GameObject _mainMenuPanel, _modePanel, _freebrawlPanel, _optionsPanel;
 
     private void Start()
     {
@@ -25,7 +27,7 @@ public class ButtonsBehaviour : MonoBehaviour
     {
         _mainMenuPanel.SetActive(false); 
         _modePanel.SetActive(false); 
-        _miniGamesPanel.SetActive(false); 
+        _freebrawlPanel.SetActive(false); 
         _optionsPanel.SetActive(false);
     }
 
@@ -41,6 +43,17 @@ public class ButtonsBehaviour : MonoBehaviour
         scenesManager sm = FindObjectOfType<scenesManager>();
         sm.LoadSpecificScene(0);
         
+    }
+
+    public void SetUIFocus(RectTransform ui)
+    {
+        EventSystem.current.SetSelectedGameObject(ui.gameObject);
+       
+    }
+
+    public void SetMiniGameID(int id)
+    {
+        MetaGameManager.instance._gameID = id;
     }
 
     public void Quit()

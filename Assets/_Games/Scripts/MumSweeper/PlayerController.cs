@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         _canDig = true;
     }
 
-    //Description de l'action Dig : on créer un raycast partant du joueur vers le bas (la cellule au dessous de lui) > declenchement de la fonction principale des cellules : révélation + effet OU re cacher la cellule
+    //Description de l'action Dig : on créer un raycast partant du joueur vers le bas (la cellule au dessous de lui) > declenchement de la fonction principale des cellules : révélation + effet OU cacher la cellule
     IEnumerator Dig()
     {
         _digIcon.SetActive(true);

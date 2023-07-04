@@ -19,6 +19,8 @@ namespace META
         public int _currentStep;
         public int _P1Wins, _P2Wins;
 
+        [Header("FreeBrawl Mode")]
+        public int _gameID;
 
         [Header("Set Characters")]
         public Character _player1;
@@ -83,6 +85,7 @@ namespace META
             _player1 = null;
             _player2 = null;
             _currentStep = 1;
+            _gameID = 0;
             _gameMode = GameMode.None;
         }
 

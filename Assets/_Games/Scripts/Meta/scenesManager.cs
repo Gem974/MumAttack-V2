@@ -65,9 +65,18 @@ public class scenesManager : MonoBehaviour
             }
 
         }
+    }
 
-
-
+    public void StartButton()
+    {
+        if(MetaGameManager.instance._gameMode == MetaGameManager.GameMode.BroadCast)
+        {
+            LoadBroadcastScene(1);
+        }
+        else if(MetaGameManager.instance._gameMode == MetaGameManager.GameMode.FreeBrawl)
+        {
+            LoadSpecificScene(MetaGameManager.instance._gameID);
+        }
     }
 
     public void LoadBroadcastScene(int step)
@@ -93,7 +102,6 @@ public class scenesManager : MonoBehaviour
             LoadSpecificScene(10);
         }
     }
-
 
     public void PauseBackToMainMenu()
     {

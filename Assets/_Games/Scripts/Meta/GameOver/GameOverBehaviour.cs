@@ -49,6 +49,7 @@ public class GameOverBehaviour : MonoBehaviour
 
     public void BackToMenu()
     {
+        MetaGameManager.instance.ResetAll();
         scenesManager.instance.LoadSpecificScene(0);
     }
 
