@@ -70,25 +70,31 @@ public class Kart : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         //On se contente de récupérer le Vecteur2 des touches de déplacement
-        _moveInput = context.ReadValue<Vector2>();
+        if (GameManager_IromMum.instance._canPlay)
+        {
+            _moveInput = context.ReadValue<Vector2>(); 
+        }
     }
 
     //Event pour la touche d'action
     public void OnAction(InputAction.CallbackContext context)
     {
-        //Equivaut a un GetKeyDown (appuie sur le bouton)
-         context.action.started += context =>
-         {
-             _actionNewInput = true;
-         };
-
-        //Equivaut a un GetKeyUp (quand on relache le bouton)
-        context.action.canceled += context =>
+        if (GameManager_IromMum.instance._canPlay)
         {
-            RealeshPower();
-            PowerImpulse();
-            _actionNewInput = false;
-        };
+            //Equivaut a un GetKeyDown (appuie sur le bouton)
+            context.action.started += context =>
+            {
+                _actionNewInput = true;
+            };
+
+            //Equivaut a un GetKeyUp (quand on relache le bouton)
+            context.action.canceled += context =>
+            {
+                RealeshPower();
+                PowerImpulse();
+                _actionNewInput = false;
+            }; 
+        }
     }
 
     //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
@@ -344,13 +350,15 @@ public class Kart : MonoBehaviour
     {
         if (other.gameObject.tag == "Plaices")
         {
+            
             _canMultiply = true;
             StopAllCoroutines();
             StartCoroutine(Multiply());
             GameManager_IromMum.instance.AddPoints(_isPlayer1, _multiplier);
             RandomPlaices.instance.RemovePlaces();
             _source.PlayOneShot(_plaicesIroned);
-            Destroy(other.gameObject);
+            
+            other.gameObject.GetComponent<Pinces>().FlyAway(_rb.velocity.magnitude, other.transform.position, transform.position);
         }
     }
     
@@ -384,6 +392,19 @@ public class Kart : MonoBehaviour
             }
 
         }
+
+        //if (collision.gameObject.tag == "Plaices")
+        //{
+        //    collision.collider.enabled = false;
+        //    _canMultiply = true;
+        //    StopAllCoroutines();
+        //    StartCoroutine(Multiply());
+        //    GameManager_IromMum.instance.AddPoints(_isPlayer1, _multiplier);
+        //    RandomPlaices.instance.RemovePlaces();
+        //    _source.PlayOneShot(_plaicesIroned);
+        //    //Destroy(col.gameObject);
+        //    collision.gameObject.GetComponent<Pinces>().FlyAway(_rb.velocity.magnitude, collision.contacts[0].point, transform.position);
+        //}
     }
 
     void DisplayInfoCharacter()

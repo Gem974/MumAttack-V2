@@ -5330,22 +5330,22 @@ PrefabInstance:
     - target: {fileID: 5041140449510001014, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5041140449510001014, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5041140449510001014, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5041140449983295316, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Name
-      value: MomSelecter_None_Pref
+      value: MomSelecter_MianBao_Pref
       objectReference: {fileID: 0}
     - target: {fileID: 5041140449983295317, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
@@ -5400,6 +5400,11 @@ PrefabInstance:
     - target: {fileID: 5041140449983295317, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140450099684273, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5041140450649763709, guid: 019861daf10655b4b87bf42829081a7f,
@@ -6662,6 +6667,7 @@ MonoBehaviour:
   _moms: []
   _datas:
   - {fileID: 11400000, guid: 0cfdcf28b96cfac47844dae3334302ad, type: 2}
+  - {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
   - {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
   _playBtn: {fileID: 1756351211}
   _playersSelector:
