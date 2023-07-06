@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     //Event pour la touche d'action
     public void OnAction(InputAction.CallbackContext context)
     {
+
         _actionInput = context.action.triggered;
     }
 
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
     public void OnReady(InputAction.CallbackContext context)
     {
         Tutorials.instance.ReadyChecker(_isPlayer1);
+      
     }
 
     //Passer de l'action map Tuto (get ready) à l'action map de jeu

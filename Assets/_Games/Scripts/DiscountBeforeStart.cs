@@ -84,8 +84,12 @@ public class DiscountBeforeStart : MonoBehaviour
 
         //Lance toute les fonctions de Start
         _gameManagerInScene.SendMessage("StartGameAfterDiscount");
-        
-        
 
+    }
+
+    // Methode pour changer de map quand tout les joueurs sont prêt. Appeler par le script Tutorial lorsque les deux joueurs sont prêts.
+    public void TutoPreparationFinish()
+    {
+        _gameManagerInScene.SendMessage("TutoPreparationFinish");
     }
 }

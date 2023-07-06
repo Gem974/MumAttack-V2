@@ -121,6 +121,8 @@ public class Tutorials : MonoBehaviour
 
     public void PrepareGame()
     {
+        //Appel de la fonction de changement d'action map des joueurs (corrige les erreurs de spamming de touche dans le tuto)
+        _discount.TutoPreparationFinish();
         _animator.SetTrigger("Start");
     }
 

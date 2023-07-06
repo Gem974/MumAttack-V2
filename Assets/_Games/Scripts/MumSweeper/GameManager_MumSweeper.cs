@@ -85,13 +85,19 @@ public class GameManager_MumSweeper : MonoBehaviour
         
     }
 
-    public void StartGameAfterDiscount()
+    // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
+    public void TutoPreparationFinish()
     {
-        _canPlay = true;
-        PauseGame.instance.CanPause();
         foreach (var player in _players)
         {
             player.ChangeActionMap();
         }
+    }
+
+    public void StartGameAfterDiscount()
+    {
+        _canPlay = true;
+        PauseGame.instance.CanPause();
+
     }
 }

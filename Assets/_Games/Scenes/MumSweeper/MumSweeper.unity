@@ -9700,8 +9700,6 @@ MonoBehaviour:
   _canPlay: 0
   _GOPanel: {fileID: 3363888092072481221}
   _HUD: {fileID: 3363888092334716596}
-  _grid: []
-  _emptyCells: []
   _trapCount: 5
 --- !u!4 &1864651773
 Transform:
@@ -12164,6 +12162,7 @@ MonoBehaviour:
   _currentStep: 0
   _P1Wins: 0
   _P2Wins: 0
+  _gameID: 0
   _player1: {fileID: 11400000, guid: 0cfdcf28b96cfac47844dae3334302ad, type: 2}
   _player2: {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
   _winner: {fileID: 0}
@@ -13528,7 +13527,7 @@ MonoBehaviour:
     m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: TutoP2
+  m_DefaultActionMap: 1e1bec2a-250a-45a4-b2f0-061a5faad1fd
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &5775928175000515294
@@ -17902,7 +17901,7 @@ MonoBehaviour:
     m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: TutoP1
+  m_DefaultActionMap: b7a85955-85d9-486e-941c-990063a298c4
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &9201749928816198519
