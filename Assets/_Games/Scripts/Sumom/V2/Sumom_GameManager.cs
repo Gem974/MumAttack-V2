@@ -63,10 +63,16 @@ public class Sumom_GameManager : MonoBehaviour
 
     }
 
-    public void StartGameAfterDiscount()
+    // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
+    public void TutoPreparationFinish()
     {
         _player1.ChangeActionMap();
         _player2.ChangeActionMap();
+    }
+
+    public void StartGameAfterDiscount()
+    {
+        
         _canPlay = true;
 
         _player1.AnimCanMove();

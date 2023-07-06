@@ -91,15 +91,19 @@ public class UtencilBrawl_GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
+    public void TutoPreparationFinish()
+    {
+        _J1.ChangeActionMap();
+        _J2.ChangeActionMap();
+    }
+
     public void StartGameAfterDiscount()
     {
         Time.timeScale = 1;
         _isGameStopped = false;
         _canPlay = true;
         PauseGame.instance.CanPause();
-        _J1.ChangeActionMap();
-        _J2.ChangeActionMap();
-
     }
 
 

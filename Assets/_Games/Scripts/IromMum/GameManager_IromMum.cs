@@ -92,16 +92,21 @@ public class GameManager_IromMum : MonoBehaviour
         }
     }
 
+    // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
+    public void TutoPreparationFinish()
+    {
+        foreach (var player in _players)
+        {
+            player.ChangeActionMap();
+        }
+    }
+
     public void StartGameAfterDiscount()
     {
         Timer.instance.LaunchTimer();
         RandomPlaices.instance.StartRandomPlaices();
         _canPlay = true;
         PauseGame.instance.CanPause();
-        foreach (var player in _players)
-        {
-            player.ChangeActionMap();
-        }
     }
 
 }
