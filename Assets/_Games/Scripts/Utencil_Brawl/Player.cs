@@ -84,6 +84,7 @@ namespace Utencil_Brawl
         public void OnReady(InputAction.CallbackContext context)
         {
             Tutorials.instance.ReadyChecker(_isPlayerOne);
+
         }
 
         //Passer de l'action map Tuto (get ready) à l'action map de jeu
