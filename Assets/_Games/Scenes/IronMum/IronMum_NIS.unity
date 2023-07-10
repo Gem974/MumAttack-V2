@@ -2217,7 +2217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.7564735, y: 33.049294, z: -27.563793}
+  m_LocalPosition: {x: 2.7564745, y: 33.049294, z: -27.563793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5042,7 +5042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196643380}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.7564735, y: 33.049294, z: -27.563793}
+  m_LocalPosition: {x: 2.7564745, y: 33.049294, z: -27.563793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7920,6 +7920,8 @@ MonoBehaviour:
   _rb: {fileID: 611062656476255700}
   _power: 20
   _plaices: {fileID: 611062656100614181}
+  _impactVFX: {fileID: 5880797563127281583, guid: a1ce8094905f4714d95984ead87ad3b3,
+    type: 3}
 --- !u!54 &611062656476255700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8209,6 +8211,8 @@ MonoBehaviour:
   _rb: {fileID: 611062657388830127}
   _power: 20
   _plaices: {fileID: 611062657710574527}
+  _impactVFX: {fileID: 5880797563127281583, guid: a1ce8094905f4714d95984ead87ad3b3,
+    type: 3}
 --- !u!135 &611062657388830126
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9140,6 +9144,8 @@ MonoBehaviour:
   _rb: {fileID: 1957678256729561770}
   _power: 20
   _plaices: {fileID: 1723325945526180511}
+  _impactVFX: {fileID: 5880797563127281583, guid: a1ce8094905f4714d95984ead87ad3b3,
+    type: 3}
 --- !u!54 &1957678256729561770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9243,6 +9249,8 @@ MonoBehaviour:
   _rb: {fileID: 1957678257639469826}
   _power: 20
   _plaices: {fileID: 1723325946083767095}
+  _impactVFX: {fileID: 5880797563127281583, guid: a1ce8094905f4714d95984ead87ad3b3,
+    type: 3}
 --- !u!54 &1957678257639469826
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9346,6 +9354,8 @@ MonoBehaviour:
   _rb: {fileID: 1957678257667321178}
   _power: 20
   _plaices: {fileID: 1723325946197863791}
+  _impactVFX: {fileID: 5880797563127281583, guid: a1ce8094905f4714d95984ead87ad3b3,
+    type: 3}
 --- !u!54 &1957678257667321178
 Rigidbody:
   m_ObjectHideFlags: 0

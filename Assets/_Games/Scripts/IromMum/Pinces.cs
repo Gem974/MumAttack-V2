@@ -9,7 +9,7 @@ public class Pinces : MonoBehaviour
     [SerializeField] Rigidbody _rb;
     [SerializeField] float _power;
     [SerializeField] GameObject _plaices;
-
+    public GameObject _impactVFX;
 
     private void Start()
     {
@@ -25,6 +25,7 @@ public class Pinces : MonoBehaviour
 
     public void FlyAway(float Force, Vector3 ImpactPosition, Vector3 PlayerPos)
     {
+        Instantiate(_impactVFX, transform.position, Quaternion.identity);
         Destroy(_plaices);
         _rb.isKinematic = false;
         _rb.useGravity = true;
