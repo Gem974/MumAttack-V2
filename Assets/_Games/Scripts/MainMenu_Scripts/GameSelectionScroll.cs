@@ -63,7 +63,7 @@ public class GameSelectionScroll : MonoBehaviour
             nav1.selectOnLeft = _games[_games.Count - 1].GetComponent<Selectable>();
             _games[0].GetComponent<Button>().navigation = nav1;
             Navigation nav2 = _games[_games.Count - 1].GetComponent<Button>().navigation;
-            nav2.selectOnRight = _ptrGames[0].GetComponent<Selectable>();
+            nav2.selectOnRight = _games[0].GetComponent<Selectable>();
             _games[_games.Count - 1].GetComponent<Button>().navigation = nav2;
             _ptrActive = false;
         }

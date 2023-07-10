@@ -42,18 +42,18 @@ public class SoundManager_DarTeat : MonoBehaviour
         instance = this;
 
         //Initialization sound
-        if (_musicTheme != null)
-        {
-            _soundEffectTheme.clip = _musicTheme;
-            _soundEffectTheme.PlayDelayed(4);
-        }
+        //if (_musicTheme != null)
+        //{
+        //    _soundEffectTheme.clip = _musicTheme;
+        //    _soundEffectTheme.PlayDelayed(4);
+        //}
 
         //Initialization sound
-        if (_introSound != null)
-        {
-            _soundEffectIntro.clip = _introSound;
-            _soundEffectIntro.PlayDelayed(.25f);
-        }
+        //if (_introSound != null)
+        //{
+        //    _soundEffectIntro.clip = _introSound;
+        //    _soundEffectIntro.PlayDelayed(.25f);
+        //}
 
         //Initialization sound
 
