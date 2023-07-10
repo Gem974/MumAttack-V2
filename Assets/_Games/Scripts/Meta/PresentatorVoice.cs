@@ -11,7 +11,7 @@ public class PresentatorVoice : MonoBehaviour
     [SerializeField] AudioClip[] _badThingsClips;
     [SerializeField] AudioClip[] _discounts;
     [SerializeField] AudioSource _audioSource;
-
+    public GameObject[] _prompts;
 
     public static PresentatorVoice instance;
 
@@ -28,11 +28,29 @@ public class PresentatorVoice : MonoBehaviour
         instance = this;
     }
 
+    public void ShowPrompt(float duration)
+    {
+        foreach (var i in _prompts)
+        {
+            i.SetActive(false);
+        }
+        StartCoroutine(Prompt(duration));
+    }
+
+    IEnumerator Prompt(float duration)
+    {
+        var id = Random.Range(0, _prompts.Length);
+        _prompts[id].SetActive(true);
+        yield return new WaitForSeconds(duration);
+        _prompts[id].SetActive(false);
+    }
+
     public void StartSpeaking(bool isOneShot, bool _isGoodThings)
     {
         if (_canTalk)
         {
             StartCoroutine(Speak(isOneShot, _isGoodThings));
+            ShowPrompt(0.5f);
             _canTalk = false;
         }
     }
