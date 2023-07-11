@@ -33,7 +33,8 @@ public class RandomPlaices : MonoBehaviour
     {
         StartCoroutine(SpawnPlaices());
     }
-   
+
+    float RandomWait = 0;
     IEnumerator SpawnPlaices()
     {
 
@@ -41,8 +42,8 @@ public class RandomPlaices : MonoBehaviour
         {
             if (GameManager_IromMum.instance._canPlay && _spwanedPlaices <= _maxPlaicesToSpawn)
             {
-                int RandomWait = Random.Range(1, 5);
                 yield return new WaitForSeconds(RandomWait);
+                RandomWait = Random.Range(1, 5);
 
                 int randomPlaices = Random.Range(0, _plaices.Length);
 
@@ -79,7 +80,7 @@ public class RandomPlaices : MonoBehaviour
     {
         return new Vector3(
             Random.Range(bounds.min.x / _zoneDivide, bounds.max.x / _zoneDivide),
-            0f,
+            -0.5f,
             Random.Range(bounds.min.z / _zoneDivide, bounds.max.z / _zoneDivide)
         );
     }
