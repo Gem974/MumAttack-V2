@@ -360,6 +360,11 @@ public class Kart : MonoBehaviour
             
             other.gameObject.GetComponent<Pinces>().FlyAway(_rb.velocity.magnitude, other.transform.position, transform.position);
         }
+
+        if(other.gameObject.tag == "Deco")
+        {
+            other.gameObject.GetComponent<FilDeco>().Triggered();
+        }
     }
     
     IEnumerator Multiply()
