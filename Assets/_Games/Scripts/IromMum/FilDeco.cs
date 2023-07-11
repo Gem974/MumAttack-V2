@@ -7,6 +7,7 @@ public class FilDeco : MonoBehaviour
     //Variables
     public Sprite _base, _applati;
     public float _duration = 5f;
+    public GameObject _vfx;
     private SpriteRenderer _renderer;
     private bool _alreadyTrigger = false;
     // Start is called before the first frame update
@@ -35,6 +36,7 @@ public class FilDeco : MonoBehaviour
     {
         _alreadyTrigger = true;
         _renderer.sprite = _applati;
+        Instantiate(_vfx, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(_duration);
         _renderer.sprite = _base;
         _alreadyTrigger = false;
