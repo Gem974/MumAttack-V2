@@ -2234,7 +2234,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 45.290215
+  field of view: 45.290195
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2260,7 +2260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.324783, y: 32.916122, z: -27.602827}
+  m_LocalPosition: {x: 2.3247883, y: 32.916122, z: -27.602825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4335,7 +4335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829067490}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.95, z: 0}
+  m_LocalPosition: {x: 0, y: -0.95, z: -1.809}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4350,7 +4350,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829067490}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5470,7 +5470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196643380}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.324783, y: 32.916122, z: -27.602827}
+  m_LocalPosition: {x: 2.3247883, y: 32.916122, z: -27.602825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5497,9 +5497,20 @@ PrefabInstance:
       objectReference: {fileID: 299382537}
     - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
+      propertyPath: _smokeFX
+      value: 
+      objectReference: {fileID: 8656522925564163052, guid: 774e18408e9c3fa4b8e3fb8d05953eda,
+        type: 3}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
       propertyPath: _trailFX
       value: 
       objectReference: {fileID: 829067490}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _vfxPoint
+      value: 
+      objectReference: {fileID: 829067491}
     - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
       propertyPath: _isPlayer1

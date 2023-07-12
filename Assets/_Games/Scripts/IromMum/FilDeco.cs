@@ -36,9 +36,9 @@ public class FilDeco : MonoBehaviour
     {
         _alreadyTrigger = true;
         _renderer.sprite = _applati;
-        Instantiate(_vfx, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(_duration);
         _renderer.sprite = _base;
+        Instantiate(_vfx, transform.position, Quaternion.identity);
         _alreadyTrigger = false;
     }
 }

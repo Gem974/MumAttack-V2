@@ -116,6 +116,11 @@ public class Kart : MonoBehaviour
         }
     }
 
+
+    float _nextFX;
+    float _fxCD = 0.1f;
+    public GameObject _smokeFX;
+    public Transform _vfxPoint;
     void Update()
     {
 
@@ -132,6 +137,11 @@ public class Kart : MonoBehaviour
                     break;
                 case PlayerState.Propulse:
                     PowerCharge();
+                    //if (Time.time >= _nextFX)
+                    //{
+                        Instantiate(_smokeFX, _vfxPoint.position, Quaternion.identity);
+                    //    _nextFX = Time.time + _fxCD;
+                    //}
 
                     break;
                 default:
@@ -139,6 +149,8 @@ public class Kart : MonoBehaviour
             } 
         }
     }
+
+
 
     private void FixedUpdate()
     {
@@ -150,7 +162,6 @@ public class Kart : MonoBehaviour
             switch (_playerState)
             {
                 case PlayerState.Standby:
-                    
                     break;
                 case PlayerState.Charging:
                     break;
@@ -165,6 +176,7 @@ public class Kart : MonoBehaviour
                             _playerState = PlayerState.Standby;
                             _power = 0;
                             _driftPower = 0;
+                            
                         }
                     }
                     _rb.AddForce(transform.forward * 0.6f * (_power / 10F), ForceMode.VelocityChange);
