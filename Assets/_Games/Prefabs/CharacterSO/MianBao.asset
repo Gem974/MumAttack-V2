@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078677eb21c5ca642a8de46799ed7484, type: 3}
+  m_Name: MianBao
+  m_EditorClassIdentifier: 
+  _name: MianBao
+  _color:
+    serializedVersion: 2
+    rgba: 5233138
+  _headBackColor:
+    serializedVersion: 2
+    rgba: 1518846
+  _winImage: {fileID: 0}
+  _goodHead: {fileID: 0}
+  _badHead: {fileID: 0}
+  _ironMum_sprite: {fileID: 0}
+  sumom_animatorController: {fileID: 9100000, guid: 6274d5750d0128a47ba962bee448694b,
+    type: 2}
+  utencil_animatorController: {fileID: 9100000, guid: a875ffd182f9c44409746db2b20719c3,
+    type: 2}

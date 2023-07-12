@@ -655,6 +655,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCantSelect:
+    m_PersistentCalls:
+      m_Calls: []
   momSelecterState: 0
 --- !u!82 &6983677029731603533
 AudioSource:
