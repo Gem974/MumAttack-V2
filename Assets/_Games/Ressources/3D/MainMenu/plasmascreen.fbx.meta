@@ -3,7 +3,12 @@ guid: e2cf8446032028b46afe3a5d06fad0f5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plasma screen
+    second: {fileID: 2100000, guid: 6fa8dfb09cf3ce441a505d5122a5d9ba, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

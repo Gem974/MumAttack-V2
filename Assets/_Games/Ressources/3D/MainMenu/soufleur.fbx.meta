@@ -3,7 +3,12 @@ guid: 2d3734c4b09b1a34abedaa32ba7d1980
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sound sytem
+    second: {fileID: 2100000, guid: 11780184b1d9ac242a32f64443e8dc4d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

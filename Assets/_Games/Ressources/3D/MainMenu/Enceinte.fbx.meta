@@ -3,7 +3,12 @@ guid: 418d4bdadd5c7054bb285e07cc26262a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enceinte
+    second: {fileID: 2100000, guid: 6e4af60fb6cf2ef49907a5ac1ea1604b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

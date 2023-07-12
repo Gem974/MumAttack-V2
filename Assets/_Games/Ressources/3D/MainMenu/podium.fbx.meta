@@ -3,7 +3,12 @@ guid: 6b1938fa33606494a8bef012564c2ee7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Podium
+    second: {fileID: 2100000, guid: 3764b253cbca7844eaef283521578a29, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -40,7 +40,7 @@ public class BabyBehavior_DarTeat : MonoBehaviour
             i.SetActive(false);
         }
         _teat.SetActive(true);
-        _teat.GetComponent<MeshRenderer>().material.color = color;
+        _teat.GetComponentInChildren<MeshRenderer>().materials[0].color = color;
         _col.enabled = false;
         _vfxSuccess.SetActive(true);
     }

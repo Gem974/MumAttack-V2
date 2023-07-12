@@ -142,7 +142,7 @@ public class PlayerController_DarTeat : MonoBehaviour
                     Instantiate(_vfxHit[1], hit.point, Quaternion.identity);
                 }
                 var go = Instantiate(_teatPrefab, hit.point, Quaternion.identity);
-                go.GetComponent<MeshRenderer>().material.color = _playerColor;
+                go.GetComponentInChildren<MeshRenderer>().materials[0].color = _playerColor;
             }
         }
     }

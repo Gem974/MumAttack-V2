@@ -3,7 +3,12 @@ guid: c17f2a3d12b141c408634466ef648171
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lustre
+    second: {fileID: 2100000, guid: 9b2d652b5fa1d9247be7e1af661b26d4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

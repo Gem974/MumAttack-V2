@@ -3,7 +3,12 @@ guid: 39831344c5b7385428ab88d60c29c900
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scafolding
+    second: {fileID: 2100000, guid: 07b75909ff69f3249bc8bf99224c0b10, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

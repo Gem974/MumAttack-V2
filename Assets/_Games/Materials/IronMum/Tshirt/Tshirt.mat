@@ -12,7 +12,6 @@ Material:
   m_ValidKeywords:
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
-  - _OCCLUSIONMAP
   - _PARALLAXMAP
   - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_InvalidKeywords: []
@@ -31,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 1, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 05965806802301548a305b538b65dead, type: 3}
+        m_Texture: {fileID: 2800000, guid: dd4417bb6df188e48b7c221e3d884e4c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -67,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 1, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 967a993458501684f8e858e8c4732220, type: 3}
+        m_Texture: {fileID: 2800000, guid: cf7f3ae09d5a4014b870d806b722f3e6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoGrassTex:
@@ -79,11 +78,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: cb694c4c30a073d4f84d9e0567eb0703, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: cb694c4c30a073d4f84d9e0567eb0703, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b9280fcf8ba3a94a98dce41cdf8ca3c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -127,7 +126,7 @@ Material:
     - _GrassThinness: 0.4
     - _GrassThinnessIntersection: 0.43
     - _LightIntensity: 1
-    - _Metallic: 0
+    - _Metallic: 0.438
     - _MinimumNumberStacks: 2
     - _NearCameraSmoosh: 0.5
     - _NoisePower: 2
