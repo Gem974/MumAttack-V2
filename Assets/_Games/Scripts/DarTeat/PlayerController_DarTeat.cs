@@ -122,6 +122,7 @@ public class PlayerController_DarTeat : MonoBehaviour
                 hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>().Goal(_playerColor);
 
                 //Sound
+                PresentatorVoice.instance.StartSpeaking(true, true);
                 SoundManager_DarTeat.instance._soundEffectsPlayerController.PlayOneShot(SoundManager_DarTeat.instance._addPointSoundEffect);
                 //Camera Shake
                 CameraShake_DarTeat.instance.ShakeCamera();
@@ -133,6 +134,7 @@ public class PlayerController_DarTeat : MonoBehaviour
             {
                 if (hit.transform.CompareTag("Baby"))
                 {
+                    PresentatorVoice.instance.StartSpeaking(true, false);
                     Instantiate(_vfxHit[0], hit.point, Quaternion.identity);
                 }
                 else
