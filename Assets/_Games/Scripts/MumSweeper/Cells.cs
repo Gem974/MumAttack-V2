@@ -39,6 +39,7 @@ public class Cells : MonoBehaviour
             //Effet de la cellule à trouver
             if (_isGoal)
             {
+                PresentatorVoice.instance.StartSpeaking(true, true);
                 _mesh.material.color = _goalColor;
                 GameManager_MumSweeper.instance.GameOver(isPlayer1);
             }
@@ -46,6 +47,7 @@ public class Cells : MonoBehaviour
             //Effet de la cellule piege
             if (_isTrap)
             {
+                PresentatorVoice.instance.StartSpeaking(true, false);
                 _mesh.material.color = _trapColor;
                 player.GetTrapped();
 
