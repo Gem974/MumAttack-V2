@@ -348,6 +348,11 @@ MonoBehaviour:
   - {fileID: 472133570}
   - {fileID: 1426455929}
   - {fileID: 8261174030665199057}
+  _sprites:
+  - {fileID: 21300000, guid: 9603b0ee0cef68c4e9b34f3892d3dbb1, type: 3}
+  - {fileID: 21300000, guid: 74e4989429f980543a961c937da068ab, type: 3}
+  - {fileID: 21300000, guid: 5ac20400718a5544d94127751112213f, type: 3}
+  - {fileID: 21300000, guid: 530f5b2841ea65a428c78263a969f41a, type: 3}
 --- !u!82 &3798500592264770949
 AudioSource:
   m_ObjectHideFlags: 0

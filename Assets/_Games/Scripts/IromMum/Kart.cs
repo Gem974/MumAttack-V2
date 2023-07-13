@@ -323,22 +323,22 @@ public class Kart : MonoBehaviour
         //_rb.AddForce(Impulse, ForceMode.Impulse);
         _playerState = PlayerState.Propulse;
 
-        if (_power < 4)
-        {
+        //if (_power < 4)
+        //{
 
-            Instantiate(_fxPropulse[0], _fxSpawnPoint);
+        //    Instantiate(_fxPropulse[0], _fxSpawnPoint);
 
-        }
-        else if (_power > 4 && _power < 8)
-        {
+        //}
+        //else if (_power > 4 && _power < 8)
+        //{
 
-            Instantiate(_fxPropulse[1], _fxSpawnPoint);
+        //    Instantiate(_fxPropulse[1], _fxSpawnPoint);
 
-        }
-        else if (_power > 8 && _power < 12)
-        {
-            Instantiate(_fxPropulse[2], _fxSpawnPoint);
-        }
+        //}
+        //else if (_power > 8 && _power < 12)
+        //{
+        //    Instantiate(_fxPropulse[2], _fxSpawnPoint);
+        //}
 
     }
 

@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.UI;
 
 public class PresentatorVoice : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class PresentatorVoice : MonoBehaviour
     [SerializeField] AudioClip[] _discounts;
     [SerializeField] AudioSource _audioSource;
     public GameObject[] _prompts;
+    public Sprite[] _sprites; // 0 : Stress / 1 : Sad / 2 : happy / 3 : Angry 
 
     public static PresentatorVoice instance;
 
@@ -28,18 +28,22 @@ public class PresentatorVoice : MonoBehaviour
         instance = this;
     }
 
-    public void ShowPrompt(float duration)
+    public void ShowPrompt(float duration, bool isGood)
     {
         foreach (var i in _prompts)
         {
             i.SetActive(false);
         }
-        StartCoroutine(Prompt(duration));
+        StartCoroutine(Prompt(duration, isGood));
     }
 
-    IEnumerator Prompt(float duration)
+    IEnumerator Prompt(float duration, bool isGood)
     {
         var id = Random.Range(0, _prompts.Length);
+        if (isGood)
+            _prompts[id].GetComponent<Image>().sprite = _sprites[2];
+        else
+            _prompts[id].GetComponent<Image>().sprite = _sprites[3];
         _prompts[id].SetActive(true);
         yield return new WaitForSeconds(duration);
         _prompts[id].SetActive(false);
@@ -50,7 +54,7 @@ public class PresentatorVoice : MonoBehaviour
         if (_canTalk)
         {
             StartCoroutine(Speak(isOneShot, _isGoodThings));
-            ShowPrompt(0.5f);
+            ShowPrompt(0.5f, _isGoodThings);
             _canTalk = false;
         }
     }

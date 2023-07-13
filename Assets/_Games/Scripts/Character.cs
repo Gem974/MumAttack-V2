@@ -15,7 +15,7 @@ public class Character : ScriptableObject
     public Sprite _winImage;
     public Sprite _goodHead;
     public Sprite _badHead;
-
+    public Sprite _readyMum;
 
     [Header("IRONMUM")]
     public Sprite _ironMum_sprite;

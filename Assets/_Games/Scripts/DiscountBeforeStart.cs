@@ -14,7 +14,7 @@ public class DiscountBeforeStart : MonoBehaviour
     [SerializeField] Volume _postProcess;
     [SerializeField] DepthOfField _dop;
     [SerializeField] Text _discountTxt;
-    
+    public GameObject[] _readySprites;
 
     public static DiscountBeforeStart instance;
 
@@ -33,7 +33,9 @@ public class DiscountBeforeStart : MonoBehaviour
 
     void Start()
     {
-        
+        _readySprites[0].GetComponent<Image>().sprite = MetaGameManager.instance._player1._readyMum;
+        _readySprites[1].GetComponent<Image>().sprite = MetaGameManager.instance._player2._readyMum;
+
     }
 
     public void RestartDiscount()
@@ -62,16 +64,23 @@ public class DiscountBeforeStart : MonoBehaviour
         _discountTxt.gameObject.SetActive(true);
         PresentatorVoice.instance.DiscountPresentator(3);
         _discountTxt.text = "3";
+        _readySprites[0].SetActive(true);
         yield return new WaitForSeconds(1f);
         PresentatorVoice.instance.DiscountPresentator(2);
         _discountTxt.text = "2";
+        _readySprites[1].SetActive(true);
         yield return new WaitForSeconds(1f);
         PresentatorVoice.instance.DiscountPresentator(1);
         _discountTxt.text = "1";
+        _readySprites[2].SetActive(true);
         yield return new WaitForSeconds(1f);
         PresentatorVoice.instance.DiscountPresentator(0);
         _discountTxt.text = "START !";
         yield return new WaitForSeconds(1f);
+        foreach (var i in _readySprites)
+        {
+            i.SetActive(false);
+        }
         _discountTxt.gameObject.SetActive(false);
         
         //APL DepthOfField

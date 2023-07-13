@@ -15,14 +15,15 @@ MonoBehaviour:
   _name: MianBao
   _color:
     serializedVersion: 2
-    rgba: 5233138
+    rgba: 4283423218
   _headBackColor:
     serializedVersion: 2
-    rgba: 1518846
-  _winImage: {fileID: 0}
-  _goodHead: {fileID: 0}
-  _badHead: {fileID: 0}
-  _ironMum_sprite: {fileID: 0}
+    rgba: 4279708926
+  _winImage: {fileID: 21300000, guid: e7939ebe37a594d4499906f32311effa, type: 3}
+  _goodHead: {fileID: 21300000, guid: 2eebdb8be9e9d884493ef76701ab74db, type: 3}
+  _badHead: {fileID: 21300000, guid: 8c53db838e69ff84b8b9312e28d595e5, type: 3}
+  _readyMum: {fileID: 21300000, guid: ee7349c0720d1d348b253e1c65565720, type: 3}
+  _ironMum_sprite: {fileID: 21300000, guid: a8777b68bcfa26e45a85d56c8bb82509, type: 3}
   sumom_animatorController: {fileID: 9100000, guid: 6274d5750d0128a47ba962bee448694b,
     type: 2}
   utencil_animatorController: {fileID: 9100000, guid: a875ffd182f9c44409746db2b20719c3,

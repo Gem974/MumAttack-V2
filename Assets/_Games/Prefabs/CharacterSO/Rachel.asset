@@ -19,9 +19,10 @@ MonoBehaviour:
   _headBackColor:
     serializedVersion: 2
     rgba: 4292732617
-  _winImage: {fileID: 21300000, guid: d71446c884cc74a498b0b869ff6ecc7f, type: 3}
+  _winImage: {fileID: 21300000, guid: e0d829ab2dd0c4d4da8cb5bade014980, type: 3}
   _goodHead: {fileID: 21300000, guid: 1e8f68ec254a23e4090d990eae3d8339, type: 3}
   _badHead: {fileID: 21300000, guid: 9b14062a16765f944aeb949b7c818d0c, type: 3}
+  _readyMum: {fileID: 21300000, guid: b3e329ecf6d3d4046b5b2475e79a5967, type: 3}
   _ironMum_sprite: {fileID: 21300000, guid: c8231ca8b73f60c41b3229bd102aee51, type: 3}
   sumom_animatorController: {fileID: 9100000, guid: 6274d5750d0128a47ba962bee448694b,
     type: 2}

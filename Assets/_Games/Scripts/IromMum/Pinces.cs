@@ -10,9 +10,15 @@ public class Pinces : MonoBehaviour
     [SerializeField] float _power;
     [SerializeField] GameObject _plaices;
     public GameObject _impactVFX;
+    public MeshRenderer[] _mat;
 
     private void Start()
     {
+        var col = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+        foreach (var i in _mat)
+        {
+            i.material.color = col;
+        }
         int randomSpeed = Random.Range(1, 3);
         _animator.speed = randomSpeed;
     }
