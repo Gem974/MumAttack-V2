@@ -3,7 +3,12 @@ guid: 82f51607539c20c43999d83e479cefe2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hote
+    second: {fileID: 2100000, guid: 88bcaa2c96ba0c74cbc8c441d1b549fb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

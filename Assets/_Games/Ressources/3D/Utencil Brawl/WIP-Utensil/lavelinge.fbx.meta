@@ -3,7 +3,12 @@ guid: 47850fc22a6fd204b8ec0e650b365899
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wahing
+    second: {fileID: 2100000, guid: 343de726efc29dd4cae5bc278f7421df, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -5604,19 +5604,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041140449417168453, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65962470eb79ba04e8beb9754ee97933,
+        type: 3}
+    - target: {fileID: 5041140449417168453, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5041140449417168453, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5041140449417168453, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5041140449417168455, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449417168455, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449417168455, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449417168455, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449510000968, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449510000968, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449510000968, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449510000968, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140449510001014, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65962470eb79ba04e8beb9754ee97933,
+        type: 3}
     - target: {fileID: 5041140449510001014, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Color.b
@@ -5697,6 +5749,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5041140450462735209, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65962470eb79ba04e8beb9754ee97933,
+        type: 3}
+    - target: {fileID: 5041140450462735211, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140450462735211, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140450462735211, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041140450462735211, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5041140450649763709, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Color.b
@@ -5752,6 +5830,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.54
       objectReference: {fileID: 0}
+    - target: {fileID: 5637852517921546297, guid: ce41fdcdf6f47784bac7cc14644a087a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5637852518054436350, guid: ce41fdcdf6f47784bac7cc14644a087a,
         type: 3}
       propertyPath: m_Color.b
@@ -5785,7 +5868,7 @@ PrefabInstance:
     - target: {fileID: 5637852518630733341, guid: ce41fdcdf6f47784bac7cc14644a087a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5637852519001814214, guid: ce41fdcdf6f47784bac7cc14644a087a,
         type: 3}
@@ -5886,6 +5969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MomSelecter_None_Pref
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637852519710498263, guid: ce41fdcdf6f47784bac7cc14644a087a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce41fdcdf6f47784bac7cc14644a087a, type: 3}
@@ -7370,6 +7458,46 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f367cb27-bfe8-4b85-8ef3-3c98ac8fba8c
     m_ActionName: SelectCharaP2/Cancel[/XInputControllerWindows/buttonEast,/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf4445e0-f731-420a-b724-e94809fcbcf7
+    m_ActionName: GridPlayer1/MoveUp[/Keyboard/w,/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 577686c6-89f2-4452-9fda-5ec6990b87c0
+    m_ActionName: GridPlayer1/MoveDown[/Keyboard/s,/XInputControllerWindows/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18ffbcae-4543-4c72-be46-28edb04825e3
+    m_ActionName: GridPlayer1/MoveLeft[/Keyboard/a,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 620f0561-d342-457e-b2a8-961bfbf6ea6d
+    m_ActionName: GridPlayer1/MoveRight[/Keyboard/d,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 622c7fd9-064d-4505-ae0a-5f585f4b01b5
+    m_ActionName: GridPlayer1/Action[/Keyboard/q,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a5041b6b-96c1-4c13-81dc-2e449de08388
+    m_ActionName: GridPlayer2/MoveUp[/Keyboard/upArrow,/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 11d83260-ae3c-4b09-be96-1b46d921594d
+    m_ActionName: GridPlayer2/MoveDown[/Keyboard/downArrow,/XInputControllerWindows/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a1025f9-f133-4a98-a356-a2abe6f527c6
+    m_ActionName: GridPlayer2/MoveLeft[/Keyboard/leftArrow,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa19ecdc-8ddb-4e1a-b456-e80667233eef
+    m_ActionName: GridPlayer2/MoveRight[/Keyboard/rightArrow,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16e2f8f8-f27d-4b2f-ac8f-97d924703958
+    m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: SelectCharaP1

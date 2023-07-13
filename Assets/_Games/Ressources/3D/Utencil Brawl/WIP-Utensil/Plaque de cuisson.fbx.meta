@@ -3,7 +3,12 @@ guid: 0d8266f0d73532147aff2f0a95c56771
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bruleur
+    second: {fileID: 2100000, guid: fe7c05cf3f852924e980978a4a18429d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

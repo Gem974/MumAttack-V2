@@ -25,8 +25,8 @@ namespace META
 
             instance = this;
 
-            _moms = new Transform[transform.childCount];
-            for (int i = 0; i < transform.childCount; i++)
+            _moms = new Transform[transform.childCount-1];
+            for (int i = 0; i < transform.childCount - 1; i++)
             {
                 _moms[i] = transform.GetChild(i);
             }

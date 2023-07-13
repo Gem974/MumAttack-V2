@@ -3,7 +3,12 @@ guid: 98681ee2557a6f142ad19eaea015a277
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oven door
+    second: {fileID: 2100000, guid: bf208a8d9924193458bb2e0de07636c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
