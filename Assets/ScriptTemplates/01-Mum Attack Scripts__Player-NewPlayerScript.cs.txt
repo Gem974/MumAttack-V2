@@ -6,7 +6,7 @@ public class #SCRIPTNAME# : PlayerBehaviour
 {
 
   
-    PlayerBehaviour thisPlayer = new PlayerBehaviour();
+   
     // Start is called before the first frame update
     public void Start()
     {

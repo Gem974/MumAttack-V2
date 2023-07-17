@@ -6,34 +6,33 @@ public class #SCRIPTNAME# : MonoBehaviour
 {
 
   
-// Start is called before the first frame update
+    [SerializeField] PlayerBehaviour[] _players;
+    // Start is called before the first frame update
     void Start()
     {
-    #NOTRIM#
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-    #NOTRIM#
+    
     }
 
     //Called just After the Discount
     public void StartGameAfterDiscount()
     {
-    #NOTRIM#
+    
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
     public void TutoPreparationFinish()
     {
 
-        #region A Decommenter: player etant le script qui controle les joueurs
-        //foreach (var player in _players)   
-        //{
-        //    player.ChangeActionMap();
-        //} 
-        #endregion
+        foreach (var player in _players)
+        {
+            player.ChangeActionMap();
+        }
     }
 }
 

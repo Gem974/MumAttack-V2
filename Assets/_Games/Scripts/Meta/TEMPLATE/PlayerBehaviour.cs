@@ -12,29 +12,24 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] protected PlayerInput _playerInput;
     [SerializeField] protected string _actionMapP1Name = "Player1", _actionMapP2Name = "Player2";
     [SerializeField] protected bool _isPlayer1;
-    private Vector2 _moveInput = Vector2.zero;
+    [SerializeField] protected Vector2 _moveInput = Vector2.zero;
     private bool _actionNewInput = false;
 
-    public virtual void PairingPlayerInput()
+    protected virtual void PairingPlayerInput()
     {
         //Liaison avec le Player Input
         _playerInput = GetComponent<PlayerInput>();
         //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
     }
-    public virtual void Kabo()
-    {
-        print("OUI");
-    }
+   
 
     //Event pour les touches de déplacement 
     public virtual void OnMove(InputAction.CallbackContext context)
     {
         //On se contente de récupérer le Vecteur2 des touches de déplacement
-        if (GameManager_IromMum.instance._canPlay)
-        {
-            _moveInput = context.ReadValue<Vector2>();
-        }
+        _moveInput = context.ReadValue<Vector2>();
+        
     }
 
     //Event pour la touche d'action
@@ -68,11 +63,11 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (_isPlayer1)
         {
-            _playerInput.SwitchCurrentActionMap("_actionMapP1");
+            _playerInput.SwitchCurrentActionMap(_actionMapP1Name);
         }
         else
         {
-            _playerInput.SwitchCurrentActionMap("_actionMapP2");
+            _playerInput.SwitchCurrentActionMap(_actionMapP2Name);
         }
     }
 }
