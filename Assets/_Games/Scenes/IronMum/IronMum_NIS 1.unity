@@ -2902,7 +2902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.324783, y: 32.916122, z: -27.602827}
+  m_LocalPosition: {x: 2.3247826, y: 32.916126, z: -27.602825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5011,9 +5011,20 @@ PrefabInstance:
       objectReference: {fileID: 1231866499}
     - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
+      propertyPath: _smokeFX
+      value: 
+      objectReference: {fileID: 8656522925564163052, guid: 774e18408e9c3fa4b8e3fb8d05953eda,
+        type: 3}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
       propertyPath: _trailFX
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
+        type: 3}
+      propertyPath: _vfxPoint
+      value: 
+      objectReference: {fileID: 1309413625}
     - target: {fileID: 6627102417993501201, guid: 0f9faa31f599a81428313d2a5cd0a47e,
         type: 3}
       propertyPath: _move.m_Id
@@ -8206,7 +8217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196643380}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.324783, y: 32.916122, z: -27.602827}
+  m_LocalPosition: {x: 2.3247826, y: 32.916126, z: -27.602825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
