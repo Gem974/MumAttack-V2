@@ -57,7 +57,7 @@ public class SpawnRandomObject : MonoBehaviour
 
                 float randomRot = Random.Range(-1, 1);
 
-                var randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+                var randomRotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
 
 
 

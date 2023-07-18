@@ -7,15 +7,15 @@ using Utencil_Brawl;
 using Spine.Unity;
 
 
-public class UtencilBrawl_GameManager : MonoBehaviour
+public class UtencilBrawl_GameManager : GameManagerBehaviour
 {
     public Player _J1;
     public Player _J2;
-    public GameObject _GOPanel;
+    //public GameObject _GOPanel;
 
     public bool _isGameStopped = false;
 
-    public bool _canPlay;
+    
 
     public static UtencilBrawl_GameManager instance;
 
@@ -55,13 +55,13 @@ public class UtencilBrawl_GameManager : MonoBehaviour
         if (_isGameStopped == false && _J1._touches == 0 || _J2._touches == 0 && _isGameStopped == false)
         {
             PauseGame.instance.CanTPause();
-            Victory();
+            GameOver();
         }
 
         
     }
 
-    public void Victory()
+    public override void GameOver()
     {
         if (_J1._touches <= 0 )
         {

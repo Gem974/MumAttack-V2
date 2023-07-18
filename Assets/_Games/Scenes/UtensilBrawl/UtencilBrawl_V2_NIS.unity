@@ -10891,11 +10891,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fb1fbe93c0448eca688bdbd6b015e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canPlay: 0
+  _GOPanel: {fileID: 697637817}
   _J1: {fileID: 1292938047}
   _J2: {fileID: 1848096426}
-  _GOPanel: {fileID: 697637817}
   _isGameStopped: 0
-  _canPlay: 0
   _skeletonMecanim1: {fileID: 702392038}
   _skeletonMecanim2: {fileID: 1847584228}
 --- !u!4 &973632673

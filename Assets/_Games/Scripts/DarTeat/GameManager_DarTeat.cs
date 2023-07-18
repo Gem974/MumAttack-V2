@@ -4,13 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager_DarTeat : MonoBehaviour
+public class GameManager_DarTeat : GameManagerBehaviour
 {
     
     private PlayerController_DarTeat[] _players;
 
     [Header("Systems")]
-    public bool _canPlay;
+    //public bool _canPlay;
     public int _points1, _points2;
 
     [Header("UI")]
@@ -77,10 +77,9 @@ public class GameManager_DarTeat : MonoBehaviour
 
     }
 
-    public void GameOver()
+    public override void GameOver()
     {
-        PauseGame.instance.CanTPause();
-        _canPlay = false;
+        base.GameOver();
         if (_points1 > _points2)
         {
             _GOPanel.SetActive(true);

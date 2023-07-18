@@ -6,16 +6,16 @@ using TMPro;
 using META;
 
 
-public class GameManager_IromMum : MonoBehaviour
+public class GameManager_IromMum : GameManagerBehaviour
 {
     [Header("Systems")]
-    public bool _canPlay;
+   
     public int _points1, _points2;
     public GameObject _bubbleJ1, _bubbleJ2;
 
     [Header("UI")]
     public TextMeshProUGUI _pointsTxt1, _pointsTxt2;
-    public GameObject _GOPanel;
+    
     public Text _playerWinsText;
     public Animator _HUD;
 
@@ -68,10 +68,9 @@ public class GameManager_IromMum : MonoBehaviour
 
     }
 
-    public void GameOver()
+    public override void GameOver()
     {
-        PauseGame.instance.CanTPause();
-        _canPlay = false;
+        base.GameOver();
         if (_points1 > _points2)
         {
             _GOPanel.SetActive(true);

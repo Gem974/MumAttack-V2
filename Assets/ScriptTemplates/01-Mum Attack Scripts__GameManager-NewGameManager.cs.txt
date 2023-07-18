@@ -2,18 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class #SCRIPTNAME# : MonoBehaviour
+public class #SCRIPTNAME# : GameManagerBehaviour
 {
 
-  
+    public bool _canPlay;
     [SerializeField] PlayerBehaviour[] _players;
-    // Start is called before the first frame update
+
+    public static #SCRIPTNAME# instance;
+    
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Il y a plus d'une instance de #SCRIPTNAME# dans la scène");
+            return;
+        }
+        instance = this;
+    }
+    
     void Start()
     {
-    
+        _canPlay = false;
+        PauseGame.instance.CanTPause();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
     
@@ -22,6 +36,8 @@ public class #SCRIPTNAME# : MonoBehaviour
     //Called just After the Discount
     public void StartGameAfterDiscount()
     {
+        _canPlay = true;
+        PauseGame.instance.CanPause();
     
     }
 
@@ -33,6 +49,12 @@ public class #SCRIPTNAME# : MonoBehaviour
         {
             player.ChangeActionMap();
         }
+    }
+
+    public override void GameOver()
+    {
+        base.GameOver();
+
     }
 }
 

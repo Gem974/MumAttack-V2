@@ -35,7 +35,7 @@ public class PlayerBehaviour : MonoBehaviour
     //Event pour la touche d'action
     public virtual void OnAction(InputAction.CallbackContext context)
     {
-        if (GameManager_IromMum.instance._canPlay)
+        if (GameManagerBehaviour.instancePrime._canPlay)
         {
             //Equivaut a un GetKeyDown (appuie sur le bouton)
             context.action.started += context =>

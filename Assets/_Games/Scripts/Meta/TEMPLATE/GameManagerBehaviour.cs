@@ -6,17 +6,27 @@ public class GameManagerBehaviour : MonoBehaviour
 {
     [Header("GameManagerBehaviour")]
     public bool _canPlay;
+    public GameObject _GOPanel;
 
-    public static GameManagerBehaviour instance;
+    public static GameManagerBehaviour instancePrime;
 
     private void Awake()
     {
-        if (instance != null)
+        if (instancePrime != null)
         {
             Debug.LogError("Il y a plus d'une instance de GameManager dans la scène");
             return;
         }
 
-        instance = this;
+        instancePrime = this;
+    }
+
+    public virtual void GameOver()
+    {
+        PauseGame.instance.CanTPause();
+        _canPlay = false;
+        _GOPanel.SetActive(true);
+       
+
     }
 }

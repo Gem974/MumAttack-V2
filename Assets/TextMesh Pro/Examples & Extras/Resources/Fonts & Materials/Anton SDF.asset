@@ -316,6 +316,34 @@ MonoBehaviour:
       m_Height: 70
     m_Scale: 1
     m_AtlasIndex: 0
+  - m_Index: 3
+    m_Metrics:
+      m_Width: 0
+      m_Height: 0
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 0
+      m_HorizontalAdvance: 21.09375
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 0
+      m_Height: 0
+    m_Scale: 1
+    m_AtlasIndex: 0
+  - m_Index: 29
+    m_Metrics:
+      m_Width: 15.734375
+      m_Height: 45.5625
+      m_HorizontalBearingX: 3.78125
+      m_HorizontalBearingY: 55.984375
+      m_HorizontalAdvance: 23.328125
+    m_GlyphRect:
+      m_X: 132
+      m_Y: 101
+      m_Width: 17
+      m_Height: 46
+    m_Scale: 1
+    m_AtlasIndex: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 8230
@@ -364,6 +392,14 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 49
     m_GlyphIndex: 20
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 32
+    m_GlyphIndex: 3
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 58
+    m_GlyphIndex: 29
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 28933816116536082}
@@ -419,15 +455,15 @@ MonoBehaviour:
     m_Y: 90
     m_Width: 46
     m_Height: 89
+  - m_X: 122
+    m_Y: 91
+    m_Width: 36
+    m_Height: 65
   m_FreeGlyphRects:
   - m_X: 79
     m_Y: 30
     m_Width: 49
     m_Height: 3
-  - m_X: 122
-    m_Y: 30
-    m_Width: 6
-    m_Height: 993
   - m_X: 493
     m_Y: 0
     m_Width: 530
@@ -436,14 +472,6 @@ MonoBehaviour:
     m_Y: 180
     m_Width: 1023
     m_Height: 843
-  - m_X: 0
-    m_Y: 124
-    m_Width: 311
-    m_Height: 899
-  - m_X: 122
-    m_Y: 91
-    m_Width: 189
-    m_Height: 932
   - m_X: 311
     m_Y: 89
     m_Width: 59
@@ -460,6 +488,22 @@ MonoBehaviour:
     m_Y: 90
     m_Width: 15
     m_Height: 933
+  - m_X: 122
+    m_Y: 30
+    m_Width: 6
+    m_Height: 61
+  - m_X: 0
+    m_Y: 156
+    m_Width: 311
+    m_Height: 867
+  - m_X: 0
+    m_Y: 124
+    m_Width: 122
+    m_Height: 899
+  - m_X: 158
+    m_Y: 91
+    m_Width: 153
+    m_Height: 932
   m_fontInfo:
     Name: Anton
     PointSize: 73

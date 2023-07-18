@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class Sumom_GameManager : MonoBehaviour
+public class Sumom_GameManager : GameManagerBehaviour
 {
     [Header("System")]
-    public bool _canPlay;
+    
     public int _pointsP1, _pointsP2;
     public Rigidbody _rb1, _rb2;
     public Player_sumom _player1, _player2;
@@ -131,11 +131,11 @@ public class Sumom_GameManager : MonoBehaviour
             }
            
         }
-        Victory();
+        GameOver();
         StartCoroutine(EjectedSystem());
     }
 
-    public void Victory()
+    public override void GameOver()
     {
         if (_pointsP1 == 3)
         {

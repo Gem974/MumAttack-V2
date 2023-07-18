@@ -23,6 +23,8 @@ public class Timer : MonoBehaviour
             return;
         }
 
+        
+
         instance = this;
     }
 
@@ -47,7 +49,7 @@ public class Timer : MonoBehaviour
                         _timerStart++;
                         if (_timerStart >= _chronoMax)
                         {
-                            GameManager_IromMum.instance.GameOver();
+                            DiscountBeforeStart.instance._gameManagerInScene.SendMessage("GameOver");
                         }
                         else
                         {
@@ -65,7 +67,7 @@ public class Timer : MonoBehaviour
                         if (_timerStart <= 0)
                         {
                             _timerTxt.text = _timerStart.ToString();
-                            GameManager_IromMum.instance.GameOver();
+                            DiscountBeforeStart.instance._gameManagerInScene.SendMessage("GameOver");
                             StopAllCoroutines();
                            
                         }

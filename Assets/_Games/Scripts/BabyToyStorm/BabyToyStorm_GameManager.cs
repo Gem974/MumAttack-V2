@@ -2,32 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BabyToyStorm_GameManager : MonoBehaviour
+public class BabyToyStorm_GameManager : GameManagerBehaviour
 {
 
     [SerializeField] PlayerBehaviour[] _players;
     [SerializeField] int _scoreP1, _scoreP2;
-    // Start is called before the first frame update
-    public GameObject _panelGameOver;
-    public bool _canPlay;
+ 
+
 
     public static BabyToyStorm_GameManager instance;
+    
 
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogError("Il y a plus d'une instance de GameManager dans la scène");
+            Debug.LogError("Il y a plus d'une instance de BabyToyStorm_GameManager dans la scène");
             return;
         }
-
         instance = this;
+
+       
     }
 
 
     void Start()
     {
         _canPlay = false;
+        PauseGame.instance.CanTPause();
     }
 
     // Update is called once per frame
@@ -39,8 +41,10 @@ public class BabyToyStorm_GameManager : MonoBehaviour
     //Called just After the Discount
     public void StartGameAfterDiscount()
     {
+        Timer.instance.LaunchTimer();
         SpawnRandomObject.instance.StartSpawn();
         _canPlay = true;
+        PauseGame.instance.CanPause();
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
@@ -67,9 +71,19 @@ public class BabyToyStorm_GameManager : MonoBehaviour
 
     }
 
-    public void GameOver()
+    public override void GameOver()
     {
-        print("STOP");
+        base.GameOver();
+        if (_scoreP1 > _scoreP2)
+        {
+            GameOverBehaviour.instance.PlayerToWin(1);
+        }
+        else
+        {
+            GameOverBehaviour.instance.PlayerToWin(2);
+        }
+
+
     }
 }
 

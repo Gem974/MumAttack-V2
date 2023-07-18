@@ -9,7 +9,7 @@ using META;
 
 public class DiscountBeforeStart : MonoBehaviour
 {
-    [SerializeField] GameObject _gameManagerInScene;
+    public GameObject _gameManagerInScene;
     [SerializeField] GameObject _timerGO, _soundStart;
     [SerializeField] Volume _postProcess;
     [SerializeField] DepthOfField _dop;
