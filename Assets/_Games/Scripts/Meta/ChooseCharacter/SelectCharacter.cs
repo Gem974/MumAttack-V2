@@ -40,8 +40,8 @@ namespace META
             //Liaison avec le Player Input
             _playerInput = GetComponent<PlayerInput>();
             //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
+            ForceController();
             InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
-
             _momValidate = false;
 
 
@@ -82,6 +82,7 @@ namespace META
 
         public void ForceController()
         {
+            _playerInput.user.UnpairDevices();
             if (_isPlayer1)
             {
                 InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);

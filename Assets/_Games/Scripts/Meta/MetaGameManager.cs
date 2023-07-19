@@ -63,7 +63,9 @@ namespace META
             _user2 = _p2.user;
             _device1 = _user1.pairedDevices[0];
             _device2 = _user2.pairedDevices[0];
+            Debug.Log(MetaGameManager.instance._device1.name + " START");
         }
+
 
         public void BroadCastNextStep()
         {

@@ -36,6 +36,7 @@ namespace META
         private void Start()
         {
             _playBtn.gameObject.SetActive(false);
+            Debug.Log(MetaGameManager.instance._device1.name);
         }
 
         private void Update()
