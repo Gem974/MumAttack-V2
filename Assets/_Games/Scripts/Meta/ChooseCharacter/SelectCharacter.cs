@@ -80,6 +80,18 @@ namespace META
             _cancelInput = context.action.triggered;
         }
 
+        public void ForceController()
+        {
+            if (_isPlayer1)
+            {
+                InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);
+            }
+            else
+            {
+                InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device2, user: _playerInput.user);
+            }
+        }
+
         // Update is called once per frame
         //        void Update()
         //        {
