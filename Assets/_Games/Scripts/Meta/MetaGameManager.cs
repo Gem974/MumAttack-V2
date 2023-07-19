@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 namespace META
 {
@@ -26,6 +28,9 @@ namespace META
         public Character _player1;
         public Character _player2;
         public Character _winner;
+        public PlayerInput _p1, _p2;
+        public InputUser _user1, _user2;
+        public InputDevice _device1, _device2;
 
         [Header("LeaderBoard")]
 
@@ -54,6 +59,10 @@ namespace META
             DontDestroyOnLoad(this.gameObject);
             _currentStep = 1;
             _gameMode = GameMode.None;
+            _user1 = _p1.user;
+            _user2 = _p2.user;
+            _device1 = _user1.pairedDevices[0];
+            _device2 = _user2.pairedDevices[0];
         }
 
         public void BroadCastNextStep()

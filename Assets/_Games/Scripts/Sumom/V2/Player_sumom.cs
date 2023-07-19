@@ -9,6 +9,7 @@ public class Player_sumom : MonoBehaviour
 {
     [Header("Core System")]
     public bool _isPlayer1;
+    [SerializeField] InputDevice _p1, _p2;
     [SerializeField] float _impulseForce;
     [SerializeField] Rigidbody _rb;
     [SerializeField] Animator _animator;
@@ -37,13 +38,30 @@ public class Player_sumom : MonoBehaviour
 
     private void Start()
     {
+        ForceController();
         _playerInput = GetComponent<PlayerInput>();
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
+        
+
+
+      
         DisplayInfoCharacter();
         _inCollision = false;
         _animator.SetBool("CanMove", false);
         _startPos = transform.position;
 
+    }
+
+    public void ForceController()
+    {
+        if (_isPlayer1)
+        {
+            InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);
+        }
+        else
+        {
+            InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device2, user: _playerInput.user);
+        }
     }
 
     // Update is called once per frame
@@ -232,6 +250,8 @@ public class Player_sumom : MonoBehaviour
         {
             _playerInput.SwitchCurrentActionMap("SumomP2");
         }
+
+        
     }
 
     public void OnActionSud(InputAction.CallbackContext context)
