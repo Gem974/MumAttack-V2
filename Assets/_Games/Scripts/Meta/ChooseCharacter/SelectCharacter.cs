@@ -85,11 +85,13 @@ namespace META
             _playerInput.user.UnpairDevices();
             if (_isPlayer1)
             {
-                InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);
+                if(META.MetaGameManager.instance._device1 != null)
+                    InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);
             }
             else
             {
-                InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device2, user: _playerInput.user);
+                if (META.MetaGameManager.instance._device2 != null)
+                    InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device2, user: _playerInput.user);
             }
         }
 

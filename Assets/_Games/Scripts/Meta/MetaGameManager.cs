@@ -61,9 +61,22 @@ namespace META
             _gameMode = GameMode.None;
             _user1 = _p1.user;
             _user2 = _p2.user;
-            _device1 = _user1.pairedDevices[0];
-            _device2 = _user2.pairedDevices[0];
-            Debug.Log(MetaGameManager.instance._device1.name + " START");
+            if(Gamepad.all.Count >= 2)
+            {
+                _device1 = _user1.pairedDevices[0];
+                _device2 = _user2.pairedDevices[0];
+
+            }else if(Gamepad.all.Count == 1)
+            {
+                _device1 = _user1.pairedDevices[0];
+                _device2 = null;
+            }
+            else if (Gamepad.all.Count == 0)
+            {
+                _device1 = null;
+                _device2 = null;
+            }
+                Debug.Log(MetaGameManager.instance._device1.name + " START");
         }
 
 
