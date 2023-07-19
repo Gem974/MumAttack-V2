@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43914667, g: 0.48741204, b: 0.5676654, a: 1}
+  m_IndirectSpecularColor: {r: 0.43914622, g: 0.48741132, b: 0.56766325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2344,8 +2344,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205239141}
   m_LocalRotation: {x: -0.000000029802319, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11, y: -6, z: 0.0000030367}
-  m_LocalScale: {x: 39.899536, y: 3.9899535, z: 39.899536}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
+  m_LocalScale: {x: 40, y: 4, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 478907240}
@@ -10691,8 +10691,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.29462355, y: -0.0019148922, z: 0.0005903784, w: 0.95561135}
-  m_LocalPosition: {x: 0.030000031, y: 8.21, z: -10.19}
+  m_LocalRotation: {x: 0.31295946, y: -0.0005914449, z: 0.00019488823, w: 0.9497663}
+  m_LocalPosition: {x: 0.02467072, y: 7.9088087, z: -10.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11265,8 +11265,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022741167}
-  m_LocalRotation: {x: 0.29462355, y: -0.0019148922, z: 0.0005903784, w: 0.95561135}
-  m_LocalPosition: {x: 0.030000031, y: 8.21, z: -10.19}
+  m_LocalRotation: {x: 0.31295946, y: -0.0005914449, z: 0.00019488823, w: 0.9497663}
+  m_LocalPosition: {x: 0.02467072, y: 7.9088087, z: -10.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24278,11 +24278,11 @@ MonoBehaviour:
   - target: {fileID: 1292938048}
     weight: 1
     radius: 2
-  - target: {fileID: 863760123}
+  - target: {fileID: 236078634}
     weight: 1
     radius: 2
-  - target: {fileID: 478907240}
-    weight: 1
+  - target: {fileID: 205239142}
+    weight: 0.5
     radius: 6
 --- !u!4 &1729993077
 Transform:
@@ -24292,7 +24292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729993075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71168834, y: 2.3344157, z: 0}
+  m_LocalPosition: {x: -0.71701765, y: 2.0332239, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25954,6 +25954,102 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7289ac76-913f-4521-a01b-3c15cb364486
     m_ActionName: TutoP2/Ready[/XInputControllerWindows/start,/DualShock4GamepadHID/start,/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0237bd6f-cf83-4035-9ad4-ad590068045b
+    m_ActionName: SumomP1/ActionSud[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f23205d0-ff34-4aff-a585-b43ec2bda4f4
+    m_ActionName: SumomP1/ActionOuest[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24b0b0a7-c307-49dd-958e-026222f5c018
+    m_ActionName: SumomP1/ActionNord[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd5a4e64-9f29-4253-86c7-9480d739ec52
+    m_ActionName: SumomP1/ActionEst[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bb9f43aa-6dc7-44e1-b6f7-4183f2794bc7
+    m_ActionName: SumomP2/ActionSud[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5ac066b-c2be-4eab-a1f5-57f71b750279
+    m_ActionName: SumomP2/ActionOuest[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01f674b9-55e0-4284-bb73-6f75d0a0f3e5
+    m_ActionName: SumomP2/ActionNord[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3efcbe21-d9a9-4b8b-8c98-c4249d3c6a20
+    m_ActionName: SumomP2/ActionEst[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f21a1154-f49e-4760-b7bf-95e3218f25ed
+    m_ActionName: SelectCharaP1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 71c52429-141a-4b46-aa22-58ee56349e5a
+    m_ActionName: SelectCharaP1/Select[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: adfe1b54-329f-400f-b592-0b7e887a2a7e
+    m_ActionName: SelectCharaP1/Cancel[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43595886-9e12-4b71-89a7-581b0f7bce5d
+    m_ActionName: SelectCharaP2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd2ab696-a9a3-45ce-b43f-87f3885dbe06
+    m_ActionName: SelectCharaP2/Select[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f367cb27-bfe8-4b85-8ef3-3c98ac8fba8c
+    m_ActionName: SelectCharaP2/Cancel[/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf4445e0-f731-420a-b724-e94809fcbcf7
+    m_ActionName: GridPlayer1/MoveUp[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 577686c6-89f2-4452-9fda-5ec6990b87c0
+    m_ActionName: GridPlayer1/MoveDown[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18ffbcae-4543-4c72-be46-28edb04825e3
+    m_ActionName: GridPlayer1/MoveLeft[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 620f0561-d342-457e-b2a8-961bfbf6ea6d
+    m_ActionName: GridPlayer1/MoveRight[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 622c7fd9-064d-4505-ae0a-5f585f4b01b5
+    m_ActionName: GridPlayer1/Action[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a5041b6b-96c1-4c13-81dc-2e449de08388
+    m_ActionName: GridPlayer2/MoveUp[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 11d83260-ae3c-4b09-be96-1b46d921594d
+    m_ActionName: GridPlayer2/MoveDown[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a1025f9-f133-4a98-a356-a2abe6f527c6
+    m_ActionName: GridPlayer2/MoveLeft[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa19ecdc-8ddb-4e1a-b456-e80667233eef
+    m_ActionName: GridPlayer2/MoveRight[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16e2f8f8-f27d-4b2f-ac8f-97d924703958
+    m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: TutoP2

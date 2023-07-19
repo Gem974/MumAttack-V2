@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43883577, g: 0.2880386, b: 0.5507315, a: 1}
+  m_IndirectSpecularColor: {r: 0.43870366, g: 0.2878023, b: 0.55062664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2876,7 +2876,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 45.290215
+  field of view: 45.290207
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2902,7 +2902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.3247826, y: 32.916126, z: -27.602825}
+  m_LocalPosition: {x: 2.324781, y: 32.91613, z: -27.602829}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8032,13 +8032,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canPlay: 1
+  _GOPanel: {fileID: 890345027}
   _points1: 0
   _points2: 0
   _bubbleJ1: {fileID: 534399530}
   _bubbleJ2: {fileID: 1207739915}
   _pointsTxt1: {fileID: 525805111}
   _pointsTxt2: {fileID: 2038075049}
-  _GOPanel: {fileID: 890345027}
   _playerWinsText: {fileID: 1063967295}
   _HUD: {fileID: 274271909}
 --- !u!4 &1145795483
@@ -8217,7 +8217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196643380}
   m_LocalRotation: {x: 0.5220338, y: 0.027613873, z: -0.016913302, w: 0.85230994}
-  m_LocalPosition: {x: 2.3247826, y: 32.916126, z: -27.602825}
+  m_LocalPosition: {x: 2.324781, y: 32.91613, z: -27.602829}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
