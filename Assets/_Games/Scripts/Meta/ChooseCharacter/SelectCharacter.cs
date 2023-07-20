@@ -85,13 +85,13 @@ namespace META
             _playerInput.user.UnpairDevices();
             if (_isPlayer1)
             {
-                if(META.MetaGameManager.instance._device1 != null)
-                    InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);
+                if(MetaGameManager.instance._device1 != null)
+                    InputUser.PerformPairingWithDevice(MetaGameManager.instance._device1, user: _playerInput.user);
             }
             else
             {
-                if (META.MetaGameManager.instance._device2 != null)
-                    InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device2, user: _playerInput.user);
+                if (MetaGameManager.instance._device2 != null)
+                    InputUser.PerformPairingWithDevice(MetaGameManager.instance._device2, user: _playerInput.user);
             }
         }
 
@@ -125,8 +125,6 @@ namespace META
         //        _actionInput = "Fire_P2";
         //        _altActionInput = "Fire_Alt_P2";
         //    }
-
-
         //}
 
         void Placement()
@@ -142,8 +140,6 @@ namespace META
 
             transform.position = MomReferencer.instance._moms[_currentPlayer].position;
             transform.rotation = MomReferencer.instance._moms[_currentPlayer].rotation;
-
-            
         }
 
       
@@ -207,7 +203,14 @@ namespace META
                 }
                 else
                 {
-                    if (/*Input.GetButtonDown(_altActionInput)*/ _cancelInput) //UnselectMom
+                    if (_actionNewInput)
+                    {
+                        if(_isPlayer1 && MetaGameManager.instance._player2 != null)
+                        {
+                            MomReferencer.instance._playBtn.onClick.Invoke();
+                        }
+                    }
+                    else if (/*Input.GetButtonDown(_altActionInput)*/ _cancelInput) //UnselectMom
                     {
                         _momChoosed = false;
                         _animator.SetTrigger("UnSelect");
@@ -216,7 +219,6 @@ namespace META
                         _headDisplay.gameObject.SetActive(false);
                         MomReferencer.instance.ShowButton();
                         
-
                     }
                     yield return null;
 
@@ -253,10 +255,7 @@ namespace META
                         _nameDisplay.text = "Select a Mom";
                         _headDisplay.gameObject.SetActive(false);
                     }
-                    
                 }
-
-                
             }
             else
             {
@@ -286,11 +285,7 @@ namespace META
                         
                     }
                 }
-
-                
             }
-
-            
         }
 
         public void ChangeStateMomSelection(bool show, bool selected, int currentSelection)
@@ -332,10 +327,5 @@ namespace META
             
             
         }
-  
-
-        
-
-    } 
-
+    }
 }
