@@ -47,10 +47,13 @@ public class Kart : MonoBehaviour
     [SerializeField] GameObject _fxCollision;
     [SerializeField] UnityEvent _yellowSteam, _orangeSteam, _violetSteam, _noSteam;
     [SerializeField] Bubble _bubble;
+    public GameObject _smokeFX;
+    public Transform _vfxPoint;
 
     [Header("Sounds")]
     [SerializeField] AudioSource _source;
     [SerializeField] AudioClip _plaicesIroned;
+    
 
     private Vector2 _moveInput = Vector2.zero;
     private bool _actionNewInput = false;
@@ -100,15 +103,26 @@ public class Kart : MonoBehaviour
             //Equivaut a un GetKeyDown (appuie sur le bouton)
             context.action.started += context =>
             {
+                _power = 0;
+                _driftPower = 0;
+                _actionNewInput = true;
+                
+            };
+
+            //Equivaut a un GetKeyDown (appuie sur le bouton)
+            context.action.performed += context =>
+            {
                 _actionNewInput = true;
             };
 
             //Equivaut a un GetKeyUp (quand on relache le bouton)
             context.action.canceled += context =>
             {
+                _actionNewInput = false;
+                _canPropulse = false;
+                CantSpam();
                 RealeshPower();
                 PowerImpulse();
-                _actionNewInput = false;
             }; 
         }
     }
@@ -133,13 +147,8 @@ public class Kart : MonoBehaviour
     }
 
 
-    float _nextFX;
-    float _fxCD = 0.1f;
-    public GameObject _smokeFX;
-    public Transform _vfxPoint;
     void Update()
     {
-
         if (GameManager_IromMum.instance._canPlay)
         {
             switch (_playerState)
@@ -153,11 +162,7 @@ public class Kart : MonoBehaviour
                     break;
                 case PlayerState.Propulse:
                     PowerCharge();
-                    //if (Time.time >= _nextFX)
-                    //{
-                        Instantiate(_smokeFX, _vfxPoint.position, Quaternion.identity);
-                    //    _nextFX = Time.time + _fxCD;
-                    //}
+                    Instantiate(_smokeFX, _vfxPoint.position, Quaternion.identity);
 
                     break;
                 default:
@@ -258,13 +263,13 @@ public class Kart : MonoBehaviour
 
     void PowerCharge()
     {
-        if (/*Input.GetButton(_actionInput)*/_actionNewInput)
+        if (/*Input.GetButton(_actionInput)*/_actionNewInput && _canPropulse)
         {
-            if (_canPropulse)
-            {
-                _canPropulse = false;
-                CantSpam();
-            }
+            //if (_canPropulse)
+            //{
+            //    _canPropulse = false;
+            //    CantSpam();
+            //}
             _animator.SetBool("Charge", true);
             _animator.speed = 1f;
             _playerState = PlayerState.Charging;
@@ -290,6 +295,8 @@ public class Kart : MonoBehaviour
                 }
             }
         }
+
+        
         //if (/*Input.GetButtonUp(_actionInput)*/_actionNewInput == false)
         //{
         //    _animator.SetBool("Charge", false);
