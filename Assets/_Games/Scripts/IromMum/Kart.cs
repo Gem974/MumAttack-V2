@@ -8,9 +8,9 @@ using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem.Users;
 using META;
 
-public class Kart : MonoBehaviour
+public class Kart : PlayerBehaviour
 {
-    public bool _isPlayer1;
+    
     public enum PlayerState
     {
        Standby, Charging, Propulse
@@ -55,9 +55,9 @@ public class Kart : MonoBehaviour
     [SerializeField] AudioClip _plaicesIroned;
     
 
-    private Vector2 _moveInput = Vector2.zero;
+ 
     private bool _actionNewInput = false;
-    private PlayerInput _playerInput;
+
     private void Start()
     {
         DisplayInfoCharacter();
@@ -70,7 +70,7 @@ public class Kart : MonoBehaviour
         //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
     }
-    public void ForceController()
+    public override void ForceController()
     {
         _playerInput.user.UnpairDevices();
         if (_isPlayer1)
@@ -86,7 +86,7 @@ public class Kart : MonoBehaviour
     }
 
     //Event pour les touches de déplacement 
-    public void OnMove(InputAction.CallbackContext context)
+    public override void OnMove(InputAction.CallbackContext context)
     {
         //On se contente de récupérer le Vecteur2 des touches de déplacement
         if (GameManager_IromMum.instance._canPlay)
@@ -96,7 +96,7 @@ public class Kart : MonoBehaviour
     }
 
     //Event pour la touche d'action
-    public void OnAction(InputAction.CallbackContext context)
+    public override void OnAction(InputAction.CallbackContext context)
     {
         if (GameManager_IromMum.instance._canPlay)
         {
@@ -128,13 +128,13 @@ public class Kart : MonoBehaviour
     }
 
     //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
-    public void OnReady(InputAction.CallbackContext context)
+    public override void OnReady(InputAction.CallbackContext context)
     {
             Tutorials.instance.ReadyChecker(_isPlayer1);  
     }
 
     //Passer de l'action map Tuto (get ready) à l'action map de jeu
-    public void ChangeActionMap()
+    public override void ChangeActionMap()
     {
         if (_isPlayer1)
         {

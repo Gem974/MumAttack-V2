@@ -38,6 +38,7 @@ public class GameManager_IromMum : GameManagerBehaviour
     {
         _players = FindObjectsOfType<Kart>();
         _canPlay = false;
+        PauseGame.instance.CanTPause();
 
     }
 

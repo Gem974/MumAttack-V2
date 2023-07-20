@@ -11,7 +11,7 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Player Behaviour")]
     [SerializeField] protected PlayerInput _playerInput;
     [SerializeField] protected string _actionMapP1Name = "Player1", _actionMapP2Name = "Player2";
-    [SerializeField] protected bool _isPlayer1;
+    public bool _isPlayer1;
     [SerializeField] protected Vector2 _moveInput = Vector2.zero;
     private bool _actionNewInput = false;
 
@@ -57,6 +57,24 @@ public class PlayerBehaviour : MonoBehaviour
         Tutorials.instance.ReadyChecker(_isPlayer1);
     }
 
+    public virtual void OnPause(InputAction.CallbackContext context)
+    {
+        
+        if (PauseGame.instance._pausable)
+        {
+            if (PauseGame.instance._canPause)
+            {
+                PauseGame.instance.ShowPause(true);
+            }
+            else
+            {
+                PauseGame.instance.ShowPause(false);
+            }
+
+        }
+        print("PROUT");
+    }
+
     //Passer de l'action map Tuto (get ready) à l'action map de jeu
     public virtual void ChangeActionMap()
     {
@@ -70,7 +88,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    public void ForceController()
+    public virtual void ForceController()
     {
         _playerInput.user.UnpairDevices();
         if (_isPlayer1)

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Users;
 
 public class PlayerController_DarTeat : MonoBehaviour
 {
-    public bool _isPlayerOne;
+    public bool _isPlayer1;
     public GameObject _teatPrefab;
     public GameObject[] _vfxHit;
     public float _sightSpeed = 250f;
@@ -44,13 +44,13 @@ public class PlayerController_DarTeat : MonoBehaviour
     //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
     public void OnReady(InputAction.CallbackContext context)
     {
-        Tutorials.instance.ReadyChecker(_isPlayerOne);
+        Tutorials.instance.ReadyChecker(_isPlayer1);
     }
 
     //Passer de l'action map Tuto (get ready) à l'action map de jeu
     public void ChangeActionMap()
     {
-        if (_isPlayerOne)
+        if (_isPlayer1)
         {
             _playerInput.SwitchCurrentActionMap("Player1");
         }
@@ -97,7 +97,7 @@ public class PlayerController_DarTeat : MonoBehaviour
         //Verification du temps aprés cooldown
         if (Time.time >= _nextShot)
         {
-            if (_isPlayerOne)
+            if (_isPlayer1)
             {
                 HitChecker(gameObject, 1);
             }
@@ -118,7 +118,7 @@ public class PlayerController_DarTeat : MonoBehaviour
         {
             if (hit.transform.CompareTag("Teat"))
             {
-                GameManager_DarTeat.instance.AddPoints(_isPlayerOne , hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>()._valueToAdd);
+                GameManager_DarTeat.instance.AddPoints(_isPlayer1 , hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>()._valueToAdd);
                 hit.transform.parent.transform.parent.GetComponent<BabyBehavior_DarTeat>().Goal(_playerColor);
 
                 //Sound

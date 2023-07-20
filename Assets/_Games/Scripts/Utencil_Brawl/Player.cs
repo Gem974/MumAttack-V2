@@ -9,7 +9,7 @@ using META;
 
 namespace Utencil_Brawl
 {
-    public class Player : MonoBehaviour
+    public class Player : PlayerBehaviour
     {
 
         [Header("Clamp Displacement")]
@@ -17,7 +17,7 @@ namespace Utencil_Brawl
 
         [SerializeField] Animator _animator;
 
-        public bool _isPlayerOne;
+      
 
         public float _moveSpeed = 5f;
         private Vector3 _move;
@@ -43,9 +43,8 @@ namespace Utencil_Brawl
 
         public UnityEvent _onHit, _onShoot, _Startrun, _Stoprun;
 
-        private Vector2 _moveInput = Vector2.zero;
         private bool _actionInput = false;
-        private PlayerInput _playerInput;
+   
 
         void Start()
         {
@@ -58,7 +57,7 @@ namespace Utencil_Brawl
             //Debug.Log(_Touches);
             _progress = _shootCountdown;
             _shootCountdown -= Time.deltaTime;
-            if (_isPlayerOne)
+            if (_isPlayer1)
             {
                 _animator.runtimeAnimatorController = META.MetaGameManager.instance._player1.utencil_animatorController;
             }
@@ -69,10 +68,10 @@ namespace Utencil_Brawl
             LifeChecker();
         }
 
-        public void ForceController()
+        public override void ForceController()
         {
             _playerInput.user.UnpairDevices();
-            if (_isPlayerOne)
+            if (_isPlayer1)
             {
                 if (MetaGameManager.instance._device1 != null)
                     InputUser.PerformPairingWithDevice(MetaGameManager.instance._device1, user: _playerInput.user);
@@ -85,29 +84,29 @@ namespace Utencil_Brawl
         }
 
         //Event pour les touches de déplacement 
-        public void OnMove(InputAction.CallbackContext context)
+        public override void OnMove(InputAction.CallbackContext context)
         {
             //On se contente de récupérer le Vecteur2 des touches de déplacement
             _moveInput = context.ReadValue<Vector2>();
         }
 
         //Event pour la touche d'action
-        public void OnAction(InputAction.CallbackContext context)
+        public override void OnAction(InputAction.CallbackContext context)
         {
             _actionInput = context.action.triggered;
         }
 
         //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
-        public void OnReady(InputAction.CallbackContext context)
+        public override void OnReady(InputAction.CallbackContext context)
         {
-            Tutorials.instance.ReadyChecker(_isPlayerOne);
+            Tutorials.instance.ReadyChecker(_isPlayer1);
 
         }
 
         //Passer de l'action map Tuto (get ready) à l'action map de jeu
-        public void ChangeActionMap()
+        public override void ChangeActionMap()
         {
-            if (_isPlayerOne)
+            if (_isPlayer1)
             {
                 _playerInput.SwitchCurrentActionMap("Player1");
             }
@@ -125,11 +124,11 @@ namespace Utencil_Brawl
 
                 if (PauseGame.instance._canPause)
                 {
-                    //if (Input.GetButtonDown("Fire_P1") && _isPlayerOne)
+                    //if (Input.GetButtonDown("Fire_P1") && _isPlayer1)
                     //{
                     //    Shoot();
                     //}
-                    //if (Input.GetButtonDown("Fire_P2") && !_isPlayerOne)
+                    //if (Input.GetButtonDown("Fire_P2") && !_isPlayer1)
                     //{
                     //    Shoot();
                     //} 
@@ -161,7 +160,7 @@ namespace Utencil_Brawl
 
         public void movePlayer()
         {
-            //if (_isPlayerOne)
+            //if (_isPlayer1)
             //{
                 if (/*Input.GetAxis("Vertical_P1") != 0*/ _moveInput.y != 0)
                 {
@@ -184,7 +183,7 @@ namespace Utencil_Brawl
 
 
             //}
-            //else if (!_isPlayerOne)
+            //else if (!_isPlayer1)
             //{
             //    //Vector2 Axis created in OldInputSystem
             //    if (Input.GetAxis("Vertical_P2") != 0)
@@ -216,12 +215,12 @@ namespace Utencil_Brawl
 
                 if (_move.z >= 0.1f)
                 {
-                    _bulletLifted.GetComponent<Bullet>()._IsArcLeft = _isPlayerOne ? false : true;
+                    _bulletLifted.GetComponent<Bullet>()._IsArcLeft = _isPlayer1 ? false : true;
                     _animator.SetTrigger("ShootArc");
                 }
                 else if (_move.z <= -0.1f)
                 {
-                    _bulletLifted.GetComponent<Bullet>()._IsArcLeft = _isPlayerOne ? true : false;
+                    _bulletLifted.GetComponent<Bullet>()._IsArcLeft = _isPlayer1 ? true : false;
                     _animator.SetTrigger("ShootArc");
                 }
                 else
@@ -250,14 +249,14 @@ namespace Utencil_Brawl
 
               //J1
               //SPECIAL LEFT
-              else if (_shootCountdown <= 0f && _move.z <= -1f && _isPlayerOne)
+              else if (_shootCountdown <= 0f && _move.z <= -1f && _isPlayer1)
               {
                    GameObject _bullet = Instantiate(_projectilePrefab, _firePoint.position, _Lanceur.rotation);
                   _bullet.GetComponent<Bullet>()._IsArcLeft = true;
                   _shootCountdown = 1 / _shootRate;
               }
               //SPECIAL RIGHT
-              else if (_shootCountdown <= 0f && _move.z >= 1f && _isPlayerOne)
+              else if (_shootCountdown <= 0f && _move.z >= 1f && _isPlayer1)
               {
 
                    GameObject _bullet = Instantiate(_projectilePrefab, _firePoint.position, _Lanceur.rotation);
@@ -267,7 +266,7 @@ namespace Utencil_Brawl
 
               //J2
               //SPECIAL LEFT
-              else if (_shootCountdown <= 0f && -_move.z <= -1f && !_isPlayerOne)
+              else if (_shootCountdown <= 0f && -_move.z <= -1f && !_isPlayer1)
               {
 
                    GameObject _bullet = Instantiate(_projectilePrefab, _firePoint.position, _Lanceur.rotation);
@@ -275,7 +274,7 @@ namespace Utencil_Brawl
                   _shootCountdown = 1 / _shootRate;
               }
               //SPECIAL RIGHT
-              else if (_shootCountdown <= 0f && -_move.z >= 1f && !_isPlayerOne)
+              else if (_shootCountdown <= 0f && -_move.z >= 1f && !_isPlayer1)
               {
 
                    GameObject _bullet = Instantiate(_projectilePrefab, _firePoint.position, _Lanceur.rotation);

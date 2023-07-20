@@ -54,6 +54,7 @@ public class Sumom_GameManager : GameManagerBehaviour
         _canPlay = false;
         Sign.instance.StartRandomKeys();
         _playerDominant = PlayerDominant.None;
+        PauseGame.instance.CanTPause();
         
 
         _pointsP1 = 0;
@@ -74,6 +75,7 @@ public class Sumom_GameManager : GameManagerBehaviour
     {
         
         _canPlay = true;
+        PauseGame.instance.CanPause();
 
         _player1.AnimCanMove();
         _player2.AnimCanMove();
@@ -111,6 +113,7 @@ public class Sumom_GameManager : GameManagerBehaviour
    
     public void PlayerEjected(int WhichPlayer)
     {
+        PauseGame.instance.CanTPause();
         StopAllCoroutines();
         _canPlay = false;
         StartCoroutine(EjectedSystem(WhichPlayer));   
@@ -171,6 +174,7 @@ public class Sumom_GameManager : GameManagerBehaviour
         }
         else if (_pointsP2 != 3 && _pointsP1 != 3)
         {
+            PauseGame.instance.CanPause();
             RestartRound();
         }
 

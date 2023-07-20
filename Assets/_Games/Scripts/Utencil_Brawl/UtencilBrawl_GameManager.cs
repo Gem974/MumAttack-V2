@@ -45,6 +45,7 @@ public class UtencilBrawl_GameManager : GameManagerBehaviour
         _skeletonMecanim2.Skeleton.SetSlotsToSetupPose();
         _canPlay = false;
         Time.timeScale = 1;
+        PauseGame.instance.CanTPause();
     }
 
 

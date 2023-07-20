@@ -40,26 +40,11 @@ public class PauseGame : MonoBehaviour
         {
             if (_canPause)
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    _canPause = false;
-                    _pausePanel.SetActive(true);
-                    _backBtn.Select();
-                    UnityEngine.Time.timeScale = 0;
-
-                }
+                
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))
-                {
-                    _canPause = true;
-                    _pausePanel.SetActive(false);
-
-
-                    UnityEngine.Time.timeScale = 1;
-
-                }
+                
             } 
         }
 
@@ -75,6 +60,23 @@ public class PauseGame : MonoBehaviour
     public void CanTPause()
     {
         _pausable = false;
+    }
+
+    public void ShowPause(bool isPause)
+    {
+        if (isPause)
+        {
+            _canPause = false;
+            _pausePanel.SetActive(true);
+            _backBtn.Select();
+            UnityEngine.Time.timeScale = 0;
+        }
+        else
+        {
+            _canPause = true;
+            _pausePanel.SetActive(false);
+            UnityEngine.Time.timeScale = 1;
+        }
     }
 
     public void PauseBackToMenu()

@@ -556,6 +556,54 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 16e2f8f8-f27d-4b2f-ac8f-97d924703958
     m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab0d353a-5db6-4382-b85f-58209fee29ae
+    m_ActionName: Player1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f4ec815b-7fa2-418a-9793-35138571176c
+    m_ActionName: Player2/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3425387679829732767}
+        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ee750e19-22d9-45ce-9e5b-cc0f644a3132
+    m_ActionName: SumomP1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 32cb7829-5ac4-47a8-b5d7-0087661e3721
+    m_ActionName: SumomP2/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eff3a6f5-0451-40d4-848a-04ab7ead8d80
+    m_ActionName: GridPlayer1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca630c3b-ca52-49ca-9f44-f3022a04f202
+    m_ActionName: GridPlayer2/Pause[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: TutoP1

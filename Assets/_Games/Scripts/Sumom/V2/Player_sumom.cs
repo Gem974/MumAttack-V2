@@ -295,6 +295,11 @@ public class Player_sumom : PlayerBehaviour
         Tutorials.instance.ReadyChecker(_isPlayer1);
     }
 
+    public override void OnPause(InputAction.CallbackContext context)
+    {
+        base.OnPause(context);
+    }
+
 
 
 
