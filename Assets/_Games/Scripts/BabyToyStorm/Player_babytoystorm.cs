@@ -15,7 +15,7 @@ public class Player_babytoystorm : PlayerBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        base.PairingPlayerInput();
+        base.ForceController();
         _rb = GetComponent<Rigidbody>();
 
     }

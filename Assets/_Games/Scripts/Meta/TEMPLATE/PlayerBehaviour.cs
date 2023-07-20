@@ -15,13 +15,12 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] protected Vector2 _moveInput = Vector2.zero;
     private bool _actionNewInput = false;
 
-    protected virtual void PairingPlayerInput()
-    {
-        //Liaison avec le Player Input
-        _playerInput = GetComponent<PlayerInput>();
-        //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
-        InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
-    }
+    //protected virtual void PairingPlayerInput()
+    //{
+    //    ForceController();
+    //    //Liaison avec le Player Input
+        
+    //}
    
 
     //Event pour les touches de déplacement 
@@ -69,5 +68,22 @@ public class PlayerBehaviour : MonoBehaviour
         {
             _playerInput.SwitchCurrentActionMap(_actionMapP2Name);
         }
+    }
+
+    public void ForceController()
+    {
+        _playerInput.user.UnpairDevices();
+        if (_isPlayer1)
+        {
+            if (META.MetaGameManager.instance._device1 != null)
+                InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);
+        }
+        else
+        {
+            if (META.MetaGameManager.instance._device2 != null)
+                InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device2, user: _playerInput.user);
+        }
+        //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
+        InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
     }
 }

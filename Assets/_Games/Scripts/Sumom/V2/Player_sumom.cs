@@ -6,10 +6,9 @@ using UnityEngine.InputSystem.Users;
 using Spine.Unity;
 using META;
 
-public class Player_sumom : MonoBehaviour
+public class Player_sumom : PlayerBehaviour
 {
-    [Header("Core System")]
-    public bool _isPlayer1;
+    [Header("Sumom Core System")]
     [SerializeField] InputDevice _p1, _p2;
     [SerializeField] float _impulseForce;
     [SerializeField] Rigidbody _rb;
@@ -17,7 +16,7 @@ public class Player_sumom : MonoBehaviour
     public bool _inCollision, _falling;
     [SerializeField] Transform _player;
     [SerializeField] Vector3 _startPos;
-    [SerializeField] PlayerInput _playerInput;
+
 
 
     [Header("Controls")]
@@ -39,8 +38,7 @@ public class Player_sumom : MonoBehaviour
 
     private void Start()
     {
-        _playerInput = GetComponent<PlayerInput>();
-        ForceController();
+        base.ForceController();
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
         
 
@@ -53,20 +51,7 @@ public class Player_sumom : MonoBehaviour
 
     }
 
-    public void ForceController()
-    {
-        _playerInput.user.UnpairDevices();
-        if (_isPlayer1)
-        {
-            if (MetaGameManager.instance._device1 != null)
-                InputUser.PerformPairingWithDevice(MetaGameManager.instance._device1, user: _playerInput.user);
-        }
-        else
-        {
-            if (MetaGameManager.instance._device2 != null)
-                InputUser.PerformPairingWithDevice(MetaGameManager.instance._device2, user: _playerInput.user);
-        }
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -244,7 +229,7 @@ public class Player_sumom : MonoBehaviour
 
     }
 
-    public void ChangeActionMap()
+    public override void ChangeActionMap()
     {
         if (_isPlayer1)
         {
@@ -305,7 +290,7 @@ public class Player_sumom : MonoBehaviour
 
     }
 
-    public void OnReady(InputAction.CallbackContext context)
+    public override void OnReady(InputAction.CallbackContext context)
     {
         Tutorials.instance.ReadyChecker(_isPlayer1);
     }

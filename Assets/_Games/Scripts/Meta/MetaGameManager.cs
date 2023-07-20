@@ -76,7 +76,7 @@ namespace META
                 _device1 = null;
                 _device2 = null;
             }
-                Debug.Log(MetaGameManager.instance._device1.name + " START");
+                
         }
 
 

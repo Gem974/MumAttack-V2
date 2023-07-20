@@ -111,51 +111,27 @@ public class Sumom_GameManager : GameManagerBehaviour
    
     public void PlayerEjected(int WhichPlayer)
     {
-        //StopAllCoroutines();
+        StopAllCoroutines();
         _canPlay = false;
-        if (WhichPlayer == 1)
-        {
-            if (_pointsP2 <= 2)
-            {
-                _pointsP2++;
-                _pointsJ2Txt.text = _pointsP2.ToString();
-            }
-            
-        }
-        else if (WhichPlayer == 2)
-        {
-            if (_pointsP1 <= 2)
-            {
-                _pointsP1++;
-                _pointsJ1Txt.text = _pointsP1.ToString();
-            }
-           
-        }
-        GameOver();
-        StartCoroutine(EjectedSystem());
+        StartCoroutine(EjectedSystem(WhichPlayer));   
     }
 
-    public override void GameOver()
-    {
-        if (_pointsP1 == 3)
-        {
-            print("Victoire J1");
-            _canPlay = true;
-            Time.timeScale = 1;
-            _GameOverGO.SetActive(true);
-        }
-        else if (_pointsP2 == 3)
-        {
-            print("Victoire J2");
-            _canPlay = true;
-            Time.timeScale = 1;
-            _GameOverGO.SetActive(true);
-        }
-    }
+    
 
-    IEnumerator EjectedSystem()
+    IEnumerator EjectedSystem(int wichPlayer)
     {
         PlaySFX(2);
+
+        if (wichPlayer == 1)
+        {
+            _pointsP1++;
+            _pointsJ1Txt.text = _pointsP1.ToString();
+        }
+        else if (wichPlayer == 2)
+        {
+            _pointsP2++;
+            _pointsJ2Txt.text = _pointsP2.ToString();
+        }
 
         while (_chroAbe.intensity.value <= 0.9)
         {
@@ -168,8 +144,59 @@ public class Sumom_GameManager : GameManagerBehaviour
         UnityEngine.Time.timeScale = 0.2f;
         yield return new WaitForSeconds(0.3f);
         UnityEngine.Time.timeScale = 1;
-        RestartRound();
-      
+        //if (wichPlayer == 1)
+        //{
+        //    if (_pointsP2 <= 2)
+        //    {
+        //        _pointsP2++;
+        //        _pointsJ2Txt.text = _pointsP2.ToString();
+        //        RestartRound();
+        //    }
+
+        //}
+        //else if (wichPlayer == 2)
+        //{
+        //    if (_pointsP1 <= 2)
+        //    {
+        //        _pointsP1++;
+        //        _pointsJ1Txt.text = _pointsP1.ToString();
+                
+        //    }
+
+        //}
+        
+        if (_pointsP1 == 3 || _pointsP2 == 3)
+        {
+            GameOver();
+        }
+        else if (_pointsP2 != 3 && _pointsP1 != 3)
+        {
+            RestartRound();
+        }
+
+    }
+
+    public override void GameOver()
+    {
+        StopAllCoroutines();
+        if (_pointsP1 == 3)
+        {
+            print("Victoire J1");
+            _canPlay = true;
+            Time.timeScale = 1;
+            _GameOverGO.SetActive(true);
+            GameOverBehaviour.instance.PlayerToWin(1);
+
+        }
+        else if (_pointsP2 == 3)
+        {
+            print("Victoire J2");
+            _canPlay = true;
+            Time.timeScale = 1;
+            _GameOverGO.SetActive(true);
+            GameOverBehaviour.instance.PlayerToWin(2);
+
+        }
 
     }
 
@@ -177,7 +204,7 @@ public class Sumom_GameManager : GameManagerBehaviour
     {
         _playerDominant = PlayerDominant.None;
          
-        DiscountBeforeStart.instance.RestartDiscount();
+        DiscountBeforeStart.instance.RestartRoundDiscount();
         _player1.ResetPlayer();
         _player2.ResetPlayer();
     }

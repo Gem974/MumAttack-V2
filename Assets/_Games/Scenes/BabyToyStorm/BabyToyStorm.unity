@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2547,7 +2547,6 @@ MonoBehaviour:
   - {fileID: 1721686066}
   _scoreP1: 0
   _scoreP2: 0
-  _panelGameOver: {fileID: 0}
 --- !u!21 &537677055
 Material:
   serializedVersion: 8
@@ -4129,6 +4128,8 @@ MonoBehaviour:
   _player1: {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
   _player2: {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
   _winner: {fileID: 0}
+  _p1: {fileID: 0}
+  _p2: {fileID: 0}
   _topScorePoints: 
   _topScoreName: []
   _volume: 0
@@ -5870,6 +5871,11 @@ PrefabInstance:
       propertyPath: _isPlayer1
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 452802728321648572, guid: a0452fcba1e9f4647aad7d3be366d36d,
+        type: 3}
+      propertyPath: _playerInput
+      value: 
+      objectReference: {fileID: 1297056780}
     - target: {fileID: 452802728321648574, guid: a0452fcba1e9f4647aad7d3be366d36d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5883,6 +5889,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1297056778}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1297056780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 452802728321648560, guid: a0452fcba1e9f4647aad7d3be366d36d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1297056778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316339087
 GameObject:
   m_ObjectHideFlags: 0
@@ -9230,8 +9248,25 @@ PrefabInstance:
       propertyPath: _speed
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 452802728321648572, guid: a0452fcba1e9f4647aad7d3be366d36d,
+        type: 3}
+      propertyPath: _playerInput
+      value: 
+      objectReference: {fileID: 452802728107683640}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0452fcba1e9f4647aad7d3be366d36d, type: 3}
+--- !u!114 &452802728107683640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 452802728321648560, guid: a0452fcba1e9f4647aad7d3be366d36d,
+    type: 3}
+  m_PrefabInstance: {fileID: 452802728107683639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1382359383404312430
 MonoBehaviour:
   m_ObjectHideFlags: 0

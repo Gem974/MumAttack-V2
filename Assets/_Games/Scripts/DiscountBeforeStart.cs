@@ -38,9 +38,9 @@ public class DiscountBeforeStart : MonoBehaviour
 
     }
 
-    public void RestartDiscount()
+    public void RestartRoundDiscount()
     {
-        StartCoroutine(Discount());
+        StartCoroutine(RestartRound("Next Round", "Next Round", "Ready ?"));
         PauseGame.instance.CanTPause();
 
     }
@@ -100,5 +100,37 @@ public class DiscountBeforeStart : MonoBehaviour
     public void TutoPreparationFinish()
     {
         _gameManagerInScene.SendMessage("TutoPreparationFinish");
+    }
+
+    IEnumerator RestartRound(string Text3s, string Text2s, string Text1s)
+    {
+
+        _discountTxt.gameObject.SetActive(true);
+        PresentatorVoice.instance.DiscountPresentator(3);
+        _discountTxt.text = Text3s;
+        yield return new WaitForSeconds(1f);
+        PresentatorVoice.instance.DiscountPresentator(2);
+        _discountTxt.text = Text2s;
+        yield return new WaitForSeconds(1f);
+        PresentatorVoice.instance.DiscountPresentator(1);
+        _discountTxt.text = Text1s;
+        yield return new WaitForSeconds(1f);
+        PresentatorVoice.instance.DiscountPresentator(0);
+        _discountTxt.text = "START !";
+        yield return new WaitForSeconds(1f);
+
+        _discountTxt.gameObject.SetActive(false);
+
+        //APL DepthOfField
+        while (_dop.focusDistance.value <= 10f)
+        {
+            _dop.focusDistance.value += 1f;
+            yield return new WaitForSeconds(0.05f);
+
+        }
+
+        //Lance toute les fonctions de Start
+        _gameManagerInScene.SendMessage("StartGameAfterDiscount");
+
     }
 }
