@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 using Spine.Unity;
+using META;
 
 public class Player_sumom : MonoBehaviour
 {
@@ -38,8 +39,8 @@ public class Player_sumom : MonoBehaviour
 
     private void Start()
     {
-        ForceController();
         _playerInput = GetComponent<PlayerInput>();
+        ForceController();
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
         
 
@@ -54,13 +55,16 @@ public class Player_sumom : MonoBehaviour
 
     public void ForceController()
     {
+        _playerInput.user.UnpairDevices();
         if (_isPlayer1)
         {
-            InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device1, user: _playerInput.user);
+            if (MetaGameManager.instance._device1 != null)
+                InputUser.PerformPairingWithDevice(MetaGameManager.instance._device1, user: _playerInput.user);
         }
         else
         {
-            InputUser.PerformPairingWithDevice(META.MetaGameManager.instance._device2, user: _playerInput.user);
+            if (MetaGameManager.instance._device2 != null)
+                InputUser.PerformPairingWithDevice(MetaGameManager.instance._device2, user: _playerInput.user);
         }
     }
 

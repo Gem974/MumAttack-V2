@@ -39,8 +39,8 @@ namespace META
         {
             //Liaison avec le Player Input
             _playerInput = GetComponent<PlayerInput>();
-            //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
             ForceController();
+            //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
             InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
             _momValidate = false;
 
@@ -105,8 +105,6 @@ namespace META
         //                Debug.Log("Manette " + (i + 1) + " : " + joystickNames[i]);
         //            }
         //#endif
-
-
         //        }
 
         //void TouchBinding()
@@ -184,6 +182,7 @@ namespace META
 
                             WichMom();
                             MomReferencer.instance.ShowButton();
+                            yield return new WaitForSeconds(0.2f);
                             //DisplayScreenInfo();
                         }
                         else
@@ -195,6 +194,13 @@ namespace META
                         }
                         yield return null;
                     }
+                    else if (_cancelInput)
+                    {
+                        ReturnMainMenu();
+                        //Debug.Log("canceled");
+                        //scenesManager.instance.LoadSpecificScene(0);
+                        yield return null;
+                    }
                     else
                     {
                         yield return null;
@@ -203,28 +209,37 @@ namespace META
                 }
                 else
                 {
-                    if (_actionNewInput)
-                    {
-                        if(_isPlayer1 && MetaGameManager.instance._player2 != null)
-                        {
-                            MomReferencer.instance._playBtn.onClick.Invoke();
-                        }
-                    }
-                    else if (/*Input.GetButtonDown(_altActionInput)*/ _cancelInput) //UnselectMom
+                    if (/*Input.GetButtonDown(_altActionInput)*/ _cancelInput) //UnselectMom
                     {
                         _momChoosed = false;
+                        _momValidate = false;
                         _animator.SetTrigger("UnSelect");
                         WichMom();
                         _nameDisplay.text = "Select a Mom";
                         _headDisplay.gameObject.SetActive(false);
                         MomReferencer.instance.ShowButton();
-                        
+                        yield return new WaitForSeconds(0.2f);
+
+                    }
+                    if(_isPlayer1 && _momValidate && _otherCharacter._momValidate)
+                    {
+                        if (_actionNewInput)
+                        {
+                            MomReferencer.instance._playBtn.onClick.Invoke();
+                        }
                     }
                     yield return null;
 
                 } 
                     
             }
+        }
+
+        private void ReturnMainMenu()
+        {
+            StopAllCoroutines();
+            Debug.Log("canceled");
+            scenesManager.instance.LoadSpecificScene(0);
         }
 
         void WichMom()
@@ -290,16 +305,13 @@ namespace META
 
         public void ChangeStateMomSelection(bool show, bool selected, int currentSelection)
         {
-
             MomSelecter _momSelecter = MomReferencer.instance._moms[currentSelection].GetComponent<MomSelecter>();
-
 
             if (selected)
             {
                 _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Selected);
                 return;
             }
-
 
             if (show)
             {
@@ -310,9 +322,6 @@ namespace META
             {
                 _momSelecter.OnChangeState(MomSelecter.MomSelecterState.Default);
             }
-
-
-
         }
 
         public void DisplayScreenInfo()

@@ -35,17 +35,23 @@ namespace META
 
         private void Start()
         {
+            _playBtn.onClick.AddListener(StartButton);
             _playBtn.gameObject.SetActive(false);
             Debug.Log(MetaGameManager.instance._device1.name);
         }
 
-        private void Update()
+        private void StartButton()
         {
-            if (Input.GetButtonDown("Cancel"))
-            {
-                scenesManager.instance.LoadSpecificScene(0);
-            }
+            scenesManager.instance.StartButton();
         }
+
+        //private void Update()
+        //{
+        //    if (Input.GetButtonDown("Cancel"))
+        //    {
+        //        scenesManager.instance.LoadSpecificScene(0);
+        //    }
+        //}
 
         public void ShowButton()
         {

@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem.Users;
+using META;
 
 public class Kart : MonoBehaviour
 {
@@ -62,8 +63,23 @@ public class Kart : MonoBehaviour
         _canPropulse = true;
         //Liaison avec le Player Input
         _playerInput = GetComponent<PlayerInput>();
+        ForceController();
         //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
         InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
+    }
+    public void ForceController()
+    {
+        _playerInput.user.UnpairDevices();
+        if (_isPlayer1)
+        {
+            if (MetaGameManager.instance._device1 != null)
+                InputUser.PerformPairingWithDevice(MetaGameManager.instance._device1, user: _playerInput.user);
+        }
+        else
+        {
+            if (MetaGameManager.instance._device2 != null)
+                InputUser.PerformPairingWithDevice(MetaGameManager.instance._device2, user: _playerInput.user);
+        }
     }
 
     //Event pour les touches de déplacement 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
+using META;
 
 namespace Utencil_Brawl
 {
@@ -50,6 +51,7 @@ namespace Utencil_Brawl
         {
             //Liaison avec le Player Input
             _playerInput = GetComponent<PlayerInput>();
+            ForceController();
             //Assignation manuelle du clavier (obligatoire vu que partager par tout les joueurs)
             InputUser.PerformPairingWithDevice(Keyboard.current, user: _playerInput.user);
 
@@ -65,6 +67,21 @@ namespace Utencil_Brawl
                 _animator.runtimeAnimatorController = META.MetaGameManager.instance._player2.utencil_animatorController;
             }
             LifeChecker();
+        }
+
+        public void ForceController()
+        {
+            _playerInput.user.UnpairDevices();
+            if (_isPlayerOne)
+            {
+                if (MetaGameManager.instance._device1 != null)
+                    InputUser.PerformPairingWithDevice(MetaGameManager.instance._device1, user: _playerInput.user);
+            }
+            else
+            {
+                if (MetaGameManager.instance._device2 != null)
+                    InputUser.PerformPairingWithDevice(MetaGameManager.instance._device2, user: _playerInput.user);
+            }
         }
 
         //Event pour les touches de déplacement 

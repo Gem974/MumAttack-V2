@@ -6318,6 +6318,8 @@ MonoBehaviour:
   _player1: {fileID: 0}
   _player2: {fileID: 0}
   _winner: {fileID: 0}
+  _p1: {fileID: 0}
+  _p2: {fileID: 0}
   _topScorePoints: 
   _topScoreName: []
   _volume: 0
@@ -6654,7 +6656,7 @@ PrefabInstance:
     - target: {fileID: 3136938959013769762, guid: e83d81315a521214e85ee44ee7dc4a58,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3136938959013769762, guid: e83d81315a521214e85ee44ee7dc4a58,
         type: 3}
@@ -6884,7 +6886,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756351204}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d71ef31b5d7b0314bb876f4b5291b718, type: 3}
   m_Name: 
