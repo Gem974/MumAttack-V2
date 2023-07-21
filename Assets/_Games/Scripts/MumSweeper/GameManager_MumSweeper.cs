@@ -37,6 +37,7 @@ public class GameManager_MumSweeper : MonoBehaviour
     {
         _players = FindObjectsOfType<PlayerController>();
         _canPlay = false;
+        PauseGame.instance.CanTPause();
 
         //List des cellules du terrain
         foreach (var i in FindObjectsOfType<Cells>())

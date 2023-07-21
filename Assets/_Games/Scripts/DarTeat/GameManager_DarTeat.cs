@@ -14,7 +14,7 @@ public class GameManager_DarTeat : GameManagerBehaviour
     public int _points1, _points2;
 
     [Header("UI")]
-    public GameObject _GOPanel;
+    //public GameObject _GOPanel;
     public Text _playerWinsText;
     public TextMeshProUGUI _pointsTxt1, _pointsTxt2;
     public Animator _HUD;
@@ -33,6 +33,7 @@ public class GameManager_DarTeat : GameManagerBehaviour
     private void Start()
     {
         _players = FindObjectsOfType<PlayerController_DarTeat>();
+        PauseGame.instance.CanTPause();
         
     }
 

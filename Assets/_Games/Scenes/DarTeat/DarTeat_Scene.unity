@@ -1567,6 +1567,8 @@ MonoBehaviour:
   _player1: {fileID: 11400000, guid: 0cfdcf28b96cfac47844dae3334302ad, type: 2}
   _player2: {fileID: 11400000, guid: 18d9ad96b0d7dd94ba42932a181bd1f1, type: 2}
   _winner: {fileID: 0}
+  _p1: {fileID: 1756654328}
+  _p2: {fileID: 1830554279}
   _topScorePoints: 
   _topScoreName: []
   _volume: 0
@@ -6150,9 +6152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canPlay: 0
+  _GOPanel: {fileID: 7436544232407712874}
   _points1: 0
   _points2: 0
-  _GOPanel: {fileID: 7436544232407712874}
   _playerWinsText: {fileID: 7436544232407712873}
   _pointsTxt1: {fileID: 7436544232150076290}
   _pointsTxt2: {fileID: 7436544232789418780}
@@ -7802,7 +7804,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d007ca9ae22fec049b825fa0866d88cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPlayerOne: 1
+  _playerInput: {fileID: 1756654328}
+  _actionMapP1Name: Player1
+  _actionMapP2Name: Player2
+  _isPlayer1: 1
+  _moveInput: {x: 0, y: 0}
   _teatPrefab: {fileID: 5267056591300235849, guid: 26acaf76acc10cf43af1b5d0a2de4944,
     type: 3}
   _vfxHit:
@@ -7995,6 +8001,42 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 16e2f8f8-f27d-4b2f-ac8f-97d924703958
     m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1756654327}
+        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: da44d39b-dc49-4f31-a60a-5cb8006c9f48
+    m_ActionName: Player1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 80dce28d-601f-4b8b-8eb9-5a54a8eecf99
+    m_ActionName: Player2/Pause
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee750e19-22d9-45ce-9e5b-cc0f644a3132
+    m_ActionName: SumomP1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 903965d6-3d59-479e-8167-84ab167f0b6e
+    m_ActionName: SumomP2/Pause
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 31ef8522-e13c-407a-a082-160612f42903
+    m_ActionName: GridPlayer1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a231005-9fea-47b5-8c3c-d2849ecd95a9
+    m_ActionName: GridPlayer2/Pause
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: TutoP1
@@ -8671,6 +8713,42 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 16e2f8f8-f27d-4b2f-ac8f-97d924703958
     m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da44d39b-dc49-4f31-a60a-5cb8006c9f48
+    m_ActionName: Player1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1830554280}
+        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 80dce28d-601f-4b8b-8eb9-5a54a8eecf99
+    m_ActionName: Player2/Pause
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee750e19-22d9-45ce-9e5b-cc0f644a3132
+    m_ActionName: SumomP1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 903965d6-3d59-479e-8167-84ab167f0b6e
+    m_ActionName: SumomP2/Pause
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 31ef8522-e13c-407a-a082-160612f42903
+    m_ActionName: GridPlayer1/Pause[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a231005-9fea-47b5-8c3c-d2849ecd95a9
+    m_ActionName: GridPlayer2/Pause
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: TutoP2
@@ -8688,7 +8766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d007ca9ae22fec049b825fa0866d88cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPlayerOne: 0
+  _playerInput: {fileID: 1830554279}
+  _actionMapP1Name: Player1
+  _actionMapP2Name: Player2
+  _isPlayer1: 0
+  _moveInput: {x: 0, y: 0}
   _teatPrefab: {fileID: 5267056591300235849, guid: 26acaf76acc10cf43af1b5d0a2de4944,
     type: 3}
   _vfxHit:

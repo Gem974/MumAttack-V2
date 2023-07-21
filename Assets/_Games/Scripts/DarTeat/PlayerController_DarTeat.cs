@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 
-public class PlayerController_DarTeat : MonoBehaviour
+public class PlayerController_DarTeat : PlayerBehaviour
 {
-    public bool _isPlayer1;
+    
     public GameObject _teatPrefab;
     public GameObject[] _vfxHit;
     public float _sightSpeed = 250f;
@@ -15,9 +15,7 @@ public class PlayerController_DarTeat : MonoBehaviour
     public float _shootRate = 1f;
     public float _shootCountdown = 0.2f;
     private float _nextShot;
-    private Vector2 _moveInput = Vector2.zero;
     private bool _actionInput = false;
-    private PlayerInput _playerInput;
 
     private void Start()
     {
@@ -29,26 +27,26 @@ public class PlayerController_DarTeat : MonoBehaviour
     }
 
     //Event pour les touches de déplacement 
-    public void OnMove(InputAction.CallbackContext context)
+    public override void OnMove(InputAction.CallbackContext context)
     {
         //On se contente de récupérer le Vecteur2 des touches de déplacement
         _moveInput = context.ReadValue<Vector2>();
     }
 
     //Event pour la touche d'action
-    public void OnAction(InputAction.CallbackContext context)
+    public override void OnAction(InputAction.CallbackContext context)
     {
         _actionInput = context.action.triggered;
     }
 
     //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
-    public void OnReady(InputAction.CallbackContext context)
+    public override void OnReady(InputAction.CallbackContext context)
     {
         Tutorials.instance.ReadyChecker(_isPlayer1);
     }
 
     //Passer de l'action map Tuto (get ready) à l'action map de jeu
-    public void ChangeActionMap()
+    public override void ChangeActionMap()
     {
         if (_isPlayer1)
         {

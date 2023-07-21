@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : PlayerBehaviour
 {
     //Variables
-    public bool _isPlayer1;
+
     public bool _canMove = false;
     public bool _canDig = false;
     public float _stunDuration = 3f;
     public GameObject _digIcon, _stunIcon;
     private RaycastHit down;
     private bool _actionInput = false;
-    private PlayerInput _playerInput;
+  
     private int _clampMin = -1;
     private int _clampMax = 7;
      
@@ -66,21 +66,21 @@ public class PlayerController : MonoBehaviour
     }
 
     //Event pour la touche d'action
-    public void OnAction(InputAction.CallbackContext context)
+    public override void OnAction(InputAction.CallbackContext context)
     {
 
         _actionInput = context.action.triggered;
     }
 
     //Event pour l'action map Tuto (se mettre pret pour lancer le jeu)
-    public void OnReady(InputAction.CallbackContext context)
+    public override void OnReady(InputAction.CallbackContext context)
     {
         Tutorials.instance.ReadyChecker(_isPlayer1);
       
     }
 
     //Passer de l'action map Tuto (get ready) à l'action map de jeu
-    public void ChangeActionMap()
+    public override void ChangeActionMap()
     {
         if (_isPlayer1)
         {
