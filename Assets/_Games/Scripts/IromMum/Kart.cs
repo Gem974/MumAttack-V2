@@ -56,7 +56,7 @@ public class Kart : PlayerBehaviour
     
 
  
-    private bool _actionNewInput = false;
+    
 
     private void Start()
     {

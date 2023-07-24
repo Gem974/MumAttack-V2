@@ -65,13 +65,13 @@ public class Sumom_GameManager : GameManagerBehaviour
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
-    public void TutoPreparationFinish()
+    public override void TutoPreparationFinish()
     {
         _player1.ChangeActionMap();
         _player2.ChangeActionMap();
     }
 
-    public void StartGameAfterDiscount()
+    public override void StartGameAfterDiscount()
     {
         
         _canPlay = true;

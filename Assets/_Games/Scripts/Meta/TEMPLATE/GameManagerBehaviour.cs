@@ -7,6 +7,7 @@ public class GameManagerBehaviour : MonoBehaviour
     [Header("GameManagerBehaviour")]
     public bool _canPlay;
     public GameObject _GOPanel;
+    public PlayerBehaviour[] _players;
 
     public static GameManagerBehaviour instancePrime;
 
@@ -19,6 +20,22 @@ public class GameManagerBehaviour : MonoBehaviour
         }
 
         instancePrime = this;
+    }
+
+    public virtual void TutoPreparationFinish()
+    {
+
+        foreach (var player in _players)
+        {
+            player.ChangeActionMap();
+        }
+    }
+
+    public virtual void StartGameAfterDiscount()
+    {
+        _canPlay = true;
+        PauseGame.instance.CanPause();
+
     }
 
     public virtual void GameOver()

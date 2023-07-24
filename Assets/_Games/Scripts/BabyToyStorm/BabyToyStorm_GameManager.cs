@@ -5,7 +5,6 @@ using UnityEngine;
 public class BabyToyStorm_GameManager : GameManagerBehaviour
 {
 
-    [SerializeField] PlayerBehaviour[] _players;
     [SerializeField] int _scoreP1, _scoreP2;
  
 
@@ -39,7 +38,7 @@ public class BabyToyStorm_GameManager : GameManagerBehaviour
     }
 
     //Called just After the Discount
-    public void StartGameAfterDiscount()
+    public override void StartGameAfterDiscount()
     {
         Timer.instance.LaunchTimer();
         SpawnRandomObject.instance.StartSpawn();
@@ -48,7 +47,7 @@ public class BabyToyStorm_GameManager : GameManagerBehaviour
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
-    public void TutoPreparationFinish()
+    public override void TutoPreparationFinish()
     {
 
         foreach (var player in _players)

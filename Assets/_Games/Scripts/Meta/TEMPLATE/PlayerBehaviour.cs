@@ -13,14 +13,9 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] protected string _actionMapP1Name = "Player1", _actionMapP2Name = "Player2";
     public bool _isPlayer1;
     [SerializeField] protected Vector2 _moveInput = Vector2.zero;
-    private bool _actionNewInput = false;
+    public bool _actionNewInput = false;
 
-    //protected virtual void PairingPlayerInput()
-    //{
-    //    ForceController();
-    //    //Liaison avec le Player Input
-        
-    //}
+   
    
 
     //Event pour les touches de déplacement 
@@ -72,7 +67,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
 
         }
-        print("PROUT");
+       
     }
 
     //Passer de l'action map Tuto (get ready) à l'action map de jeu

@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class #SCRIPTNAME# : GameManagerBehaviour
+public class ExempleGM : GameManagerBehaviour
 {
 
-    
-   
 
-    public static #SCRIPTNAME# instance;
+    public static ExempleGM instance;
     
 
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogError("Il y a plus d'une instance de #SCRIPTNAME# dans la scène");
+            Debug.LogError("Il y a plus d'une instance de ExempleGM dans la scï¿½ne");
             return;
         }
         instance = this;

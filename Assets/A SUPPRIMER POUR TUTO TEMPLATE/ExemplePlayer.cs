@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem.Users;
 
-public class #SCRIPTNAME# : PlayerBehaviour
+public class ExemplePlayer : PlayerBehaviour
 {
 
   

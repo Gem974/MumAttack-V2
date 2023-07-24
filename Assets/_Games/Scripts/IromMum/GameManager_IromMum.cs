@@ -93,7 +93,7 @@ public class GameManager_IromMum : GameManagerBehaviour
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
-    public void TutoPreparationFinish()
+    public override void TutoPreparationFinish()
     {
         foreach (var player in _players)
         {
@@ -101,7 +101,7 @@ public class GameManager_IromMum : GameManagerBehaviour
         }
     }
 
-    public void StartGameAfterDiscount()
+    public override void StartGameAfterDiscount()
     {
         Timer.instance.LaunchTimer();
         RandomPlaices.instance.StartRandomPlaices();
