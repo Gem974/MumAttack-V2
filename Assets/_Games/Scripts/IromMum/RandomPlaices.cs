@@ -10,6 +10,7 @@ public class RandomPlaices : MonoBehaviour
     [SerializeField] int _spwanedPlaices;
     [SerializeField] int _maxPlaicesToSpawn = 50;
     [SerializeField] float _zoneDivide;
+    
 
     public static RandomPlaices instance;
 
