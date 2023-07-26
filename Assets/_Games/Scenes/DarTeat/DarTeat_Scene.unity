@@ -6153,6 +6153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canPlay: 0
   _GOPanel: {fileID: 7436544232407712874}
+  _players:
+  - {fileID: 1756654327}
+  - {fileID: 1830554280}
   _points1: 0
   _points2: 0
   _playerWinsText: {fileID: 7436544232407712873}
@@ -7809,6 +7812,7 @@ MonoBehaviour:
   _actionMapP2Name: Player2
   _isPlayer1: 1
   _moveInput: {x: 0, y: 0}
+  _actionNewInput: 0
   _teatPrefab: {fileID: 5267056591300235849, guid: 26acaf76acc10cf43af1b5d0a2de4944,
     type: 3}
   _vfxHit:
@@ -8771,6 +8775,7 @@ MonoBehaviour:
   _actionMapP2Name: Player2
   _isPlayer1: 0
   _moveInput: {x: 0, y: 0}
+  _actionNewInput: 0
   _teatPrefab: {fileID: 5267056591300235849, guid: 26acaf76acc10cf43af1b5d0a2de4944,
     type: 3}
   _vfxHit:

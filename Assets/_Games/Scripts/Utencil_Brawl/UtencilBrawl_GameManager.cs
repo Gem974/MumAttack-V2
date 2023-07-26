@@ -93,13 +93,13 @@ public class UtencilBrawl_GameManager : GameManagerBehaviour
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
-    public void TutoPreparationFinish()
+    public override void TutoPreparationFinish()
     {
         _J1.ChangeActionMap();
         _J2.ChangeActionMap();
     }
 
-    public void StartGameAfterDiscount()
+    public override void StartGameAfterDiscount()
     {
         Time.timeScale = 1;
         _isGameStopped = false;
