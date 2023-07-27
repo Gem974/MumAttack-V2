@@ -12,7 +12,6 @@ public class ButtonsBehaviour : MonoBehaviour
 
     private void Start()
     {
-
         OffPanels();
         _mainMenuPanel.SetActive(true);
     }
