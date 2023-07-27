@@ -19,7 +19,7 @@ public class GameManager_IromMum : GameManagerBehaviour
     public Text _playerWinsText;
     public Animator _HUD;
 
-    private Kart[] _players;
+    private Kart[] _kart;
 
     public static GameManager_IromMum instance;
 
@@ -36,7 +36,7 @@ public class GameManager_IromMum : GameManagerBehaviour
 
     private void Start()
     {
-        _players = FindObjectsOfType<Kart>();
+        _kart = FindObjectsOfType<Kart>();
         _canPlay = false;
         PauseGame.instance.CanTPause();
 
@@ -95,7 +95,7 @@ public class GameManager_IromMum : GameManagerBehaviour
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
     public override void TutoPreparationFinish()
     {
-        foreach (var player in _players)
+        foreach (var player in _kart)
         {
             player.ChangeActionMap();
         }

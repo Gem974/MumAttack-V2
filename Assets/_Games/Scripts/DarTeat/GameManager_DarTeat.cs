@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager_DarTeat : GameManagerBehaviour
 {
     
-    private PlayerController_DarTeat[] _players;
+   // private PlayerController_DarTeat[] _players;
 
     [Header("Systems")]
     //public bool _canPlay;
@@ -102,15 +102,12 @@ public class GameManager_DarTeat : GameManagerBehaviour
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
-    public void TutoPreparationFinish()
-    {
-        foreach (var player in _players)
-        {
-            player.ChangeActionMap();
-        }
-    }
+    //public override void TutoPreparationFinish()
+    //{
+    //    base.TutoPreparationFinish();
+    //}
 
-    public void StartGameAfterDiscount()
+    public override void StartGameAfterDiscount()
     {
         _canPlay = true;
         PauseGame.instance.CanPause();
