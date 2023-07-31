@@ -30,13 +30,12 @@ public class TTP_GameManager : GameManagerBehaviour
     public override void StartGameAfterDiscount()
     {
         base.StartGameAfterDiscount();
-        
+        TTP_Timer.instance.StartInGameTimer();
     }
 
     // Sert a corriger les erreurs lors du spamming de touche dans le tuto. Appeler par message par le script DiscountBeforeStart 
     public override void TutoPreparationFinish()
     {
-
         base.TutoPreparationFinish();
     }
 

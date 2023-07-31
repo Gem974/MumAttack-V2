@@ -19,6 +19,10 @@ public class TTP_Timer : MonoBehaviour
         }
         instance = this;
     }
+    private void Start()
+    {
+        _timer.text = string.Format("{0} : {1}", _minutes.ToString("00"), _seconds.ToString("00"));
+    }
 
     public void StartInGameTimer()
     {
@@ -53,6 +57,9 @@ public class TTP_Timer : MonoBehaviour
             {
                 _timer.faceColor = Color.red;
             }
+
+            _timer.text = string.Format("{0} : {1}", _minutes.ToString("00"), _seconds.ToString("00"));
+            StartCoroutine("OneSecondLess");
         }
     }
 }
