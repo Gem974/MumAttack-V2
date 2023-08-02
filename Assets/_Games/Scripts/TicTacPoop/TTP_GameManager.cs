@@ -40,6 +40,22 @@ public class TTP_GameManager : GameManagerBehaviour
         base.TutoPreparationFinish();
     }
 
+    public void TimerFinish()
+    {
+        StartCoroutine(GameFinish());
+    }
+
+    IEnumerator GameFinish()
+    {
+        foreach (var i in _players)
+        {
+            if (i.GetComponent<TTP_Player>()._hasBomb)
+                i.GetComponent<TTP_Player>().Explode();
+        }
+        yield return new WaitForSeconds(0.6f);
+        GameOver();
+    }
+
     public override void GameOver()
     {
         base.GameOver();

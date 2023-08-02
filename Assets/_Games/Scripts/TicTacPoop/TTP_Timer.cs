@@ -49,7 +49,7 @@ public class TTP_Timer : MonoBehaviour
                 }
                 else
                 {
-                    TTP_GameManager.instance.GameOver(); 
+                    TTP_GameManager.instance.TimerFinish(); 
                 }
             }
 

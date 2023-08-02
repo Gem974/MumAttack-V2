@@ -30,6 +30,12 @@ public class TTP_Player : PlayerBehaviour
     public GameObject _mesh;
     public Sprite _goodHead, _badHead;
 
+    [Header("Juice")]
+    public GameObject _teleportVFX;
+    public GameObject _explodeVFX;
+    public GameObject _hitPlayer;
+    private Vector3 _offset = new Vector3(0, 1f, 0);
+
     //Event pour la touche Move
     public override void OnMove(InputAction.CallbackContext context)
     {
@@ -52,6 +58,17 @@ public class TTP_Player : PlayerBehaviour
     public void Start()
     {
         base.ForceController();
+        if (_isPlayer1)
+        {
+            _goodHead = META.MetaGameManager.instance._player1._goodHead;
+            _badHead = META.MetaGameManager.instance._player1._badHead;
+
+        }
+        else
+        {
+            _goodHead = META.MetaGameManager.instance._player2._goodHead;
+            _badHead = META.MetaGameManager.instance._player2._badHead;
+        }
         _rb = GetComponent<Rigidbody>();
         if (_hasBomb) 
         {
@@ -66,6 +83,7 @@ public class TTP_Player : PlayerBehaviour
             _mesh.GetComponent<SpriteRenderer>().sprite = _goodHead;
             _iconIndicator.SetActive(false);
         }
+
         
     }
 
@@ -146,6 +164,7 @@ public class TTP_Player : PlayerBehaviour
                     //Si on touche l'autre joueur
                     if(_forward.collider.GetComponent<TTP_Player>() != null)
                     {
+                        Instantiate(_hitPlayer, _forward.point, Quaternion.identity);
                         var otherPlayer = _forward.collider.GetComponent<TTP_Player>();
                         //On passe la bombe et on le stun
                         _iconIndicator.SetActive(false);
@@ -164,15 +183,17 @@ public class TTP_Player : PlayerBehaviour
                 //On tire le raycast et on verifie qu'il touche un decor interactible (via le layer spécifique)
                 if (Physics.Raycast(transform.position, transform.forward, out _forward, _actionDistance, _decoInteractible))
                 {
+                    Instantiate(_teleportVFX, transform.position + _offset, Quaternion.identity);
                     // Récupération du collider de l'objet en collision
                     Collider objectCollider = _forward.collider;
 
                     // Calcul de la nouvelle position du personnage qui traverse l'objet touché
                     // Calcul : position actuel du joueur + la surface à traverser (collider) à partir de la normal de la face touchée * -1 pour aller dans le sens inverse de la normal
                     Vector3 newPosition = transform.position + _forward.normal * objectCollider.bounds.size.magnitude * -1f;
-
+                    newPosition.y = 1f;
                     // Affectation la position calculée au personnage
                     transform.position = newPosition;
+                    Instantiate(_teleportVFX, newPosition + _offset, Quaternion.identity);
                 }
             }
         }
@@ -195,6 +216,11 @@ public class TTP_Player : PlayerBehaviour
         yield return new WaitForSeconds(_stunDuration);
         _hasControl = true;
         _iconIndicator.GetComponent<SpriteRenderer>().sprite = _bombSprite;
+    }
+
+    public void Explode()
+    {
+        Instantiate(_explodeVFX, transform.position + _offset, Quaternion.identity);
     }
 }
 
