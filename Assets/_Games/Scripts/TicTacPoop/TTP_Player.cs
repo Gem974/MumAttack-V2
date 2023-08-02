@@ -28,6 +28,7 @@ public class TTP_Player : PlayerBehaviour
     public GameObject _iconIndicator;
     public Sprite _bombSprite, _stunSprite;
     public GameObject _mesh;
+    public Sprite _goodHead, _badHead;
 
     //Event pour la touche Move
     public override void OnMove(InputAction.CallbackContext context)
@@ -55,12 +56,14 @@ public class TTP_Player : PlayerBehaviour
         if (_hasBomb) 
         {
             _currentSpeed = _speed;
+            _mesh.GetComponent<SpriteRenderer>().sprite = _badHead;
             _iconIndicator.SetActive(true);
             _iconIndicator.GetComponent<SpriteRenderer>().sprite = _bombSprite;
         }
         else
         {
             _currentSpeed = _speed * 0.8f;
+            _mesh.GetComponent<SpriteRenderer>().sprite = _goodHead;
             _iconIndicator.SetActive(false);
         }
         
@@ -70,7 +73,7 @@ public class TTP_Player : PlayerBehaviour
     void Update()
     {
         //Orientation du mesh pour qu'il fasse face à la camera
-        _mesh.transform.forward = Camera.main.transform.forward;
+        //_mesh.transform.forward = Camera.main.transform.forward;
 
         if (TTP_GameManager.instance._canPlay)
         {
@@ -107,14 +110,14 @@ public class TTP_Player : PlayerBehaviour
             Vector3 movement = new Vector3(_moveInput.x, 0f, _moveInput.y).normalized;
 
             //Orientation de Sprite selon la direction (gauche / droite)
-            if(_moveInput.x > 0f)
-            {
-                _mesh.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if(_moveInput.x < 0f)
-            {
-                _mesh.GetComponent<SpriteRenderer>().flipX = true;
-            }
+            //if(_moveInput.x > 0f)
+            //{
+            //    _mesh.GetComponent<SpriteRenderer>().flipX = false;
+            //}
+            //else if(_moveInput.x < 0f)
+            //{
+            //    _mesh.GetComponent<SpriteRenderer>().flipX = true;
+            //}
 
 
             //Gere l'orientation du perso (important pour le raycast de l'action)
@@ -138,18 +141,19 @@ public class TTP_Player : PlayerBehaviour
             if (_actionNewInput)
             {
                 //On tire le Raycast
-                Physics.Raycast(transform.position, transform.forward, out _forward, _actionDistance);
-
-                //Si on touche l'autre joueur
-                if(_forward.collider.GetComponent<TTP_Player>() != null)
+                if(Physics.Raycast(transform.position, transform.forward, out _forward, _actionDistance))
                 {
-                    var otherPlayer = _forward.collider.GetComponent<TTP_Player>();
-
-                    //On passe la bombe et on le stun
-                    _iconIndicator.SetActive(false);
-                    _hasBomb = false;
-                    otherPlayer.GetCatch();
-                    Debug.Log("Action avec bombe");
+                    //Si on touche l'autre joueur
+                    if(_forward.collider.GetComponent<TTP_Player>() != null)
+                    {
+                        var otherPlayer = _forward.collider.GetComponent<TTP_Player>();
+                        //On passe la bombe et on le stun
+                        _iconIndicator.SetActive(false);
+                        _mesh.GetComponent<SpriteRenderer>().sprite = _goodHead;
+                        _hasBomb = false;
+                        otherPlayer.GetCatch();
+                        Debug.Log("Action avec bombe");
+                    }
                 }
             }
         }
@@ -183,6 +187,7 @@ public class TTP_Player : PlayerBehaviour
     //Desactive le controle du player pour la durée du stun et lui donne la bombe
     public IEnumerator Stun()
     {
+        _mesh.GetComponent<SpriteRenderer>().sprite = _badHead;
         _iconIndicator.SetActive(true);
         _iconIndicator.GetComponent<SpriteRenderer>().sprite = _stunSprite;
         _hasBomb = true;
