@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/_Games/Scenes/BabyToyStorm/BabyToyStorm.unity
     guid: ce63dac7e6719a84aa3a0f656d87f552
   - enabled: 1
+    path: Assets/_Games/Scenes/Menu/BroadCastVictory.unity
+    guid: 0019240dedf1079488d590a042638854
+  - enabled: 1
     path: Assets/_Games/Scenes/TicTacPoop/TTP_Scene.unity
     guid: 014054d7868b1424ea5f38b208f120cd
   - enabled: 1
@@ -44,9 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Games/Scenes/MumEscape/MumEscape_Scene.unity
     guid: 0c1a003448ee95346a3bb8b83a7213a0
-  - enabled: 1
-    path: Assets/_Games/Scenes/Menu/BroadCastVictory.unity
-    guid: 0019240dedf1079488d590a042638854
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0eb64ded269ef6944884ef69d713cf21,
       type: 2}

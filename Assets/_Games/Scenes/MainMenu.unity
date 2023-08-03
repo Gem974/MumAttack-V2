@@ -543,7 +543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 98bc8d0bc5940184093e7749fd7e8f5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1867d5bcaa48a724b89c313e6c1da813, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1776,7 +1776,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3c96e75b9df786a4da81aecdd9ab8499, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b4caf452bc170d448a001d3d58236f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3811,7 +3811,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: SelectCharaP1
+  m_DefaultActionMap: SelectCharaP2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &633656531 stripped
@@ -24066,7 +24066,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1671316855}
   - component: {fileID: 1671316854}
-  - component: {fileID: 1671316856}
   - component: {fileID: 1671316857}
   m_Layer: 0
   m_Name: EventSystem
@@ -24105,19 +24104,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1671316856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671316852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1671316857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24391,7 +24377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1f285d9e9eee9a24f86f1538b217ce03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fa827b75cda41a4a8681305600c15f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
