@@ -13672,9 +13672,11 @@ MonoBehaviour:
   _actionMapP2Name: GridPlayer2
   _isPlayer1: 0
   _moveInput: {x: 0, y: 0}
+  _actionNewInput: 0
   _canMove: 0
   _canDig: 0
   _stunDuration: 3
+  _actionCD: 0.5
   _digIcon: {fileID: 1844183506}
   _stunIcon: {fileID: 848433917}
 --- !u!23 &6236608122485692222
@@ -18086,8 +18088,10 @@ MonoBehaviour:
   _actionMapP2Name: GridPlayer2
   _isPlayer1: 1
   _moveInput: {x: 0, y: 0}
+  _actionNewInput: 0
   _canMove: 0
   _canDig: 0
   _stunDuration: 3
+  _actionCD: 0.5
   _digIcon: {fileID: 341125151}
   _stunIcon: {fileID: 1231095170}

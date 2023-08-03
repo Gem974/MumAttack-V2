@@ -30,6 +30,15 @@ EditorBuildSettings:
     path: Assets/_Games/Scenes/DarTeat/DarTeat_Scene.unity
     guid: f85d7914c68713d40b4cba06baa0b29f
   - enabled: 1
+    path: Assets/_Games/Scenes/MumSweeper/MumSweeper.unity
+    guid: 6a66174ecb08ce147bc5b00a51eb24ae
+  - enabled: 1
+    path: Assets/_Games/Scenes/BabyToyStorm/BabyToyStorm.unity
+    guid: ce63dac7e6719a84aa3a0f656d87f552
+  - enabled: 1
+    path: Assets/_Games/Scenes/TicTacPoop/TTP_Scene.unity
+    guid: 014054d7868b1424ea5f38b208f120cd
+  - enabled: 1
     path: Assets/_Games/Scenes/MaxiMum/MaxiMum.unity
     guid: f10fa62561fb0c242aab2e9ac5d9d147
   - enabled: 1

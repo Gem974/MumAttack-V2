@@ -11,6 +11,8 @@ public class PlayerController : PlayerBehaviour
     public bool _canMove = false;
     public bool _canDig = false;
     public float _stunDuration = 3f;
+    public float _actionCD = 0.5f;
+    private float _nextAction;
     public GameObject _digIcon, _stunIcon;
     private RaycastHit down;
     private bool _actionInput = false;
@@ -32,26 +34,33 @@ public class PlayerController : PlayerBehaviour
     public void OnMoveUp(InputAction.CallbackContext context)
     {
         if (GameManager_MumSweeper.instance._canPlay && _canMove)
-            StartCoroutine(Move(Vector3.forward));
+            Movement(Vector3.forward);
 
     }
 
     public void OnMoveDown(InputAction.CallbackContext context)
     {
         if (GameManager_MumSweeper.instance._canPlay && _canMove)
-            StartCoroutine(Move(Vector3.back));
+            Movement(Vector3.back);
     }
 
     public void OnMoveLeft(InputAction.CallbackContext context)
     {
         if (GameManager_MumSweeper.instance._canPlay && _canMove)
-            StartCoroutine(Move(Vector3.left));
+            Movement(Vector3.left);
     }
 
     public void OnMoveRight(InputAction.CallbackContext context)
     {
         if (GameManager_MumSweeper.instance._canPlay && _canMove)
-            StartCoroutine(Move(Vector3.right));
+            Movement(Vector3.right);
+    }
+
+    void Movement(Vector3 dir)
+    {
+        _canMove = false;
+        StopCoroutine("Move");
+        StartCoroutine(Move(dir));
     }
 
     //Co routine pour faire du step par step lors du deplacement
@@ -100,7 +109,12 @@ public class PlayerController : PlayerBehaviour
         {
             if (_actionInput)
             {
-                StartDig();
+                //CD sur l'action
+                if (Time.time >= _nextAction)
+                {
+                    StartDig();
+                    _nextAction = Time.time + _actionCD;
+                }
             }
         }
     }
@@ -110,6 +124,8 @@ public class PlayerController : PlayerBehaviour
     {
         if (_canDig)
         {
+            _canMove = false;
+            _canDig = false;
             StartCoroutine(Dig());
         }
     }

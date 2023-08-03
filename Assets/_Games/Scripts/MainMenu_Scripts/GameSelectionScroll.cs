@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameSelectionScroll : MonoBehaviour
 {
     //Variables
+    public GameObject _promptPTRActive;
     public ScrollRect _scrollRect;
     public float _offset;
     public float _speed;
@@ -40,6 +41,7 @@ public class GameSelectionScroll : MonoBehaviour
     {
         if(_ptrActive == false)
         {
+            _promptPTRActive.SetActive(true);
             foreach (var i in _ptrGames)
             {
                 i.gameObject.SetActive(true);
@@ -55,6 +57,7 @@ public class GameSelectionScroll : MonoBehaviour
         }
         else
         {
+            _promptPTRActive.SetActive(false);
             foreach (var i in _ptrGames)
             {
                 i.gameObject.SetActive(false);

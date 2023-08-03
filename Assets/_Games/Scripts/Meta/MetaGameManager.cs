@@ -54,6 +54,7 @@ namespace META
             }
             instance = this;
         }
+
         void Start()
         {
             DontDestroyOnLoad(this.gameObject);
@@ -61,12 +62,13 @@ namespace META
             _gameMode = GameMode.None;
             _user1 = _p1.user;
             _user2 = _p2.user;
-            if(Gamepad.all.Count >= 2)
+            if (Gamepad.all.Count >= 2)
             {
                 _device1 = _user1.pairedDevices[0];
                 _device2 = _user2.pairedDevices[0];
 
-            }else if(Gamepad.all.Count == 1)
+            }
+            else if (Gamepad.all.Count == 1)
             {
                 _device1 = _user1.pairedDevices[0];
                 _device2 = null;
@@ -76,9 +78,8 @@ namespace META
                 _device1 = null;
                 _device2 = null;
             }
-                
-        }
 
+        }
 
         public void BroadCastNextStep()
         {
@@ -112,13 +113,5 @@ namespace META
             _gameID = 0;
             _gameMode = GameMode.None;
         }
-
-
-
-
-
-
-
-
     }
 }
