@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4445217623114516410}
   - component: {fileID: 796371571536454700}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 3113197471612988786}
   - component: {fileID: 3113197471612988781}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Mouth
   m_TagString: Teat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,7 +552,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 2
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 5649038219960250002}
   - component: {fileID: 3529075197611000985}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
