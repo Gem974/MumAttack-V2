@@ -127,13 +127,13 @@ public class Sumom_GameManager : GameManagerBehaviour
 
         if (wichPlayer == 1)
         {
-            _pointsP1++;
-            _pointsJ1Txt.text = _pointsP1.ToString();
+            _pointsP2++;
+            _pointsJ2Txt.text = _pointsP2.ToString();
         }
         else if (wichPlayer == 2)
         {
-            _pointsP2++;
-            _pointsJ2Txt.text = _pointsP2.ToString();
+            _pointsP1++;
+            _pointsJ1Txt.text = _pointsP1.ToString();
         }
 
         while (_chroAbe.intensity.value <= 0.9)
