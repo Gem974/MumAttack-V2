@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class BabyToyStorm_GameManager : GameManagerBehaviour
 {
 
     [SerializeField] int _scoreP1, _scoreP2;
- 
+    [SerializeField] TextMeshProUGUI _scoreP1Text, _scoreP2Text;
+
+
 
 
     public static BabyToyStorm_GameManager instance;
@@ -61,10 +65,12 @@ public class BabyToyStorm_GameManager : GameManagerBehaviour
         if (isPlayer1)
         {
             _scoreP1 += howMuchPoints;
+            _scoreP1Text.text = _scoreP1.ToString();
         }
         else
         {
             _scoreP2 += howMuchPoints;
+            _scoreP2Text.text = _scoreP2.ToString();
 
         }
 

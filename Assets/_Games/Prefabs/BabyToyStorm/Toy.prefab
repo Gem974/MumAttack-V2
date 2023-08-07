@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda12e1485dd1af47988331dd03f43c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toyPointValue: 4
+  _toyPointValue: 1
   _rb: {fileID: 7245024533050648426}
 --- !u!1 &7824209175230429924
 GameObject:

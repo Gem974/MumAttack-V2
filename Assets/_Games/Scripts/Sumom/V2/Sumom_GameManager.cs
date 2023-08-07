@@ -207,7 +207,7 @@ public class Sumom_GameManager : GameManagerBehaviour
     public void RestartRound()
     {
         _playerDominant = PlayerDominant.None;
-         
+        _chroAbe.intensity.value = 0f;
         DiscountBeforeStart.instance.RestartRoundDiscount();
         _player1.ResetPlayer();
         _player2.ResetPlayer();

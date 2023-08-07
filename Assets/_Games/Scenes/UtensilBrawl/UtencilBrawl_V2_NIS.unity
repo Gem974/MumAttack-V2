@@ -3678,6 +3678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734136439426530484, guid: 3021cc00c59fd674eb3be06345de8bbe,
         type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1022741170}
+    - target: {fileID: 2734136439426530484, guid: 3021cc00c59fd674eb3be06345de8bbe,
+        type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 1848096430}
@@ -3705,6 +3710,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734136439426530484, guid: 3021cc00c59fd674eb3be06345de8bbe,
+        type: 3}
+      propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: doCamShake
       objectReference: {fileID: 0}
     - target: {fileID: 2734136439426530484, guid: 3021cc00c59fd674eb3be06345de8bbe,
         type: 3}
@@ -9685,6 +9695,7 @@ MonoBehaviour:
   _actionMapP2Name: Player2
   _isPlayer1: 0
   _moveInput: {x: 0, y: 0}
+  _actionNewInput: 0
   _clamping: 4.47
   _animator: {fileID: 0}
   _moveSpeed: 5
@@ -10897,7 +10908,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.31295946, y: -0.0005914444, z: 0.00019488804, w: 0.9497663}
+  m_LocalRotation: {x: 0.31295946, y: -0.00059144426, z: 0.00019488802, w: 0.9497663}
   m_LocalPosition: {x: 0.02467072, y: 7.9088087, z: -10.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11099,6 +11110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canPlay: 0
   _GOPanel: {fileID: 697637817}
+  _players: []
   _J1: {fileID: 1292938047}
   _J2: {fileID: 1848096426}
   _isGameStopped: 0
@@ -11471,7 +11483,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022741167}
-  m_LocalRotation: {x: 0.31295946, y: -0.0005914444, z: 0.00019488804, w: 0.9497663}
+  m_LocalRotation: {x: 0.31295946, y: -0.00059144426, z: 0.00019488802, w: 0.9497663}
   m_LocalPosition: {x: 0.02467072, y: 7.9088087, z: -10.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
