@@ -48,5 +48,9 @@ EditorBuildSettings:
     path: Assets/_Games/Scenes/MumEscape/MumEscape_Scene.unity
     guid: 0c1a003448ee95346a3bb8b83a7213a0
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: bc59a6cd81818c24faeae7d81ae7979c,
+      type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 0eb64ded269ef6944884ef69d713cf21,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 6b4a9173677f4f7499734d41dabe110b,
       type: 2}
