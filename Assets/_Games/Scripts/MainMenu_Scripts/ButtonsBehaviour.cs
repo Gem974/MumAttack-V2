@@ -5,10 +5,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Audio;
 
 public class ButtonsBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject _mainMenuPanel, _modePanel, _freebrawlPanel, _optionsPanel;
+    public AudioMixer _mixer;
+    public Slider _volumeSlider;
 
     private void Start()
     {
@@ -65,4 +70,14 @@ public class ButtonsBehaviour : MonoBehaviour
         Debug.Log("Working");
     }
 
+    public void ChangeLangage(int langageID)
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[langageID];
+    }
+
+    public void ChangeVolume(float volume)
+    {
+        volume = _volumeSlider.value;
+        _mixer.SetFloat("Volume", volume);
+    }
 }
