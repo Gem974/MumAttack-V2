@@ -15,10 +15,10 @@ MonoBehaviour:
   _name: MianBao
   _color:
     serializedVersion: 2
-    rgba: 4283423218
+    rgba: 4278255359
   _headBackColor:
     serializedVersion: 2
-    rgba: 4279708926
+    rgba: 4280628180
   _winImage: {fileID: 21300000, guid: e7939ebe37a594d4499906f32311effa, type: 3}
   _goodHead: {fileID: 21300000, guid: 2eebdb8be9e9d884493ef76701ab74db, type: 3}
   _badHead: {fileID: 21300000, guid: 8c53db838e69ff84b8b9312e28d595e5, type: 3}

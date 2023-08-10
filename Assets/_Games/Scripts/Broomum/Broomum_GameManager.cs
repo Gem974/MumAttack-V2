@@ -5,11 +5,10 @@ using UnityEngine;
 public class Broomum_GameManager : GameManagerBehaviour
 {
 
-    
-   
+
+    public int _scoreP1, _scoreP2;
 
     public static Broomum_GameManager instance;
-    
 
     private void Awake()
     {
@@ -51,6 +50,18 @@ public class Broomum_GameManager : GameManagerBehaviour
     {
         base.GameOver();
 
+    }
+
+    public void AddPoint(bool isPlayer1, int howMuchPoints)
+    {
+        if (isPlayer1)
+        {
+            _scoreP1 += howMuchPoints;
+        }
+        else
+        {
+            _scoreP2 += howMuchPoints;
+        }
     }
 }
 

@@ -12,8 +12,10 @@ public class Timer : MonoBehaviour
     public int _timerStart;
     public TextMeshProUGUI _timerTxt;
     public int _chronoMax = 10;
-
+    [SerializeField] string _methodName = "GameOver";
     public static Timer instance;
+
+    public int _timerAtStart;
 
     private void Awake()
     {
@@ -28,11 +30,24 @@ public class Timer : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        _timerAtStart = _timerStart;
+    }
+
     public void LaunchTimer()
     {
         StopCoroutine(TimerBehaviour());
         StartCoroutine(TimerBehaviour());
     }
+
+    //public void ResetTimer()
+    //{
+    //    StopCoroutine(TimerBehaviour());
+    //    _timerStart = _timerAtStart;
+    //    StartCoroutine(TimerBehaviour());
+
+    //}
 
     IEnumerator TimerBehaviour()
     {
@@ -49,7 +64,7 @@ public class Timer : MonoBehaviour
                         _timerStart++;
                         if (_timerStart >= _chronoMax)
                         {
-                            DiscountBeforeStart.instance._gameManagerInScene.SendMessage("GameOver");
+                            DiscountBeforeStart.instance._gameManagerInScene.SendMessage(_methodName);
                         }
                         else
                         {
@@ -67,7 +82,7 @@ public class Timer : MonoBehaviour
                         if (_timerStart <= 0)
                         {
                             _timerTxt.text = _timerStart.ToString();
-                            DiscountBeforeStart.instance._gameManagerInScene.SendMessage("GameOver");
+                            DiscountBeforeStart.instance._gameManagerInScene.SendMessage(_methodName);
                             StopAllCoroutines();
                            
                         }

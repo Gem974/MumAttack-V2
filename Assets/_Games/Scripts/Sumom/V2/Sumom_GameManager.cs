@@ -12,6 +12,7 @@ public class Sumom_GameManager : GameManagerBehaviour
     public int _pointsP1, _pointsP2;
     public Rigidbody _rb1, _rb2;
     public Player_sumom _player1, _player2;
+    public ZoneAvantages[] _zones;
     
 
     [Header("UI")]
@@ -76,7 +77,7 @@ public class Sumom_GameManager : GameManagerBehaviour
         
         _canPlay = true;
         PauseGame.instance.CanPause();
-
+        Timer.instance.LaunchTimer();
         _player1.AnimCanMove();
         _player2.AnimCanMove();
     }
@@ -147,26 +148,7 @@ public class Sumom_GameManager : GameManagerBehaviour
         UnityEngine.Time.timeScale = 0.2f;
         yield return new WaitForSeconds(0.3f);
         UnityEngine.Time.timeScale = 1;
-        //if (wichPlayer == 1)
-        //{
-        //    if (_pointsP2 <= 2)
-        //    {
-        //        _pointsP2++;
-        //        _pointsJ2Txt.text = _pointsP2.ToString();
-        //        RestartRound();
-        //    }
-
-        //}
-        //else if (wichPlayer == 2)
-        //{
-        //    if (_pointsP1 <= 2)
-        //    {
-        //        _pointsP1++;
-        //        _pointsJ1Txt.text = _pointsP1.ToString();
-                
-        //    }
-
-        //}
+        
         
         if (_pointsP1 == 3 || _pointsP2 == 3)
         {
@@ -204,10 +186,28 @@ public class Sumom_GameManager : GameManagerBehaviour
 
     }
 
+    public void TimerEnd()
+    {
+        if (_zones[0]._playerIn > _zones[1]._playerIn)
+        {
+            PlayerEjected(1);
+        }
+        else if(_zones[1]._playerIn > _zones[0]._playerIn)
+        {
+            PlayerEjected(2);
+
+        }else if (_zones[1]._playerIn == _zones[0]._playerIn)
+        {
+            PlayerEjected(0);
+        }
+    }
+
     public void RestartRound()
     {
         _playerDominant = PlayerDominant.None;
         _chroAbe.intensity.value = 0f;
+        //Timer.instance.ResetTimer();
+        Timer.instance._timerStart = Timer.instance._timerAtStart;
         DiscountBeforeStart.instance.RestartRoundDiscount();
         _player1.ResetPlayer();
         _player2.ResetPlayer();
