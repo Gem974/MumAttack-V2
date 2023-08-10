@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: d508c0076da7b664e9646d80442f3ab7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4426539376640
+    m_Localized: Jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4544747446272
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4727216447488
+    m_Localized: Emission
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4852810686464
+    m_Localized: Mode Libre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5164128706560
+    m_Localized: "Le saviez-vous: Mum Attack a \xE9t\xE9 \xE9lu meilleur Party Game
+      ! ( Bien devant Marius Party et Fall Dudes)     |     Des rumeurs disent que
+      le pr\xE9sentateur serait... CHAUVE !    |    Les d\xE9veloppeurs ont totalement
+      su garder le rythme (c'est faux)    |    Des chinois auraient \xE9t\xE9 exploit\xE9s
+      afin de finir le jeu... Mais bien-s\xFBr la rumeur n'est pas fond\xE9e...   
+      |    L'abr\xE9viation \"M.I.L.F\" signifie \"Module d'Infanterie L\xE9tal F\xE9ministe\"   
+      |    DISCLAIMER: Les mamans sont venus \xE0 l'\xE9mission de leur plein gr\xE9
+      ! Aucun enfant n'a \xE9t\xE9 pris en otage pour contraindre/ou forcer les participations.
+      CROYEZ-NOUS !    |    Les d\xE9veloppeurs du jeu se seraient embrouill\xE9s
+      sur la charte graphique..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5543457366016
+    m_Localized: Retour
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5913394978816
+    m_Localized: PTR Actif
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6736485195776
+    m_Localized: Choisi une Maman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6953783697408
+    m_Localized: Concurrent 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7243425554432
+    m_Localized: Concurrent 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7450523508736
+    m_Localized: Jouer !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8107418624000
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8491713339392
+    m_Localized: Retour au Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8890407100416
+    m_Localized: Partie Finie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9278464106496
+    m_Localized: "JoueurX a gagn\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9548745056256
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9938848882688
+    m_Localized: Retour au Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10560344072192
+    m_Localized: Frappez l'adversaire 5 fois avec des ustensiles de cuisine ! Quoi?!
+      Les mamans peuvent les envoyer avec un effet de courbe ?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11021545545728
+    m_Localized: OU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11268543913984
+    m_Localized: Pret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12094117158912
+    m_Localized: "Le b\xE9b\xE9 jette ses jouets ! Attrapez-en le plus avant qu'ils
+      ne touchent le sol ! "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12720708427776
+    m_Localized: "\rNe pleure pas b\xE9b\xE9, prends une t\xE9tine !!!\r\nTirez des
+      t\xE9tines sur les bouches des b\xE9b\xE9s pour marquer des points."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13121650335744
+    m_Localized: "Prenez place dans le kart de repassage et repassez le plus de plis
+      et chassez les pinces sur ce t-shirt g\xE9ant !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13563457347584
+    m_Localized: "Trouvez la t\xE9tine dans le bac \xE0 sable.\r\nLe premier joueur
+      qui le trouve remporte la partie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13797772140544
+    m_Localized: "Poussez l'autre maman hors de l'ar\xE8ne 3 fois ! Attention \xE0
+      ne pas avoir de crampes !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14203210342400
+    m_Localized: "La couche du b\xE9b\xE9 est pleine, il faudra la changer. Frappez
+      l'autre maman pour lui transmettre ce cadeau empoisonn\xE9. Fuyez jusqu'\xE0
+      la fin du chronom\xE8tre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 435505964425216
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 436771721486336
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442409209995264
+    m_Localized: Son
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442556962742272
+    m_Localized: Langue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766915224969216
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767008665673728
+    m_Localized: Musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767071416655872
+    m_Localized: Bruitages
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767227344101376
+    m_Localized: Voix
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

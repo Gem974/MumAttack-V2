@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: d508c0076da7b664e9646d80442f3ab7
+  m_Entries:
+  - m_Id: 4426539376640
+    m_Key: Button_Play_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4544747446272
+    m_Key: Button_Quit_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4727216447488
+    m_Key: Button_BroadCast_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4852810686464
+    m_Key: Button_FreeBrawl_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5164128706560
+    m_Key: Text_TextDefile_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5543457366016
+    m_Key: Button_Return_FreeBrawl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5913394978816
+    m_Key: Text_PTRActivation_FreeBrawl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6736485195776
+    m_Key: Text_MomName_CharacterChoose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6953783697408
+    m_Key: Text_PlayerTV_CharacterChoose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7243425554432
+    m_Key: Text_PlayerTV2_CharacterChoose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7450523508736
+    m_Key: Button_Start_CharacterChoose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8107418624000
+    m_Key: Text_Title_PauseGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8491713339392
+    m_Key: Button_BackMenu_PauseGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8890407100416
+    m_Key: Text_Title_GameOverGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9278464106496
+    m_Key: Text_PlayerWin_GameOverGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9548745056256
+    m_Key: Button_Continue_GameOverGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9938848882688
+    m_Key: Button_BackMenu_GameOverGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10560344072192
+    m_Key: Text_BubbleTextUtensil_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11021545545728
+    m_Key: Text_BubbleTextOr_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11268543913984
+    m_Key: Text_GetReady_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12094117158912
+    m_Key: Text_BubbleTextBabyToyStorm_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12720708427776
+    m_Key: Text_BubbleTextBabyShoot_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13121650335744
+    m_Key: Text_BubbleTextIronMum_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13563457347584
+    m_Key: Text_BubbleTextMumSweeper_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13797772140544
+    m_Key: Text_BubbleTextSumom_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14203210342400
+    m_Key: Text_BubbleTextTicTacPoop_TutorialPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 435505964425216
+    m_Key: Button_Setting_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 436771721486336
+    m_Key: Text_Title_SettingPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442409209995264
+    m_Key: Text_TitleSound_SettingPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442556962742272
+    m_Key: Text_TitleLangue_SettingPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766915224969216
+    m_Key: Text_SubTitleGeneral_SettingPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767008665673728
+    m_Key: Text_SubTitleMusic_SettingPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767071416655872
+    m_Key: Text_SubTitleSFX_SettingPanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767227344101376
+    m_Key: Text_SubTitleVoice_SettingPanel
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2942287805404938264
+  references:
+    version: 2
+    RefIds:
+    - rid: 2942287805404938264
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1691476153813

@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: d508c0076da7b664e9646d80442f3ab7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4426539376640
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4544747446272
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4727216447488
+    m_Localized: BroadCast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4852810686464
+    m_Localized: Free Brawl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5164128706560
+    m_Localized: 'Did you know: Mum Attack was voted best Party Game! (Well ahead
+      of Marius Party and Fall Dudes) | Rumor has it that the presenter is... BALD!
+      | The developers totally knew how to keep up the pace (it''s not true) | The
+      Chinese would have been exploited in order to finish the game... But of course
+      the rumor is unfounded... | The abbreviation "M.I.L.F" stands for "Feminist
+      Lethal Infantry Module" | DISCLAIMER: The moms came to the show of their own
+      free will! No child was taken hostage to coerce/or coerce entries. BELIEVE
+      US! | The game developers would have gotten confused about the graphic charter...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5543457366016
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5913394978816
+    m_Localized: PTR Activate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6736485195776
+    m_Localized: Select a Mom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6953783697408
+    m_Localized: Challenger 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7243425554432
+    m_Localized: Challenger 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7450523508736
+    m_Localized: Start !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8107418624000
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8491713339392
+    m_Localized: Back to Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8890407100416
+    m_Localized: Game Set
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9278464106496
+    m_Localized: JoueurX Wins !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9548745056256
+    m_Localized: Continu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9938848882688
+    m_Localized: Back to Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10560344072192
+    m_Localized: Hit the opponent 5 times using kitchen utensils! What?! Moms can
+      send them with an arched effect?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11021545545728
+    m_Localized: OR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11268543913984
+    m_Localized: Get Ready
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12094117158912
+    m_Localized: The Baby is throwing his toys away ! Catch the more of them before
+      they hit the ground !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12720708427776
+    m_Localized: "Don't cry baby, take a teat !!! \nShot teat on the babies' mouth."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13121650335744
+    m_Localized: Take a seat in the ironing kart and iron the most plaice on this
+      giant t-shirt !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13563457347584
+    m_Localized: 'Find the pacifier in the sandbox.
+
+      The first player who find
+      it wins the game.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13797772140544
+    m_Localized: 'Push the other mom out of the arena 3 times! Be careful not to
+      get cramps!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14203210342400
+    m_Localized: The baby's diaper is full, it will have to be changed. Hit the other
+      mom to pass this poisoned gift on to her. Run away until the end of the timer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 435505964425216
+    m_Localized: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 436771721486336
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442409209995264
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442556962742272
+    m_Localized: Langage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766915224969216
+    m_Localized: All
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767008665673728
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767071416655872
+    m_Localized: Sound Effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767227344101376
+    m_Localized: Voice
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
