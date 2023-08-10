@@ -8420,6 +8420,8 @@ MonoBehaviour:
   _timerStart: 30
   _timerTxt: {fileID: 1584228104}
   _chronoMax: 10
+  _methodName: GameOver
+  _timerAtStart: 0
 --- !u!4 &1764729887
 Transform:
   m_ObjectHideFlags: 0
@@ -9723,7 +9725,8 @@ AudioSource:
   m_GameObject: {fileID: 2044884781}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7744142117137542561, guid: 026f3d416ac87c64f906b8f517cf76b0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 499b55a2a5429104ba339fc9517a6c8a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -10482,7 +10485,8 @@ AudioSource:
   m_GameObject: {fileID: 410365231}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 1d52bbb9a9882dc468270c25a7ec7b98, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -10742,6 +10746,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2320408771282135058, guid: 119262d468c282f44b3be11ea10914f9,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
+    - target: {fileID: 6048686346446598062, guid: 119262d468c282f44b3be11ea10914f9,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     - target: {fileID: 6853537075156250242, guid: 119262d468c282f44b3be11ea10914f9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10874,9 +10890,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6853537076719673325, guid: 119262d468c282f44b3be11ea10914f9,
         type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
+    - target: {fileID: 6853537076719673325, guid: 119262d468c282f44b3be11ea10914f9,
+        type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
       value: 1.026
       objectReference: {fileID: 0}
+    - target: {fileID: 6853537076719673327, guid: 119262d468c282f44b3be11ea10914f9,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 6853537075156250241, guid: 119262d468c282f44b3be11ea10914f9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 119262d468c282f44b3be11ea10914f9, type: 3}

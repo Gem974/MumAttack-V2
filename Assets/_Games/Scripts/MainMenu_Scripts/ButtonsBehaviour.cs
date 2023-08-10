@@ -13,7 +13,7 @@ public class ButtonsBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject _mainMenuPanel, _modePanel, _freebrawlPanel, _optionsPanel;
     public AudioMixer _mixer;
-    public Slider _volumeSlider;
+    public Slider _generalSlider, _sfxSlider, _musicSlider, _voiceSlider;
 
     private void Start()
     {
@@ -75,9 +75,27 @@ public class ButtonsBehaviour : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[langageID];
     }
 
-    public void ChangeVolume(float volume)
+    public void ChangeGeneralVolume(float volume)
     {
-        volume = _volumeSlider.value;
-        _mixer.SetFloat("Volume", volume);
+        volume = _generalSlider.value;
+        _mixer.SetFloat("GeneralVolume", volume);
+    }
+
+    public void ChangeSFXVolume(float volume)
+    {
+        volume = _sfxSlider.value;
+        _mixer.SetFloat("SFXVolume", volume);
+    }
+
+    public void ChangeVoiceVolume(float volume)
+    {
+        volume = _voiceSlider.value;
+        _mixer.SetFloat("VoiceVolume", volume);
+    }
+
+    public void ChangeMusicVolume(float volume)
+    {
+        volume = _musicSlider.value;
+        _mixer.SetFloat("MusicVolume", volume);
     }
 }

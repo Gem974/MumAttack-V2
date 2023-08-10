@@ -124,6 +124,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8259d06f-e20d-486a-96bc-8ee6d599ee38",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b577e00e-d769-4e88-bd83-6c581c2312d6",
                     "path": "<Gamepad>/start",
                     "interactions": "",
@@ -269,6 +280,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ac98edce-80be-4fa4-995d-4c3d6fe2708f",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9e31ccb3-463b-44e3-9d25-c4bddab22dab",
                     "path": "<Gamepad>/start",
                     "interactions": "",
@@ -327,6 +349,17 @@
                     "action": "Ready",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d35c512-3cd0-4f06-944d-1c83fab5c9db",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -371,6 +404,17 @@
                     "name": "",
                     "id": "afd3e1dc-e431-43e1-a8c2-e59b5623e518",
                     "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1737a358-0b6c-4aa4-bc4b-5aea3f236b76",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -455,6 +499,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f6ae1691-360b-4ae6-82cd-e916f309e7c8",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionSud",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2d5f5381-c666-4a82-aa1b-c9aa68f13e26",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -468,6 +523,17 @@
                     "name": "",
                     "id": "56ad7bb3-5c7a-46ad-8af0-6ed9fc5afd10",
                     "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionOuest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17a2abd6-ebc6-4969-b8c9-90a4d9c60c60",
+                    "path": "<SwitchProControllerHID>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -499,6 +565,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d96c9e3f-4bb3-42fb-8cf7-0766b53d1b45",
+                    "path": "<SwitchProControllerHID>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionNord",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e228b850-9ae6-448c-b456-dd28138e8d1a",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -512,6 +589,17 @@
                     "name": "",
                     "id": "871c0c8d-f589-4f98-bc82-214cb3652e1e",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionEst",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31772364-438d-42a4-924c-ac7d72c78eda",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -618,6 +706,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0e55b2a2-0c0b-451d-adb5-a9660ba31a83",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionSud",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ba9cdc08-c249-45aa-a2cf-116699d7729b",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -631,6 +730,17 @@
                     "name": "",
                     "id": "9b214014-5d0b-40be-b2af-fc7746044b65",
                     "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionOuest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5475a300-8a90-4ab3-91a3-b0c2e8de50a3",
+                    "path": "<SwitchProControllerHID>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -662,6 +772,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e7888c6a-906e-49d5-a954-a8063691b211",
+                    "path": "<SwitchProControllerHID>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionNord",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b2be3faf-2b79-4977-b765-9b5930fd29a7",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -675,6 +796,17 @@
                     "name": "",
                     "id": "9dc91992-0645-4b98-914b-41b68d199c92",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionEst",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cfa0ebff-5024-46a7-8655-219d641b22f1",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -818,6 +950,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6f1bfa9d-27ae-4062-9587-f2c2bb6e0607",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "63e0730d-5920-437c-87c7-7221fbb13bf9",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -831,6 +974,17 @@
                     "name": "",
                     "id": "8fa06177-1460-4b99-acf6-f3629925e139",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1218019b-77bc-4e37-9d44-9f2bd5fdef13",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -963,6 +1117,17 @@
                 },
                 {
                     "name": "",
+                    "id": "add1b0de-12d8-41d7-82b4-279e8f017f2b",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "db09e3a7-917d-41be-9a54-953f5be65884",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -976,6 +1141,17 @@
                     "name": "",
                     "id": "da888be1-43cf-4a07-9864-e4823d03519f",
                     "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0242e93-d253-4d98-8274-af78ba9912d8",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1148,6 +1324,17 @@
                     "name": "",
                     "id": "5cf2ea1a-8783-4310-bd26-43d238272a91",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99154659-2285-4656-b77e-543f322f2ab5",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1342,6 +1529,17 @@
                     "name": "",
                     "id": "0ebecbf6-167d-4175-ba0a-5c6f03091896",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "681dd349-2211-445a-b26e-dcfde76fe270",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

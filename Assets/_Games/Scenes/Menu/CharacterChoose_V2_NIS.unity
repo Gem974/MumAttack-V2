@@ -474,6 +474,12 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.54
       objectReference: {fileID: 0}
+    - target: {fileID: 1208070057958337149, guid: ce41fdcdf6f47784bac7cc14644a087a,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     - target: {fileID: 5032295240137227124, guid: ce41fdcdf6f47784bac7cc14644a087a,
         type: 3}
       propertyPath: m_Mesh
@@ -4380,7 +4386,8 @@ AudioSource:
   m_GameObject: {fileID: 764268647}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7744142117137542561, guid: 026f3d416ac87c64f906b8f517cf76b0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: dac72361b0c367d41aab45dc1a687b8e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -5451,6 +5458,12 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.54
       objectReference: {fileID: 0}
+    - target: {fileID: 1948927414748682494, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     - target: {fileID: 3518155887964897458, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: initialSkinName
@@ -5770,6 +5783,12 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.54
       objectReference: {fileID: 0}
+    - target: {fileID: 1948927414748682494, guid: 019861daf10655b4b87bf42829081a7f,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     - target: {fileID: 5041140449417168453, guid: 019861daf10655b4b87bf42829081a7f,
         type: 3}
       propertyPath: m_Sprite
@@ -5998,6 +6017,12 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.54
       objectReference: {fileID: 0}
+    - target: {fileID: 1208070057958337149, guid: ce41fdcdf6f47784bac7cc14644a087a,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     - target: {fileID: 5637852517921546297, guid: ce41fdcdf6f47784bac7cc14644a087a,
         type: 3}
       propertyPath: m_IsActive
@@ -6700,6 +6725,70 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f367cb27-bfe8-4b85-8ef3-3c98ac8fba8c
     m_ActionName: SelectCharaP2/Cancel[/XInputControllerWindows/buttonEast,/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da44d39b-dc49-4f31-a60a-5cb8006c9f48
+    m_ActionName: Player1/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 80dce28d-601f-4b8b-8eb9-5a54a8eecf99
+    m_ActionName: Player2/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee750e19-22d9-45ce-9e5b-cc0f644a3132
+    m_ActionName: SumomP1/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 903965d6-3d59-479e-8167-84ab167f0b6e
+    m_ActionName: SumomP2/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf4445e0-f731-420a-b724-e94809fcbcf7
+    m_ActionName: GridPlayer1/MoveUp[/Keyboard/w,/DualShock4GamepadHID/leftStick/up,/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 577686c6-89f2-4452-9fda-5ec6990b87c0
+    m_ActionName: GridPlayer1/MoveDown[/Keyboard/s,/DualShock4GamepadHID/leftStick/down,/XInputControllerWindows/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18ffbcae-4543-4c72-be46-28edb04825e3
+    m_ActionName: GridPlayer1/MoveLeft[/Keyboard/a,/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 620f0561-d342-457e-b2a8-961bfbf6ea6d
+    m_ActionName: GridPlayer1/MoveRight[/Keyboard/d,/DualShock4GamepadHID/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 622c7fd9-064d-4505-ae0a-5f585f4b01b5
+    m_ActionName: GridPlayer1/Action[/Keyboard/q,/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 31ef8522-e13c-407a-a082-160612f42903
+    m_ActionName: GridPlayer1/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a5041b6b-96c1-4c13-81dc-2e449de08388
+    m_ActionName: GridPlayer2/MoveUp[/Keyboard/upArrow,/DualShock4GamepadHID/leftStick/up,/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 11d83260-ae3c-4b09-be96-1b46d921594d
+    m_ActionName: GridPlayer2/MoveDown[/Keyboard/downArrow,/DualShock4GamepadHID/leftStick/down,/XInputControllerWindows/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a1025f9-f133-4a98-a356-a2abe6f527c6
+    m_ActionName: GridPlayer2/MoveLeft[/Keyboard/leftArrow,/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa19ecdc-8ddb-4e1a-b456-e80667233eef
+    m_ActionName: GridPlayer2/MoveRight[/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16e2f8f8-f27d-4b2f-ac8f-97d924703958
+    m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl,/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a231005-9fea-47b5-8c3c-d2849ecd95a9
+    m_ActionName: GridPlayer2/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: SelectCharaP2
@@ -7061,6 +7150,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3916037826211600723, guid: e83d81315a521214e85ee44ee7dc4a58,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83d81315a521214e85ee44ee7dc4a58, type: 3}
 --- !u!224 &1756351202 stripped
@@ -7824,6 +7919,30 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 16e2f8f8-f27d-4b2f-ac8f-97d924703958
     m_ActionName: GridPlayer2/Action[/Keyboard/rightCtrl,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da44d39b-dc49-4f31-a60a-5cb8006c9f48
+    m_ActionName: Player1/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 80dce28d-601f-4b8b-8eb9-5a54a8eecf99
+    m_ActionName: Player2/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee750e19-22d9-45ce-9e5b-cc0f644a3132
+    m_ActionName: SumomP1/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 903965d6-3d59-479e-8167-84ab167f0b6e
+    m_ActionName: SumomP2/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 31ef8522-e13c-407a-a082-160612f42903
+    m_ActionName: GridPlayer1/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a231005-9fea-47b5-8c3c-d2849ecd95a9
+    m_ActionName: GridPlayer2/Pause[/DualShock4GamepadHID/start,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: SelectCharaP1

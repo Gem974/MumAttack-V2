@@ -12009,7 +12009,8 @@ AudioSource:
   m_GameObject: {fileID: 6861396551545900977}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 1d52bbb9a9882dc468270c25a7ec7b98, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -12590,6 +12591,18 @@ PrefabInstance:
       propertyPath: rectTransformSize.y
       value: 535.99994
       objectReference: {fileID: 0}
+    - target: {fileID: 2320408771282135058, guid: 119262d468c282f44b3be11ea10914f9,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
+    - target: {fileID: 6048686346446598062, guid: 119262d468c282f44b3be11ea10914f9,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1555757114118643860, guid: 026f3d416ac87c64f906b8f517cf76b0,
+        type: 2}
     - target: {fileID: 6853537075156250242, guid: 119262d468c282f44b3be11ea10914f9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -14280,7 +14293,8 @@ AudioSource:
   m_GameObject: {fileID: 6861396549909091763}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7744142117137542561, guid: 026f3d416ac87c64f906b8f517cf76b0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 499b55a2a5429104ba339fc9517a6c8a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
